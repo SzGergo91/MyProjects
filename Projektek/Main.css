@@ -1,0 +1,117 @@
+* {
+			box-sizing: border-box;
+		}
+		.A1 {
+			font-size: 5vw;
+		    letter-spacing: -1px;
+		    margin-left: 100px;
+		    margin-top: 25px; 
+		    border:5px solid blue;
+		    max-width: 380px;
+		    color: darkblue;
+		}
+		.A2 li {
+			float: left;
+			margin-right: 50px;
+			font-family: 'Macondo Swash Caps', cursive;
+			list-style-type: none;
+			font-size: 31px;
+
+		}
+		p.P1 {
+			font-size: 30px;
+			font-weight: 200;
+			text-align: center;
+			max-width: 500px;
+			min-height: 300px;
+			background-color: white;	
+			word-wrap: break-word;
+			padding: 50px;
+			margin-left: 15%;
+		}
+		a {
+			text-decoration: none;
+			
+		}
+
+		a:visited {
+			color: black;
+		}
+		a:hover {
+			color: white;
+		}
+		.aback {
+			color: black;
+			font-weight: bold;
+		}
+		.aback:hover{
+			color: black;
+		}
+
+		li#bgimg1{
+			background-image: url('Pictures/ArrowDown.png');
+			background-repeat: no-repeat;
+			background-size: 25px 25px;
+			background-position: 170px 10px;
+			width: 200px;
+		}
+
+		#bgimg1:hover, #tartalom:hover {
+			cursor: pointer;
+		}
+
+		.background {
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+		.shade {
+			font-size: 2vw;
+			text-align: center;
+			text-shadow: 5px 0px white 0px 5px white -5px 0px white 0px -5px white;
+			color: blue;
+		}
+		.calculator{
+			display: inline-block;
+			width: 60px;
+			height: 55px;
+			background-color: transparent;
+			border-radius: 50%;
+			position: absolute;
+		}
+		.calculator:hover {
+			color: black;
+		}
+
+		.pAsLabel {
+			width:250px;
+			position: relative;
+			background-color: transparent;
+			color: red;
+			text-align: center;
+			font-size: 5vw;
+			text-shadow: 8px 8px 10px white, -8px -8px 10px white, 0px 8px 10px white, 8px 0px 10px white;
+		}
+
+		@keyframes gif{
+			0% {background-image: url('Pictures/Spring.jpg');}
+			33% {background-image: url('Pictures/Summer.jpg');}
+			67% {background-image: url('Pictures/Autumn.jpg');}
+			100% {background-image: url('Pictures/Winter.png');}
+		}
+
+		@keyframes SunCurrent{
+			0% {top: 5466px;}
+			25% {top: 5366px;}
+			50% {top: 5266px;}
+			75% {top: 5166px;}
+			100% {top: 5066px;}
+		}
+
+		@keyframes SunSun{
+			0% {background-image: url('Pictures/Sun/SunLow.png');width: 350px;height: 350px;top:5200px;left: 750px;}
+			25% {background-image: url('Pictures/Sun/SunSlightlyLow.png');width: 450px;height: 450px;top:5150px;left: 700px;}
+			50% {background-image: url('Pictures/Sun/Sun.png');width: 550px;height: 550px;top:5100px;left: 650px;}
+			75% {background-image: url('Pictures/Sun/SunSlightlyHigh.png');width: 650px;height: 650px;top:5050px;left: 600px;}
+			100% {background-image: url('Pictures/Sun/BlueSun.png');width: 750px;height: 750px;top:5000px;left: 550px;}
+		}

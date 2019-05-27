@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="Main.css">
+		<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.js "></script>
+</head>
+<body>
+	<!--Az erdore is lehet rakni diveket/ szamologepre is lehet pakolni gombokat!(mint img es nagyit mikor ramegy)!-->
+	<!--A time converterbe rakjuk bele az orat is!Ami minden masodpercben frissul es idoket hasonloan mint a wawexban amikor modosulnak ugyszinten!-->
+	<!--A filternel mikor rakatt a kepre, akkor fadeljen az img a masik pedig unfadeljen! -->
+	<!--Egy masik projekt amit csinalhatok azpedig hogy barangolasa jungelben!(bizonyos rejtett divekre rakattintva nagyitson stb)!-->
+	<!--Transparent kepek megnyitasa!(transparent gifek mozgatasa)!-->
+	<!--Az universe Projekt! Adva vannak bolygok es a homerseklet hatasara szinesedni kezdenek (kiveve a fold) illetve forog minden!
+		A. A reklamba belerakom a napot homerseklettel!B. A rendes projektjeimbe pedig a bolygokat belerakom a gifbe(valtozo gif) tooltippel illetve nagyitassal! -->
+	<!--The menu-->
+	<div style="height: 150px;">
+	  <p class="A1">Mini Projects</p>
+	  <ul class="A2" style="position: relative;top: -125px;left: 600px; max-width: 740px;">
+		<li><a href="#About">About</a></li>
+		<li>News </li>
+		<li>Contacts </li>
+		<li id="bgimg1">My Projects</li>
+	  </ul>
+	</div>
+	<ul style="width: 250px;height: 200px;line-height: 40px; position: absolute;left: 1030px;top: 80px;z-index: 1;display: none;" class="A2" id="tartalom">
+	  <li>Calculator</li>
+	  <li>TimeConverter</li>
+	  <li>Universe</li>
+	  <li>Filter</li>
+	  <li>SettingsGame</li>
+	  <li>JungleFinder</li>
+	</ul>
+
+
+	<!--Continue (end of road)-->
+	<div style="width:100%;height:1250px;background-image: url('Pictures/Erdo.jpg');background-repeat: no-repeat;background-size: cover;background-position: center; position: relative;">
+		<p class="shade" style="position: relative;right: 350px;top: 300px;">You never know what will be at the end of the road!(Guess or click to find out!)</p>ss
+		<div style="width: 300px;height: 170px;background-color: white;position: relative;left: 1040px;bottom:110px;display: none;" id="helpdiv1"> </div>
+		<div style="width: 200px;height: 200px;background-color: green;position: relative;top:550px;left: 550px;opacity: 0.25" id="EOR" class="background">
+		  <img src="Pictures/Erdo.jpg" width="200px" height="200px" style="display: none;" id="EORimg"> 
+		</div>
+	</div> 
+
+
+	 <!--About-->
+	 <h1 style="text-align: center;font-size: 60px" id="About">II. About Me</h1>
+	 <div style="box-shadow: 1px 5px 3px gray;height: 700px;"> 
+	   <p class="P1" style="display: inline-block;">My name is Gergo Szabo. I practiced web development for a several mounths but intensively. This page is only for exercising purposes! I will exercises with different
+	   tools like Css, Javascript, JQuery, React! Practice makes the Master like they say!(Mouseover the picture) </p>
+	   <div style="border:1px solid black;width: 500px;height: 500px;background-image: url('Pictures/EmberiAlak.jpg');background-size: 500px 500px;background-repeat: no-repeat;float: right;display: inline-block;" id="Kepek">
+	     <div style="width: 100px;height: 100px; background-image: url('Pictures/PictureArrowLeft.png');background-repeat: no-repeat; background-size: 100px 100px;opacity: 0.2;display: none;position: relative;top: 180px;" id="left">
+
+	     </div>
+	     <div style="width: 100px;height: 100px;position: relative; float: right;background-image: url('Pictures/PictureArrowRight.png');background-repeat: no-repeat; background-size: 100px 100px;opacity: 0.2;display: none;position: relative;top: 80px;" id="right"> </div>
+	   </div>
+	</div>
+
+
+
+
+
+
+	<!--II.1. Calculator-->
+	<h2 style="font-size: 35px;font-style: italic;">II/1 My Projects</h2>
+	<h3 style="text-align: center;font-size: 25px;">1. Calculator</h3>
+	<div style="width: 100%;height: 1000px;background-image: url('Pictures/CalculatorII1.jpg');" class="background">
+      <i>You can find the project in the <a href="#bgimg1" class="aback">My Projects!</a> This one in the picture is a bit broken but some buttons still working! Try it out! </i>
+	  <a class="calculator" style="top: 2845px;left: 780px;height: 50px" href="https://en.wikipedia.org/wiki/9"> </a>
+	  <a class="calculator" style="top: 2890px;left: 710px;width: 70px;" href="https://en.wikipedia.org/wiki/8"> </a>
+	  <a class="calculator" style="top: 2950px;left: 632px;width: 72px" href="https://en.wikipedia.org/wiki/7"> </a>
+	  <a class="calculator" style="top: 2890px;left: 855px;width: 65px" href="https://en.wikipedia.org/wiki/6"> </a>
+	  <a class="calculator" style="top: 2940px;left: 785px;width: 70px;height: 60px;" href="https://en.wikipedia.org/wiki/5"> </a>
+	  <a class="calculator" style="top: 3000px;left: 710px;width: 75px;height: 65px;" href="https://en.wikipedia.org/wiki/4"> </a>
+	  <a class="calculator" style="top: 2940px;left: 932px;width: 75px;" href="https://en.wikipedia.org/wiki/3"> </a>
+	  <a class="calculator" style="top: 2995px;left: 870px;width: 75px;height: 60px;" href="https://en.wikipedia.org/wiki/2"> </a>
+	  <a class="calculator" style="top: 3057px;left: 792px;width: 85px;height: 68px;" href="https://en.wikipedia.org/wiki/1"> </a>
+	  <a class="calculator" style="top: 3205px;left: 800px;width: 100px;height: 95px" href="https://en.wikipedia.org/wiki/0"> </a>
+	  <a class="calculator" style="top: 3122px;left: 885px;width: 90px;height: 83px;" href="https://en.wikipedia.org/wiki/0"> </a>
+	  <a class="calculator" style="top: 3055px;left: 957px;width: 82px;height: 70px;" href="https://en.wikipedia.org/wiki/Point_(geometry)"></a>
+	  <a class="calculator" style="top: 2925px;left: 405px;width: 73px;height: 32px;transform: rotate(-30deg);" href="http://muonlineguides.com/calculator/"> </a>
+	  <a class="calculator" style="top: 2990px;left: 1020px;width: 80px;height: 60px;" href="https://en.wikipedia.org/wiki/Equals_sign"> </a>
+	  <a class="calculator" style="top: 2910px;left: 995px;width: 160px;height: 50px;border-radius: 10px;transform: rotate(30deg);" href="https://en.wikipedia.org/wiki/Plus_and_minus_signs"> </a>
+	  <a class="calculator" style="top: 2840px;left: 915px;width: 70px;height: 50px;" href="https://en.wikipedia.org/wiki/Plus_and_minus_signs"> </a>
+	  <a class="calculator" style="top: 2803px;left: 840px;width: 70px;height: 45px;" href="https://en.wikipedia.org/wiki/Multiplication_sign"> </a>
+	  <a class="calculator" style="top: 2765px;left: 772px;width: 65px;height: 40px;" href="https://en.wikipedia.org/wiki/Obelus"> </a>
+	  <a class="calculator" style="top: 3140px;left: 705px;width: 80px;height: 75px;border-radius: 10px;transform: rotate(-45deg);cursor: pointer;" id="ACButton" > </a>
+	  <a class="calculator" style="top: 2628px;left: 533px;width: 65px;height: 40px;border-radius: 10px;padding: 10px;font-size: 7.1vw;transform: rotateZ(-48deg) rotateY(-30deg); display: none;font-weight: 200;" id="AC0">0</a>
+
+	</div>
+
+
+
+
+
+    <!--II.2. Time Converter-->
+	<h3 style="text-align: center;font-size: 25px;margin-top: 100px;">2. Time Converter</h3>
+	<div style="width: 100%;height: 1050px; animation-name: gif;animation-duration: 16s;animation-iteration-count: infinite; font-size: 2vw;" class="background" id="TimeConverterDiv" >
+		In my Project you can convert from a lot of options. For example from days to seconds, or years to weeks, try it out!
+		<br>
+		<div style="width: 350px;height: 350px;display:inline-block;background-image: url('Pictures/Clock.gif');margin-top: 100px;margin-left: 50px;" class="background"> </div> 
+		<div style="width: 200px;height: 200px;display: inline-block;float: right;background-image: url('Pictures/SandsOfTime.gif');position: relative;right: 200px;top:200px;" class="background;"> </div> 
+		<div style="width: 260px;height: 260px;display: inline-block;margin-left: 30%;margin-top: 225px;background-image: url('Pictures/Meter.gif');position: relative;right: 240px;top:350px;" class="background" id="TCclick"> </div> 
+		<p class="pAsLabel" style="top: -500px; left: 100px;" id="TCsec">0 Sec</p>
+		<p class="pAsLabel" style="top: -600px; left: 875px;width: 370px;" id="TCseason">0 Years</p>
+		<p class="pAsLabel" style="top: -320px; left: 250px;width: 900px;" id="TCcomercial">Years to Sec</p>
+		<div style="background-color: transparent;position: absolute;top: 4317px;left:680px;width: 50px;height: 50px;border-radius: 50%;cursor: pointer;font-size: 3vw;font-weight: 900;color: yellow;padding-left: 18px; " id="TCAction">!</div>
+	</div>
+
+
+
+	<!--II.3. Universe-->
+	<h3 style="text-align: center;font-size: 25px;margin-top: 100px;">3. Universe</h3>
+	<div style="width: 100%;height: 1000px;background-image: url('Pictures/UniverseC.jpg');" class="background">
+		<p style="font-size: 2vw;position: absolute;top: 4800px">The sun's temperature is altering!(this includes it'size as well)</p>
+	  <div style="width: 80px;height: 400px;background-color: white;display:inline-block; position: relative;top: 300px;left:175px;border-top-left-radius: 40%;border-top-right-radius: 40%; box-shadow: 8px 8px 8px black, -8px 8px 8px black, 0px -8px 8px black;
+	  background-image: linear-gradient(red,yellow,green,lightblue)">
+	  </div>
+	  <p style="width: 300px;font-size: 4vw;font-weight: 900;position:relative;top: 250px;left: 55px;text-shadow:3px 3px 3px red, -3px 3px 3px red, 0px -3px 3px red ">Temperature </p>
+	  <p style="width: 100px;position: absolute;top: 5458px;left: 275px;font-size: 2vw;font-weight: bold;color: white">Low</p>
+
+	  <p style="width: 250px;position: absolute;top: 5360px;left: 179px;font-size: 2vw;font-weight: bold;color: black">- - - - - - <span style="color: green">Slightly Low</span></p>
+	  <p style="width: 200px;position: absolute;top: 5262px;left: 179px;font-size: 2vw;font-weight: bold;color: black">- - - - - - <span style="color: yellow">Medium</span></p>
+	  <p style="width: 250px;position: absolute;top: 5164px;left: 179px;font-size: 2vw;font-weight: bold;color: black">- - - - - - <span style="color: orange">Slightly High</span></p>
+
+	  <p style="width: 100px;position: absolute;top: 5066px;left: 250px;font-size: 2vw;font-weight: bold;color: red">- High</p>
+	  <p style="width: 150px;position: absolute;top: 5466px;left: 28px;font-size: 2vw;font-weight: bold;color: red;text-shadow:3px 3px 3px blue, -3px 3px 3px blue, 0px -3px 3px blue;animation: SunCurrent;animation-duration: 16s;animation-iteration-count: infinite;animation-direction: alternate; ">Current ==></p>
+	  <div style="width: 350px;height: 350px;position: absolute;top:5200px;left: 750px;animation: SunSun;animation-duration: 16s;animation-iteration-count: infinite;animation-direction: alternate;" class="background"> </div>
+	</div>
+
+
+
+	<!--II.4. Filter(angular)-->
+    <h3 style="text-align: center;font-size: 25px;margin-top: 100px;">4. Filter</h3>
+	<div style="width: 100%;height: 1050px; font-size: 2vw;"> 
+		<input type="text" name="Search" placeholder="Search..." style="width: 500px;padding: 20px;padding-left: 50px;border-radius: 25px;border:3px solid lightblue;box-shadow: 3px 3px 5px gray; font-size:2vw;outline: none; background-image: url(Pictures/Countries/Search.png); background-size: 50px 50px;background-repeat: no-repeat;background-position: 0px 10px;" id="FSearch">
+	</div>
+	<script type="text/javascript" src="Main.js"></script>
+</body>
+</html>
