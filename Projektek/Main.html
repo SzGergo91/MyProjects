@@ -10,7 +10,7 @@
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.js "></script>
 </head>
-<body>
+<body ng-app="Forfilter">
 	<!--Az erdore is lehet rakni diveket/ szamologepre is lehet pakolni gombokat!(mint img es nagyit mikor ramegy)!-->
 	<!--A time converterbe rakjuk bele az orat is!Ami minden masodpercben frissul es idoket hasonloan mint a wawexban amikor modosulnak ugyszinten!-->
 	<!--A filternel mikor rakatt a kepre, akkor fadeljen az img a masik pedig unfadeljen! -->
@@ -137,9 +137,16 @@
 
 	<!--II.4. Filter(angular)-->
     <h3 style="text-align: center;font-size: 25px;margin-top: 100px;">4. Filter</h3>
-	<div style="width: 100%;height: 1050px; font-size: 2vw;"> 
-		<input type="text" name="Search" placeholder="Search..." style="width: 500px;padding: 20px;padding-left: 50px;border-radius: 25px;border:3px solid lightblue;box-shadow: 3px 3px 5px gray; font-size:2vw;outline: none; background-image: url(Pictures/Countries/Search.png); background-size: 50px 50px;background-repeat: no-repeat;background-position: 0px 10px;" id="FSearch">
+	<div style="width: 100%; font-size: 2vw;min-height: 1000px;" id="DivFilter" class="background"> 
+		<i class="italian">Search for countries by name! It's a small sample. The big Filter is more complex! </i>
+		<br><br>
+		<input type="text" name="Search" placeholder="Search..."  id="FSearch" minlength="1" maxlength="20">
+		<div frames>
+		  
+		</div>
 	</div>
+
+	<script type="text/javascript" src="AngControll.js"></script>
 	<script type="text/javascript" src="Main.js"></script>
 </body>
 </html>

@@ -17,7 +17,11 @@ let $globalSeconds=0;
 let $globalCounter1=0;
 let $globalCounterForSeason=0;
 let $globalbool1=true;
-let $globalarray=["Sec","Min","Hour","Day","Week","Mounth","Sobeksec","Year","Decade","Generation","Century","Millenium","Sobekday"]
+let $globalarray=["Sec","Min","Hour","Day","Week","Mounth","Sobeksec","Year","Decade","Generation","Century","Millenium","Sobekday"];
+
+//Filter
+let $globalbgimg=["Pictures/OtherPics/FilterBG1.jpg","Pictures/OtherPics/FilterBG2.jpg","Pictures/OtherPics/FilterBG3.jpg"];
+
 
 $(document).ready(()=>{
 		//Menu settings
@@ -243,12 +247,19 @@ $(document).ready(()=>{
 
 
 		//4. Filter!
-		$('#FSearch').on('focus',()=>{
-			$('#FSearch').animate(({
-				width: "100%",
-				backgroundColor: "green"
-			})
-			,2000)
+		$('#DivFilter').css({
+			background: `url('${$globalbgimg[Math.floor(Math.random()*3)]}') center fixed`,
+			backgroundSize: 'cover',
+		})
+		$('#FSearch').on('input',()=>{
+			if($('#FSearch').val().length!=0)
+			{
+				console.log($('#inDiv').find('p'))
+			}
 		})
 
-})
+});
+
+
+
+	
