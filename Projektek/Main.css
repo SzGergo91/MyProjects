@@ -158,6 +158,19 @@
 
 		}
 
+		div.frame:hover {
+			width: 33%;
+			height: 510px;
+			position: relative;
+			bottom: 5px;
+			right: 1%;
+			box-shadow: 10px 10px 10px black, -10px 10px 10px black, 10px -10px 10px black,-10px -10px 10px black; 
+		}
+
+		div.frame:hover p {
+			height: 152px;
+		}
+
 		div.frame p {
 			font-size: 3vw;
 			text-align: center;

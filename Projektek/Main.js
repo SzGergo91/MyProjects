@@ -246,19 +246,38 @@ $(document).ready(()=>{
 
 
 
-		//4. Filter!
+		//4. Filter!(With DOM!)
 		$('#DivFilter').css({
 			background: `url('${$globalbgimg[Math.floor(Math.random()*3)]}') center fixed`,
 			backgroundSize: 'cover',
 		})
 		$('#FSearch').on('input',()=>{
+			let elements=document.getElementsByClassName('frame');
 			if($('#FSearch').val().length!=0)
 			{
-				console.log($('#inDiv').find('p'))
+				for(let i=0;i<elements.length;i++)
+				{
+					let CountryNames=elements[i].getElementsByTagName('p')[0].innerHTML.slice(1,elements[i].getElementsByTagName('p')[0].innerHTML.length-1);
+					let InputCapitalize=$('#FSearch').val().charAt(0).toUpperCase()+$('#FSearch').val().slice(1);
+					if(CountryNames.startsWith(InputCapitalize)){
+							elements[i].style.display="inline-block";
+					}
+					else {
+						elements[i].style.display="none";
+					}		
+
+				}
+				
+			}
+			else {
+				for(let i=0;i<elements.length;i++)
+				{
+				elements[i].style.display="inline-block";
+				}
 			}
 		})
 
-});
+});					
 
 
 
