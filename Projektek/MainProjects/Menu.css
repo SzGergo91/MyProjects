@@ -15,7 +15,7 @@
 			margin-right: 50px;
 			font-family: 'Macondo Swash Caps', cursive;
 			list-style-type: none;
-			font-size: 31px;
+			font-size: 3vw;
 
 		}
 		a {
@@ -28,23 +28,41 @@
 		}
 		a:hover {
 			color: white;
+
 		}
 		.aback {
 			color: black;
 			font-weight: bold;
 		}
-		.aback:hover{
+		.aback:hover {
 			color: black;
 		}
 
-		li#bgimg1 {
+		#bgimg1 {
 			background-image: url('ArrowDown.png');
 			background-repeat: no-repeat;
 			background-size: 25px 25px;
-			background-position: 170px 10px;
-			width: 200px;
+			background-position: 210px 10px;
+			width: 250px;
+			position: relative;
+			z-index: 2;
+			cursor: pointer;
+		}
+		#tartalom { 
+			width: 250px;
+			height: 255px;
+			line-height: 40px;
+			position: absolute;
+			left: 1039px;
+			top: 35px;
+			z-index: 1;
+			display: none;
+			background-color: black;
+			color: white;
 		}
 
-		#bgimg1:hover, #tartalom:hover {
-			cursor: pointer;
+		#tartalom li {
+			position: relative;
+			top: 50px;
+			right: 30px;
 		}
