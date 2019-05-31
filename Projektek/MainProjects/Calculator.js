@@ -124,6 +124,15 @@ $(document).ready(()=>{
 		$('#Result').html("0");
 	})
 
+	//I.Bg form
+	//$GlobalInputValue for the 1 characters!
+	//$GlobalStepper entire line!
+	//$GlobalResult input value
+
+	//II.Frontend form
+	//$('#Input').val the physical see!
+	//$('#Result') the see result!
+
 	$('#Equal').on('click',()=>{
 		if(!$operatorActive){
 			$globalResult=Number($('#Input').val());
@@ -147,6 +156,7 @@ $(document).ready(()=>{
 					$globalStepper=0;
 		}
 	})
+
 
 	$('#plus').on('click',()=>{
 		if($operatorActive){
