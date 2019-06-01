@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="Menu.css">
+	<link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
+			<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <style type="text/css">
+  	label {
+  		font-size: 5vw;
+  		margin-left: 20px;
+  		color: red;
+  		position: relative;
+  		top: -50px;
+  	}
+  	p.values {
+  		width: 400px;
+  		background-color: gray;
+  		display: inline-block;
+  		box-shadow: 5px 5px 10px black;
+  		border-radius: 10%;
+  		font-size: 3vw;
+  		padding-left: 20px;
+  		overflow-x: auto;
+  	}
+  	div.buttons {
+  		display: inline-block;
+  		margin-right: 3px;
+  		margin-top: 3px;
+  		padding-top: 25px;
+  		font-size: 3vw;
+  		font-weight: 900;
+  		width: 200px;
+  		height: 100px;
+  		text-align: center;
+  		background-color: green;
+  		box-shadow: 2px 2px 5px white,0px -2px 5px white,-2px 0px 5px white,-2px -2px 5px white;
+  		cursor: pointer;
+  	}
+  </style>
+</head>
+<body style="background: url('TimeConverterBG.gif') center fixed;background-repeat: no-repeat;background-size: auto 900px;">
+	  <div style="height: 150px;display: inline-block;position: relative;top: -66px;">
+	  <p class="A1" style="width: 400px">Mini Projects</p>
+	</div>
+	<a style="height: 150px;display: inline-block;width: 200px;margin-left: 50px;background-image:url('Home.png');background-repeat: no-repeat;background-size: 200px 150px;" href="file:///C:/GITHUB/MyProjects/Projektek/Main.html" target="_blank">
+	</a>
+	<a style="display: inline-block; font-family:'Macondo Swash Caps', cursive;font-size: 3vw;position: relative;top:-80px;margin-left: 70px;" class="aback">Contacts 
+	</a>
+	<a style="display: inline-block; font-family:'Macondo Swash Caps', cursive;font-size: 3vw;position: relative;top:-80px;margin-left: 70px;" class="aback" id="bgimg1">My Projects
+	</a>
+	<ul class="A2" id="tartalom">
+	  <li>Calculator</li>
+	  <li>Universe</li>
+	  <li>Filter</li>
+	  <li>SettingsGame</li>
+	  <li>JungleFinder</li>
+	</ul>
+
+	<input type="number" name="in1" style="width: 400px;padding: 20px;outline: none;border-radius: 20%;font-size: 3vw;font-weight: 900;" id="Input">
+	<label for="in1" id="Inputlabel" style="top: 0;">Seconds</label>
+	<br><br><br><br><br><br>
+	<p class="values" id="Seconds">0</p>
+	<label for="Seconds">Seconds</label>
+	<br>
+	<p class="values" id="Minutes">0</p>
+	<label for="Minutes">Minutes</label>
+	<br>
+	<p class="values" id="Hours">0</p>
+	<label for="Hours">Hours</label>
+	<br>
+	<p class="values" id="Days">0</p>
+	<label for="Days">Days</label>
+	<br>
+	<p class="values" id="Weeks">0</p>
+	<label for="Weeks">Weeks</label>
+	<br>
+	<p class="values" id="Months">0</p>
+	<label for="Months">Months</label>
+	<br>
+	<p class="values" id="SobekSec">0</p>
+	<label for="SobekSec">SobekSec</label>
+	<br>
+	<p class="values" id="Years">0</p>
+	<label for="Years">Years</label>
+	<br>
+	<p class="values" id="Decade">0</p>
+	<label for="Decade">Decade</label>
+	<br>
+	<p class="values" id="Generation">0</p>
+	<label for="Generation">Generation</label>
+	<br>
+	<p class="values" id="Century">0</p>
+	<label for="Century">Century</label>
+	<br>
+	<p class="values" id="Millenium">0</p>
+	<label for="Millenium">Millenium</label>
+	<br>
+	<p class="values" id="SobekDays">0</p>
+	<label for="SobekDays">SobekDays</label>
+	<!--Controllers-->
+	<p class="values" style="position: absolute;left: 800px;top: 400px;background-color: transparent;box-shadow: none;text-align: center;font-size: 7vw;">Controllers</p>
+	<div style="width: 619px;height: 300px;position: absolute;top: 600px;left: 725px">
+	  <div class="buttons">Seconds</div>
+	  <div class="buttons">Minutes</div>
+	  <div class="buttons">Hours</div>
+	  <div class="buttons">Days</div>
+	  <div class="buttons">Weeks</div>
+	  <div class="buttons">Months</div>
+	  <div class="buttons">SobekSec</div>
+	  <div class="buttons">Years</div>
+	  <div class="buttons">Decade</div>
+	  <div class="buttons">Generation</div>
+	  <div class="buttons">Century</div>
+	  <div class="buttons">Millenium</div>
+	  <div class="buttons">SobekDays</div>
+	</div>
+
+<script type="text/javascript" src="Menu.js"></script>
+<script type="text/javascript" src="TimeConverter.js"></script>
+</body>
+</html>

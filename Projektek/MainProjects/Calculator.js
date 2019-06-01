@@ -8,7 +8,7 @@ let $globalpart1="";
 let $globalpart2="";
 let $globaleredmeny=0;
 let $globalB="";
-let $dotcounter=0;
+let $globalA=[];
 
 $(document).ready(()=>{
 	$('.buttons').on('mousedown',event=>{
@@ -223,33 +223,50 @@ $(document).ready(()=>{
 					$globalInputValue="";
 					$('#Input').val(null);
 
-					for(let i=0;i<$globalContainer.length;i++)
-					{
-						if($globalContainer[i] === "."){
-							$dotcounter+=1;
-						}
-					}
 
-					if($dotcounter>1)
-					{
+					//Atalakitsuk a tombot, U hogy csak teliszamok es ertekado operatorok legyenek(pontot kiveszem)
 						for(let i=0;i<$globalContainer.length;i++)
 						{
 							if($globalContainer[i] === ".")
 							{
 								$globalpart2+=".";
-								for(j=i;j<$globalContainer.length;j++){
+								for(j=i;j<$globalContainer.length;j++)
+								{
 									if(typeof($globalContainer[j]) === "number")
 									{
 										$globalpart2+=$globalContainer[j];
+									}
+									else {
+										break;
 									}
 
 									
 								}
 							}
+							else
+							{
 							//Nem pont akkor hozzaadom
-							$globalpart2+=$globalContainer[i];
+								if((typeof($globalContainer[i])!== "number") && ($globalContainer[i]!== "."))
+								{
+								//Eddig volt ertek a part2ben!
+								//Azt hozza kell adjam az operatorral egyutt!
+									$globalA.push(Number($globalpart2));
+									$globalA.push($globalContainer[i]);
+									$globalpart2="";
+								}
+								else {
+									$globalpart2+=$globalContainer[i];
+								}
+							}
+
+							
 						}
-					}
+						$globalA.push(Number($globalpart2));
+						//Ha vege a muveleteknek akkor kiirjuk Mukodik tokeletesen!
+						$globalContainer=$globalA;
+						$globalA=[];
+						$globalpart2="";
+
 
 					for(let i=0;i<$globalContainer.length;i++)
 					{
@@ -281,9 +298,6 @@ $(document).ready(()=>{
 							  			break;
 							  		case "/": 
 							  			$globaleredmeny=Number($globalpart2)/Number($globalpart1);
-							  			break;
-							  		case ".": 
-							  			$globaleredmeny=Number($globalpart2+$globalB+$globalpart1);
 							  			break;
 
 								}
@@ -330,9 +344,6 @@ $(document).ready(()=>{
 							  		case "/": 
 							  			$globaleredmeny=Number($globalpart2)/Number($globalpart1);
 							  		break;
-							  		case ".": 
-							  			$globaleredmeny=Number(String($globalpart2+$globalB+$globalpart1));
-							  		break;
 							  	}
 
 							  		$globalpart2=String($globaleredmeny);
@@ -351,7 +362,6 @@ $(document).ready(()=>{
 					$('#Result').html(`${$globaleredmeny}`);
 					$('#Input').val(`${$globaleredmeny}`);
 					$globalStepper=String($globaleredmeny);
-					console.log(String($globalpart2+$globalB+$globalpart1));
 					$globalpart1="";
 					$globalpart2="";
 					$globalB="";
