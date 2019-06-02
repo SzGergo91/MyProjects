@@ -251,8 +251,13 @@ $(document).ready(()=>{
 		
 	})
 
+	$('#Input').on('keyup',(event)=>{
+		if(event.keyCode === 13){
+			$globallabel=$('#Inputlabel').html();
+			$globalvalue=$('#Input').val();
+			execute();
+		}
+	})
 
-
-	//With DOM
 
 });

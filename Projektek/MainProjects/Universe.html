@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="Menu.css">
+	<link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+			<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <style type="text/css">
+  	#Info {
+  		font-family: 'ZCOOL KuaiLe', cursive;
+  		font-size: 3vw;
+  		letter-spacing: 2px;
+  	}
+  	div.main {
+  		position: absolute;
+  		width: 99%;
+  		height: 1000px;
+
+  	}
+  </style>
+</head>
+<body>
+	<!--Tehat adva van egy  div az univerzummal es azon legyen rajta a galaxisunk!(A galaxisunkon belul pedig a naprendszerunk(tooltippek))-->
+	<!--A naprendszerunkon belul pedig a bolygok illetve a nap!-->
+	<!--Rakattintva behoz egy divet informaciokkal ellhatva!-->
+	<!--Menu-->
+	  <div style="height: 150px;display: inline-block;position: relative;top: -66px;">
+	  <p class="A1" style="width: 400px">Mini Projects</p>
+	</div>
+	<a style="height: 150px;display: inline-block;width: 200px;margin-left: 50px;background-image:url('Home.png');background-repeat: no-repeat;background-size: 200px 150px;" href="file:///C:/GITHUB/MyProjects/Projektek/Main.html" target="_blank">
+	</a>
+	<a style="display: inline-block; font-family:'Macondo Swash Caps', cursive;font-size: 3vw;position: relative;top:-80px;margin-left: 70px;" class="aback">Contacts 
+	</a>
+	<a style="display: inline-block; font-family:'Macondo Swash Caps', cursive;font-size: 3vw;position: relative;top:-80px;margin-left: 70px;" class="aback" id="bgimg1">My Projects
+	</a>
+	<ul class="A2" id="tartalom">
+	  <li>Calculator</li>
+	  <li>TimeConverter</li>
+	  <li>Filter</li>
+	  <li>SettingsGame</li>
+	  <li>JungleFinder</li>
+	</ul>
+	<p id="Info">Try to find our Galaxy in the universe!</p>
+	<div class="main" id="Universe" style="background: url('Universe.jpg') center fixed;background-size: 100% 1000px;background-repeat: no-repeat;">
+		<img id="Galaxy1" src="Galaxy1.png" width="100px;" height="100px;" style="position: relative;top: 500px;left: 350px;cursor: pointer;"> 
+	</div>
+	<div class="main" style="background-color: yellow;display: none;" id="Galaxy"> </div>
+	<div class="main" style="background-color: blue; display: none;" id="SolarSystem"> </div>
+	<script type="text/javascript" src="Menu.js"></script>
+</body>
+</html>
