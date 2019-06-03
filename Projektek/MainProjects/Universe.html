@@ -4,26 +4,60 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="Menu.css">
 	<link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ranga&display=swap" rel="stylesheet">
 			<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <style type="text/css">
   	#Info {
-  		font-family: 'ZCOOL KuaiLe', cursive;
+  		font-family: 'Ranga', cursive;
   		font-size: 3vw;
   		letter-spacing: 2px;
+  		color: white;
   	}
   	div.main {
   		position: absolute;
-  		width: 99%;
+  		width: 100%;
+  		left: 0px;
   		height: 1000px;
 
   	}
+  	a.ref {
+  		position: relative;
+  		width: 70px;
+  		height: 70px;
+  		display: inline-block;
+  		background-color: transparent;
+  	}
+  	/*Tooltips*/
+  	.tooltiptext {
+  		font-size: 3vw;
+  		background-color: black;
+  		color: white;
+  		position: absolute;
+  		z-index: 1;
+  		display: none;
+  		
+
+  	}
+  	.tooltiptext::after{
+  		content: "";
+  		position: absolute;
+  		top: 101%;
+  		left: 42%;
+  		border-style: solid;
+ 		border-color: black transparent transparent transparent;
+ 		margin-left: -5px;
+  		border-width: 25px;
+  	}
+
+ 	img::selection{
+  		background-color: transparent;
+  	}
   </style>
 </head>
-<body>
+<body style="background: url('UniverseBG.jpg') center fixed;">
 	<!--Tehat adva van egy  div az univerzummal es azon legyen rajta a galaxisunk!(A galaxisunkon belul pedig a naprendszerunk(tooltippek))-->
 	<!--A naprendszerunkon belul pedig a bolygok illetve a nap!-->
 	<!--Rakattintva behoz egy divet informaciokkal ellhatva!-->
@@ -45,11 +79,21 @@
 	  <li>JungleFinder</li>
 	</ul>
 	<p id="Info">Try to find our Galaxy in the universe!</p>
-	<div class="main" id="Universe" style="background: url('Universe.jpg') center fixed;background-size: 100% 1000px;background-repeat: no-repeat;">
-		<img id="Galaxy1" src="Galaxy1.png" width="100px;" height="100px;" style="position: relative;top: 500px;left: 350px;cursor: pointer;"> 
+	<div class="main" id="Universe" style="background: url('Universe.jpg');background-size: 100% 1000px;background-repeat: no-repeat;">
+		<img id="Galaxy1" src="Galaxy1.png" width="100px;" height="100px;" style="position: relative;top: 500px;left: 350px;"> 
+		<img src="Galaxy2.png" width="150px" height="150px" style="position: relative;top: 300px; left:550px;">
+		<img src="MilkyWay.png" width="200px" height="200px" style="position: relative;top:700px; left:500px;" id="MilkyWay">
+		<a class="ref" style="top: 482px;left: -95px;border-radius: 50%;" href="https://en.wikipedia.org/wiki/Andromeda_Galaxy" target="_blank" id="Andromeda"></a>
+		<a class="ref" style="top: 275px;left: 115px;width: 150px;height: 100px;border-radius: 50%;" href="https://en.wikipedia.org/wiki/Cosmos_Redshift_7" target="_blank" id="Cosmos_Redshift"> </a>
+		<a class="ref" style="top: 630px;left: 115px;width: 150px;height: 80px;border-radius: 50%; transform: rotate(-55deg);cursor: pointer;" id="Milky-Way"> </a>
+		<span class="tooltiptext" style="top:300px;right:460px; " id="CRTooltip">Cosmos Redshift 7</span>
+		<span class="tooltiptext" style="top:540px;right:780px; " id="AdrTooltip">Andromeda Galaxy</span>
+		<span class="tooltiptext" style="top:640px;right:275px; " id="MWTooltip">Milky Way Galaxy</span>
 	</div>
+
 	<div class="main" style="background-color: yellow;display: none;" id="Galaxy"> </div>
 	<div class="main" style="background-color: blue; display: none;" id="SolarSystem"> </div>
 	<script type="text/javascript" src="Menu.js"></script>
+	<script type="text/javascript" src="Universe.js"></script>
 </body>
 </html>
