@@ -24,7 +24,7 @@
 
   	}
   	a.ref {
-  		position: relative;
+  		position: absolute;
   		width: 70px;
   		height: 70px;
   		display: inline-block;
@@ -39,7 +39,6 @@
   		z-index: 1;
   		display: none;
   		
-
   	}
   	.tooltiptext::after{
   		content: "";
@@ -51,6 +50,68 @@
  		margin-left: -5px;
   		border-width: 25px;
   	}
+
+
+  	  .tooltiptextUp {
+  		font-size: 2vw;
+  		background-color: black;
+  		color: white;
+  		position: absolute;
+  		z-index: 1;	
+  		display: none;
+  	}
+
+  	  .tooltiptextUp::after{
+  		content: "";
+  		position: absolute;
+  		bottom:80%;
+  		left: 42%;
+  		border-style: solid;
+ 		border-color: transparent transparent black transparent;
+ 		margin-left: -5px;
+  		border-width: 20px;
+  	}
+  	  .tooltiptextLeft {
+  		font-size: 2vw;
+  		background-color: black;
+  		color: white;
+  		position: absolute;
+  		z-index: 1;	
+  		display: none;
+  	}
+
+  	  .tooltiptextRight {
+  		font-size: 2vw;
+  		background-color: black;
+  		color: white;
+  		position: absolute;
+  		z-index: 1;	
+  		display: none;
+  	}
+
+
+  	.tooltiptextLeft::after{
+  		content: "";
+  		position: absolute;
+  		top:0;
+  		right: 100%;
+  		border-style: solid;
+ 		border-color: transparent black transparent transparent;
+ 		margin-left: -5px;
+  		border-width: 18px;
+  	}
+
+  	.tooltiptextRight::after{
+  		content: "";
+  		position: absolute;
+  		bottom:0;
+  		left: 100%;
+  		border-style: solid;
+ 		border-color: transparent transparent transparent black;
+ 		margin-left: 0.1px;
+  		border-width: 18px;
+  	}
+
 
  	img::selection{
   		background-color: transparent;
@@ -78,20 +139,44 @@
 	  <li>SettingsGame</li>
 	  <li>JungleFinder</li>
 	</ul>
-	<p id="Info">Try to find our Galaxy in the universe!</p>
-	<div class="main" id="Universe" style="background: url('Universe.jpg');background-size: 100% 1000px;background-repeat: no-repeat;">
-		<img id="Galaxy1" src="Galaxy1.png" width="100px;" height="100px;" style="position: relative;top: 500px;left: 350px;"> 
-		<img src="Galaxy2.png" width="150px" height="150px" style="position: relative;top: 300px; left:550px;">
-		<img src="MilkyWay.png" width="200px" height="200px" style="position: relative;top:700px; left:500px;" id="MilkyWay">
-		<a class="ref" style="top: 482px;left: -95px;border-radius: 50%;" href="https://en.wikipedia.org/wiki/Andromeda_Galaxy" target="_blank" id="Andromeda"></a>
-		<a class="ref" style="top: 275px;left: 115px;width: 150px;height: 100px;border-radius: 50%;" href="https://en.wikipedia.org/wiki/Cosmos_Redshift_7" target="_blank" id="Cosmos_Redshift"> </a>
-		<a class="ref" style="top: 630px;left: 115px;width: 150px;height: 80px;border-radius: 50%; transform: rotate(-55deg);cursor: pointer;" id="Milky-Way"> </a>
-		<span class="tooltiptext" style="top:300px;right:460px; " id="CRTooltip">Cosmos Redshift 7</span>
-		<span class="tooltiptext" style="top:540px;right:780px; " id="AdrTooltip">Andromeda Galaxy</span>
-		<span class="tooltiptext" style="top:640px;right:275px; " id="MWTooltip">Milky Way Galaxy</span>
+	<p id="Info">Select the Milky Way Galaxy in our universe!</p>
+	<div class="main" id="Universe" style="background: url('Universe.jpg');background-size: 100% 1000px;background-repeat: no-repeat; ">
+		<!--Main items inside-->
+		<img id="Galaxy1" src="Galaxy1.png" width="100px;" height="100px;" style="position: absolute;top: 450px;left: 250px;"> 
+		<img src="Galaxy2.png" width="125px" height="125px" style="position: absolute;top: 300px; left:850px;">
+		<img src="MilkyWay.jpg" width="150px" height="150px" style="position: relative;top:650px; left:550px;border-radius: 120%;" id="MilkyWay">
+		<a class="ref" style="top: 463px;left: 267px;border-radius: 50%;" href="https://en.wikipedia.org/wiki/Andromeda_Galaxy" target="_blank" id="Andromeda"></a>
+		<a class="ref" style="top: 315px;left: 855px;width: 120px;height: 95px;border-radius: 50%;" href="https://en.wikipedia.org/wiki/Cosmos_Redshift_7" target="_blank" id="Cosmos_Redshift"> </a>
+		<a class="ref" style="top: 650px;left: 550px;width: 150px;height: 150px;border-radius: 50%;cursor: pointer;" id="Milky-Way"> </a>
+		<span class="tooltiptext" style="top:242px;right:275px; " id="CRTooltip">Cosmos Redshift 7</span>
+		<span class="tooltiptext" style="top:400px;right:910px;font-size: 2.5vw; " id="AdrTooltip">Andromeda Galaxy</span>
+		<span class="tooltiptext" style="top:577px;right:563px; " id="MWTooltip">Milky Way Galaxy</span>
+
+		<!--The extras!-->
+		<a class="ref" style="top: 65px;left: 630px;width: 45px;height: 35px;border-radius: 50%;cursor: pointer;" href="https://en.wikipedia.org/wiki/Cartwheel_Galaxy" target="_blank" id="CG"> </a>
+		<a class="ref" style="top: 77px;left: 520px;width: 45px;height: 35px;border-radius: 50%;cursor: pointer;" href="https://en.wikipedia.org/wiki/Messier_81" target="_blank" id="M81"> </a>
+		<a class="ref" style="top: 125px;left: 365px;width: 38px;height: 30px;border-radius: 50%;cursor: pointer;transform: rotate(-30deg);" href="https://en.wikipedia.org/wiki/Messier_82" target="_blank" id="M82"> </a>
+		<a class="ref" style="top: 445px;left: 132px;width: 50px;height: 50px;border-radius: 50%;cursor: pointer;" href="https://en.wikipedia.org/wiki/Circinus_Galaxy" target="_blank" id="CIG"> </a>
+		<a class="ref" style="top: 523px;left: 978px;width: 50px;height: 50px;border-radius: 50%;cursor: pointer;" href="https://en.wikipedia.org/wiki/Black_Eye_Galaxy" target="_blank" id="BEG"> </a>
+		<a class="ref" style="top: 640px;left: 1020px;width: 40px;height: 40px;border-radius: 50%;cursor: pointer;" href="https://en.wikipedia.org/wiki/UY_Scuti" target="_blank" id="UYS"> </a>
+		<span class="tooltiptextUp" style="top:115px;left:555px;" id="CGTooltip" >Cartwheel Galaxy</span>
+		<span class="tooltiptext" style="top:17px;left:465px;font-size: 2.2vw" id="M81Tooltip">Messier 81</span>
+		<span class="tooltiptextUp" style="top:171px;left:318px;" id="M82Tooltip">Messier 82</span>
+		<span class="tooltiptextUp" style="top:509px;left:60px;font-size: 2.2vw" id="CIGTooltip">Circinus Galaxy</span>
+		<span class="tooltiptextLeft" style="top:530px;left:1047px;font-size: 2.2vw" id="BEGTooltip">Black Eye Galaxy</span>
+		<span class="tooltiptextRight" style="top:642px;left:882px;font-size: 2.2vw" id="UYSTooltip">UY_Scuti</span>
 	</div>
 
-	<div class="main" style="background-color: yellow;display: none;" id="Galaxy"> </div>
+
+
+	<div class="main" style="background:url('MilkyWay.jpg');background-size: 100% 1000px;background-repeat: no-repeat;display: none;" id="Galaxy">
+		<img src="Sun.png" style="position: absolute;top: 398px;left: 970px" width="25px" height="25px">
+		<a class="ref" style="color: white;cursor: pointer;top: 470px;left: 630px;border-radius: 50%;" href="https://en.wikipedia.org/wiki/Galactic_Center" target="_blank"></a>
+		<a class="ref" style="color: white;cursor: pointer;top: 230px;left: 322px;border-radius: 50%;width:20px;height: 20px;" href="https://en.wikipedia.org/wiki/WOH_G64" target="_blank"></a>
+		<a class="ref" style="color: white;cursor: pointer;top: 400px;left: 972px;border-radius: 50%;width:20px;height: 20px;" id="Sun"></a>
+	 </div>
+
+
 	<div class="main" style="background-color: blue; display: none;" id="SolarSystem"> </div>
 	<script type="text/javascript" src="Menu.js"></script>
 	<script type="text/javascript" src="Universe.js"></script>
