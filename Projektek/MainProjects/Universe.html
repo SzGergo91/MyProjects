@@ -38,6 +38,7 @@
   		position: absolute;
   		z-index: 1;
   		display: none;
+
   		
   	}
   	.tooltiptext::after{
@@ -139,8 +140,10 @@
 	  <li>SettingsGame</li>
 	  <li>JungleFinder</li>
 	</ul>
+
+
 	<p id="Info">Select the Milky Way Galaxy in our universe!</p>
-	<div class="main" id="Universe" style="background: url('Universe.jpg');background-size: 100% 1000px;background-repeat: no-repeat; ">
+	<div class="main" id="Universe" style="background: url('Universe.jpg');background-size: 100% 1000px;background-repeat: no-repeat;">
 		<!--Main items inside-->
 		<img id="Galaxy1" src="Galaxy1.png" width="100px;" height="100px;" style="position: absolute;top: 450px;left: 250px;"> 
 		<img src="Galaxy2.png" width="125px" height="125px" style="position: absolute;top: 300px; left:850px;">
@@ -170,14 +173,47 @@
 
 
 	<div class="main" style="background:url('MilkyWay.jpg');background-size: 100% 1000px;background-repeat: no-repeat;display: none;" id="Galaxy">
-		<img src="Sun.png" style="position: absolute;top: 398px;left: 970px" width="25px" height="25px">
-		<a class="ref" style="color: white;cursor: pointer;top: 470px;left: 630px;border-radius: 50%;" href="https://en.wikipedia.org/wiki/Galactic_Center" target="_blank"></a>
-		<a class="ref" style="color: white;cursor: pointer;top: 230px;left: 322px;border-radius: 50%;width:20px;height: 20px;" href="https://en.wikipedia.org/wiki/WOH_G64" target="_blank"></a>
-		<a class="ref" style="color: white;cursor: pointer;top: 400px;left: 972px;border-radius: 50%;width:20px;height: 20px;" id="Sun"></a>
-	 </div>
+		<img src="Sun.png" style="position: absolute;top: 398px;left: 970px;" width="15px" height="15px" id="Sun">
+		<a class="ref" style="color: white;cursor: pointer;top: 470px;left: 630px;border-radius: 50%;" href="https://en.wikipedia.org/wiki/Galactic_Center" target="_blank" id="GalacticCentre"></a>
+		<a class="ref" style="color: white;cursor: pointer;top: 220px;left: 302px;border-radius: 50%;width:45px;height: 45px;" href="https://en.wikipedia.org/wiki/WOH_G64" target="_blank" id="WOHG64"></a>
+		<a class="ref" style="color: white;cursor: pointer;top: 200px;left: 570px;border-radius: 50%;width:40px;height: 40px;" href="https://en.wikipedia.org/wiki/Nebula" target="_blank" id="Nebula" ></a>
+		<a class="ref" style="color: white;cursor: pointer;top: 398px;left: 970px;border-radius: 50%;width:25px;height: 25px;" id="SunClick"></a>
+		<span class="tooltiptext" style="top:410px;left:568px;font-size: 2.2vw" id="GALCTooltip">GalacticCenter</span>
+		<span class="tooltiptextUp" style="top:264px;left:262px;font-size: 2.2vw;" id="WOHTooltip">WOH G64</span>
+		<span class="tooltiptextUp" style="top:229px;left:526px;font-size: 2.2vw;" id="NebulaTooltip">Nebula</span>
+		<span class="tooltiptextUp" style="top: 427px;left:921px;font-size: 2.2vw;">Our Sun</span>
+	</div>
 
+	<!--The Main things comes here-->
+	<div class="main" style="background-color: blue; background:url('Solar System.jpg'); background-size: 100% 1000px;background-repeat: no-repeat;display: none;" id="SolarSystem">
+		<img src="Sun.png" style="position: absolute;top: 150px; left: 0px; width: 50%; height: 700px;cursor: pointer;border-radius: 50%" id="SolarSun">
+		<img src="Planets/Mercury.png" width="40px" height="40px" style="position: absolute;left: 700px;top: 500px;cursor: pointer;border-radius: 50%" id="Mercury"> 
+		<label style="color: white;position: absolute;left: 690px;top:480px;">Mercury</label>
+		<img src="Planets/Venus.png" width="60px" height="60px" style="position: absolute;left: 740px;top: 490px;cursor: pointer;border-radius: 50%" id="Venus"> 
+		<label style="color: white;position: absolute;left: 748px;top:470px;">Venus</label>
+		<img src="Planets/Earth.png" width="62px" height="62px" style="position: absolute;left: 800px;top: 490px;cursor: pointer;border-radius: 50%" id="Earth"> 
+		<label style="color: white;position: absolute;left: 812px;top:470px;">Earth</label>
+		<img src="Planets/Mars.png" width="60px" height="60px" style="position: absolute;left: 870px;top: 490px;cursor: pointer;border-radius: 50%" id="Mars"> 
+		<label style="color: white;position: absolute;left: 883px;top:470px;">Mars</label>#
+		<img src="Planets/Jupiter.png" width="100px" height="100px" style="position: absolute;left: 940px;top: 470px;cursor: pointer;border-radius: 50%" id="Jupiter"> 
+		<label style="color: white;position: absolute;left: 967px;top:450px;">Jupiter</label>
+		<img src="Planets/Saturn.png" width="95px" height="75px" style="position: absolute;left: 1040px;top: 485px;cursor: pointer;border-radius: 50%" id="Saturn"> 
+		<label style="color: white;position: absolute;left: 1068px;top:470px;">Saturn</label>
+		<img src="Planets/Uranus.png" width="90px" height="90px" style="position: absolute;left: 1125px;top: 485px;cursor: pointer;border-radius: 50%" id="Uranus"> 
+		<label style="color: white;position: absolute;left: 1145px;top:478px;">Uranus</label>
+		<img src="Planets/Neptune.png" width="85px" height="85px" style="position: absolute;left: 1205px;top: 485px;cursor: pointer;border-radius: 50%" id="Neptune"> 
+		<label style="color: white;position: absolute;left: 1220px;top:470px;">Neptune</label>
+		<img src="Planets/Pluto.png" width="40px" height="40px" style="position: absolute;left: 1295px;top: 505px;cursor: pointer;border-radius: 50%" id="Pluto"> 
+		<label style="color: white;position: absolute;left: 1297px;top:485px;">Pluto</label>
 
-	<div class="main" style="background-color: blue; display: none;" id="SolarSystem"> </div>
+		<div id="Information" style="width: 48%;height: 600px;background-color: black;color: white;font-size: 3vw;position: absolute;top: 20%;left: 51%;box-shadow: 4px 4px 10px gray, -4px 0px 10px gray, 0px -4px 10px gray, -4px -4px 10px gray; word-wrap: break-word;overflow: auto;display: none;">
+			<h1 style="text-align: center;" id="Titles">The Sun </h1>
+			<p style="font-size: 2vw;" id="Basic1">-Age:≈ 4.6 billion years!!</p>
+			<p style="font-size: 2vw;" id="Basic2">-Mass 1.9885×1030kg, 333,000 × Earth</p>
+			<p style="font-size: 2vw;" id="Basic3">-The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma,with internal convective motion that generates a magnetic field via a dynamo process.It is by far the most important source of energy for life on Earth. Its diameter is about 1.39 million kilometers (864,000 miles), or 109 times that of Earth, and its mass is about 330,000 times that of Earth. It accounts for about 99.86% of the total mass of the Solar System. Roughly three quarters of the Sun's mass consists of hydrogen (~73%); the rest is mostly helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon, and iron </p>
+			<span style="font-size: 20px;position: absolute;top: 40px;left:550px;color: blue;cursor: pointer;" id="BackButton">Back</span>
+	    </div>
+	</div>
 	<script type="text/javascript" src="Menu.js"></script>
 	<script type="text/javascript" src="Universe.js"></script>
 </body>
