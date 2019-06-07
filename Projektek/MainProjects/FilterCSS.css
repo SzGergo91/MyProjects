@@ -1,0 +1,87 @@
+	img.img {
+  		position: absolute;
+  	}
+  	input {
+  		outline: none;
+  		width: 400px;
+  		padding: 20px;
+  		font-size: 3vw;
+  		border-radius: 15px;
+  		box-shadow: 3px 3px 5px gray;
+  		padding-left: 50px;
+  		background-image:url('Filter/Search.png');
+  		background-size: 45px 45px;
+  		background-position: 0px 20px;
+  		background-repeat: no-repeat;
+
+  	}
+  	input:focus {
+  		width: 95%;
+  		background-color: lightgreen;
+  		transition: 2s;
+  	}
+  	div.set{
+  		display: inline-block;
+  		position: relative;
+  		width: 19.7%;
+  		height: 360px;
+  		margin-right: 5px;
+  		margin-top: 5px;
+  		background-color:transparent; 
+  	}
+
+  	div.details{
+  		width: 100%;
+  		height: 120px;
+  		position: absolute;
+  		top: 260px;
+  		background-color: transparent;
+      display: none;
+
+  	}
+
+    h1.names{
+      font-size: 2vw;
+      text-align: center;
+      text-shadow: 2px 2px 5px white;
+    }
+    p.dmg{
+      display: inline-block;
+      width: 54%;
+      height: 40px;
+      position: relative;
+      top: -15px;
+      background-color: green;
+      margin-left: 3px;
+      font-size: 23px;
+      padding-top: 8px;
+      padding-left: 40px;
+      color: yellow;
+      text-shadow: 2px 2px 5px gray, -2px 0px 5px gray, 0px -2px 5px gray, -2px -2px 5px gray;
+      background-image: url('Filter/DualSwords.png');
+      background-size: 40px 40px;
+      background-position: 0px 0px;
+      background-repeat: no-repeat;
+    }
+
+    p.health{
+      display: inline-block;
+      width: 43%;
+      height: 40px;
+      position: relative;
+      top: -15px;
+      background-color: green;
+      font-size: 23px;
+      padding-top: 8px;
+      padding-left: 40px;
+      color: red;
+      text-shadow: 2px 2px 5px black, -2px 0px 5px black, 0px -2px 5px black, -2px -2px 5px black;
+      background-image: url('Filter/Hearts.png');
+      background-size: 40px 40px;
+      background-position: 0px 0px;
+      background-repeat: no-repeat;
+    }
+    i.species{
+      color: white;
+      text-shadow: 2px 2px 5px lightblue;
+    }
