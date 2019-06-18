@@ -1,3 +1,6 @@
+//Media Queries variables
+let $globalwidth=screen.width;
+
 //Arrowimage Variables
 let $globalArrows=["Pictures/ArrowDown.png","Pictures/ArrowLeft.png"];
 let $globalArrow1=0;
@@ -26,21 +29,122 @@ let $globalbgimg=["Pictures/OtherPics/FilterBG1.jpg","Pictures/OtherPics/FilterB
 $(document).ready(()=>{
 		//Menu settings
 		$('li').on('mouseenter',event=>{
-			$(event.currentTarget).css({
-				backgroundColor: 'black',
-				color: 'white',
-				fontSize: '32px',
+			if(($globalwidth>=320) && ($globalwidth<=480))
+			{
+			  $(event.currentTarget).css({
+					backgroundColor: 'black',
+					color: 'white',
+					fontSize: '4.6vw',
 				//cursor: 'pointer'
-			})
+			  })
+			}
+			else
+			{
+			  if(($globalwidth>=481) && ($globalwidth<=767))
+			  {
+			  	$(event.currentTarget).css({
+					backgroundColor: 'black',
+					color: 'white',
+					fontSize: '3.3vw',
+				//cursor: 'pointer'
+			  	})
+			  }
+			  else
+			  {
+			  	if(($globalwidth>=768) && ($globalwidth<=1024))
+			  	{
+			  		$(event.currentTarget).css({
+					backgroundColor: 'black',
+					color: 'white',
+					fontSize: '3.3vw',
+					//cursor: 'pointer'
+			  		})
+			  	}
+			  	else
+			  	{
+			  	if(($globalwidth>=1025) && ($globalwidth<=1280))
+			  	{
+			  		$(event.currentTarget).css({
+					backgroundColor: 'black',
+					color: 'white',
+					fontSize: '3.3vw',
+					//cursor: 'pointer'
+			  		})
+			  	}
+			  	else
+			  	{
+			  	$(event.currentTarget).css({
+					backgroundColor: 'black',
+					color: 'white',
+					fontSize: '3.3vw',
+					//cursor: 'pointer'
+			    })
+			  	}
+			    }
+			  }
+			}
 		})
-		$('li').on('mouseleave',event=>{
-			$(event.currentTarget).css({
-				backgroundColor: 'white',
-				color: 'black',
-				fontSize: '30px',
 
-			})
+
+		$('li').on('mouseleave',event=>{
+			if(($globalwidth>=320) && ($globalwidth<=480))
+			{
+			  	$(event.currentTarget).css({
+					backgroundColor: 'white',
+					color: 'black',
+					fontSize: '4.5vw',
+
+			  })
+			}
+			else
+			{
+			  if(($globalwidth>=481) && ($globalwidth<=767))
+			  {
+			  	  $(event.currentTarget).css({
+				  	backgroundColor: 'white',
+				 	color: 'black',
+				  	fontSize: '3.1vw',
+
+			    })
+			  }
+			  else
+			  {
+			  	if(($globalwidth>=768) && ($globalwidth<=1024))
+			  	{
+			  		$(event.currentTarget).css({
+				  	backgroundColor: 'white',
+				 	color: 'black',
+				  	fontSize: '3.1vw',
+
+			   	 })
+			  	}
+			  	else
+			  	{
+			  		if(($globalwidth>=1025) && ($globalwidth<=1280))
+			  		{
+			  			$(event.currentTarget).css({
+						backgroundColor: 'black',
+						color: 'white',
+						fontSize: '3.1vw',
+						//cursor: 'pointer'
+			  			})
+			  		}
+			  	else
+			  	  {
+			  		$(event.currentTarget).css({
+						backgroundColor: 'white',
+						color: 'black',
+						fontSize: '3.1vw',
+
+			 	 	})
+				  }
+			  	}
+			  }
+			}
 		})
+
+
+
 		$('#bgimg1').on('click',()=>{
 			$('#tartalom').slideToggle('slow');
 			$('#helpdiv1').fadeToggle('slow');
@@ -53,7 +157,10 @@ $(document).ready(()=>{
 			})
 		})
 
+
 		//Road-end settings
+
+
 		$('#EOR').on('mouseenter',()=>{
 			$('#EOR').css({
 				opacity: "0.35",
@@ -61,27 +168,137 @@ $(document).ready(()=>{
 				cursor: 'pointer'
 			})
 		})
+	
+
+
+
 		$('#EOR').on('mouseleave',()=>{
 			if($globalvalidate)
 			{
-			$('#EOR').css({
-				opacity: "0.25",
-				backgroundColor: "green",
-				backgroundImage: "none",
-				top:'550px',
-				left: '550px',
-				width: '200px',
-				height: '200px'
-			})
-			$('#EORimg').fadeOut(1000);
-			$('#EORimg').css({
-				top: '0px',
-				left: '0px',
-				width: '200px',
-				height: '200px',
-			})
-			$('#EORimg').attr('src',`Pictures/Erdo.jpg`)
-			$globalclicks=0;
+			  //MediaQuery for 320px-480px!Mobiles,Iphones etc.
+			  if(($globalwidth>=320) && ($globalwidth<=480))
+			  {
+				$('#EOR').css({
+					opacity: "0.25",
+					backgroundColor: "green",
+					backgroundImage: "none",
+					top:'44vw',
+					left: '42%',
+					width: '15%',
+					height: '15vw'
+			    })
+			    $('#EORimg').fadeOut(1000);
+				$('#EORimg').css({
+					top: '0px',
+					left: '0px',
+					width: '15vw',
+					height: '15vw',
+				})
+				$('#EORimg').attr('src',`Pictures/Erdo.jpg`)
+				$globalclicks=0;
+
+			  }
+			else
+			{
+				//MediaQuery for Width (481-767px) Low Resolution tablets, Mobiles(Landscape)
+			  	if(($globalwidth>=481) && ($globalwidth<=767))
+			  	{
+					$('#EOR').css({
+						opacity: "0.25",
+						backgroundColor: "green",
+						backgroundImage: "none",
+						top:'44vw',
+						left: '42%',
+						width: '15%',
+						height: '15vw'
+			    	})
+			   	    $('#EORimg').fadeOut(1000);
+					$('#EORimg').css({
+						top: '0px',
+						left: '0px',
+						width: '15vw',
+						height: '15vw',
+					})
+					$('#EORimg').attr('src',`Pictures/Erdo.jpg`)
+					$globalclicks=0;
+			  	}
+
+			  	//MediaQuery for Width (1281px+) Desktops!
+			  	else
+			  	{
+			  		if(($globalwidth>=768) && ($globalwidth<=1024))
+			  		{
+			  			$('#EOR').css({
+						opacity: "0.25",
+						backgroundColor: "green",
+						backgroundImage: "none",
+						top:'44vw',
+						left: '42%',
+						width: '15%',
+						height: '15vw'
+			    	})
+			   	    $('#EORimg').fadeOut(1000);
+					$('#EORimg').css({
+						top: '0px',
+						left: '0px',
+						width: '15vw',
+						height: '15vw',
+					})
+					$('#EORimg').attr('src',`Pictures/Erdo.jpg`)
+					$globalclicks=0;
+			  		}
+
+
+			  		else
+			  		{
+			  			if(($globalwidth>=1025) && ($globalwidth<=1280))
+			  			{
+
+			  			$('#EOR').css({
+							opacity: "0.25",
+							backgroundColor: "green",
+							backgroundImage: "none",
+							top:'44vw',
+							left: '42%',
+							width: '15%',
+							height: '15vw'
+						})
+						$('#EORimg').fadeOut(1000);
+						$('#EORimg').css({
+							top: '0px',
+							left: '0px',
+							width: '15vw',
+							height: '15vw',
+						})
+						$('#EORimg').attr('src',`Pictures/Erdo.jpg`)
+						$globalclicks=0;
+
+			  			}
+			  			else
+			  			{
+
+						$('#EOR').css({
+							opacity: "0.25",
+							backgroundColor: "green",
+							backgroundImage: "none",
+							top:'44vw',
+							left: '42%',
+							width: '15%',
+							height: '200px'
+						})
+						$('#EORimg').fadeOut(1000);
+						$('#EORimg').css({
+							top: '0px',
+							left: '0px',
+							width: '15vw',
+							height: '15vw',
+						})
+						$('#EORimg').attr('src',`Pictures/Erdo.jpg`)
+						$globalclicks=0;
+						}
+					}
+				}
+			}
 		   }
 		})
 
@@ -96,39 +313,174 @@ $(document).ready(()=>{
 				backgroundColor: "transparent",
 				cursor: 'pointer'
 			})
-			$('#EORimg').fadeIn(2000, ()=>{
-				$('#EOR').css({
-					backgroundImage : `url('Pictures/ForestEnd.jpg')`
+			if(($globalwidth>=320) && ($globalwidth<=480))
+			{
+				$('#EORimg').fadeIn(2000, ()=>{
+				  $('#EOR').css({
+					backgroundImage : `url('Pictures/ForestEnd.jpg')`,
+					backgroundSize: `40vw 35vw`
 
-				})
-				$('#EORimg').hide();
-				$('#EORimg').attr('src',`${$globalAnimals[Math.floor(Math.random()*8)]}`);
-				$('#EOR').animate({
-					top: '350px',
-					left: '350px',
-					width: '550px',
-					height: '550px',
-				},1500, ()=>{
-					$('#EORimg').show();
-					$('#EORimg').css({
-						position: 'relative',
-						top: '275px',
-						left: '180px',
-						width: '50px',
-						height: '50px'
-					})
+				  })
+				  $('#EORimg').hide();
+				  $('#EORimg').attr('src',`${$globalAnimals[Math.floor(Math.random()*8)]}`);
+				  $('#EOR').animate({
+					  top: '30vw',
+					  left: '30%',
+					  width: '40%',
+					  height: '35vw',
+				  },1500, ()=>{
+					  $('#EORimg').show();
+					  $('#EORimg').css({
+					  	  position: 'relative',
+						  top: '20vw',
+						  left: '12vw',
+						  width: '20px',
+						  height: '20px'
+					  })
 					
-					$globalvalidate=true;
-				})
+					  $globalvalidate=true;
+				  })
 
 			});
 			}
+			  //MediaQuery for Width (1281px+) Desktops!
+			  else
+			  {
+			  	if(($globalwidth>=481) && ($globalwidth<=767))
+			  	{
+			  	  $('#EORimg').fadeIn(2000, ()=>{
+				  $('#EOR').css({
+					backgroundImage : `url('Pictures/ForestEnd.jpg')`,
+					backgroundSize: `40vw 35vw`
+
+				  })
+				  $('#EORimg').hide();
+				  $('#EORimg').attr('src',`${$globalAnimals[Math.floor(Math.random()*8)]}`);
+				  $('#EOR').animate({
+					  top: '30vw',
+					  left: '30%',
+					  width: '40%',
+					  height: '35vw',
+				  },1500, ()=>{
+					  $('#EORimg').show();
+					  $('#EORimg').css({
+					  	  position: 'relative',
+						  top: '20vw',
+						  left: '12vw',
+						  width: '5vw',
+						  height: '5vw'
+					  })
+					
+					  $globalvalidate=true;
+				  })
+
+				});
+			  	}
+			  	else
+			  	{
+			  		if(($globalwidth>=768) && ($globalwidth<=1024))
+			  		{
+			  		  $('#EORimg').fadeIn(2000, ()=>{
+				 	  $('#EOR').css({
+							backgroundImage : `url('Pictures/ForestEnd.jpg')`,
+							backgroundSize: `40vw 35vw`
+
+				 	 })
+				 	 $('#EORimg').hide();
+				 	 $('#EORimg').attr('src',`${$globalAnimals[Math.floor(Math.random()*8)]}`);
+				     $('#EOR').animate({
+						  top: '30vw',
+						  left: '30%',
+						  width: '40%',
+						  height: '35vw',
+				 	 },1500, ()=>{
+						  $('#EORimg').show();
+					 	  $('#EORimg').css({
+					  		  position: 'relative',
+							  top: '20vw',
+						 	  left: '12vw',
+							  width: '5vw',
+						 	  height: '5vw'
+					  })
+					
+					 	 $globalvalidate=true;
+				  	})
+
+					});
+			  		}
+			  		else
+			  		{
+			  				if(($globalwidth>=1025) && ($globalwidth<=1280))
+			  				{
+			  					$('#EORimg').fadeIn(2000, ()=>{
+				 	  	 		   $('#EOR').css({
+							       backgroundImage : `url('Pictures/ForestEnd.jpg')`,
+							       backgroundSize: `40vw 35vw`
+
+				 			 })
+				 	 			$('#EORimg').hide();
+				 	 			$('#EORimg').attr('src',`${$globalAnimals[Math.floor(Math.random()*8)]}`);
+				     			$('#EOR').animate({
+						 			 top: '30vw',
+						  			 left: '30%',
+						  			 width: '40%',
+						  			 height: '35vw',
+				 			 },1500, ()=>{
+						 		 $('#EORimg').show();
+					 	  		 $('#EORimg').css({
+					  		 		 position: 'relative',
+							 		 top: '20vw',
+						 	 		 left: '12vw',
+							  		 width: '5vw',
+						 	  		 height: '5vw'
+					 			 })
+					
+					 		 	$globalvalidate=true;
+				  				})
+
+								});
+			  				}
+			  				else
+			  				{
+			   		 		$('#EORimg').fadeIn(2000, ()=>{
+				 				 $('#EOR').css({
+						 		backgroundImage : `url('Pictures/ForestEnd.jpg')`
+
+				  				})
+				  				$('#EORimg').hide();
+				  				$('#EORimg').attr('src',`${$globalAnimals[Math.floor(Math.random()*8)]}`);
+				  				$('#EOR').animate({
+					 				 top: '30vw',
+					 				 left: '30%',
+					 				 width: '40%',
+					 				 height: '35vw',
+				 				 },1500, ()=>{
+					  				$('#EORimg').show();
+					 	  		    $('#EORimg').css({
+					  	 				 position: 'relative',
+						 				 top: '20vw',
+						 				 left: '12vw',
+						 				 width: '5vw',
+						 		 		 height: '5vw'
+					 				 })
+					
+					 				 $globalvalidate=true;
+				  				})
+
+								});
+			   		 		}
+			   			
+			   		}
+				}
+			}
+			}
+
 			else {
 				$globalclicks=0;
 				$globalvalidate=true;
 				location.reload();
 			}
-		})
+		});
 
 
 		//Picture Settings(About me!)!
