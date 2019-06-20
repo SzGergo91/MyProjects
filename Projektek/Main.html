@@ -9,6 +9,7 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.js "></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 <body ng-app="Forfilter">
 	
@@ -51,11 +52,10 @@
 
 	 <!--About-->
 	 <h1 id="About">II. About Me</h1>
-	 <div style="box-shadow: 0.15vw 5px 3px gray;height: 51vw;"> 
+	 <div id="AboutContainerDiv"> 
 	   <p class="P1">My name is Gergo Szabo. I practiced web development for a several mounths, intensively. I will create some projects to improve my learning skills! I will implement these projects with everything that I've learned! The tools(languages) that I will use are HTML, Css, Javascript, JQuery, React! Practice makes the Master like they say!(Mouseover the picture) </p>
 	   <div id="Kepek">
 	     <div id="left">
-
 	     </div>
 	     <div id="right"> </div>
 	   </div>
@@ -67,30 +67,30 @@
 
 
 	<!--II.1. Calculator-->
-	<h2 style="font-size: 35px;font-style: italic;">II/1 My Projects</h2>
-	<h3 style="text-align: center;font-size: 25px;">1. Calculator</h3>
-	<div style="width: 100%;height: 1000px;background-image: url('Pictures/CalculatorII1.jpg');" class="background">
-      <i>You can find the project in the <a href="#bgimg1" class="aback">My Projects!</a> This one in the picture is a bit broken but some buttons still working! Try it out! </i>
-	  <a class="calculator" style="top: 2845px;left: 780px;height: 50px" href="https://en.wikipedia.org/wiki/9"> </a>
-	  <a class="calculator" style="top: 2890px;left: 710px;width: 70px;" href="https://en.wikipedia.org/wiki/8"> </a>
-	  <a class="calculator" style="top: 2950px;left: 632px;width: 72px" href="https://en.wikipedia.org/wiki/7"> </a>
-	  <a class="calculator" style="top: 2890px;left: 855px;width: 65px" href="https://en.wikipedia.org/wiki/6"> </a>
-	  <a class="calculator" style="top: 2940px;left: 785px;width: 70px;height: 60px;" href="https://en.wikipedia.org/wiki/5"> </a>
-	  <a class="calculator" style="top: 3000px;left: 710px;width: 75px;height: 65px;" href="https://en.wikipedia.org/wiki/4"> </a>
-	  <a class="calculator" style="top: 2940px;left: 932px;width: 75px;" href="https://en.wikipedia.org/wiki/3"> </a>
-	  <a class="calculator" style="top: 2995px;left: 870px;width: 75px;height: 60px;" href="https://en.wikipedia.org/wiki/2"> </a>
-	  <a class="calculator" style="top: 3057px;left: 792px;width: 85px;height: 68px;" href="https://en.wikipedia.org/wiki/1"> </a>
-	  <a class="calculator" style="top: 3205px;left: 800px;width: 100px;height: 95px" href="https://en.wikipedia.org/wiki/0"> </a>
-	  <a class="calculator" style="top: 3122px;left: 885px;width: 90px;height: 83px;" href="https://en.wikipedia.org/wiki/0"> </a>
-	  <a class="calculator" style="top: 3055px;left: 957px;width: 82px;height: 70px;" href="https://en.wikipedia.org/wiki/Point_(geometry)"></a>
-	  <a class="calculator" style="top: 2925px;left: 405px;width: 73px;height: 32px;transform: rotate(-30deg);" href="http://muonlineguides.com/calculator/"> </a>
-	  <a class="calculator" style="top: 2990px;left: 1020px;width: 80px;height: 60px;" href="https://en.wikipedia.org/wiki/Equals_sign"> </a>
-	  <a class="calculator" style="top: 2910px;left: 995px;width: 160px;height: 50px;border-radius: 10px;transform: rotate(30deg);" href="https://en.wikipedia.org/wiki/Plus_and_minus_signs"> </a>
-	  <a class="calculator" style="top: 2840px;left: 915px;width: 70px;height: 50px;" href="https://en.wikipedia.org/wiki/Plus_and_minus_signs"> </a>
-	  <a class="calculator" style="top: 2803px;left: 840px;width: 70px;height: 45px;" href="https://en.wikipedia.org/wiki/Multiplication_sign"> </a>
-	  <a class="calculator" style="top: 2765px;left: 772px;width: 65px;height: 40px;" href="https://en.wikipedia.org/wiki/Obelus"> </a>
-	  <a class="calculator" style="top: 3140px;left: 705px;width: 80px;height: 75px;border-radius: 10px;transform: rotate(-45deg);cursor: pointer;" id="ACButton" > </a>
-	  <a class="calculator" style="top: 2628px;left: 533px;width: 65px;height: 40px;border-radius: 10px;padding: 10px;font-size: 7.1vw;transform: rotateZ(-48deg) rotateY(-30deg); display: none;font-weight: 200;" id="AC0">0</a>
+	<h2 id="calculatorHeader2">II/1 My Projects</h2>
+	<h3 id="calculatorHeader3">1. Calculator</h3>
+	<div class="background" id="calculatorContainerDiv">
+      <i>You can find the real project in the <a href="#bgimg1" class="aback">My Projects!</a> This one is just an advertisment! The calculator that you see below is a bit broken but some buttons still working! Try it out! </i>
+	  <a class="calculator" id="calculatorFor9" href="https://en.wikipedia.org/wiki/9"> </a>
+	  <a class="calculator" id="calculatorFor8" href="https://en.wikipedia.org/wiki/8"> </a>
+	  <a class="calculator" id="calculatorFor7" href="https://en.wikipedia.org/wiki/7"> </a>
+	  <a class="calculator" id="calculatorFor6" href="https://en.wikipedia.org/wiki/6"> </a>
+	  <a class="calculator" id="calculatorFor5" href="https://en.wikipedia.org/wiki/5"> </a>
+	  <a class="calculator" id="calculatorFor4" href="https://en.wikipedia.org/wiki/4"> </a>
+	  <a class="calculator" id="calculatorFor3" href="https://en.wikipedia.org/wiki/3"> </a>
+	  <a class="calculator" id="calculatorFor2" href="https://en.wikipedia.org/wiki/2"> </a>
+	  <a class="calculator" id="calculatorFor1" href="https://en.wikipedia.org/wiki/1"> </a>
+	  <a class="calculator" id="calculatorFor0" href="https://en.wikipedia.org/wiki/0"> </a>
+	  <a class="calculator" id="calculatorFor00" href="https://en.wikipedia.org/wiki/0"> </a>
+	  <a class="calculator" id="calculatorForPoint" href="https://en.wikipedia.org/wiki/Point_(geometry)"></a>
+	  <a class="calculator" id="calculatorForMu" href="http://muonlineguides.com/calculator/"> </a>
+	  <a class="calculator" id="calculatorForEqual" href="https://en.wikipedia.org/wiki/Equals_sign"> </a>
+	  <a class="calculator" id="calculatorForPlus" href="https://en.wikipedia.org/wiki/Plus_and_minus_signs"> </a>
+	  <a class="calculator" id="calculatorForMinus" href="https://en.wikipedia.org/wiki/Plus_and_minus_signs"> </a>
+	  <a class="calculator" id="calculatorForMultiply" href="https://en.wikipedia.org/wiki/Multiplication_sign"> </a>
+	  <a class="calculator" id="calculatorForDivision" href="https://en.wikipedia.org/wiki/Obelus"> </a>
+	  <a class="calculator" id="ACButton" > </a>
+	  <a id="AC0">0</a>
 
 	</div>
 
@@ -99,13 +99,13 @@
 
 
     <!--II.2. Time Converter-->
-	<h3 style="text-align: center;font-size: 25px;margin-top: 100px;">2. Time Converter</h3>
-	<div style="width: 100%;height: 1050px; animation-name: gif;animation-duration: 16s;animation-iteration-count: infinite; font-size: 2vw;" class="background" id="TimeConverterDiv" >
-		In my Project you can convert from a lot of options. For example from days to seconds, or years to weeks, try it out!
+	<h3 id="TimeConverterHeader3">2. Time Converter</h3>
+	<div class="background" id="TimeConverterDiv">
+		<i id="TimeConverterText">-In the real project you can convert from a lot of options(including invented times) like seconds,minites,hours,... centuries etc. Here are some written examples: days to seconds, years to hours, years to weeks try it out!</i>
 		<br>
-		<div style="width: 350px;height: 350px;display:inline-block;background-image: url('Pictures/Clock.gif');margin-top: 100px;margin-left: 50px;" class="background"> </div> 
-		<div style="width: 200px;height: 200px;display: inline-block;float: right;background-image: url('Pictures/SandsOfTime.gif');position: relative;right: 200px;top:200px;" class="background;"> </div> 
-		<div style="width: 260px;height: 260px;display: inline-block;margin-left: 30%;margin-top: 225px;background-image: url('Pictures/Meter.gif');position: relative;right: 240px;top:350px;" class="background" id="TCclick"> </div> 
+		<div id="TimeConverterClock" class="background"> </div> 
+		<div id="TimeConverterSOT" class="background;"> </div> 
+		<div class="background" id="TimeConverterMeter"> </div> 
 		<p class="pAsLabel" style="top: -500px; left: 100px;" id="TCsec">0 Sec</p>
 		<p class="pAsLabel" style="top: -600px; left: 875px;width: 370px;" id="TCseason">0 Years</p>
 		<p class="pAsLabel" style="top: -320px; left: 250px;width: 900px;" id="TCcomercial">Years to Sec</p>

@@ -1,7 +1,8 @@
 		* {
 			box-sizing: border-box;
 		}
-		@media screen and (max-width: 480px) {
+		@media (min-width: 320px) and (max-width: 480px)
+		 {
 
 		/*Css for the Menu(320px-480px)*/
 		
@@ -75,6 +76,8 @@
 		.shade {
 			font-size: 5vw;
 			width: 50%;
+			position: absolute;
+			z-index: 5;
 			padding: none;
 			text-shadow: 2px 0px white 0px 2px white -2px 0px white 0px -2px white;
 			color: blue;
@@ -106,7 +109,238 @@
 			width: 15vw;
 			height: 15vw;
 			display: none;
-		}	
+		}
+
+
+		/*About Me! (320px-480px)*/
+		#About{
+			position: relative;
+			top: 10vw;
+			text-align: center;
+			font-size: 6.5vw;
+		}
+		#AboutContainerDiv{
+			position: relative;
+			top: 10vw;
+			box-shadow: 0.15vw 0.4vw 0.22vw gray;
+			height: 153vw;
+		}
+
+		p.P1 {
+			font-size: 4.7vw;
+			display: inline-block;
+			font-weight: 200;
+			text-align: center;
+			max-width: 100vw;
+			background-color: white;	
+			word-wrap: break-word;
+			padding: 3vw;
+			}
+
+
+		#Kepek{
+			border: 0.15vw solid black;
+			width: 80vw;
+			height: 80vw;
+			background-image: url('Pictures/EmberiAlak.jpg');
+			background-size: 80vw 80vw;
+			background-repeat: no-repeat;
+			float: right;
+			display: inline-block;
+			margin-right: 9vw;
+		}
+
+		#left{
+			width: 16vw;
+			height: 16vw;
+			background-image: url('Pictures/PictureArrowLeft.png');
+			background-repeat: no-repeat;
+			background-size: 16vw 16vw;
+			opacity: 0.2;
+			display: none;
+			position: relative;
+			top: 28vw;
+		}
+		#right{
+			width: 16vw;
+			height: 16vw;
+			float: right;
+			background-image: url('Pictures/PictureArrowRight.png');
+			background-repeat: no-repeat;
+			background-size: 16vw 16vw;
+			opacity: 0.2;
+			display: none;
+			position: relative;
+			top: 12vw;
+		}
+
+
+		/*Calculator (320px-480px)*/
+		#calculatorHeader2{
+			position: relative;
+			top: 10vw;
+			font-size: 8vw;
+			font-style: italic;
+		}
+		#calculatorHeader3{
+			position: relative;
+			top: 8vw;
+			text-align: center;
+			font-size: 8vw;
+		}
+		#calculatorContainerDiv{
+			position: relative;
+			top: 10vw;
+			width: 100%;
+			height: 100vw;
+			background-image: url('Pictures/CalculatorII1.jpg');
+			background-size: 100vw auto;
+		}
+
+		.calculator{
+			display: inline-block;
+			width: 4.4vw;
+			height: 4vw;
+			background-color: transparent;
+			border-radius: 50%;
+			position: absolute;
+		}
+		#calculatorFor9{
+			top: 42.1vw;
+			left: 55.7vw;
+			height: 3.66vw;
+			width:4.75vw;
+		}
+
+		#calculatorFor8{
+			top: 45.5vw;
+			left: 50.5vw;
+			width: 5.1vw;
+		}
+		#calculatorFor7{
+			top: 49.5vw;
+			left: 44.5vw;
+			width: 5.7vw;
+		}
+		#calculatorFor6{
+			top: 45vw;
+			left: 61.5vw;
+			width: 4.76vw;
+		}
+		#calculatorFor5{
+			top: 48.8vw;
+			left: 56.5vw;
+			width: 5.1vw;
+			height: 4.4vw;
+		}
+		#calculatorFor4{
+			top: 53.5vw;
+			left: 50.7vw;
+			width: 5.5vw;
+			height: 4.76vw;
+		}
+		#calculatorFor3{
+			top: 49vw;
+			left: 67.4vw;
+			width: 5.5vw;
+		}
+		#calculatorFor2{
+			top: 53.2vw;
+			left: 62.6vw;
+			width: 5.5vw;
+			height: 4.4vw;
+		}
+		#calculatorFor1{
+			top: 58vw;
+			left: 57vw;
+			width: 6.22vw;
+			height: 5vw;
+		}
+		#calculatorFor0{
+			top: 69vw;
+			left: 57.5vw;
+			width: 7.3vw;
+			height: 7vw;
+		}
+		#calculatorFor00{
+			top: 62.5vw;
+			left: 64vw;
+			width: 6.6vw;
+			height: 6.07vw;
+		}
+
+		#calculatorForPoint{
+			top: 57.3vw;
+			left: 69.5vw;
+			width: 6vw;
+			height: 5.12vw;
+		}
+		#calculatorForMu{
+			top: 48vw;
+			left: 27.8vw;
+			width: 5.34vw;
+			height: 2.34vw;
+			transform: rotate(-30deg);
+		}
+		#calculatorForEqual{
+			top: 53vw;
+			left: 74vw;
+			width: 5.85vw;
+			height: 4.4vw;
+		}
+		#calculatorForPlus{
+			top: 47vw;
+			left: 72vw;
+			width: 11.7vw;
+			height: 3.66vw;
+			border-radius: 0.732vw;
+			transform: rotate(30deg);
+		}
+		#calculatorForMinus{
+			top: 41.5vw;
+			left: 66vw;
+			width: 5.12vw;
+			height: 3.66vw;
+		}
+		#calculatorForMultiply{
+			top: 38.7vw;
+			left: 60.5vw;
+			width: 5.12vw;
+			height: 3.3vw;
+		}
+		#calculatorForDivision{
+			top: 36vw;
+			left: 55.5vw;
+			width: 4.76vw;
+			height: 2.93vw;
+		}
+		#ACButton{
+			top: 64vw;
+			left: 50.2vw;
+			width: 5.85vw;
+			height: 5.5vw;
+			border-radius: 0.732vw;
+			transform: rotate(-45deg);
+			cursor: pointer;
+		}
+		#AC0{
+			display: inline-block;
+			position: absolute;
+			background-color: transparent;
+			border-radius: 50%;
+			top: 25.8vw;
+			left: 37.8vw;
+			width: 4.76vw;
+			height: 2.93vw;
+			border-radius: 0.732vw;
+			padding: 0.732vw;
+			font-size: 7.1vw;
+			transform: rotateZ(-48deg) rotateY(-30deg);
+			display: none;
+			font-weight: 200;
+			}
+
+
 
 		}
 
@@ -221,7 +455,235 @@
 			width: 15vw;
 			height: 15vw;
 			display: none;
-		}	
+		}
+
+
+
+
+		/*About Me!(481px-767px)*/
+		#About{
+			text-align: center;
+			font-size: 4.8vw;
+		}
+
+		#AboutContainerDiv{
+			box-shadow: 0.15vw 0.4vw 0.22vw gray;
+			height: 140vw;
+		}
+
+		p.P1 {
+			font-size: 3.5vw;
+			display: inline-block;
+			font-weight: 200;
+			text-align: center;
+			max-width: 100vw;
+			background-color: white;	
+			word-wrap: break-word;
+			padding: 2vw;
+		}
+
+
+		#Kepek{
+			border: 0.15vw solid black;
+			width: 90vw;
+			height: 90vw;
+			background-image: url('Pictures/EmberiAlak.jpg');
+			background-size: 90vw 90vw;
+			background-repeat: no-repeat;
+			float: right;
+			display: inline-block;
+			margin-right: 5vw;
+		}
+
+		#left{
+			width: 20vw;
+			height:20vw;
+			background-image: url('Pictures/PictureArrowLeft.png');
+			background-repeat: no-repeat;
+			background-size: 20vw 20vw;
+			opacity: 0.2;
+			display: none;
+			position: relative;
+			top: 28vw;
+		}
+		#right{
+			width: 20vw;
+			height: 20vw;
+			float: right;
+			background-image: url('Pictures/PictureArrowRight.png');
+			background-repeat: no-repeat;
+			background-size: 20vw 20vw;
+			opacity: 0.2;
+			display: none;
+			position: relative;
+			top: 9vw;
+		}
+
+
+
+
+
+		/*About Me!(481px-767px)*/
+		#calculatorHeader2{
+			font-size: 5vw;
+			font-style: italic;
+		}
+		#calculatorHeader3{
+			text-align: center;
+			font-size: 4vw;
+		}
+		#calculatorContainerDiv{
+			width: 100%;
+			height: 73.5vw;
+			background-image: url('Pictures/CalculatorII1.jpg');
+			background-size: 95vw auto;
+		}
+
+		.calculator{
+			display: inline-block;
+			width: 4.4vw;
+			height: 4vw;
+			background-color: transparent;
+			border-radius: 50%;
+			position: absolute;
+		}
+		#calculatorFor9{
+			top: 317.5vw;
+			left: 56.9vw;
+			height: 3.66vw;
+			width:4.75vw;
+		}
+
+		#calculatorFor8{
+			top: 321vw;
+			left: 52.2vw;
+			width: 5.1vw;
+		}
+		#calculatorFor7{
+			top: 324.5vw;
+			left: 46.5vw;
+			width: 5.7vw;
+		}
+		#calculatorFor6{
+			top: 320.5vw;
+			left: 62.6vw;
+			width: 4.76vw;
+		}
+		#calculatorFor5{
+			top: 324vw;
+			left: 57.8vw;
+			width: 5.1vw;
+			height: 4.4vw;
+		}
+		#calculatorFor4{
+			top: 328.2vw;
+			left: 52.4vw;
+			width: 5.5vw;
+			height: 4.76vw;
+		}
+		#calculatorFor3{
+			top: 324vw;
+			left: 68.2vw;
+			width: 5.5vw;
+		}
+		#calculatorFor2{
+			top: 328vw;
+			left: 63.7vw;
+			width: 5.5vw;
+			height: 4.4vw;
+		}
+		#calculatorFor1{
+			top: 332.6vw;
+			left: 58vw;
+			width: 6.22vw;
+			height: 5vw;
+		}
+		#calculatorFor0{
+			top: 343vw;
+			left: 58.6vw;
+			width: 7.3vw;
+			height: 7vw;
+		}
+		#calculatorFor00{
+			top: 337vw;
+			left: 64.8vw;
+			width: 6.6vw;
+			height: 6.07vw;
+		}
+
+		#calculatorForPoint{
+			top: 332vw;
+			left: 70.3vw;
+			width: 6vw;
+			height: 5.12vw;
+		}
+		#calculatorForMu{
+			top: 323vw;
+			left: 30.5vw;
+			width: 5.34vw;
+			height: 2.34vw;
+			transform: rotate(-30deg);
+		}
+		#calculatorForEqual{
+			top: 327.6vw;
+			left: 74.7vw;
+			width: 5.85vw;
+			height: 4.4vw;
+		}
+		#calculatorForPlus{
+			top: 321.4vw;
+			left: 72.8vw;
+			width: 11.7vw;
+			height: 3.66vw;
+			border-radius: 0.732vw;
+			transform: rotate(30deg);
+		}
+		#calculatorForMinus{
+			top: 316.7vw;
+			left: 67vw;
+			width: 5.12vw;
+			height: 3.66vw;
+		}
+		#calculatorForMultiply{
+			top: 314vw;
+			left: 61.5vw;
+			width: 5.12vw;
+			height: 3.3vw;
+		}
+		#calculatorForDivision{
+			top: 311.5vw;
+			left: 57vw;
+			width: 4.76vw;
+			height: 2.93vw;
+		}
+		#ACButton{
+			top: 338.6vw;
+			left: 51.6vw;
+			width: 5.85vw;
+			height: 5.5vw;
+			border-radius: 0.732vw;
+			transform: rotate(-45deg);
+			cursor: pointer;
+		}
+		#AC0{
+			display: inline-block;
+			position: absolute;
+			background-color: transparent;
+			border-radius: 50%;
+			top: 301.8vw;
+			left: 40vw;
+			width: 4.76vw;
+			height: 2.93vw;
+			border-radius: 0.732vw;
+			padding: 0.732vw;
+			font-size: 7.1vw;
+			transform: rotateZ(-48deg) rotateY(-30deg);
+			display: none;
+			font-weight: 200;
+			}
+
+
+
 		}
 
 
@@ -333,6 +795,230 @@
 			height: 15vw;
 			display: none;
 		}
+
+
+		/*About Me!(768px-1024px)*/
+		#About{
+			text-align: center;
+			font-size: 4.5vw;
+		}
+
+		#AboutContainerDiv{
+			box-shadow: 0.15vw 0.4vw 0.22vw gray;
+			height: 51vw;
+		}
+
+		p.P1 {
+			font-size: 2.2vw;
+			display: inline-block;
+			font-weight: 200;
+			text-align: center;
+			max-width: 37vw;
+			background-color: white;	
+			word-wrap: break-word;
+			padding: 3vw;
+			margin-left: 15%;
+		}
+
+
+		#Kepek{
+			border: 0.15vw solid black;
+			width: 37vw;
+			height: 37vw;
+			background-image: url('Pictures/EmberiAlak.jpg');
+			background-size: 37vw 37vw;
+			background-repeat: no-repeat;
+			float: right;
+			display: inline-block;
+			margin-right: 5vw;
+		}
+
+		#left{
+			width: 7.5vw;
+			height: 7.5vw;
+			background-image: url('Pictures/PictureArrowLeft.png');
+			background-repeat: no-repeat;
+			background-size: 7.5vw 7.5vw;
+			opacity: 0.2;
+			display: none;
+			position: relative;
+			top: 12.5vw;
+		}
+		#right{
+			width: 7.5vw;
+			height: 7.5vw;
+			float: right;
+			background-image: url('Pictures/PictureArrowRight.png');
+			background-repeat: no-repeat;
+			background-size: 7.5vw 7.5vw;
+			opacity: 0.2;
+			display: none;
+			position: relative;
+			top: 5vw;
+		}
+
+
+
+
+
+		/*Calculator(768px-1024px)*/
+		#calculatorHeader2{
+			font-size: 2.6vw;
+			font-style: italic;
+		}
+		#calculatorHeader3{
+			text-align: center;
+			font-size: 2vw;
+		}
+		#calculatorContainerDiv{
+			width: 100%;
+			height: 73.5vw;
+			background-image: url('Pictures/CalculatorII1.jpg');
+		}
+
+		.calculator{
+			display: inline-block;
+			width: 4.4vw;
+			height: 4vw;
+			background-color: transparent;
+			border-radius: 50%;
+			position: absolute;
+		}
+		#calculatorFor9{
+			top: 212.3vw;
+			left: 57.5vw;
+			height: 3.66vw;
+			width:4.75vw;
+		}
+
+		#calculatorFor8{
+			top: 215.6vw;
+			left: 52.4vw;
+			width: 5.1vw;
+		}
+		#calculatorFor7{
+			top: 219.9vw;
+			left: 46.6vw;
+			width: 5.7vw;
+		}
+		#calculatorFor6{
+			top: 215.5vw;
+			left: 63.2vw;
+			width: 4.76vw;
+		}
+		#calculatorFor5{
+			top: 219.3vw;
+			left: 58.1vw;
+			width: 5.1vw;
+			height: 4.4vw;
+		}
+		#calculatorFor4{
+			top: 223.7vw;
+			left: 52.6vw;
+			width: 5.5vw;
+			height: 4.76vw;
+		}
+		#calculatorFor3{
+			top: 219.3vw;
+			left: 68.8vw;
+			width: 5.5vw;
+		}
+		#calculatorFor2{
+			top: 223.5vw;
+			left: 64.3vw;
+			width: 5.5vw;
+			height: 4.4vw;
+		}
+		#calculatorFor1{
+			top: 228.1vw;
+			left: 58.6vw;
+			width: 6.22vw;
+			height: 5vw;
+		}
+		#calculatorFor0{
+			top: 238.9vw;
+			left: 59.2vw;
+			width: 7.3vw;
+			height: 7vw;
+		}
+		#calculatorFor00{
+			top: 232.5vw;
+			left: 65.4vw;
+			width: 6.6vw;
+			height: 6.07vw;
+		}
+
+		#calculatorForPoint{
+			top: 227.7vw;
+			left: 70.9vw;
+			width: 6vw;
+			height: 5.12vw;
+		}
+		#calculatorForMu{
+			top: 218vw;
+			left: 30.1vw;
+			width: 5.34vw;
+			height: 2.34vw;
+			transform: rotate(-30deg);
+		}
+		#calculatorForEqual{
+			top: 223.1vw;
+			left: 75.3vw;
+			width: 5.85vw;
+			height: 4.4vw;
+		}
+		#calculatorForPlus{
+			top: 216.9vw;
+			left: 73.4vw;
+			width: 11.7vw;
+			height: 3.66vw;
+			border-radius: 0.732vw;
+			transform: rotate(30deg);
+		}
+		#calculatorForMinus{
+			top: 212vw;
+			left: 67.6vw;
+			width: 5.12vw;
+			height: 3.66vw;
+		}
+		#calculatorForMultiply{
+			top: 209vw;
+			left: 62.1vw;
+			width: 5.12vw;
+			height: 3.3vw;
+		}
+		#calculatorForDivision{
+			top: 206.5vw;
+			left: 57.1vw;
+			width: 4.76vw;
+			height: 2.93vw;
+		}
+		#ACButton{
+			top: 234.3vw;
+			left: 52.2vw;
+			width: 5.85vw;
+			height: 5.5vw;
+			border-radius: 0.732vw;
+			transform: rotate(-45deg);
+			cursor: pointer;
+		}
+		#AC0{
+			display: inline-block;
+			position: absolute;
+			background-color: transparent;
+			border-radius: 50%;
+			top: 196.5vw;
+			left: 39.8vw;
+			width: 4.76vw;
+			height: 2.93vw;
+			border-radius: 0.732vw;
+			padding: 0.732vw;
+			font-size: 7.1vw;
+			transform: rotateZ(-48deg) rotateY(-30deg);
+			display: none;
+			font-weight: 200;
+			}
+
 		}
 
 
@@ -399,7 +1085,7 @@
 		}
 
 
-		/*Css for the road!(1025-1280px)*/
+		/*Css for the road!(1025px-1280px)*/
 		#TheRoadI {
 			width:100%;
 			height:92vw;
@@ -447,6 +1133,231 @@
 			height: 15vw;
 			display: none;
 		}
+
+
+		/*About Me!(1025px-1280px)*/
+		#About{
+			text-align: center;
+			font-size: 4.5vw;
+		}
+
+		#AboutContainerDiv{
+			box-shadow: 0.15vw 0.4vw 0.22vw gray;
+			height: 51vw;
+		}
+
+		p.P1 {
+			font-size: 2.2vw;
+			display: inline-block;
+			font-weight: 200;
+			text-align: center;
+			max-width: 37vw;
+			background-color: white;	
+			word-wrap: break-word;
+			padding: 3vw;
+			margin-left: 15%;
+		}
+
+
+		#Kepek{
+			border: 0.15vw solid black;
+			width: 37vw;
+			height: 37vw;
+			background-image: url('Pictures/EmberiAlak.jpg');
+			background-size: 37vw 37vw;
+			background-repeat: no-repeat;
+			float: right;
+			display: inline-block;
+			margin-right: 5vw;
+		}
+
+		#left{
+			width: 7.5vw;
+			height: 7.5vw;
+			background-image: url('Pictures/PictureArrowLeft.png');
+			background-repeat: no-repeat;
+			background-size: 7.5vw 7.5vw;
+			opacity: 0.2;
+			display: none;
+			position: relative;
+			top: 12.5vw;
+		}
+		#right{
+			width: 7.5vw;
+			height: 7.5vw;
+			float: right;
+			background-image: url('Pictures/PictureArrowRight.png');
+			background-repeat: no-repeat;
+			background-size: 7.5vw 7.5vw;
+			opacity: 0.2;
+			display: none;
+			position: relative;
+			top: 5vw;
+		}
+
+
+
+
+
+		/*Calculator(1025px-1280px)*/
+		#calculatorHeader2{
+			font-size: 2.6vw;
+			font-style: italic;
+		}
+		#calculatorHeader3{
+			text-align: center;
+			font-size: 2vw;
+		}
+		#calculatorContainerDiv{
+			width: 100%;
+			height: 73.5vw;
+			background-image: url('Pictures/CalculatorII1.jpg');
+		}
+
+		.calculator{
+			display: inline-block;
+			width: 4.4vw;
+			height: 4vw;
+			background-color: transparent;
+			border-radius: 50%;
+			position: absolute;
+		}
+		#calculatorFor9{
+			top: 210.8vw;
+			left: 57.5vw;
+			height: 3.66vw;
+			width:4.75vw;
+		}
+
+		#calculatorFor8{
+			top: 214.1vw;
+			left: 52.4vw;
+			width: 5.1vw;
+		}
+		#calculatorFor7{
+			top: 218.4vw;
+			left: 46.6vw;
+			width: 5.7vw;
+		}
+		#calculatorFor6{
+			top: 214vw;
+			left: 63.2vw;
+			width: 4.76vw;
+		}
+		#calculatorFor5{
+			top: 217.8vw;
+			left: 58.1vw;
+			width: 5.1vw;
+			height: 4.4vw;
+		}
+		#calculatorFor4{
+			top: 222.2vw;
+			left: 52.6vw;
+			width: 5.5vw;
+			height: 4.76vw;
+		}
+		#calculatorFor3{
+			top: 217.8vw;
+			left: 68.8vw;
+			width: 5.5vw;
+		}
+		#calculatorFor2{
+			top: 222vw;
+			left: 64.3vw;
+			width: 5.5vw;
+			height: 4.4vw;
+		}
+		#calculatorFor1{
+			top: 226.6vw;
+			left: 58.6vw;
+			width: 6.22vw;
+			height: 5vw;
+		}
+		#calculatorFor0{
+			top: 237.4vw;
+			left: 59.2vw;
+			width: 7.3vw;
+			height: 7vw;
+		}
+		#calculatorFor00{
+			top: 231vw;
+			left: 65.4vw;
+			width: 6.6vw;
+			height: 6.07vw;
+		}
+
+		#calculatorForPoint{
+			top: 226.2vw;
+			left: 70.9vw;
+			width: 6vw;
+			height: 5.12vw;
+		}
+		#calculatorForMu{
+			top: 216.5vw;
+			left: 30.1vw;
+			width: 5.34vw;
+			height: 2.34vw;
+			transform: rotate(-30deg);
+		}
+		#calculatorForEqual{
+			top: 221.6vw;
+			left: 75.3vw;
+			width: 5.85vw;
+			height: 4.4vw;
+		}
+		#calculatorForPlus{
+			top: 215.4vw;
+			left: 73.4vw;
+			width: 11.7vw;
+			height: 3.66vw;
+			border-radius: 0.732vw;
+			transform: rotate(30deg);
+		}
+		#calculatorForMinus{
+			top: 210.5vw;
+			left: 67.6vw;
+			width: 5.12vw;
+			height: 3.66vw;
+		}
+		#calculatorForMultiply{
+			top: 207.5vw;
+			left: 62.1vw;
+			width: 5.12vw;
+			height: 3.3vw;
+		}
+		#calculatorForDivision{
+			top: 205vw;
+			left: 57.1vw;
+			width: 4.76vw;
+			height: 2.93vw;
+		}
+		#ACButton{
+			top: 232.8vw;
+			left: 52.2vw;
+			width: 5.85vw;
+			height: 5.5vw;
+			border-radius: 0.732vw;
+			transform: rotate(-45deg);
+			cursor: pointer;
+		}
+		#AC0{
+			display: inline-block;
+			position: absolute;
+			background-color: transparent;
+			border-radius: 50%;
+			top: 195vw;
+			left: 39.6vw;
+			width: 4.76vw;
+			height: 2.93vw;
+			border-radius: 0.732vw;
+			padding: 0.732vw;
+			font-size: 7.1vw;
+			transform: rotateZ(-48deg) rotateY(-30deg);
+			display: none;
+			font-weight: 200;
+			}
+
+
 		}
 
 
@@ -562,10 +1473,15 @@
 		}
 
 
-		/*About Me!*/
+		/*About Me!(1281px+)*/
 		#About{
 			text-align: center;
 			font-size: 4.5vw;
+		}
+
+		#AboutContainerDiv{
+			box-shadow: 0.15vw 0.4vw 0.22vw gray;
+			height: 51vw;
 		}
 
 		p.P1 {
@@ -614,25 +1530,225 @@
 			opacity: 0.2;
 			display: none;
 			position: relative;
-			top: 5.5vw;
+			top: 5vw;
 		}
 
 
-		/*Calculator*/
+
+
+
+		/*Calculator(1281px+)*/
+		#calculatorHeader2{
+			font-size: 2.6vw;
+			font-style: italic;
+		}
+		#calculatorHeader3{
+			text-align: center;
+			font-size: 2vw;
+		}
+		#calculatorContainerDiv{
+			width: 100%;
+			height: 73.5vw;
+			background-image: url('Pictures/CalculatorII1.jpg');
+		}
+
 		.calculator{
 			display: inline-block;
-			width: 60px;
-			height: 55px;
-			background-color: transparent;
+			width: 4.4vw;
+			height: 4vw;
+			background-color: red;
 			border-radius: 50%;
 			position: absolute;
 		}
-		.calculator:hover {
-			color: black;
+		#calculatorFor9{
+			top: 210.8vw;
+			left: 56.9vw;
+			height: 3.66vw;
+			width:4.75vw;
+		}
+
+		#calculatorFor8{
+			top: 214.1vw;
+			left: 51.8vw;
+			width: 5.1vw;
+		}
+		#calculatorFor7{
+			top: 218.4vw;
+			left: 46vw;
+			width: 5.7vw;
+		}
+		#calculatorFor6{
+			top: 214vw;
+			left: 62.6vw;
+			width: 4.76vw;
+		}
+		#calculatorFor5{
+			top: 217.8vw;
+			left: 57.5vw;
+			width: 5.1vw;
+			height: 4.4vw;
+		}
+		#calculatorFor4{
+			top: 222.2vw;
+			left: 52vw;
+			width: 5.5vw;
+			height: 4.76vw;
+		}
+		#calculatorFor3{
+			top: 217.8vw;
+			left: 68.2vw;
+			width: 5.5vw;
+		}
+		#calculatorFor2{
+			top: 222vw;
+			left: 63.7vw;
+			width: 5.5vw;
+			height: 4.4vw;
+		}
+		#calculatorFor1{
+			top: 226.6vw;
+			left: 58vw;
+			width: 6.22vw;
+			height: 5vw;
+		}
+		#calculatorFor0{
+			top: 237.4vw;
+			left: 58.6vw;
+			width: 7.3vw;
+			height: 7vw;
+		}
+		#calculatorFor00{
+			top: 231vw;
+			left: 64.8vw;
+			width: 6.6vw;
+			height: 6.07vw;
+		}
+
+		#calculatorForPoint{
+			top: 226.2vw;
+			left: 70.3vw;
+			width: 6vw;
+			height: 5.12vw;
+		}
+		#calculatorForMu{
+			top: 216.5vw;
+			left: 29.5vw;
+			width: 5.34vw;
+			height: 2.34vw;
+			transform: rotate(-30deg);
+		}
+		#calculatorForEqual{
+			top: 221.6vw;
+			left: 74.7vw;
+			width: 5.85vw;
+			height: 4.4vw;
+		}
+		#calculatorForPlus{
+			top: 215.4vw;
+			left: 72.8vw;
+			width: 11.7vw;
+			height: 3.66vw;
+			border-radius: 0.732vw;
+			transform: rotate(30deg);
+		}
+		#calculatorForMinus{
+			top: 210.5vw;
+			left: 67vw;
+			width: 5.12vw;
+			height: 3.66vw;
+		}
+		#calculatorForMultiply{
+			top: 207.5vw;
+			left: 61.5vw;
+			width: 5.12vw;
+			height: 3.3vw;
+		}
+		#calculatorForDivision{
+			top: 205vw;
+			left: 56.5vw;
+			width: 4.76vw;
+			height: 2.93vw;
+		}
+		#ACButton{
+			top: 232.8vw;
+			left: 51.6vw;
+			width: 5.85vw;
+			height: 5.5vw;
+			border-radius: 0.732vw;
+			transform: rotate(-45deg);
+			cursor: pointer;
+		}
+		#AC0{
+			display: inline-block;
+			position: absolute;
+			background-color: transparent;
+			border-radius: 50%;
+			top: 195vw;
+			left: 39vw;
+			width: 4.76vw;
+			height: 2.93vw;
+			border-radius: 0.732vw;
+			padding: 0.732vw;
+			font-size: 7.1vw;
+			transform: rotateZ(-48deg) rotateY(-30deg);
+			display: none;
+			font-weight: 200;
+			}
+
+
+
+
+		/*Time Converter (1281px+)*/
+		#TimeConverterHeader3{
+			text-align: center;
+			font-size: 2vw;
+			margin-top: 7.5vw;
+		}
+		#TimeConverterDiv{
+			width: 100%;
+			height: 77vw;
+			animation-name: gif;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+		}
+
+		#TimeConverterText{
+			font-size: 1.5vw;
+			font-weight: bolder;
+			padding-left: 2vw;
+		}
+		#TimeConverterClock{
+			width: 26vw;
+			height: 26vw;
+			display:inline-block;
+			background-image: url('Pictures/Clock.gif');
+			margin-top: 7.3vw;
+			margin-left: 3.7vw;
+		}
+		#TimeConverterSOT{
+			width: 14.7vw;
+			height: 14.7vw;
+			display: inline-block;
+			float: right;
+			background-image: url('Pictures/SandsOfTime.gif');
+			position: relative;
+			right: 14.7vw;
+			top:14.7vw;
+		}
+		#TimeConverterMeter{
+			width: 19vw;
+			height: 19vw;
+			display: inline-block;
+			margin-left: 30%;
+			margin-top: 16.5vw;
+			background-image: url('Pictures/Meter.gif');
+			position: relative;
+			right: 17.6vw;
+			top:25.6vw;
 		}
 
 		.pAsLabel {
-			width:250px;
+			width:18.3vw;
 			position: relative;
 			background-color: transparent;
 			color: red;
@@ -666,7 +1782,9 @@
 		}
 
 
-		/*For the Filter!*/
+
+
+		/*For the Filter!(1281+)*/
 		#FSearch {
 			width: 500px;
 			padding: 20px;
@@ -732,8 +1850,12 @@
 	
 
 			/*Universal Css Below!*/
+
 		a {
 			text-decoration: none;
+		}
+		a:active{
+			background-color: transparent;
 		}
 		.aback {
 			color: black;
