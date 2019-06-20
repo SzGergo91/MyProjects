@@ -1,6 +1,6 @@
 //Media Queries variables
 let $globalwidth=screen.width;
-
+let $globaltop=0;
 //Arrowimage Variables
 let $globalArrows=["Pictures/ArrowDown.png","Pictures/ArrowLeft.png"];
 let $globalArrow1=0;
@@ -526,8 +526,77 @@ $(document).ready(()=>{
 
 
 		//1. Calculator
+			for(let i=0;i<document.getElementsByClassName("calculator").length;i++)
+			{
+				  let a=window.getComputedStyle(document.getElementsByClassName("calculator")[i]).getPropertyValue('top');
+				  $globaltop=Number(a.substr(0,a.length-2))*100/$globalwidth;
+
+				if(($globalwidth>=481) && ($globalwidth<=767)){
+					if(($globalwidth>=481) && ($globalwidth<=624)){
+						document.getElementsByClassName("calculator")[i].style.top=`${$globaltop+(624-screen.width)*0.0084}vw`
+					}
+					else {
+						document.getElementsByClassName("calculator")[i].style.top=`${$globaltop-(screen.width-624)*0.0105}vw`
+					}
+				}
+				if(($globalwidth>=768) && ($globalwidth<=1024)){
+					document.getElementsByClassName("calculator")[i].style.top=`${$globaltop-(screen.width-768)*0.0043}vw`
+				}
+			}
+			
+
+			//A) Settings	
+
+
+
+			//B) The 0 on the calculator!
 			$('#ACButton').on('click',()=>{
+				if(($globalwidth>=481) && ($globalwidth<=767)){
+					//I. Part 1(2vw less diff diff=0.014vw/px)
+					if(($globalwidth>=481) && ($globalwidth<=624)){
+						$('#AC0').css({
+							top: `${303.8-(screen.width-481)*0.014}vw`,
+
+						})
+					}
+					//part 2 (1.5vw less diff! diff=0.0105)
+					else 
+					{
+						$('#AC0').css({
+							top: `${301.8-(screen.width-624)*0.0104}vw`,
+						})
+					}
+				}
+				else{
+					if(($globalwidth>=768) && ($globalwidth<=1024)){
+						//768 196.5vw 1024 195.3vw (0.005vw/px)
+						$('#AC0').css({
+							top: `${196.5-(screen.width-768)*0.005}vw`,
+						})
+
+					}
+					else
+					{
+						if(($globalwidth>=1025) && ($globalwidth<=1280)){
+							$('#AC0').css({
+								top: `${195-(screen.width-1025)*0.002}vw`,
+							})
+						}
+						else
+						{
+							if($globalwidth>=1281)
+							{
+							$('#AC0').css({
+							top: "195vw",
+							left: "39vw",
+							})
+							}
+						}
+					}
+				}
+				
 				$('#AC0').fadeToggle(1000);
+				
 			})
 
 
