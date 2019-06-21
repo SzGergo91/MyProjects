@@ -342,6 +342,302 @@
 
 
 
+	/*Time Converter (320px-480px)*/
+		#TimeConverterHeader3{
+			text-align: center;
+			font-size: 10vw;
+			margin-top: 7.5vw;
+		}
+		#TimeConverterDiv{
+			width: 100%;
+			height: 120vw;
+			animation-name: gif;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+		}
+
+		#TimeConverterText{
+			font-size: 5vw;
+			font-weight: bolder;
+			padding-left: 2vw;
+		}
+		#TimeConverterClock{
+			width: 26vw;
+			height: 26vw;
+			display:inline-block;
+			background-image: url('Pictures/Clock.gif');
+			margin-top: 7.3vw;
+			margin-left: 3.7vw;
+		}
+		#TimeConverterSOT{
+			width: 14.7vw;
+			height: 14.7vw;
+			display: inline-block;
+			float: right;
+			background-image: url('Pictures/SandsOfTime.gif');
+			background-size: 14.7vw 14.7vw;
+			position: relative;
+			right: 14.7vw;
+			top:14.7vw;
+		}
+		#TimeConverterMeter{
+			width: 19vw;
+			height: 19vw;
+			display: inline-block;
+			margin-left: 30%;
+			margin-top: 16.5vw;
+			background-image: url('Pictures/Meter.gif');
+			position: relative;
+			right: 17.6vw;
+			top:25.6vw;
+		}
+
+		#TCsec{
+			top: -36.6vw;
+			left: 7.32vw;
+		}
+		#TCseason{
+			top: -44vw;
+			left: 64vw;
+			width: 27vw;
+		}
+		#TCcomercial{
+			top: -23.4vw;
+			left: 18.3vw;
+			width: 66vw;
+		}
+		.pAsLabel {
+			width:18.3vw;
+			position: relative;
+			background-color: transparent;
+			color: red;
+			text-align: center;
+			font-size: 5vw;
+			text-shadow: 0.6vw 0.6vw 0.75vw white, -0.6vw -0.6vw 0.75vw white, 0px 0.6vw 0.75vw white, 0.6vw 0px 0.75vw white;
+		}
+
+
+
+		/*Universe(320px-480px)*/
+		#UniverseHeader3{
+			text-align: center;
+			font-size: 10vw;
+			margin-top: 7.32vw;
+		}
+		#UniverseContainer{
+			width: 100%;
+			height: 160vw;
+			background-image: url('Pictures/UniverseC.jpg');
+		}
+		#UniverseText{
+			font-size: 5vw;
+			position: absolute;
+			color: red;
+			font-weight: 900;
+			top: 616.5vw;
+		}
+
+		#UniverseTemperature{
+			width: 8.79vw;
+			height: 43.95vw;
+			background-color: white;
+			display:inline-block;
+			position: relative;
+			top: 28vw;
+			left:40vw;
+			border-top-left-radius: 40%;
+			border-top-right-radius: 40%;
+			box-shadow: 0.9vw 0.9vw 0.9vw black, -0.9vw 0.9vw 0.9vw black, 0vw -0.9vw 0.9vw black;
+	  		background-image: linear-gradient(red,yellow,green,lightblue);
+		}
+
+		#UniverseTemperatureText{
+			width: 33vw;
+			font-size: 6vw;
+			font-weight: 900;
+			position:relative;
+			top: 24vw;
+			left: 26.6vw;
+			text-shadow:0.33vw 0.33vw 0.33vw red, -0.33vw 0.33vw 0.33vw red, 0vw -0.33vw 0.33vw red; 
+		}
+
+		#UniverseTemperatureLow{
+			width: 7.32vw;
+			position: absolute;
+			top: 683vw;
+			left: 53.1vw;
+			font-size: 3vw;
+			font-weight: bold;
+			color: white
+		}
+		#UniverseTemperatureSlightlyLow{
+			width: 27.5vw;
+		    position: absolute;
+		    top: 672.2vw;
+		    left: 42.1vw;
+		    font-size: 3vw;
+		    font-weight: bold;
+		    color: black
+		}
+		#UniverseTemperatureMedium{
+			width: 22vw;
+			position: absolute;
+			top: 661.4vw;
+			left: 42.1vw;
+			font-size: 3vw;
+			font-weight: bold;
+			color: black
+		}
+		#UniverseTemperatureSlightlyHigh{
+			width:27.5vw;
+			position: absolute;
+			top: 650.6vw;
+			left: 42.1vw;
+			font-size: 3vw;
+			font-weight: bold;
+			color: black
+		}
+		#UniverseTemperatureHigh{
+			width: 11vw;
+			position: absolute;
+			top: 639.8vw;
+			left: 50.1vw;
+			font-size: 3vw;
+			font-weight: bold;
+			color: red
+		}
+		#UniverseSunCurrent{
+			width: 28vw;
+			position: absolute;
+			top: 681vw;
+			left: 13.05vw;
+			font-size: 5vw;
+			font-weight: bold;
+			color: red;
+			text-shadow:0.33vw 0.33vw 0.33vw blue, -0.33vw 0.33vw 0.33vw blue, 0vw -0.33vw 0.33vw blue;
+			animation: SunCurrent;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		#UniverseSunSun{
+			width: 38vw;
+			height: 38vw;
+			position: absolute;
+			top: 723vw;
+			left: 30vw;
+			animation: SunSun;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+
+
+		@keyframes SunCurrent{
+			0% {top: 681vw;}
+			25% {top: 670.2vw}
+			50% {top: 659.4vw}
+			75% {top: 648.6vw}
+			100% {top: 637.8vw}
+		}
+
+		@keyframes SunSun{
+			0% {background-image: url('Pictures/Sun/SunLow.png');width: 38vw;height: 38vw;top:723vw;left: 30vw;}
+			25% {background-image: url('Pictures/Sun/SunSlightlyLow.png');width: 49vw;height: 49vw;top:717.5vw;left: 24.5vw;}
+			50% {background-image: url('Pictures/Sun/Sun.png');width: 60vw;height: 60vw;top:712vw;left: 19vw;}
+			75% {background-image: url('Pictures/Sun/SunSlightlyHigh.png');width: 71vw;height: 71vw;top:706.5vw;left: 13.5vw;}
+			100% {background-image: url('Pictures/Sun/BlueSun.png');width: 82vw;height: 82vw;top:701vw;left: 8vw;}
+		}
+
+
+
+
+		/*For Filter (320px-480px)*/
+		#FilterHeader3{
+			text-align: center;
+			font-size: 10vw;
+			margin-top: 12.5vw;
+		}
+		#DivFilter{
+			padding-top: 3vw;
+			width: 100%;
+			font-size: 2vw;
+			min-height: 1000px;
+		}
+		#DivFilter i {
+			font-size: 5vw;
+		}
+
+		#FSearch {
+			width: 43.6vw;
+			padding: 1.46vw;
+			padding-left: 7.66vw;
+			border-radius: 1.83vw;
+			border:0.22vw solid lightblue;
+			box-shadow: 0.22vw 0.22vw 0.36vw gray;
+			font-size:7vw;
+			outline: none;
+			background-image: url(Pictures/Countries/Search.png);
+		    background-size: 7.66vw 7.66vw;
+			background-repeat: no-repeat;
+			background-position: 0vw 1.732vw;
+		}
+
+		#FSearch:focus {
+			width: 100%;
+			transition: 2s;
+			padding: 1.54vw;
+			background-image: none;
+			background-color: lightgreen;
+		}
+
+		div.frame {
+			width:48%;
+			display: inline-block;
+			height: 54.9vw;
+			margin-top: 2vw;
+			margin-left: 0.55vw;
+			border:3.3vw brown ridge; 
+			cursor: grab;
+
+		}
+
+
+		div.frame:hover {
+			width: 49.5%;
+			height: 56vw;
+			position: relative;
+			bottom: 0.54vw;
+			right: 1%;
+			box-shadow: 1vw 1vw 1vw black, -1vw 1vw 1vw black, 1vw -1vw 1vw black,-1vw -1vw 1vw black; 
+		}
+
+		div.frame img{
+			height: 33vw;
+		}
+
+		div.frame:hover p {
+			height: 16.68vw;
+		}
+
+		div.frame p {
+			font-size: 4.5vw;
+			text-align: center;
+			color: white;
+			background-color: black;
+			height: 15.92vw;
+			width: 100.1%;
+			display: inline-block;
+			border:0.22vw solid red;
+			position: relative;
+			padding-top: 5.5vw;
+			bottom: 5.5vw;
+			cursor: pointer;
+		}
+
+
+
+
 		}
 
 
@@ -684,7 +980,297 @@
 
 
 
+
+	/*Time Converter (481px-767px)*/
+		#TimeConverterHeader3{
+			text-align: center;
+			font-size: 4vw;
+			margin-top: 7.5vw;
 		}
+		#TimeConverterDiv{
+			width: 100%;
+			height: 121vw;
+			animation-name: gif;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+		}
+
+		#TimeConverterText{
+			font-size: 3vw;
+			font-weight: bolder;
+			padding-left: 2vw;
+		}
+		#TimeConverterClock{
+			width: 26vw;
+			height: 26vw;
+			display:inline-block;
+			background-image: url('Pictures/Clock.gif');
+			margin-top: 7.3vw;
+			margin-left: 3.7vw;
+		}
+		#TimeConverterSOT{
+			width: 14.7vw;
+			height: 14.7vw;
+			display: inline-block;
+			float: right;
+			background-image: url('Pictures/SandsOfTime.gif');
+			background-size: 14.7vw 14.7vw;
+			position: relative;
+			right: 14.7vw;
+			top:14.7vw;
+		}
+		#TimeConverterMeter{
+			width: 19vw;
+			height: 19vw;
+			display: inline-block;
+			margin-left: 30%;
+			margin-top: 16.5vw;
+			background-image: url('Pictures/Meter.gif');
+			position: relative;
+			right: 17.6vw;
+			top:25.6vw;
+		}
+
+		#TCsec{
+			top: -36.6vw;
+			left: 7.32vw;
+		}
+		#TCseason{
+			top: -44vw;
+			left: 64vw;
+			width: 27vw;
+		}
+		#TCcomercial{
+			top: -23.4vw;
+			left: 18.3vw;
+			width: 66vw;
+		}
+		.pAsLabel {
+			width:18.3vw;
+			position: relative;
+			background-color: transparent;
+			color: red;
+			text-align: center;
+			font-size: 5vw;
+			text-shadow: 0.6vw 0.6vw 0.75vw white, -0.6vw -0.6vw 0.75vw white, 0px 0.6vw 0.75vw white, 0.6vw 0px 0.75vw white;
+		}
+
+
+
+		/*Universe(481px-767px)*/
+		#UniverseHeader3{
+			text-align: center;
+			font-size: 10vw;
+			margin-top: 7.32vw;
+		}
+		#UniverseContainer{
+			width: 100%;
+			height: 160vw;
+			background-image: url('Pictures/UniverseC.jpg');
+		}
+		#UniverseText{
+			font-size: 4vw;
+			position: absolute;
+			color: red;
+			font-weight: 900;
+			top: 530.5vw;
+		}
+
+		#UniverseTemperature{
+			width: 8.79vw;
+			height: 43.95vw;
+			background-color: white;
+			display:inline-block;
+			position: relative;
+			top: 28vw;
+			left:40vw;
+			border-top-left-radius: 40%;
+			border-top-right-radius: 40%;
+			box-shadow: 0.9vw 0.9vw 0.9vw black, -0.9vw 0.9vw 0.9vw black, 0vw -0.9vw 0.9vw black;
+	  		background-image: linear-gradient(red,yellow,green,lightblue);
+		}
+
+		#UniverseTemperatureText{
+			width: 33vw;
+			font-size: 6vw;
+			font-weight: 900;
+			position:relative;
+			top: 24vw;
+			left: 28.6vw;
+			text-shadow:0.33vw 0.33vw 0.33vw red, -0.33vw 0.33vw 0.33vw red, 0vw -0.33vw 0.33vw red; 
+		}
+		
+		#UniverseTemperatureLow{
+			width: 7.32vw;
+			position: absolute;
+			top: 595.5vw;
+			left: 52.1vw;
+			font-size: 3vw;
+			font-weight: bold;
+			color: white
+		}
+		#UniverseTemperatureSlightlyLow{
+			width: 27.5vw;
+		    position: absolute;
+		    top: 584.7vw;
+		    left: 41.1vw;
+		    font-size: 3vw;
+		    font-weight: bold;
+		    color: black
+		}
+		#UniverseTemperatureMedium{
+			width: 22vw;
+			position: absolute;
+			top: 573.9vw;
+			left: 41.1vw;
+			font-size: 3vw;
+			font-weight: bold;
+			color: black
+		}
+		#UniverseTemperatureSlightlyHigh{
+			width:27.5vw;
+			position: absolute;
+			top: 563.1vw;
+			left: 41.1vw;
+			font-size: 3vw;
+			font-weight: bold;
+			color: black
+		}
+		#UniverseTemperatureHigh{
+			width: 11vw;
+			position: absolute;
+			top: 552.3vw;
+			left: 49.1vw;
+			font-size: 3vw;
+			font-weight: bold;
+			color: red
+		}
+		#UniverseSunCurrent{
+			width: 28vw;
+			position: absolute;
+			top: 593.5vw;
+			left: 13.05vw;
+			font-size: 5vw;
+			font-weight: bold;
+			color: red;
+			text-shadow:0.33vw 0.33vw 0.33vw blue, -0.33vw 0.33vw 0.33vw blue, 0vw -0.33vw 0.33vw blue;
+			animation: SunCurrent;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		#UniverseSunSun{
+			width: 38vw;
+			height: 38vw;
+			position: absolute;
+			top: 625.5vw;
+			left: 30vw;
+			animation: SunSun;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+
+
+		@keyframes SunCurrent{
+			0% {top: 593.5vw;}
+			25% {top: 582.7vw}
+			50% {top: 571.9vw}
+			75% {top: 561.1vw}
+			100% {top: 550.3vw}
+		}
+
+		@keyframes SunSun{
+			0% {background-image: url('Pictures/Sun/SunLow.png');width: 38vw;height: 38vw;top:625.5vw;left: 30vw;}
+			25% {background-image: url('Pictures/Sun/SunSlightlyLow.png');width: 49vw;height: 49vw;top:620vw;left: 24.5vw;}
+			50% {background-image: url('Pictures/Sun/Sun.png');width: 60vw;height: 60vw;top:614.5vw;left: 19vw;}
+			75% {background-image: url('Pictures/Sun/SunSlightlyHigh.png');width: 71vw;height: 71vw;top:609vw;left: 13.5vw;}
+			100% {background-image: url('Pictures/Sun/BlueSun.png');width: 82vw;height: 82vw;top:603.5vw;left: 8vw;}
+		}
+
+	/*For the Filter!(481px-767px)*/
+		#FilterHeader3{
+			text-align: center;
+			font-size: 10vw;
+			margin-top: 12.5vw;
+		}
+		#DivFilter{
+			padding-top: 3vw;
+			width: 100%;
+			font-size: 2vw;
+			min-height: 1000px;
+		}
+		#DivFilter i {
+			font-size: 4vw;
+		}
+
+		#FSearch {
+			width: 36.6vw;
+			padding: 2.92vw;
+			padding-left: 7.32vw;
+			border-radius: 3.66vw;
+			border:0.44vw solid lightblue;
+			box-shadow: 0.44vw 0.44vw 0.72vw gray;
+			font-size:5vw;
+			outline: none;
+			background-image: url(Pictures/Countries/Search.png);
+		    background-size: 7.32vw 7.32vw;
+			background-repeat: no-repeat;
+			background-position: 0vw 2.832vw;
+		}
+
+		#FSearch:focus {
+			width: 100%;
+			transition: 2s;
+			padding: 1.54vw;
+			background-image: none;
+			background-color: lightgreen;
+		}
+
+		div.frame {
+			width:32%;
+			display: inline-block;
+			height: 36.6vw;
+			margin-top: 1.46vw;
+			margin-left: 0.366vw;
+			border:2.2vw brown ridge; 
+			cursor: grab;
+
+		}
+
+		div.frame:hover {
+			width: 33%;
+			height: 37.33vw;
+			position: relative;
+			bottom: 0.36vw;
+			right: 1%;
+			box-shadow: 0.732vw 0.732vw 0.732vw black, -0.732vw 0.732vw 0.732vw black, 0.732vw -0.732vw 0.732vw black,-0.732vw -0.732vw 0.732vw black; 
+		}
+
+		div.frame img{
+			height: 22vw;
+		}
+
+		div.frame:hover p {
+			height: 11.12vw;
+		}
+
+		div.frame p {
+			font-size: 3vw;
+			text-align: center;
+			color: white;
+			background-color: black;
+			height: 10.61vw;
+			width: 100.1%;
+			display: inline-block;
+			border:0.15vw solid red;
+			position: relative;
+			padding-top: 3.66vw;
+			bottom: 3.66vw;
+			cursor: pointer;
+		}
+
+	}
 
 
 		/*Ipads everything normal from here!*/
@@ -1018,6 +1604,297 @@
 			display: none;
 			font-weight: 200;
 			}
+
+
+
+		/*Time Converter (768px-1024px)*/
+		#TimeConverterHeader3{
+			text-align: center;
+			font-size: 2vw;
+			margin-top: 7.5vw;
+		}
+		#TimeConverterDiv{
+			width: 100%;
+			height: 77vw;
+			animation-name: gif;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+		}
+
+		#TimeConverterText{
+			font-size: 1.8vw;
+			font-weight: bolder;
+			padding-left: 2vw;
+		}
+		#TimeConverterClock{
+			width: 26vw;
+			height: 26vw;
+			display:inline-block;
+			background-image: url('Pictures/Clock.gif');
+			margin-top: 7.3vw;
+			margin-left: 3.7vw;
+		}
+		#TimeConverterSOT{
+			width: 14.7vw;
+			height: 14.7vw;
+			display: inline-block;
+			float: right;
+			background-image: url('Pictures/SandsOfTime.gif');
+			position: relative;
+			background-size: 14.7vw 14.7vw;
+			right: 14.7vw;
+			top:14.7vw;
+		}
+		#TimeConverterMeter{
+			width: 19vw;
+			height: 19vw;
+			display: inline-block;
+			margin-left: 30%;
+			margin-top: 16.5vw;
+			background-image: url('Pictures/Meter.gif');
+			position: relative;
+			right: 17.6vw;
+			top:25.6vw;
+		}
+
+		#TCsec{
+			top: -36.6vw;
+			left: 7.32vw;
+		}
+		#TCseason{
+			top: -44vw;
+			left: 64vw;
+			width: 27vw;
+		}
+		#TCcomercial{
+			top: -23.4vw;
+			left: 18.3vw;
+			width: 66vw;
+		}
+		.pAsLabel {
+			width:18.3vw;
+			position: relative;
+			background-color: transparent;
+			color: red;
+			text-align: center;
+			font-size: 5vw;
+			text-shadow: 0.6vw 0.6vw 0.75vw white, -0.6vw -0.6vw 0.75vw white, 0px 0.6vw 0.75vw white, 0.6vw 0px 0.75vw white;
+		}
+
+
+		/*Universe(768px-1024px)*/
+		#UniverseHeader3{
+			text-align: center;
+			font-size: 1.83vw;
+			margin-top: 7.32vw;
+		}
+		#UniverseContainer{
+			width: 100%;
+			height: 73.2vw;
+			background-image: url('Pictures/UniverseC.jpg');
+		}
+		#UniverseText{
+			font-size: 1.5vw;
+			position: absolute;
+			color: red;
+			font-weight: 900;
+			top: 357.5vw;
+		}
+
+		#UniverseTemperature{
+			width: 5.86vw;
+			height: 29.3vw;
+			background-color: white;
+			display:inline-block;
+			position: relative;
+			top: 17vw;
+			left:12.8vw;
+			border-top-left-radius: 40%;
+			border-top-right-radius: 40%;
+			box-shadow: 0.6vw 0.6vw 0.6vw black, -0.6vw 0.6vw 0.6vw black, 0vw -0.6vw 0.6vw black;
+	  		background-image: linear-gradient(red,yellow,green,lightblue);
+		}
+
+		#UniverseTemperatureText{
+			width: 22vw;
+			font-size: 4vw;
+			font-weight: 900;
+			position:relative;
+			top: 16.1vw;
+			left: 4.4vw;
+			text-shadow:0.22vw 0.22vw 0.22vw red, -0.22vw 0.22vw 0.22vw red, 0vw -0.22vw 0.22vw red; 
+		}
+
+		#UniverseTemperatureLow{
+			width: 7.32vw;
+			position: absolute;
+			top: 399.5vw;
+			left: 20.6vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: white
+		}
+		#UniverseTemperatureSlightlyLow{
+			width: 18.3vw;
+		    position: absolute;
+		    top: 392.4vw;
+		    left: 13.6vw;
+		    font-size: 2vw;
+		    font-weight: bold;
+		    color: black
+		}
+		#UniverseTemperatureMedium{
+			width: 14.64vw;
+			position: absolute;
+			top: 385.2vw;
+			left: 13.6vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: black
+		}
+
+		#UniverseTemperatureSlightlyHigh{
+			width:18.3vw;
+			position: absolute;
+			top: 378vw;
+			left: 13.6vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: black
+		}
+		#UniverseTemperatureHigh{
+			width: 7.32vw;
+			position: absolute;
+			top: 370.8vw;
+			left: 18.6vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: red
+		}
+		#UniverseSunCurrent{
+			width: 11vw;
+			position: absolute;
+			top: 400.14vw;
+			left: 2.05vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: red;
+			text-shadow:0.22vw 0.22vw 0.22vw blue, -0.22vw 0.22vw 0.22vw blue, 0vw -0.22vw 0.22vw blue;
+			animation: SunCurrent;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		#UniverseSunSun{
+			width: 25.62vw;
+			height: 25.62vw;
+			position: absolute;
+			top:380.67vw;
+			left: 54.9vw;
+			animation: SunSun;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+
+
+		@keyframes SunCurrent{
+			0% {top: 400.14vw;}
+			25% {top: 392.82vw;}
+			50% {top: 385.5vw;}
+			75% {top: 378.18vw;}
+			100% {top: 370.86vw;}
+		}
+
+		@keyframes SunSun{
+			0% {background-image: url('Pictures/Sun/SunLow.png');width: 25.62vw;height: 25.62vw;top:380.67vw;left: 54.9vw;}
+			25% {background-image: url('Pictures/Sun/SunSlightlyLow.png');width: 32.94vw;height: 32.94vw;top:377.01vw;left: 51.24vw;}
+			50% {background-image: url('Pictures/Sun/Sun.png');width: 40.26vw;height: 40.26vw;top:373.35vw;left: 47.58vw;}
+			75% {background-image: url('Pictures/Sun/SunSlightlyHigh.png');width: 47.58vw;height: 47.58vw;top:369.69vw;left: 43.92vw;}
+			100% {background-image: url('Pictures/Sun/BlueSun.png');width: 54.9vw;height: 54.9vw;top:366.03vw;left: 40.26vw;}
+		}
+
+		/*For the Filter!(768px-1024px)*/
+		#FilterHeader3{
+			text-align: center;
+			font-size: 2vw;
+			margin-top: 12.5vw;
+		}
+		#DivFilter{
+			padding-top: 3vw;
+			width: 100%;
+			font-size: 2vw;
+			min-height: 1000px;
+		}
+
+		#FSearch {
+			width: 36.6vw;
+			padding: 1.46vw;
+			padding-left: 3.66vw;
+			border-radius: 1.83vw;
+			border:0.22vw solid lightblue;
+			box-shadow: 0.22vw 0.22vw 0.36vw gray;
+			font-size:2vw;
+			outline: none;
+			background-image: url(Pictures/Countries/Search.png);
+		    background-size: 3.66vw 3.66vw;
+			background-repeat: no-repeat;
+			background-position: 0vw 0.732vw;
+		}
+
+		#FSearch:focus {
+			width: 100%;
+			transition: 2s;
+			padding: 1.54vw;
+			background-image: none;
+			background-color: lightgreen;
+		}
+
+		div.frame {
+			width:32%;
+			display: inline-block;
+			height: 36.6vw;
+			margin-top: 1.46vw;
+			margin-left: 0.366vw;
+			border:2.2vw brown ridge; 
+			cursor: grab;
+
+		}
+
+		div.frame:hover {
+			width: 33%;
+			height: 37.33vw;
+			position: relative;
+			bottom: 0.36vw;
+			right: 1%;
+			box-shadow: 0.732vw 0.732vw 0.732vw black, -0.732vw 0.732vw 0.732vw black, 0.732vw -0.732vw 0.732vw black,-0.732vw -0.732vw 0.732vw black; 
+		}
+
+		div.frame img{
+			height: 22vw;
+		}
+
+		div.frame:hover p {
+			height: 11.12vw;
+		}
+
+		div.frame p {
+			font-size: 3vw;
+			text-align: center;
+			color: white;
+			background-color: black;
+			height: 10.61vw;
+			width: 100.1%;
+			display: inline-block;
+			border:0.15vw solid red;
+			position: relative;
+			padding-top: 3.66vw;
+			bottom: 3.66vw;
+			cursor: pointer;
+		}
+
+
+
 
 		}
 
@@ -1356,6 +2233,297 @@
 			display: none;
 			font-weight: 200;
 			}
+		#TimeConverterHeader3{
+			text-align: center;
+			font-size: 2vw;
+			margin-top: 7.5vw;
+		}
+		#TimeConverterDiv{
+			width: 100%;
+			height: 77vw;
+			animation-name: gif;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+		}
+
+		#TimeConverterText{
+			font-size: 1.5vw;
+			font-weight: bolder;
+			padding-left: 2vw;
+		}
+		#TimeConverterClock{
+			width: 26vw;
+			height: 26vw;
+			display:inline-block;
+			background-image: url('Pictures/Clock.gif');
+			margin-top: 7.3vw;
+			margin-left: 3.7vw;
+		}
+		#TimeConverterSOT{
+			width: 14.7vw;
+			height: 14.7vw;
+			display: inline-block;
+			float: right;
+			background-image: url('Pictures/SandsOfTime.gif');
+			position: relative;
+			right: 14.7vw;
+			top:14.7vw;
+		}
+		#TimeConverterMeter{
+			width: 19vw;
+			height: 19vw;
+			display: inline-block;
+			margin-left: 30%;
+			margin-top: 16.5vw;
+			background-image: url('Pictures/Meter.gif');
+			position: relative;
+			right: 17.6vw;
+			top:25.6vw;
+		}
+
+		#TCsec{
+			top: -36.6vw;
+			left: 7.32vw;
+		}
+		#TCseason{
+			top: -44vw;
+			left: 64vw;
+			width: 27vw;
+		}
+		#TCcomercial{
+			top: -23.4vw;
+			left: 18.3vw;
+			width: 66vw;
+		}
+
+		.pAsLabel {
+			width:18.3vw;
+			position: relative;
+			background-color: transparent;
+			color: red;
+			text-align: center;
+			font-size: 5vw;
+			text-shadow: 0.6vw 0.6vw 0.75vw white, -0.6vw -0.6vw 0.75vw white, 0px 0.6vw 0.75vw white, 0.6vw 0px 0.75vw white;
+		}
+
+
+
+		/*Universe(1025px-1280px)*/
+		#UniverseHeader3{
+			text-align: center;
+			font-size: 1.83vw;
+			margin-top: 7.32vw;
+		}
+		#UniverseContainer{
+			width: 100%;
+			height: 73.2vw;
+			background-image: url('Pictures/UniverseC.jpg');
+		}
+		#UniverseText{
+			font-size: 1.5vw;
+			position: absolute;
+			color: red;
+			font-weight: 900;
+			top: 356.5vw;
+		}
+
+		#UniverseTemperature{
+			width: 5.86vw;
+			height: 29.3vw;
+			background-color: white;
+			display:inline-block;
+			position: relative;
+			top: 18.5vw;
+			left:12.8vw;
+			border-top-left-radius: 40%;
+			border-top-right-radius: 40%;
+			box-shadow: 0.6vw 0.6vw 0.6vw black, -0.6vw 0.6vw 0.6vw black, 0vw -0.6vw 0.6vw black;
+	  		background-image: linear-gradient(red,yellow,green,lightblue);
+		}
+
+		#UniverseTemperatureText{
+			width: 22vw;
+			font-size: 4vw;
+			font-weight: 900;
+			position:relative;
+			top: 16.1vw;
+			left: 4.4vw;
+			text-shadow:0.22vw 0.22vw 0.22vw red, -0.22vw 0.22vw 0.22vw red, 0vw -0.22vw 0.22vw red; 
+		}
+
+		#UniverseTemperatureLow{
+			width: 7.32vw;
+			position: absolute;
+			top: 399.5vw;
+			left: 20.1vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: white
+		}
+		#UniverseTemperatureSlightlyLow{
+			width: 18.3vw;
+		    position: absolute;
+		    top: 392.4vw;
+		    left: 13.1vw;
+		    font-size: 2vw;
+		    font-weight: bold;
+		    color: black
+		}
+		#UniverseTemperatureMedium{
+			width: 14.64vw;
+			position: absolute;
+			top: 385.2vw;
+			left: 13.1vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: black
+		}
+
+		#UniverseTemperatureSlightlyHigh{
+			width:18.3vw;
+			position: absolute;
+			top: 378vw;
+			left: 13.1vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: black
+		}
+		#UniverseTemperatureHigh{
+			width: 7.32vw;
+			position: absolute;
+			top: 370.8vw;
+			left: 18.3vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: red
+		}
+		#UniverseSunCurrent{
+			width: 11vw;
+			position: absolute;
+			top: 400.14vw;
+			left: 2.05vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: red;
+			text-shadow:0.22vw 0.22vw 0.22vw blue, -0.22vw 0.22vw 0.22vw blue, 0vw -0.22vw 0.22vw blue;
+			animation: SunCurrent;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		#UniverseSunSun{
+			width: 25.62vw;
+			height: 25.62vw;
+			position: absolute;
+			top:380.67vw;
+			left: 54.9vw;
+			animation: SunSun;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+
+
+		@keyframes SunCurrent{
+			0% {top: 400.14vw;}
+			25% {top: 392.82vw;}
+			50% {top: 385.5vw;}
+			75% {top: 378.18vw;}
+			100% {top: 370.86vw;}
+		}
+
+		@keyframes SunSun{
+			0% {background-image: url('Pictures/Sun/SunLow.png');width: 25.62vw;height: 25.62vw;top:380.67vw;left: 54.9vw;}
+			25% {background-image: url('Pictures/Sun/SunSlightlyLow.png');width: 32.94vw;height: 32.94vw;top:377.01vw;left: 51.24vw;}
+			50% {background-image: url('Pictures/Sun/Sun.png');width: 40.26vw;height: 40.26vw;top:373.35vw;left: 47.58vw;}
+			75% {background-image: url('Pictures/Sun/SunSlightlyHigh.png');width: 47.58vw;height: 47.58vw;top:369.69vw;left: 43.92vw;}
+			100% {background-image: url('Pictures/Sun/BlueSun.png');width: 54.9vw;height: 54.9vw;top:366.03vw;left: 40.26vw;}
+		}
+
+
+
+		/*For the Filter!(1025px-1280px)*/
+		#FilterHeader3{
+			text-align: center;
+			font-size: 2vw;
+			margin-top: 12.5vw;
+		}
+		#DivFilter{
+			padding-top: 3vw;
+			width: 100%;
+			font-size: 2vw;
+			min-height: 1000px;
+		}
+
+		#FSearch {
+			width: 36.6vw;
+			padding: 1.46vw;
+			padding-left: 3.66vw;
+			border-radius: 1.83vw;
+			border:0.22vw solid lightblue;
+			box-shadow: 0.22vw 0.22vw 0.36vw gray;
+			font-size:2vw;
+			outline: none;
+			background-image: url(Pictures/Countries/Search.png);
+		    background-size: 3.66vw 3.66vw;
+			background-repeat: no-repeat;
+			background-position: 0vw 0.732vw;
+		}
+
+		#FSearch:focus {
+			width: 100%;
+			transition: 2s;
+			padding: 1.54vw;
+			background-image: none;
+			background-color: lightgreen;
+		}
+
+		div.frame {
+			width:32%;
+			display: inline-block;
+			height: 36.6vw;
+			margin-top: 1.46vw;
+			margin-left: 0.366vw;
+			border:2.2vw brown ridge; 
+			cursor: grab;
+
+		}
+
+		div.frame:hover {
+			width: 33%;
+			height: 37.33vw;
+			position: relative;
+			bottom: 0.36vw;
+			right: 1%;
+			box-shadow: 0.732vw 0.732vw 0.732vw black, -0.732vw 0.732vw 0.732vw black, 0.732vw -0.732vw 0.732vw black,-0.732vw -0.732vw 0.732vw black; 
+		}
+
+		div.frame img{
+			height: 22vw;
+		}
+
+		div.frame:hover p {
+			height: 11.12vw;
+		}
+
+		div.frame p {
+			font-size: 3vw;
+			text-align: center;
+			color: white;
+			background-color: black;
+			height: 10.61vw;
+			width: 100.1%;
+			display: inline-block;
+			border:0.15vw solid red;
+			position: relative;
+			padding-top: 3.66vw;
+			bottom: 3.66vw;
+			cursor: pointer;
+		}
+
+
+
+
 
 
 		}
@@ -1556,7 +2724,7 @@
 			display: inline-block;
 			width: 4.4vw;
 			height: 4vw;
-			background-color: red;
+			background-color: transparent;
 			border-radius: 50%;
 			position: absolute;
 		}
@@ -1747,6 +2915,21 @@
 			top:25.6vw;
 		}
 
+		#TCsec{
+			top: -36.6vw;
+			left: 7.32vw;
+		}
+		#TCseason{
+			top: -44vw;
+			left: 64vw;
+			width: 27vw;
+		}
+		#TCcomercial{
+			top: -23.4vw;
+			left: 18.3vw;
+			width: 66vw;
+		}
+
 		.pAsLabel {
 			width:18.3vw;
 			position: relative;
@@ -1754,56 +2937,180 @@
 			color: red;
 			text-align: center;
 			font-size: 5vw;
-			text-shadow: 8px 8px 10px white, -8px -8px 10px white, 0px 8px 10px white, 8px 0px 10px white;
+			text-shadow: 0.6vw 0.6vw 0.75vw white, -0.6vw -0.6vw 0.75vw white, 0px 0.6vw 0.75vw white, 0.6vw 0px 0.75vw white;
 		}
 
 
-		@keyframes gif{
-			0% {background-image: url('Pictures/Spring.jpg');}
-			33% {background-image: url('Pictures/Summer.jpg');}
-			67% {background-image: url('Pictures/Autumn.jpg');}
-			100% {background-image: url('Pictures/Winter.png');}
+
+
+
+		/*Universe(1281px+)*/
+		#UniverseHeader3{
+			text-align: center;
+			font-size: 1.83vw;
+			margin-top: 7.32vw;
 		}
+		#UniverseContainer{
+			width: 100%;
+			height: 73.2vw;
+			background-image: url('Pictures/UniverseC.jpg');
+		}
+		#UniverseText{
+			font-size: 1.5vw;
+			position: absolute;
+			color: red;
+			font-weight: 900;
+			top: 356.5vw;
+		}
+
+		#UniverseTemperature{
+			width: 5.86vw;
+			height: 29.3vw;
+			background-color: white;
+			display:inline-block;
+			position: relative;
+			top: 18.5vw;
+			left:12.8vw;
+			border-top-left-radius: 40%;
+			border-top-right-radius: 40%;
+			box-shadow: 0.6vw 0.6vw 0.6vw black, -0.6vw 0.6vw 0.6vw black, 0vw -0.6vw 0.6vw black;
+	  		background-image: linear-gradient(red,yellow,green,lightblue);
+		}
+
+		#UniverseTemperatureText{
+			width: 22vw;
+			font-size: 4vw;
+			font-weight: 900;
+			position:relative;
+			top: 16.1vw;
+			left: 4.4vw;
+			text-shadow:0.22vw 0.22vw 0.22vw red, -0.22vw 0.22vw 0.22vw red, 0vw -0.22vw 0.22vw red; 
+		}
+
+		#UniverseTemperatureLow{
+			width: 7.32vw;
+			position: absolute;
+			top: 399.5vw;
+			left: 20.1vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: white
+		}
+		#UniverseTemperatureSlightlyLow{
+			width: 18.3vw;
+		    position: absolute;
+		    top: 392.4vw;
+		    left: 13.1vw;
+		    font-size: 2vw;
+		    font-weight: bold;
+		    color: black
+		}
+		#UniverseTemperatureMedium{
+			width: 14.64vw;
+			position: absolute;
+			top: 385.2vw;
+			left: 13.1vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: black
+		}
+
+		#UniverseTemperatureSlightlyHigh{
+			width:18.3vw;
+			position: absolute;
+			top: 378vw;
+			left: 13.1vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: black
+		}
+		#UniverseTemperatureHigh{
+			width: 7.32vw;
+			position: absolute;
+			top: 370.8vw;
+			left: 18.3vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: red
+		}
+		#UniverseSunCurrent{
+			width: 11vw;
+			position: absolute;
+			top: 400.14vw;
+			left: 2.05vw;
+			font-size: 2vw;
+			font-weight: bold;
+			color: red;
+			text-shadow:0.22vw 0.22vw 0.22vw blue, -0.22vw 0.22vw 0.22vw blue, 0vw -0.22vw 0.22vw blue;
+			animation: SunCurrent;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		#UniverseSunSun{
+			width: 25.62vw;
+			height: 25.62vw;
+			position: absolute;
+			top:380.67vw;
+			left: 54.9vw;
+			animation: SunSun;
+			animation-duration: 16s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+
 
 		@keyframes SunCurrent{
-			0% {top: 5466px;}
-			25% {top: 5366px;}
-			50% {top: 5266px;}
-			75% {top: 5166px;}
-			100% {top: 5066px;}
+			0% {top: 400.14vw;}
+			25% {top: 392.82vw;}
+			50% {top: 385.5vw;}
+			75% {top: 378.18vw;}
+			100% {top: 370.86vw;}
 		}
 
 		@keyframes SunSun{
-			0% {background-image: url('Pictures/Sun/SunLow.png');width: 350px;height: 350px;top:5200px;left: 750px;}
-			25% {background-image: url('Pictures/Sun/SunSlightlyLow.png');width: 450px;height: 450px;top:5150px;left: 700px;}
-			50% {background-image: url('Pictures/Sun/Sun.png');width: 550px;height: 550px;top:5100px;left: 650px;}
-			75% {background-image: url('Pictures/Sun/SunSlightlyHigh.png');width: 650px;height: 650px;top:5050px;left: 600px;}
-			100% {background-image: url('Pictures/Sun/BlueSun.png');width: 750px;height: 750px;top:5000px;left: 550px;}
+			0% {background-image: url('Pictures/Sun/SunLow.png');width: 25.62vw;height: 25.62vw;top:380.67vw;left: 54.9vw;}
+			25% {background-image: url('Pictures/Sun/SunSlightlyLow.png');width: 32.94vw;height: 32.94vw;top:377.01vw;left: 51.24vw;}
+			50% {background-image: url('Pictures/Sun/Sun.png');width: 40.26vw;height: 40.26vw;top:373.35vw;left: 47.58vw;}
+			75% {background-image: url('Pictures/Sun/SunSlightlyHigh.png');width: 47.58vw;height: 47.58vw;top:369.69vw;left: 43.92vw;}
+			100% {background-image: url('Pictures/Sun/BlueSun.png');width: 54.9vw;height: 54.9vw;top:366.03vw;left: 40.26vw;}
 		}
 
 
 
 
-		/*For the Filter!(1281+)*/
+		/*For the Filter!(1281px+)*/
+		#FilterHeader3{
+			text-align: center;
+			font-size: 2vw;
+			margin-top: 12.5vw;
+		}
+		#DivFilter{
+			padding-top: 3vw;
+			width: 100%;
+			font-size: 2vw;
+			min-height: 1000px;
+		}
+
 		#FSearch {
-			width: 500px;
-			padding: 20px;
-			padding-left: 50px;
-			border-radius: 25px;
-			border:3px solid lightblue;
-			box-shadow: 3px 3px 5px gray;
+			width: 36.6vw;
+			padding: 1.46vw;
+			padding-left: 3.66vw;
+			border-radius: 1.83vw;
+			border:0.22vw solid lightblue;
+			box-shadow: 0.22vw 0.22vw 0.36vw gray;
 			font-size:2vw;
 			outline: none;
 			background-image: url(Pictures/Countries/Search.png);
-		    background-size: 50px 50px;
+		    background-size: 3.66vw 3.66vw;
 			background-repeat: no-repeat;
-			background-position: 0px 10px;
+			background-position: 0vw 0.732vw;
 		}
 
 		#FSearch:focus {
 			width: 100%;
 			transition: 2s;
-			padding: 21px;
+			padding: 1.54vw;
 			background-image: none;
 			background-color: lightgreen;
 		}
@@ -1811,25 +3118,29 @@
 		div.frame {
 			width:32%;
 			display: inline-block;
-			height: 500px;
-			margin-top: 20px;
-			margin-left: 5px;
-			border:30px brown ridge; 
+			height: 36.6vw;
+			margin-top: 1.46vw;
+			margin-left: 0.366vw;
+			border:2.2vw brown ridge; 
 			cursor: grab;
 
 		}
 
 		div.frame:hover {
 			width: 33%;
-			height: 510px;
+			height: 37.33vw;
 			position: relative;
-			bottom: 5px;
+			bottom: 0.36vw;
 			right: 1%;
-			box-shadow: 10px 10px 10px black, -10px 10px 10px black, 10px -10px 10px black,-10px -10px 10px black; 
+			box-shadow: 0.732vw 0.732vw 0.732vw black, -0.732vw 0.732vw 0.732vw black, 0.732vw -0.732vw 0.732vw black,-0.732vw -0.732vw 0.732vw black; 
+		}
+
+		div.frame img{
+			height: 22vw;
 		}
 
 		div.frame:hover p {
-			height: 152px;
+			height: 11.12vw;
 		}
 
 		div.frame p {
@@ -1837,13 +3148,13 @@
 			text-align: center;
 			color: white;
 			background-color: black;
-			height: 145px;
-			width: 100%;
+			height: 10.61vw;
+			width: 100.1%;
 			display: inline-block;
-			border:2px solid red;
+			border:0.15vw solid red;
 			position: relative;
-			padding-top: 50px;
-			bottom: 50px;
+			padding-top: 3.66vw;
+			bottom: 3.66vw;
 			cursor: pointer;
 		}
 	}
@@ -1874,4 +3185,11 @@
 			font-size: 2vw;
 			font-weight: bold;
 		}
+		@keyframes gif{
+			0% {background-image: url('Pictures/Spring.jpg');}
+			33% {background-image: url('Pictures/Summer.jpg');}
+			67% {background-image: url('Pictures/Autumn.jpg');}
+			100% {background-image: url('Pictures/Winter.png');}
+		}
+
 		/*Universal Css Above*/

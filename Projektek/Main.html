@@ -106,38 +106,34 @@
 		<div id="TimeConverterClock" class="background"> </div> 
 		<div id="TimeConverterSOT" class="background;"> </div> 
 		<div class="background" id="TimeConverterMeter"> </div> 
-		<p class="pAsLabel" style="top: -500px; left: 100px;" id="TCsec">0 Sec</p>
-		<p class="pAsLabel" style="top: -600px; left: 875px;width: 370px;" id="TCseason">0 Years</p>
-		<p class="pAsLabel" style="top: -320px; left: 250px;width: 900px;" id="TCcomercial">Years to Sec</p>
-		<div style="background-color: transparent;position: absolute;top: 4317px;left:680px;width: 50px;height: 50px;border-radius: 50%;cursor: pointer;font-size: 3vw;font-weight: 900;color: yellow;padding-left: 18px; " id="TCAction">!</div>
+		<p class="pAsLabel" id="TCsec">0 Sec</p>
+		<p class="pAsLabel" id="TCseason">0 Years</p>
+		<p class="pAsLabel" id="TCcomercial">Years to Sec</p>
+		<!--<div id="TCAction">!</div>-->
 	</div>
 
 
 
 	<!--II.3. Universe-->
-	<h3 style="text-align: center;font-size: 25px;margin-top: 100px;">3. Universe</h3>
-	<div style="width: 100%;height: 1000px;background-image: url('Pictures/UniverseC.jpg');" class="background">
-		<p style="font-size: 2vw;position: absolute;top: 4800px">The sun's temperature is altering!(this includes it'size as well)</p>
-	  <div style="width: 80px;height: 400px;background-color: white;display:inline-block; position: relative;top: 300px;left:175px;border-top-left-radius: 40%;border-top-right-radius: 40%; box-shadow: 8px 8px 8px black, -8px 8px 8px black, 0px -8px 8px black;
-	  background-image: linear-gradient(red,yellow,green,lightblue)">
-	  </div>
-	  <p style="width: 300px;font-size: 4vw;font-weight: 900;position:relative;top: 250px;left: 55px;text-shadow:3px 3px 3px red, -3px 3px 3px red, 0px -3px 3px red ">Temperature </p>
-	  <p style="width: 100px;position: absolute;top: 5458px;left: 275px;font-size: 2vw;font-weight: bold;color: white">Low</p>
-
-	  <p style="width: 250px;position: absolute;top: 5360px;left: 179px;font-size: 2vw;font-weight: bold;color: black">- - - - - - <span style="color: green">Slightly Low</span></p>
-	  <p style="width: 200px;position: absolute;top: 5262px;left: 179px;font-size: 2vw;font-weight: bold;color: black">- - - - - - <span style="color: yellow">Medium</span></p>
-	  <p style="width: 250px;position: absolute;top: 5164px;left: 179px;font-size: 2vw;font-weight: bold;color: black">- - - - - - <span style="color: orange">Slightly High</span></p>
-
-	  <p style="width: 100px;position: absolute;top: 5066px;left: 250px;font-size: 2vw;font-weight: bold;color: red">- High</p>
-	  <p style="width: 150px;position: absolute;top: 5466px;left: 28px;font-size: 2vw;font-weight: bold;color: red;text-shadow:3px 3px 3px blue, -3px 3px 3px blue, 0px -3px 3px blue;animation: SunCurrent;animation-duration: 16s;animation-iteration-count: infinite;animation-direction: alternate; ">Current ==></p>
-	  <div style="width: 350px;height: 350px;position: absolute;top:5200px;left: 750px;animation: SunSun;animation-duration: 16s;animation-iteration-count: infinite;animation-direction: alternate;" class="background"> </div>
+	<h3 id="UniverseHeader3">3. Universe</h3>
+	<div id="UniverseContainer" class="background">
+		<i id="UniverseText">'In My Projects/Universe' project you can choose from Galaxies and Solar systems as well! "The sun's temperature is altering!(this includes it'size as well)"</i>
+	  <div id="UniverseTemperature"></div>
+	  <p id="UniverseTemperatureText">Temperature</p>
+	  <p id="UniverseTemperatureLow">Low</p>
+	  <p id="UniverseTemperatureSlightlyLow">- - - - - - <span style="color: green">Slightly Low</span></p>
+	  <p id="UniverseTemperatureMedium">- - - - - - <span style="color: yellow">Medium</span></p>
+	  <p id="UniverseTemperatureSlightlyHigh">- - - - - - <span style="color: orange">Slightly High</span></p>
+	  <p id="UniverseTemperatureHigh">- High</p>
+	  <p id="UniverseSunCurrent">Current ==></p>
+	  <div id="UniverseSunSun" class="background"> </div>
 	</div>
 
 
 
 	<!--II.4. Filter(angular)-->
-    <h3 style="text-align: center;font-size: 25px;margin-top: 100px;">4. Filter</h3>
-	<div style="width: 100%; font-size: 2vw;min-height: 1000px;" id="DivFilter" class="background"> 
+    <h3 id="FilterHeader3">4. Filter</h3>
+	<div id="DivFilter" class="background"> 
 		<i class="italian">Search for countries by name! It's a small sample. The big Filter is more complex!(Try reloading the page for background change) </i>
 		<br><br>
 		<input type="text" name="Search" placeholder="Search..."  id="FSearch" minlength="1" maxlength="20">
@@ -145,7 +141,9 @@
 		</div>
 	</div>
 
-	<!--NEWS (Reactet igenyel)-->
+
+
+	<!--NEWS (Reactet igenyel(Demands react!))-->
 	<h1 style="text-align: center;font-size: 60px" id="News">III. News</h1>
 
 	<script type="text/javascript" src="AngControll.js"></script>
