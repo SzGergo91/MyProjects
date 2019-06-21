@@ -526,6 +526,7 @@ $(document).ready(()=>{
 
 
 		//1. Calculator
+			//A) Settings
 			for(let i=0;i<document.getElementsByClassName("calculator").length;i++)
 			{
 				  let a=window.getComputedStyle(document.getElementsByClassName("calculator")[i]).getPropertyValue('top');
@@ -545,9 +546,7 @@ $(document).ready(()=>{
 			}
 			
 
-			//A) Settings	
-
-
+				
 
 			//B) The 0 on the calculator!
 			$('#ACButton').on('click',()=>{
@@ -602,8 +601,14 @@ $(document).ready(()=>{
 
 
 
+
+
+
 		//2. Time Converter!
-		//We start the labels first!
+
+			
+
+			//A I start the labels first!
 		setInterval(function(){
 
 			if($globalbool1){
@@ -660,10 +665,46 @@ $(document).ready(()=>{
 			$('#TimeConverterDiv').children().show();
 		})
 
-		$('#TCAction').on('click',()=>{
-			$('#TimeConverterDiv').children().hide();
-		})
 
+
+		//3. Universe 
+			//A) Setting the sizes!
+			if(($globalwidth>=481) && ($globalwidth<=767)){
+				//
+				if(($globalwidth>=481) && ($globalwidth<=624))
+				{
+					$('#UniverseTemperatureText').css({
+						top: `${24+(screen.width-481)*0.014}vw`,
+					})
+					$('#UniverseSunSun').css({
+						top: `${625.5+(screen.width-481)*0.014}vw`,
+					})
+					$('#UniverseTemperature').css({
+						top: `${28+(screen.width-481)*0.014}vw`,
+						left: `${40+(screen.width-481)*0.0021}vw`
+					})
+				}
+				else{
+					$('#UniverseTemperatureText').css({
+						top: `${26+(screen.width-624)*0.007}vw`,
+					})
+					$('#UniverseSunSun').css({
+						top: `${627.5+(screen.width-624)*0.007}vw`,
+					})
+					$('#UniverseTemperature').css({
+						top: `${30+(screen.width-624)*0.007}vw`,
+						left: `${40.3+(screen.width-624)*0.0021}vw`
+					})
+				}
+				
+			}
+			else {
+				if(($globalwidth>=768) && ($globalwidth<=1024)){
+					$('#UniverseTemperature').css({
+						top: `${17+(screen.width-768)*0.0039}vw`
+					})
+				}
+			}
 
 
 
@@ -672,6 +713,7 @@ $(document).ready(()=>{
 			background: `url('${$globalbgimg[Math.floor(Math.random()*3)]}') center fixed`,
 			backgroundSize: 'cover',
 		})
+
 		$('#FSearch').on('input',()=>{
 			let elements=document.getElementsByClassName('frame');
 			if($('#FSearch').val().length!=0)
@@ -679,7 +721,8 @@ $(document).ready(()=>{
 				for(let i=0;i<elements.length;i++)
 				{
 					let CountryNames=elements[i].getElementsByTagName('p')[0].innerHTML.slice(1,elements[i].getElementsByTagName('p')[0].innerHTML.length-1);
-					let InputCapitalize=$('#FSearch').val().charAt(0).toUpperCase()+$('#FSearch').val().slice(1);
+					let Lowercase=$('#FSearch').val().toLowerCase();
+					let InputCapitalize=Lowercase.charAt(0).toUpperCase()+Lowercase.slice(1);
 					if(CountryNames.startsWith(InputCapitalize)){
 							elements[i].style.display="inline-block";
 					}
