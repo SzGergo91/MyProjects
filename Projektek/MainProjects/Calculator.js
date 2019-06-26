@@ -1,373 +1,436 @@
-let $globalStepper="";
+//Zoom variables for buttons!
+const $globalZoomWidth=window.getComputedStyle(document.getElementsByClassName("buttons")[0]).getPropertyValue('width');
+const $globalZoomPaddingBottom=window.getComputedStyle(document.getElementsByClassName("buttons")[0]).getPropertyValue('padding-bottom');
+const $globalZoomTop=window.getComputedStyle(document.getElementsByClassName("buttons")[0]).getPropertyValue('top');
+const $globalZoomLeft=window.getComputedStyle(document.getElementsByClassName("buttons")[0]).getPropertyValue('left');
+let $globalZoomNumberValues={
+	ZoomWidth: 0,
+	ZoomPaddingBottom: 0,
+	ZoomTop: 0,
+	ZoomLeft: 0
+};
+let $globalZoomButtonAc={
+	AcWidth: 0,
+	AcTop: 0,
+	AcLeft: 0,
+};
+
+//Other Variable
+const $globalWidth=screen.width;
+
+
+//Calculator Variables
+let $globalInputStepper="";
 let $globalInputValue="";
-let $globalResult=0;
-let $globalOperators=false;
+let $globalOperatorCorrectness=true;
+let $globalDotOperatorTimes=true;
+let $globalArrayItems=[];
+let $globalHelperStrings="";
+let $globalOperatorPriority=0;
 
-let $globalContainer=[];
-let $globalpart1="";
-let $globalpart2="";
-let $globaleredmeny=0;
-let $globalB="";
-let $globalA=[];
 
+
+
+//Helper functions!
+const transform=string=>{
+		string=string.slice(0,string.length-2);
+		string=Number(string)*100/screen.width;
+		return string;
+}
+
+
+
+
+//The Main things!
 $(document).ready(()=>{
+
+	$globalZoomNumberValues.ZoomWidth=transform($globalZoomWidth);
+	$globalZoomNumberValues.ZoomPaddingBottom=transform($globalZoomPaddingBottom);
+	$globalZoomNumberValues.ZoomTop=transform($globalZoomTop);
+	$globalZoomNumberValues.ZoomLeft=transform($globalZoomLeft);
+
+
+
+	//A.Settings
+	if(($globalWidth>=320) && ($globalWidth<=480)){
+		$('#Ac').css({
+			left: `${46.5-(screen.width-320)*0.0043}vw`
+		})
+		if(($globalWidth>=320) && ($globalWidth<400)){
+			$('#CalculatorBrokenNeighbour').css({
+				backgroundPosition: `25vw ${170-(screen.width-320)*0.425}vw`
+			})
+		}
+		else{
+			$('#CalculatorBrokenNeighbour').css({
+				backgroundPosition: `25vw ${136-(screen.width-400)*0.375}vw`
+			})
+		}
+	}
+
+
+	//481px-767px
+	if(($globalWidth>=481) && ($globalWidth<=767)){
+		$('#CalculatorContainerDiv').css({
+			height: `${81-(screen.width-481)*0.021}vw`
+		});
+			if(($globalWidth>=481) && ($globalWidth<624)){
+				$('#Ac').css({
+					left: `${40-(screen.width-481)*0.0035}vw`
+				})
+			}
+			else
+			{
+				$('#Ac').css({
+					left: `${39.5-(screen.width-624)*0.0021}vw`
+				})
+			}
+	}
+
+	$globalZoomButtonAc.AcWidth=transform(window.getComputedStyle(document.getElementById('Ac')).getPropertyValue('width'));
+	$globalZoomButtonAc.AcTop=transform(window.getComputedStyle(document.getElementById('Ac')).getPropertyValue('top'));
+	$globalZoomButtonAc.AcLeft=transform(window.getComputedStyle(document.getElementById('Ac')).getPropertyValue('left'));
+
+
+	//B.Controll Buttons
 	$('.buttons').on('mousedown',event=>{
 		$(event.currentTarget).css({
-			width: "96px",
-			paddingBottom: "106px",
-			top: "-18px",
-			left: "-3px",
+			width: `${$globalZoomNumberValues.ZoomWidth*1.0606}vw`,
+			paddingBottom: `${$globalZoomNumberValues.ZoomPaddingBottom*1.0601}vw`,
+			top: `${$globalZoomNumberValues.ZoomTop*1.1909}vw`,
+			left: `${$globalZoomNumberValues.ZoomLeft*(-2.2)}vw`,
 			backgroundColor: "black",
 			color: "white",
 		})
 
+	}).on('mouseleave',event=>{
+		let a=$(event.currentTarget).html();
+		if(a === "="){
+			$(event.currentTarget).css({
+			width: `${$globalZoomNumberValues.ZoomWidth}vw`,
+			paddingBottom: `${$globalZoomNumberValues.ZoomPaddingBottom}vw`,
+			top: `${$globalZoomNumberValues.ZoomTop}vw`,
+			left: `${$globalZoomNumberValues.ZoomLeft}vw`,
+			backgroundColor: "orange",
+			color: "white",
+		});
+		}
+		else
+		{
+		$(event.currentTarget).css({
+			width: `${$globalZoomNumberValues.ZoomWidth}vw`,
+			paddingBottom: `${$globalZoomNumberValues.ZoomPaddingBottom}vw`,
+			top: `${$globalZoomNumberValues.ZoomTop}vw`,
+			left: `${$globalZoomNumberValues.ZoomLeft}vw`,
+			backgroundColor: "white",
+			color: "black",
+		});
+		}
 	})
+
 	$('.buttons').on('mouseup',event=>{
 		$(event.currentTarget).css({
-			width: "90px",
-			paddingBottom: "100px",
-			top: "-15px",
-			left: "0px",
+			width: `${$globalZoomNumberValues.ZoomWidth}vw`,
+			paddingBottom: `${$globalZoomNumberValues.ZoomPaddingBottom}vw`,
+			top: `${$globalZoomNumberValues.ZoomTop}vw`,
+			left: `${$globalZoomNumberValues.ZoomLeft}vw`,
 			backgroundColor: "white",
 			color: "black",
 		})
+
 	$('#Equal').on('mouseup',()=>{
 		$('#Equal').css({
 			backgroundColor :"orange",
 			color: "white",
 		})
+	})	
 	})
-		
-	})
+
+
 	$('#Ac').on('mousedown',()=>{
 		$('#Ac').css({
-			width: "106px",
+			width: `${$globalZoomButtonAc.AcWidth*1.0601}vw`,
 			backgroundColor :"black",
 			color: "white",
-			top:"851px",
-			left:"527px",
+			top:`${$globalZoomButtonAc.AcTop*0.997}vw`,
+			left:`${$globalZoomButtonAc.AcLeft*0.995}vw`,
 		})
-	})
-	$('#Ac').on('mouseup',()=>{
+	}).on('mouseleave',()=>{
 		$('#Ac').css({
-			width: "100px",
+			width: `${$globalZoomButtonAc.AcWidth}vw`,
 			backgroundColor :"red",
 			color: "white",
-			top:"854px",
-			left:"530px",
+			top:`${$globalZoomButtonAc.AcTop}vw`,
+			left:`${$globalZoomButtonAc.AcLeft}vw`,
 		})
 	})
 
-		//Set the Buttons 
-	$('#0').on('click',()=>{
-		$globalInputValue="0";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=false;
-	})
-	$('#1').on('click',()=>{
-		$globalInputValue="1";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=false;
-	})
-	$('#2').on('click',()=>{
-		$globalInputValue="2";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=false;
-	})
-	$('#3').on('click',()=>{
-		$globalInputValue="3";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=false;
-	})
-	$('#4').on('click',()=>{
-		$globalInputValue="4";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=false;
-	})
-	$('#5').on('click',()=>{
-		$globalInputValue="5";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=false;
-	})
-	$('#6').on('click',()=>{
-		$globalInputValue="6";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=false;
-	})
-	$('#7').on('click',()=>{
-		$globalInputValue="7";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=false;
-	})
-	$('#8').on('click',()=>{
-		$globalInputValue="8";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=false;
-	})
-	$('#9').on('click',()=>{
-		$globalInputValue="9";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=false;
+	$('#Ac').on('mouseup',()=>{
+		$('#Ac').css({
+			width: `${$globalZoomButtonAc.AcWidth}vw`,
+			backgroundColor :"red",
+			color: "white",
+			top:`${$globalZoomButtonAc.AcTop}vw`,
+			left:`${$globalZoomButtonAc.AcLeft}vw`,
+		})
 	})
 
-	//Setting the Operators
+
+
+	//C. The control of buttons!
+		//1.Numbers!
+	$('#C0').on('click',()=>{
+		$globalInputStepper="0";
+		$globalInputValue+=$globalInputStepper;
+		$('#Input').val($globalInputValue);
+		$globalInputStepper="";
+		$globalOperatorCorrectness=true;
+	})
+	$('#C1').on('click',()=>{
+		$globalInputStepper="1";
+		$globalInputValue+=$globalInputStepper;
+		$('#Input').val($globalInputValue);
+		$globalInputStepper="";
+		$globalOperatorCorrectness=true;
+	})
+	$('#C2').on('click',()=>{
+		$globalInputStepper="2";
+		$globalInputValue+=$globalInputStepper;
+		$('#Input').val($globalInputValue);
+		$globalInputStepper="";
+		$globalOperatorCorrectness=true;
+	})
+	$('#C3').on('click',()=>{
+		$globalInputStepper="3";
+		$globalInputValue+=$globalInputStepper;
+		$('#Input').val($globalInputValue);
+		$globalInputStepper="";
+		$globalOperatorCorrectness=true;
+	})
+	$('#C4').on('click',()=>{
+		$globalInputStepper="4";
+		$globalInputValue+=$globalInputStepper;
+		$('#Input').val($globalInputValue);
+		$globalInputStepper="";
+		$globalOperatorCorrectness=true;
+	})
+	$('#C5').on('click',()=>{
+		$globalInputStepper="5";
+		$globalInputValue+=$globalInputStepper;
+		$('#Input').val($globalInputValue);
+		$globalInputStepper="";
+		$globalOperatorCorrectness=true;
+	})
+	$('#C6').on('click',()=>{
+		$globalInputStepper="6";
+		$globalInputValue+=$globalInputStepper;
+		$('#Input').val($globalInputValue);
+		$globalInputStepper="";
+		$globalOperatorCorrectness=true;
+	})
+	$('#C7').on('click',()=>{
+		$globalInputStepper="7";
+		$globalInputValue+=$globalInputStepper;
+		$('#Input').val($globalInputValue);
+		$globalInputStepper="";
+		$globalOperatorCorrectness=true;
+	})
+	$('#C8').on('click',()=>{
+		$globalInputStepper="8";
+		$globalInputValue+=$globalInputStepper;
+		$('#Input').val($globalInputValue);
+		$globalInputStepper="";
+		$globalOperatorCorrectness=true;
+	})
+	$('#C9').on('click',()=>{
+		$globalInputStepper="9";
+		$globalInputValue+=$globalInputStepper;
+		$('#Input').val($globalInputValue);
+		$globalInputStepper="";
+		$globalOperatorCorrectness=true;
+	})
+
+
+	//Operators
+	$('#dot').on('click',()=>{
+		if (($globalOperatorCorrectness) && ($globalDotOperatorTimes))
+		{
+			$globalInputStepper=".";
+			$globalInputValue+=$globalInputStepper;
+			$('#Input').val($globalInputValue);
+			$globalInputStepper="";
+			$globalOperatorCorrectness=false;
+			$globalDotOperatorTimes=false;
+		}
+	})
+
 	$('#plus').on('click',()=>{
-		if(!$globalOperators)
+		if ($globalOperatorCorrectness)
 		{
-		$globalInputValue="+";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=true;
+			$globalInputStepper="+";
+			$globalInputValue+=$globalInputStepper;
+			$('#Input').val($globalInputValue);
+			$globalInputStepper="";
+			$globalOperatorCorrectness=false;
+			$globalDotOperatorTimes=true;
 		}
 	})
-    $('#minus').on('click',()=>{
-    	if(!$globalOperators)
-    	{
-		$globalInputValue="-";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=true;
+
+	$('#minus').on('click',()=>{
+		if ($globalOperatorCorrectness)
+		{
+			$globalInputStepper="-";
+			$globalInputValue+=$globalInputStepper;
+			$('#Input').val($globalInputValue);
+			$globalInputStepper="";
+			$globalOperatorCorrectness=false;
+			$globalDotOperatorTimes=true;
 		}
 	})
+
 	$('#times').on('click',()=>{
-		if(!$globalOperators)
+		if ($globalOperatorCorrectness)
 		{
-		$globalInputValue="*";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=true;
+			$globalInputStepper="*";
+			$globalInputValue+=$globalInputStepper;
+			$('#Input').val($globalInputValue);
+			$globalInputStepper="";
+			$globalOperatorCorrectness=false;
+			$globalDotOperatorTimes=true;
 		}
 	})
 	$('#division').on('click',()=>{
-		if(!$globalOperators)
+		if ($globalOperatorCorrectness)
 		{
-		$globalInputValue="/";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=true;
-		}
-	})
-	$('#dot').on('click',()=>{
-		if(!$globalOperators)
-		{
-		$globalInputValue=".";
-		$globalStepper+=$globalInputValue;
-		$('#Input').val($globalStepper);
-		$globalInputValue="";
-		$globalOperators=true;
+			$globalInputStepper="/";
+			$globalInputValue+=$globalInputStepper;
+			$('#Input').val($globalInputValue);
+			$globalInputStepper="";
+			$globalOperatorCorrectness=false;
+			$globalDotOperatorTimes=true;
 		}
 	})
 
-	$('#Ac').on('click',()=>
-	{
-		$globalStepper="";
-		$globalInputValue="";
-		$globalResult=0;
-		$('#Input').val(null);
-		$('#Result').html("0");
-		$globalContainer=[];
-		$globalpart1="";
-		$globalpart2="";
-		$globalB="";
-		$globaleredmeny=0;
-	})
-
-	//Setting the Main
-
-	//Ezt maskepp kell csialni! A karakterekbol allo tombot atkell alakitani u hogy szamok es operatorokbol alljanak!
 	$('#Equal').on('click',()=>{
-		if($globalStepper.length === 0){
-			$('#Result').html("0");
-		}
-		else
-		{
-			for(let i=0;i<$globalStepper.length;i++)
-			{
-				let c=Number($globalStepper.charAt(i));
-				if (isNaN(c))
-				{
-					$globalContainer.push($globalStepper.charAt(i));
-				}
-				else
-				{
-					$globalContainer.push(c);
-				}
+
+		if($globalInputValue.length!==0){
+		//Changeing our array a bit!
+		for(let i=0;i<$globalInputValue.length;i++){
+			let str=$globalInputValue.charAt(i);
+			if((str!="+") && (str!="-") && (str!="*") && (str!="/")){
+				$globalHelperStrings+=str;
 			}
-					//Verifikalni hany . szerepel benne mert nem lehet osszeadni 2 tizedes szamot! 
-					//Ahol van pont atalakitsuk szamma es ugy hasznaljuk!
-					$globalStepper="";
-					$globalInputValue="";
-					$('#Input').val(null);
+			else{
+				//CheckingForHigherRankOperators 
+				if((str==="*") || (str==='/')){
+					$globalOperatorPriority=1;
+				}
 
-
-					//Atalakitsuk a tombot, U hogy csak teliszamok es ertekado operatorok legyenek(pontot kiveszem)
-						for(let i=0;i<$globalContainer.length;i++)
-						{
-							if($globalContainer[i] === ".")
-							{
-								$globalpart2+=".";
-								for(j=i;j<$globalContainer.length;j++)
-								{
-									if(typeof($globalContainer[j]) === "number")
-									{
-										$globalpart2+=$globalContainer[j];
-									}
-									else {
-										break;
-									}
-
-									
-								}
-							}
-							else
-							{
-							//Nem pont akkor hozzaadom
-								if((typeof($globalContainer[i])!== "number") && ($globalContainer[i]!== "."))
-								{
-								//Eddig volt ertek a part2ben!
-								//Azt hozza kell adjam az operatorral egyutt!
-									$globalA.push(Number($globalpart2));
-									$globalA.push($globalContainer[i]);
-									$globalpart2="";
-								}
-								else {
-									$globalpart2+=$globalContainer[i];
-								}
-							}
-
-							
-						}
-						$globalA.push(Number($globalpart2));
-						//Ha vege a muveleteknek akkor kiirjuk Mukodik tokeletesen!
-						$globalContainer=$globalA;
-						$globalA=[];
-						$globalpart2="";
-
-
-					for(let i=0;i<$globalContainer.length;i++)
-					{
-						//Mergeles
-							//console.log($globalContainer[i]);
-						if(typeof($globalContainer[i]) === "number")
-						{
-							//Megkell nezni hogy vege van-e az ertekeknek!if(!$globalContainer[i].length)
-							if(i!==$globalContainer.length-1)
-							{	
-								$globalpart1+=$globalContainer[i];
-							}
-							else
-							{
-								$globalpart1+=$globalContainer[i];
-								switch($globalB)
-								{
-									case "" :
-										$globaleredmeny=Number($globalpart1);
-										break;
-									case "+": 
-							  			$globaleredmeny=Number($globalpart2)+Number($globalpart1);
-							  			break;
-							  		case "-": 
-							  			$globaleredmeny=Number($globalpart2)-Number($globalpart1);
-							  			break;
-							  		case "*": 
-							  			$globaleredmeny=Number($globalpart2)*Number($globalpart1);
-							  			break;
-							  		case "/": 
-							  			$globaleredmeny=Number($globalpart2)/Number($globalpart1);
-							  			break;
-
-								}
-							}
-						}
-
+				$globalArrayItems.push(Number($globalHelperStrings));
+				$globalArrayItems.push(str);
+				$globalHelperStrings="";
 				
-						else
-						{
-							if($globalB ==="")
-							{
-								//If its first operator and last operator!
-								//A Containeres if mukodik!
-								if(i === $globalContainer.length-1)
-								{	
-									$globaleredmeny=Number($globalpart1);	
-								}
-								//Ebbe az else agba nem lep bele!
-								else
-								{
-									$globalB=$globalContainer[i];
-									$globalpart2=$globalpart1;
-									$globalpart1="";
-								}
-								
-							}
-							else
-							  {
-							  	//if its not the first operator but last!
-							  	//Megcsinalni tombbel!
-							  	if(i!==$globalContainer.length-1)
-							  	{
-							  	switch($globalB)
-							  	{
-							  		case "+": 
-							  			$globaleredmeny=Number($globalpart2)+Number($globalpart1);
-							  		break;
-							  		case "-": 
-							  			$globaleredmeny=Number($globalpart2)-Number($globalpart1);
-							  		break;
-							  		case "*": 
-							  			$globaleredmeny=Number($globalpart2)*Number($globalpart1);
-							  		break;
-							  		case "/": 
-							  			$globaleredmeny=Number($globalpart2)/Number($globalpart1);
-							  		break;
-							  	}
+			}
+			if(i === $globalInputValue.length-1)
+			{
+				$globalArrayItems.push(Number($globalHelperStrings));
+				$globalHelperStrings="";
 
-							  		$globalpart2=String($globaleredmeny);
-							  		$globalpart1="";
-							  		$globalB=$globalContainer[i];
-							  	}
-
-
-							}
-						}
-						
-					}
-
-
-					$globalContainer=[];
-					$('#Result').html(`${$globaleredmeny}`);
-					$('#Input').val(`${$globaleredmeny}`);
-					$globalStepper=String($globaleredmeny);
-					$globalpart1="";
-					$globalpart2="";
-					$globalB="";
-					$globalInputValue="";
-					
+			}
 		}
+
+		if($globalOperatorPriority === 1){
+			let i=0;
+			while (i<$globalArrayItems.length)
+			{
+				if(($globalArrayItems[i]=== "*") || ($globalArrayItems[i]==="/"))
+				{
+					switch($globalArrayItems[i]){
+						case "*":
+							let a=$globalArrayItems[i-1]*$globalArrayItems[i+1];
+							$globalArrayItems.splice(i,1,a);
+							$globalArrayItems.splice(i-1,1);
+							$globalArrayItems.splice(i,1);
+							i=-1;			
+							break;
+						case "/":
+							let b=$globalArrayItems[i-1]/$globalArrayItems[i+1];
+							$globalArrayItems.splice(i,1,b);
+							$globalArrayItems.splice(i-1,1);
+							$globalArrayItems.splice(i,1);	
+							i=-1;	
+							break;
+					}
+					i+=1;
+
+				}
+				else{
+					i+=1;
+				}
+				
+			}
+			$globalOperatorPriority=0;		
+		}
+
+		if($globalOperatorPriority===0){
+			let i=0;
+			while (i<$globalArrayItems.length)
+			{
+				if(($globalArrayItems[i]=== "+") || ($globalArrayItems[i]==="-"))
+				{
+					switch($globalArrayItems[i]){
+						case "+":
+							let a=$globalArrayItems[i-1]+$globalArrayItems[i+1];
+							$globalArrayItems.splice(i,1,a);
+							$globalArrayItems.splice(i-1,1);
+							$globalArrayItems.splice(i,1);
+							i=-1;			
+							break;
+						case "-":
+							let b=$globalArrayItems[i-1]-$globalArrayItems[i+1];
+							$globalArrayItems.splice(i,1,b);
+							$globalArrayItems.splice(i-1,1);
+							$globalArrayItems.splice(i,1);	
+							i=-1;	
+							break;
+					}
+					i+=1;
+
+				}
+				else{
+					i+=1;
+				}
+				
+			}
+		}
+
+		if(isNaN($globalArrayItems[0])){
+			$('#Result').html(`${$globalArrayItems[0]}`);
+			$globalInputValue="";
+		}
+		else{	
+			$('#Result').html(`${$globalArrayItems[0]}`);
+			$globalInputValue=`${$globalArrayItems[0]}`;
+		}
+
+
+		$globalOperatorCorrectness=true;
+		$globalDotOperatorTimes=true;
+		$globalArrayItems=[];
+
+	}
+	})
+
+	$('#Ac').on('click',()=>{
+			$globalInputStepper="";
+			$globalInputValue="";
+			$globalOperatorCorrectness=true;
+			$globalDotOperatorTimes=true;
+			$globalArrayItems=[];
+			$globalHelperStrings="";
+			$globalOperatorPriority=0;
+			$('#Result').html('0');
+			$('#Input').val(null);
 	})
 
 
