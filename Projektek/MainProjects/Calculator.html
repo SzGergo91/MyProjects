@@ -3,52 +3,24 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="Menu.css">
+	<link rel="stylesheet" type="text/css" href="Calculator.css">
 	<link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
 			<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-  <style type="text/css">
-  	 p.set {
-  	 	background-color: white;
-  	 	width: 400px;
-  	 	font-size: 3vw;
-  	 	padding-left: 10px;
-  	 	margin-left: 70px;
-  	 	margin-top: 120px;
-  	 	box-shadow: 5px 5px 10px gray;
-  	 	border:1px solid black;
-  	 	border-radius: 10px;
-  	 }
-  	 div.buttons {
-  	 	display: inline-block;
-  	 	margin-right: 10px;
-  	 	position: relative;
-  	 	top: -15px;
-  	 	width: 90px;
-  	 	height: 90px;
-  	 	background-color: white;
-  	 	font-size: 6vw;
-  	 	text-align: center;
-  	 	padding-bottom: 100px;
-  	 	font-weight: bolder;
-  	 	box-shadow: 2px 2px 5px gray, -2px 2px 5px gray, 2px -2px 5px gray, -2px -2px 5px gray;
-  	 	border:1px solid red;
-  	 	cursor: pointer;
-  	 }
-  </style>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head> 
-<body style="background: url('CalculatorBG.gif') center fixed;">
+
+
+<body id="CalculatorBody">
+
+
 	<!--Menu-->
-	  <div style="height: 150px;display: inline-block;position: relative;top: -66px;">
-	  <p class="A1" style="width: 400px">Mini Projects</p>
-	</div>
-	<a style="height: 150px;display: inline-block;width: 200px;margin-left: 50px;background-image:url('Home.png');background-repeat: no-repeat;background-size: 200px 150px;" href="file:///C:/GITHUB/MyProjects/Projektek/Main.html" target="_blank">
-	</a>
-	<a style="display: inline-block; font-family:'Macondo Swash Caps', cursive;font-size: 3vw;position: relative;top:-80px;margin-left: 70px;" class="aback">Contacts 
-	</a>
-	<a style="display: inline-block; font-family:'Macondo Swash Caps', cursive;font-size: 3vw;position: relative;top:-80px;margin-left: 70px;" class="aback" id="bgimg1">My Projects
-	</a>
+	<p class="A1">Mini Projects</p>
+	<a id="MenuHome" href="file:///C:/GITHUB/MyProjects/Projektek/Main.html" target="_blank"></a>
+	<a id="MenuContacts" class="aback">Contacts</a>
+	<a class="aback" id="bgimg1">My Projects</a>
 	<ul class="A2" id="tartalom">
 	  <li>TimeConverter</li>
 	  <li>Universe</li>
@@ -58,34 +30,33 @@
 	</ul>
 
 
+	<!--Calculator HTML implementation!-->
 	<div>
-		<div style="display: inline-block;width: 45%;max-height: 800px;background-color:white;border-radius: 15px;margin-left: 10px;position: absolute;left: 25px;box-shadow: 8px 8px 20px black, -8px 8px 20px black, 8px -8px 20px black, -8px -8px 20px black; ">
-			<input type="text" name="Number1" max="999999999" style="position: relative;top: 100px;left: 60px; padding:20px;font-size: 2vw;font-weight: 900;border-radius: 10px;outline: none;box-shadow: 5px 5px 10px gray" disabled id="Input">
-		  <p class="set" id="Result">Result</p>
-		  <div class="buttons" style="margin-left: 70px;" id="7">7</div>
-		  <div class="buttons" id="8">8</div>
-		  <div class="buttons" id="9">9</div>
+		<div id="CalculatorContainerDiv">
+		  <input type="text" name="Number1" max="999999999" disabled id="Input" style="overflow-x: auto;">
+		  <p id="Result" style="overflow-x: auto;">Result</p>
+		  <div class="buttons" id="C7">7</div>
+		  <div class="buttons" id="C8">8</div>
+		  <div class="buttons" id="C9">9</div>
 		  <div class="buttons" id="division">/</div>
 		  <br><br>
-		  <div class="buttons" style="margin-left: 70px;" id="4">4</div>
-		  <div class="buttons" id="5">5</div>
-		  <div class="buttons" id="6">6</div>
+		  <div class="buttons" id="C4">4</div>
+		  <div class="buttons" id="C5">5</div>
+		  <div class="buttons" id="C6">6</div>
 		  <div class="buttons" id="times">*</div>
 		  <br><br>
-		  <div class="buttons" style="margin-left: 70px;" id="1">1</div>
-		  <div class="buttons" id="2">2</div>
-		  <div class="buttons" id="3">3</div>
+		  <div class="buttons" id="C1">1</div>
+		  <div class="buttons" id="C2">2</div>
+		  <div class="buttons" id="C3">3</div>
 		  <div class="buttons" id="minus">-</div>
 		  <br><br>
-		  <div class="buttons" style="margin-left: 70px;" id="0">0</div>
+		  <div class="buttons" id="C0">0</div>
 		  <div class="buttons" id="dot">.</div>
 		  <div class="buttons" id="plus">+</div>
-		  <div class="buttons" style="background-color: orange;color: white" id="Equal">=</div>
+		  <div class="buttons" id="Equal">=</div>
+		  <div id="Ac">Ac</div>
 		</div>
-		 <div  id="Ac" style="background-color: red;width: 100px;color: white;left: 150px;position: absolute;top:854px;left: 530px;z-index: 4;box-shadow: 2px 2px 5px gray, -2px 2px 5px gray, 2px -2px 5px gray, -2px -2px 5px gray;border:1px solid red;cursor: pointer;  	 	font-size: 6vw;height: 100px;">Ac</div>
-
-		<div style="display: inline-block;width: 53%;height: 750px;background:url('Calculator.png') center fixed;background-repeat: no-repeat;background-size: 53% 550px;background-position: 640px 130px;position: absolute;left: 500px;top: 200px;background-color: transparent;">
-	    </div>
+		<div id="CalculatorBrokenNeighbour"></div>
 	</div>
 	<script type="text/javascript" src="Menu.js"></script>
 	<script type="text/javascript" src="Calculator.js"></script>
