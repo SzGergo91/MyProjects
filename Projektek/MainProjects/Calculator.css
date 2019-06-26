@@ -1,0 +1,530 @@
+
+@media (min-width: 320px) and (max-width: 480px)
+{
+
+    #CalculatorBody{
+        background: url('CalculatorBG.gif') center fixed;
+        background-size: 220vw 220vw;
+        background-repeat: no-repeat;
+      }
+
+   #CalculatorContainerDiv{
+          display: inline-block;
+          width: 70vw;
+          height: 100vw;
+          background-color:white;
+          border-radius: 1.1vw;
+          margin-left: 7vw;
+          position: absolute;
+          left: 4.1vw;
+          top: 60vw;
+          box-shadow: 0.6vw 0.6vw 1.5vw black, -0.6vw 0.6vw 1.5vw black, 0.6vw -0.6vw 1.5vw black, -0.6vw -0.6vw 1.5vw black; 
+     }
+
+
+     #Input{
+          width: 60vw;
+          position: relative;
+          top: 7.32vw;
+          left: 4.4vw;
+          padding:1.46vw;
+          font-size: 5vw;
+          font-weight: 900;
+          border-radius: 1.5vw;
+          outline: none;
+          box-shadow: 0.5px 0.5px 1vw gray;
+     }
+
+
+     #Result{
+          font-size: 5vw;
+          font-weight: 900;
+          background-color: white;
+          width: 57vw;
+          padding-left: 0.732vw;
+          margin-left: 5.12vw;
+          margin-top: 8.78vw;
+          box-shadow: 0.36vw 0.36vw 0.732vw gray;
+          border:0.07vw solid black;
+          border-radius: 0.732vw;
+     }
+
+     .buttons{
+         display: inline-block;
+         margin-right: 1vw;
+         position: relative;
+         top: -1.1vw;
+         left: 0.1vw;
+         width: 10vw;
+         height: 10vw;
+         background-color: white;
+         font-size: 8vw;
+         text-align: center;
+         padding-bottom: 7.32vw;
+         font-weight: bolder;
+         box-shadow: 0.15vw 0.15vw 0.36vw gray, -0.15vw 0.15vw 0.36vw gray, 0.15vw -0.15vw 0.36vw gray, -0.15vw -0.15vw 0.36vw gray;
+         border:0.07vw solid red;
+         cursor: pointer;
+     }
+
+     #C7,#C4,#C1,#C0{
+         margin-left: 10.12vw;
+     }
+
+     #Equal{
+         background-color: orange;
+         color: white;
+     }
+
+     #Ac{
+         background-color: red;
+         width: 11vw;
+         color: white;
+         position: relative;
+         left: 46.5vw;
+         z-index: 4;
+         box-shadow: 0.15vw 0.15vw 0.36vw gray, -0.15vw 0.15vw 0.36vw gray, 0.15vw -0.15vw 0.36vw gray, -0.15vw -0.15vw 0.36vw gray;
+         border:0.07vw solid red;
+         cursor: pointer;
+         font-size: 9vw;
+         height: 11vw;
+     }
+
+     #CalculatorBrokenNeighbour{
+         display: inline-block;
+         width: 50.5vw;
+         height: 38.4vw;
+         background:url('Calculator.png') center fixed;
+         background-repeat: no-repeat;
+         background-size: 50.5vw 38.4vw;
+         background-position: 25vw 170vw;
+         position: absolute;
+         left: 25vw;
+         top: 170vw;
+     }
+}
+
+
+
+
+@media (min-width: 481px) and (max-width: 767px)
+{
+
+    #CalculatorBody{
+        background: url('CalculatorBG.gif') center fixed;
+        background-size: 220vw 220vw;
+        background-repeat: no-repeat;
+      }
+
+   #CalculatorContainerDiv{
+          display: inline-block;
+          width: 60vw;
+          height: 81vw;
+          background-color:white;
+          border-radius: 1.1vw;
+          margin-left: 2vw;
+          position: absolute;
+          left: 1.83vw;
+          top: 30vw;
+          box-shadow: 0.6vw 0.6vw 1.5vw black, -0.6vw 0.6vw 1.5vw black, 0.6vw -0.6vw 1.5vw black, -0.6vw -0.6vw 1.5vw black; 
+     }
+
+
+     #Input{
+          width: 50vw;
+          position: relative;
+          top: 7.32vw;
+          left: 4.4vw;
+          padding:1.46vw;
+          font-size: 3.5vw;
+          font-weight: 900;
+          border-radius: 1.5vw;
+          outline: none;
+          box-shadow: 0.5px 0.5px 1vw gray;
+     }
+
+
+     #Result{
+          font-size: 3.5vw;
+          font-weight: 900;
+          background-color: white;
+          width: 47vw;
+          padding-left: 0.732vw;
+          margin-left: 5.12vw;
+          margin-top: 8.78vw;
+          box-shadow: 0.36vw 0.36vw 0.732vw gray;
+          border:0.07vw solid black;
+          border-radius: 0.732vw;
+     }
+
+     .buttons{
+         display: inline-block;
+         margin-right: 1vw;
+         position: relative;
+         top: -1.1vw;
+         left: 0.1vw;
+         width: 8.5vw;
+         height: 8.5vw;
+         background-color: white;
+         font-size: 7vw;
+         text-align: center;
+         padding-bottom: 7.32vw;
+         font-weight: bolder;
+         box-shadow: 0.15vw 0.15vw 0.36vw gray, -0.15vw 0.15vw 0.36vw gray, 0.15vw -0.15vw 0.36vw gray, -0.15vw -0.15vw 0.36vw gray;
+         border:0.07vw solid red;
+         cursor: pointer;
+     }
+
+     #C7,#C4,#C1,#C0{
+         margin-left: 9vw;
+     }
+
+     #Equal{
+         background-color: orange;
+         color: white;
+     }
+
+     #Ac{
+         background-color: red;
+         width: 9vw;
+         color: white;
+         position: relative;
+         left: 40vw;
+         z-index: 4;
+         box-shadow: 0.15vw 0.15vw 0.36vw gray, -0.15vw 0.15vw 0.36vw gray, 0.15vw -0.15vw 0.36vw gray, -0.15vw -0.15vw 0.36vw gray;
+         border:0.07vw solid red;
+         cursor: pointer;
+         font-size: 7.5vw;
+         height: 9vw;
+     }
+
+     #CalculatorBrokenNeighbour{
+         display: inline-block;
+         width: 30.5vw;
+         height: 50.4vw;
+         background:url('Calculator.png') center fixed;
+         background-repeat: no-repeat;
+         background-size: 30.5vw 28.4vw;
+         background-position: 65vw 45vw;
+         position: absolute;
+         left: 65vw;
+         top: 45vw;
+     }
+}
+
+@media (min-width: 768px) and (max-width: 1024px)
+{
+   #CalculatorBody{
+        background: url('CalculatorBG.gif') center fixed;
+      }
+
+     #CalculatorContainerDiv{
+          display: inline-block;
+          width: 45vw;
+          height: 65vw;
+          background-color:white;
+          border-radius: 1.1vw;
+          margin-left: 0.75vw;
+          position: absolute;
+          left: 1.83vw;
+          box-shadow: 0.6vw 0.6vw 1.5vw black, -0.6vw 0.6vw 1.5vw black, 0.6vw -0.6vw 1.5vw black, -0.6vw -0.6vw 1.5vw black; 
+     }
+
+
+     #Input{
+          width: 36.6vw;
+          position: relative;
+          top: 7.32vw;
+          left: 4.4vw;
+          padding:1.46vw;
+          font-size: 3vw;
+          font-weight: 900;
+          border-radius: 0.732vw;
+          outline: none;
+          box-shadow: 0.37px 0.37px 0.732vw gray;
+     }
+
+
+     #Result{
+          font-size: 3vw;
+          font-weight: 900;
+          background-color: white;
+          width: 29.3vw;
+          padding-left: 0.732vw;
+          margin-left: 5.12vw;
+          margin-top: 8.78vw;
+          box-shadow: 0.36vw 0.36vw 0.732vw gray;
+          border:0.07vw solid black;
+          border-radius: 0.732vw;
+     }
+
+     .buttons{
+         display: inline-block;
+         margin-right: 0.732vw;
+         position: relative;
+         top: -1.1vw;
+         left: 0.1vw;
+         width: 6.6vw;
+         height: 6.6vw;
+         background-color: white;
+         font-size: 6vw;
+         text-align: center;
+         padding-bottom: 7.32vw;
+         font-weight: bolder;
+         box-shadow: 0.15vw 0.15vw 0.36vw gray, -0.15vw 0.15vw 0.36vw gray, 0.15vw -0.15vw 0.36vw gray, -0.15vw -0.15vw 0.36vw gray;
+         border:0.07vw solid red;
+         cursor: pointer;
+     }
+
+     #C7,#C4,#C1,#C0{
+         margin-left: 5.12vw;
+     }
+
+     #Equal{
+         background-color: orange;
+         color: white;
+     }
+
+     #Ac{
+         background-color: red;
+         width: 7.32vw;
+         bottom: 8.5vw;
+         color: white;
+         position: relative;
+         left: 36.3vw;
+         z-index: 4;
+         box-shadow: 0.15vw 0.15vw 0.36vw gray, -0.15vw 0.15vw 0.36vw gray, 0.15vw -0.15vw 0.36vw gray, -0.15vw -0.15vw 0.36vw gray;
+         border:0.07vw solid red;
+         cursor: pointer;
+         font-size: 6vw;
+         height: 7.32vw;
+     }
+
+     #CalculatorBrokenNeighbour{
+         display: inline-block;
+         width: 43vw;
+         height: 55vw;
+         background:url('Calculator.png') center fixed;
+         background-repeat: no-repeat;
+         background-size: 50.5vw 38.4vw;
+         background-position: 47vw 29.7vw;
+         position: absolute;
+         left: 50.6vw;
+         top: 24.6vw;
+         background-color: transparent;
+     }
+
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px)
+{
+   #CalculatorBody{
+        background: url('CalculatorBG.gif') center fixed;
+      }
+
+     #CalculatorContainerDiv{
+          display: inline-block;
+          width: 45vw;
+          height: 60vw;
+          background-color:white;
+          border-radius: 1.1vw;
+          margin-left: 0.75vw;
+          position: absolute;
+          left: 1.83vw;
+          box-shadow: 0.6vw 0.6vw 1.5vw black, -0.6vw 0.6vw 1.5vw black, 0.6vw -0.6vw 1.5vw black, -0.6vw -0.6vw 1.5vw black; 
+     }
+
+
+     #Input{
+          width: 36.6vw;
+          position: relative;
+          top: 7.32vw;
+          left: 4.4vw;
+          padding:1.46vw;
+          font-size: 3vw;
+          font-weight: 900;
+          border-radius: 0.732vw;
+          outline: none;
+          box-shadow: 0.37px 0.37px 0.732vw gray;
+     }
+
+
+     #Result{
+          font-size: 3vw;
+          font-weight: 900;
+          background-color: white;
+          width: 29.3vw;
+          padding-left: 0.732vw;
+          margin-left: 5.12vw;
+          margin-top: 8.78vw;
+          box-shadow: 0.36vw 0.36vw 0.732vw gray;
+          border:0.07vw solid black;
+          border-radius: 0.732vw;
+     }
+
+     .buttons{
+         display: inline-block;
+         margin-right: 0.732vw;
+         position: relative;
+         top: -1.1vw;
+         left: 0.1vw;
+         width: 6.6vw;
+         height: 6.6vw;
+         background-color: white;
+         font-size: 6vw;
+         text-align: center;
+         padding-bottom: 7.32vw;
+         font-weight: bolder;
+         box-shadow: 0.15vw 0.15vw 0.36vw gray, -0.15vw 0.15vw 0.36vw gray, 0.15vw -0.15vw 0.36vw gray, -0.15vw -0.15vw 0.36vw gray;
+         border:0.07vw solid red;
+         cursor: pointer;
+     }
+
+     #C7,#C4,#C1,#C0{
+         margin-left: 5.12vw;
+     }
+
+     #Equal{
+         background-color: orange;
+         color: white;
+     }
+
+     #Ac{
+         background-color: red;
+         width: 7.32vw;
+         bottom: 8.5vw;
+         color: white;
+         position: relative;
+         left: 36.3vw;
+         z-index: 4;
+         box-shadow: 0.15vw 0.15vw 0.36vw gray, -0.15vw 0.15vw 0.36vw gray, 0.15vw -0.15vw 0.36vw gray, -0.15vw -0.15vw 0.36vw gray;
+         border:0.07vw solid red;
+         cursor: pointer;
+         font-size: 6vw;
+         height: 7.32vw;
+     }
+
+     #CalculatorBrokenNeighbour{
+         display: inline-block;
+         width: 43vw;
+         height: 57vw;
+         background:url('Calculator.png') center fixed;
+         background-repeat: no-repeat;
+         background-size: 50.5vw 38.4vw;
+         background-position: 47vw 15vw;
+         position: absolute;
+         left: 50.6vw;
+         top: 15vw;
+         background-color: transparent;
+     }
+
+}
+
+
+@media screen and (min-width: 1281px)
+{
+
+
+     #CalculatorBody{
+        background: url('CalculatorBG.gif') center fixed;
+      }
+
+     #CalculatorContainerDiv{
+          display: inline-block;
+          width: 45%;
+          max-height: 58.6vw;
+          background-color:white;
+          border-radius: 1.1vw;
+          margin-left: 0.75vw;
+          position: absolute;
+          left: 1.83vw;
+          box-shadow: 0.6vw 0.6vw 1.5vw black, -0.6vw 0.6vw 1.5vw black, 0.6vw -0.6vw 1.5vw black, -0.6vw -0.6vw 1.5vw black; 
+     }
+
+
+     #Input{
+          width: 36.6vw;
+          position: relative;
+          top: 7.32vw;
+          left: 4.4vw;
+          padding:1.46vw;
+          font-size: 3vw;
+          font-weight: 900;
+          border-radius: 0.732vw;
+          outline: none;
+          box-shadow: 0.37px 0.37px 0.732vw gray;
+     }
+
+
+     #Result{
+          font-size: 3vw;
+          font-weight: 900;
+          background-color: white;
+          width: 29.3vw;
+          padding-left: 0.732vw;
+          margin-left: 5.12vw;
+          margin-top: 8.78vw;
+          box-shadow: 0.36vw 0.36vw 0.732vw gray;
+          border:0.07vw solid black;
+          border-radius: 0.732vw;
+     }
+
+     .buttons{
+         display: inline-block;
+         margin-right: 0.732vw;
+         position: relative;
+         top: -1.1vw;
+         left: 0.1vw;
+         width: 6.6vw;
+         height: 6.6vw;
+         background-color: white;
+         font-size: 6vw;
+         text-align: center;
+         padding-bottom: 7.32vw;
+         font-weight: bolder;
+         box-shadow: 0.15vw 0.15vw 0.36vw gray, -0.15vw 0.15vw 0.36vw gray, 0.15vw -0.15vw 0.36vw gray, -0.15vw -0.15vw 0.36vw gray;
+         border:0.07vw solid red;
+         cursor: pointer;
+     }
+
+     #C7,#C4,#C1,#C0{
+         margin-left: 5.12vw;
+     }
+
+     #Equal{
+         background-color: orange;
+         color: white;
+     }
+
+     #Ac{
+         background-color: red;
+         width: 7.32vw;
+         bottom: 8.5vw;
+         color: white;
+         position: relative;
+         left: 36.3vw;
+         z-index: 4;
+         box-shadow: 0.15vw 0.15vw 0.36vw gray, -0.15vw 0.15vw 0.36vw gray, 0.15vw -0.15vw 0.36vw gray, -0.15vw -0.15vw 0.36vw gray;
+         border:0.07vw solid red;
+         cursor: pointer;
+         font-size: 6vw;
+         height: 7.32vw;
+     }
+
+     #CalculatorBrokenNeighbour{
+         display: inline-block;
+         width: 33vw;
+         height: 62vw;
+         background:url('Calculator.png') center fixed;
+         background-repeat: no-repeat;
+         background-size: 50.5vw 38.4vw;
+         background-position: 47vw 9.7vw;
+         position: absolute;
+         left: 56.6vw;
+         top: 14.6vw;
+         background-color: transparent;
+     }
+
+
+}
