@@ -4,65 +4,33 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="Menu.css">
 	<link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="TimeConverter.css">
 			<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <style type="text/css">
-  	label {
-  		font-size: 5vw;
-  		margin-left: 20px;
-  		color: red;
-  		position: relative;
-  		top: -50px;
-  	}
-  	p.values {
-  		width: 400px;
-  		background-color: gray;
-  		display: inline-block;
-  		box-shadow: 5px 5px 10px black;
-  		border-radius: 10%;
-  		font-size: 3vw;
-  		padding-left: 20px;
-  		overflow-x: auto;
-  	}
-  	div.buttons {
-  		display: inline-block;
-  		margin-right: 3px;
-  		margin-top: 3px;
-  		padding-top: 25px;
-  		font-size: 3vw;
-  		font-weight: 900;
-  		width: 200px;
-  		height: 100px;
-  		text-align: center;
-  		background-color: green;
-  		box-shadow: 2px 2px 5px white,0px -2px 5px white,-2px 0px 5px white,-2px -2px 5px white;
-  		cursor: pointer;
-  	}
-  </style>
 </head>
-<body style="background: url('TimeConverterBG.gif') center fixed;background-repeat: no-repeat;background-size: auto 900px;">
+<body id="TimeConverterBody">
 	<!--Menu-->
-	  <p class="A1">Mini Projects</p>
-	<a id="MenuHome" href="file:///C:/GITHUB/MyProjects/Projektek/Main.html" target="_blank">
-	</a>
-	<a id="MenuContacts" class="aback">Contacts 
-	</a>
-	<a class="aback" id="bgimg1">My Projects
-	</a>
+	<p class="A1">Mini Projects</p>
+	<a id="MenuHome" href="../Main.html" target="_blank"></a>
+	<a id="MenuContacts" class="aback">Contacts</a>
+	<a class="aback" id="bgimg1">My Projects</a>
 	<ul class="A2" id="tartalom">
-	  <li>Calculator</li>
-	  <li>Universe</li>
+	  <li><a href="Calculator.html" style="color: white">Calculator</a></li>
+	  <li><a href="Universe.html" style="color: white">Universe</a></li>
 	  <li>Filter</li>
 	  <li>SettingsGame</li>
 	  <li>JungleFinder</li>
 	</ul>
 
-	<input type="number" name="in1" style="width: 400px;padding: 20px;outline: none;border-radius: 20%;font-size: 3vw;font-weight: 900;" id="Input">
-	<label for="in1" id="Inputlabel" style="top: 0;">Seconds</label>
+
+	<input type="number" name="in1" id="Input">
+	<label for="in1" id="Inputlabel">Seconds</label>
 	<br><br><br><br><br><br>
+
+	<!--The Values of the Time!-->
 	<p class="values" id="Seconds">0</p>
 	<label for="Seconds">Seconds</label>
 	<br>
@@ -101,9 +69,10 @@
 	<br>
 	<p class="values" id="SobekDays">0</p>
 	<label for="SobekDays">SobekDays</label>
+
 	<!--Controllers-->
-	<p class="values" style="position: absolute;left: 800px;top: 400px;background-color: transparent;box-shadow: none;text-align: center;font-size: 7vw;">Controllers</p>
-	<div style="width: 619px;height: 300px;position: absolute;top: 600px;left: 725px">
+	<p class="values" id="TimeConverterControllersText">Controllers</p>
+	<div id="TimeConverterControllersContainerDiv">
 	  <div class="buttons">Seconds</div>
 	  <div class="buttons">Minutes</div>
 	  <div class="buttons">Hours</div>

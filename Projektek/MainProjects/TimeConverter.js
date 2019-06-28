@@ -1,3 +1,13 @@
+//Zoom Variables for buttons!
+$globalZoomVariables={
+	ZoomWidth: 0,
+	ZoomHeight: 0,
+	ZoomMarginR: 0,
+}
+
+
+
+//Values for the Converter!
 let $globalvalue=0;
 let $globallabel="";
 
@@ -207,6 +217,9 @@ const execute=()=>{
 
 
 $(document).ready(()=>{
+	//Basic settings!
+	$globalZoomVariables.ZoomWidth=window.getComputedStyle(document.getElementsByClassName("buttons")[0]).getPropertyValue('width');
+
 	$('.buttons').on('mousedown',event=>{
 		$(event.currentTarget).css({
 			width: "195px",
