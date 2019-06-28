@@ -1,0 +1,145 @@
+
+@media (min-width: 320px) and (max-width: 480px)
+{
+    #TimeConverterBody{
+      background: url('TimeConverterBG.gif') center fixed;
+      background-repeat: no-repeat;
+      background-size: auto auto;
+    }
+    #Input{
+      width: 29.3vw;
+      padding: 1.46vw;
+      outline: none;
+      border-radius: 20%;
+      font-size: 3vw;
+      font-weight: 900;
+    }
+    #Inputlabel{
+      top: 0;
+    }
+
+    label {
+      font-size: 5vw;
+      margin-left: 1.464vw;
+      color: red;
+      position: relative;
+      top: -3.66vw;
+    }
+    .values {
+      width: 29.3vw;
+      background-color: gray;
+      display: inline-block;
+      box-shadow: 0.37vw 0.37vw 0.732vw black;
+      border-radius: 10%;
+      font-size: 3vw;
+      padding-left: 1.464vw;
+      overflow-x: auto;
+    }
+    .buttons {
+      display: inline-block;
+      margin-right: 0.22vw;
+      margin-top: 0.22vw;
+      padding-top: 1.83vw;
+      font-size: 3vw;
+      font-weight: 900;
+      width: 14.64vw;
+      height: 7.32vw;
+      text-align: center;
+      background-color: green;
+      box-shadow: 0.15vw 0.15vw 0.37vw white, 0vw -0.15vw 0.37vw white, -0.15vw 0vw 0.37vw white,-0.15vw -0.15vw 0.37vw white;
+      cursor: pointer;
+    }
+    #TimeConverterControllersText{
+      position: absolute;
+      left: 56.7vw;
+      top: 27.81vw;
+      width: 36.6vw;
+      background-color: transparent;
+      box-shadow: none;
+      text-align: center;
+      font-size: 7vw;
+    }
+    #TimeConverterControllersContainerDiv{
+      width: 45.4vw;
+      height: 22vw;
+      position: absolute;
+      top: 44vw;
+      left: 53vw;
+    }
+
+  }
+
+
+
+
+
+
+@media screen and (min-width: 1281px)
+{
+    #TimeConverterBody{
+      background: url('TimeConverterBG.gif') center fixed;
+      background-repeat: no-repeat;
+      background-size: auto 66vw;
+    }
+    #Input{
+      width: 29.3vw;
+      padding: 1.46vw;
+      outline: none;
+      border-radius: 20%;
+      font-size: 3vw;
+      font-weight: 900;
+    }
+    #Inputlabel{
+      top: 0;
+    }
+
+    label {
+  		font-size: 5vw;
+  		margin-left: 1.464vw;
+  		color: red;
+  		position: relative;
+  		top: -3.66vw;
+  	}
+  	.values {
+  		width: 29.3vw;
+  		background-color: gray;
+  		display: inline-block;
+  		box-shadow: 0.37vw 0.37vw 0.732vw black;
+  		border-radius: 10%;
+  		font-size: 3vw;
+  		padding-left: 1.464vw;
+  		overflow-x: auto;
+  	}
+  	.buttons {
+  		display: inline-block;
+  		margin-right: 0.22vw;
+  		margin-top: 0.22vw;
+  		padding-top: 1.83vw;
+  		font-size: 3vw;
+  		font-weight: 900;
+  		width: 14.64vw;
+  		height: 7.32vw;
+  		text-align: center;
+  		background-color: green;
+  		box-shadow: 0.15vw 0.15vw 0.37vw white, 0vw -0.15vw 0.37vw white, -0.15vw 0vw 0.37vw white,-0.15vw -0.15vw 0.37vw white;
+  		cursor: pointer;
+  	}
+    #TimeConverterControllersText{
+      position: absolute;
+      left: 56.7vw;
+      top: 27.81vw;
+      width: 36.6vw;
+      background-color: transparent;
+      box-shadow: none;
+      text-align: center;
+      font-size: 7vw;
+    }
+    #TimeConverterControllersContainerDiv{
+      width: 45.4vw;
+      height: 22vw;
+      position: absolute;
+      top: 44vw;
+      left: 53vw;
+    }
+
+  }
