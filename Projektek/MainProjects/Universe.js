@@ -1,3 +1,8 @@
+//Global variables
+let $globalWidth=screen.width;
+
+
+
 $(document).ready(()=>{
 	$('#Andromeda').on('mouseover',()=>{
 		$('#AdrTooltip').fadeIn(1000);
@@ -90,38 +95,180 @@ $(document).ready(()=>{
 	})
 
 
+	$('#SunClick').on('mouseover',()=>{
+		$('#OurSunTooltip').fadeIn(1000);
+	}).on('mouseout',()=>{
+		$('#OurSunTooltip').fadeOut(1000);
+	})
 
-	//Change
+
+
+
+
+
+	//Enter the Universe and Galaxies!
 	$('#Milky-Way').on('click',()=>{
-		$('#MilkyWay').animate({
-			top: "0px",
-			left: "0px",
-			width: "100%",
-			height: "1000px", 
-			borderRadius: "0"
-		},1500,()=>{
-			$('#Universe').css({
+		//few repars
+		if(($globalWidth>=768) && ($globalWidth<=1024))
+		{
+			$('#CG').css({
 				display: "none",
 			})
-			$('#Galaxy').css({
-				display: "block",
+			$('#CGTooltip').css({
+				display: "none",
 			})
-			$('#Info').html('Select our star in the Galaxy!');
-		})
+			$('#M81').css({
+				display: "none",
+			})
+			$('#M81Tooltip').css({
+				display: "none",
+			})
+			$('#M82').css({
+				display: "none",
+			})
+			$('#M82Tooltip').css({
+				display: "none",
+			})
+			$('#CIG').css({
+				display: "none",
+			})
+			$('#CIGTooltip').css({
+				display: "none",
+			})
+			$('#BEG').css({
+				display: "none",
+			})
+			$('#BEGTooltip').css({
+				display: "none",
+			})
+			$('#UYS').css({
+				display: "none",
+			})
+			$('#UYSTooltip').css({
+				display: "none",
+			})
+
+
+		}
+
+		if(($globalWidth>=320) && ($globalWidth<=480))
+		{
+			$('#MilkyWay').animate({
+				top: "0px",
+				left: "0px",
+				width: "100%",
+				height: "160vw", 
+				borderRadius: "0"
+			},1500,()=>{
+				$('#Universe').css({
+					display: "none",
+				})
+				$('#Galaxy').css({
+					display: "block",
+				})
+				$('#Info').html('Select our star in the Galaxy!');
+			})
+		}
+		else
+		{
+			if(($globalWidth>=481) && ($globalWidth<=767))
+			{
+				$('#MilkyWay').animate({
+					top: "0px",
+					left: "0px",
+					width: "100%",
+					height: "113vw", 
+					borderRadius: "0"
+				},1500,()=>{
+					$('#Universe').css({
+						display: "none",
+					})
+					$('#Galaxy').css({
+						display: "block",
+					})
+					$('#Info').html('Select our star in the Galaxy!');
+				})
+
+			}
+			else
+			{
+				$('#MilkyWay').animate({
+					top: "0vw",
+					left: "0vw",
+					width: "100%",
+					height: "73.2vw", 
+					borderRadius: "0"
+				},1500,()=>{
+					$('#Universe').css({
+						display: "none",
+					})
+					$('#Galaxy').css({
+						display: "block",
+					})
+					$('#Info').html('Select our star in the Galaxy!');
+			})
+			}
+		}
+
 	})
 
 	$('#SunClick').on("click",()=>{
-		$('#Sun').animate({
-			top: "150px",
-			left: "0px",
-			width: "50%",
-			height: "700px",
-		},1000,()=>{
-			$('#Info').html('Welcome to our Solar system!(Milky Way)')
-			$('#SolarSystem').fadeIn(1000);
+			//Few repairs!
+			$('#GalacticCentre').css({
+				zIndex: "-1",
+			})
+			$('#WOHG64').css({
+				zIndex: "-1",
+			})
+			$('#Nebula').css({
+				zIndex: "-1",
+			})
+			$('#SunClick').css({
+				zIndex: "-1",
+			})
+			$('#OurSunTooltip').css({
+				zIndex: "-1",
+			})
 
-		})
+		if(($globalWidth>=320) && ($globalWidth<=480))
+		{
+			$('#Sun').animate({
+				top: "5vw",
+				left: "25vw",
+				width: "53%",
+				height: "55vw",
+			},1000,()=>{
+				$('#Info').html('Welcome to our Solar system!(Milky Way)')
+				$('#SolarSystem').fadeIn(1000);
+			})
+		}
+		else
+		{
+			if(($globalWidth>=481) && ($globalWidth<=767)){
+				$('#Sun').animate({
+					top: "22vw",
+					left: "0vw",
+					width: "51%",
+					height: "53vw",
+				},1000,()=>{
+					$('#Info').html('Welcome to our Solar system!(Milky Way)')
+					$('#SolarSystem').fadeIn(1000);
+				})
+			}
+			else
+			{
+				$('#Sun').animate({
+					top: "11vw",
+					left: "0vw",
+					width: "50%",
+					height: "51.25vw",
+				},1000,()=>{
+					$('#Info').html('Welcome to our Solar system!(Milky Way)')
+					$('#SolarSystem').fadeIn(1000);
+				})
+			}
 
+		}
 		
 	})
 

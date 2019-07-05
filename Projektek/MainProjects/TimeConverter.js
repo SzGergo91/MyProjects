@@ -11,6 +11,11 @@ $globalZoomVariables={
 let $globalvalue=0;
 let $globallabel="";
 
+//functions
+const changeToNumber=str=>{
+	return Number(str.substring(0,str.length-2));
+}
+
 const execute=()=>{
 		switch($globallabel)
 			{
@@ -20,7 +25,7 @@ const execute=()=>{
 					$('#Hours').html(`${$globalvalue/3600}`);
 					$('#Days').html(`${$globalvalue/86400}`);
 					$('#Weeks').html(`${$globalvalue/(86400*7)}`);
-					$('#Months').html(`${$globalvalue/(86400*30)}`);
+					$('#Months').html(`${$globalvalue/(86400*30.4375)}`);
 					$('#SobekSec').html(`${$globalvalue/(86400*105)}`);
 					$('#Years').html(`${$globalvalue/(86400*365.25)}`);
 					$('#Decade').html(`${$globalvalue/(86400*3652.5)}`);
@@ -35,7 +40,7 @@ const execute=()=>{
 					$('#Hours').html(`${$globalvalue/60}`);
 					$('#Days').html(`${$globalvalue/1440}`);
 					$('#Weeks').html(`${$globalvalue/(1440*7)}`);
-					$('#Months').html(`${$globalvalue/(1440*30)}`);
+					$('#Months').html(`${$globalvalue/(1440*30.4375)}`);
 					$('#SobekSec').html(`${$globalvalue/(1440*105)}`);
 					$('#Years').html(`${$globalvalue/(1440*365.25)}`);
 					$('#Decade').html(`${$globalvalue/(1440*3652.5)}`);
@@ -50,7 +55,7 @@ const execute=()=>{
 					$('#Hours').html(`${$globalvalue}`);
 					$('#Days').html(`${$globalvalue/24}`);
 					$('#Weeks').html(`${$globalvalue/(24*7)}`);
-					$('#Months').html(`${$globalvalue/(24*30)}`);
+					$('#Months').html(`${$globalvalue/(24*30.4375)}`);
 					$('#SobekSec').html(`${$globalvalue/(24*105)}`);
 					$('#Years').html(`${$globalvalue/(24*365.25)}`);
 					$('#Decade').html(`${$globalvalue/(24*3652.5)}`);
@@ -65,7 +70,7 @@ const execute=()=>{
 					$('#Hours').html(`${$globalvalue*24}`);
 					$('#Days').html(`${$globalvalue}`);
 					$('#Weeks').html(`${$globalvalue/(7)}`);
-					$('#Months').html(`${$globalvalue/(30)}`);
+					$('#Months').html(`${$globalvalue/(30.4375)}`);
 					$('#SobekSec').html(`${$globalvalue/(105)}`);
 					$('#Years').html(`${$globalvalue/(365.25)}`);
 					$('#Decade').html(`${$globalvalue/(3652.5)}`);
@@ -80,7 +85,7 @@ const execute=()=>{
 					$('#Hours').html(`${$globalvalue*168}`);
 					$('#Days').html(`${$globalvalue*7}`);
 					$('#Weeks').html(`${$globalvalue}`);
-					$('#Months').html(`${$globalvalue/(4.28571428571)}`);
+					$('#Months').html(`${$globalvalue/(4.34821428571)}`);
 					$('#SobekSec').html(`${$globalvalue/(15)}`);
 					$('#Years').html(`${$globalvalue/(52.1785714286)}`);
 					$('#Decade').html(`${$globalvalue/(521.785714286)}`);
@@ -90,19 +95,19 @@ const execute=()=>{
 					$('#SobekDays').html(`${$globalvalue/(86400*15)}`);
 					break;
 				case "Months" :
-					$('#Seconds').html(`${$globalvalue*(86400*30)}`);
-					$('#Minutes').html(`${$globalvalue*(1440*30)}`);
-					$('#Hours').html(`${$globalvalue*720}`);
-					$('#Days').html(`${$globalvalue*30}`);
-					$('#Weeks').html(`${$globalvalue*4.28571428571}`);
+					$('#Seconds').html(`${$globalvalue*(86400*30.4375)}`);
+					$('#Minutes').html(`${$globalvalue*(1440*30.4375)}`);
+					$('#Hours').html(`${$globalvalue*730.5}`);
+					$('#Days').html(`${$globalvalue*30.4375}`);
+					$('#Weeks').html(`${$globalvalue*4.34821428571}`);
 					$('#Months').html(`${$globalvalue}`);
-					$('#SobekSec').html(`${$globalvalue/(3.5)}`);
-					$('#Years').html(`${$globalvalue/(12.175)}`);
-					$('#Decade').html(`${$globalvalue/(121.75)}`);
-					$('#Generation').html(`${$globalvalue/(121.75*2.5)}`);
-					$('#Century').html(`${$globalvalue/(1217.5)}`);
-					$('#Millenium').html(`${$globalvalue/(12175)}`);
-					$('#SobekDays').html(`${$globalvalue/(86400*3.5)}`);
+					$('#SobekSec').html(`${$globalvalue/(3.44969199179)}`);
+					$('#Years').html(`${$globalvalue/(12)}`);
+					$('#Decade').html(`${$globalvalue/(120)}`);
+					$('#Generation').html(`${$globalvalue/(300)}`);
+					$('#Century').html(`${$globalvalue/(1200)}`);
+					$('#Millenium').html(`${$globalvalue/(12000)}`);
+					$('#SobekDays').html(`${$globalvalue/(86400*3.44969199179)}`);
 					break;
 
 				case "SobekSec" :
@@ -111,7 +116,7 @@ const execute=()=>{
 					$('#Hours').html(`${$globalvalue*2520}`);
 					$('#Days').html(`${$globalvalue*105}`);
 					$('#Weeks').html(`${$globalvalue*15}`);
-					$('#Months').html(`${$globalvalue*3.5}`);
+					$('#Months').html(`${$globalvalue*3.44969199179}`);
 					$('#SobekSec').html(`${$globalvalue}`);
 					$('#Years').html(`${$globalvalue/(3.47857142857)}`);
 					$('#Decade').html(`${$globalvalue/(34.7857142857)}`);
@@ -216,15 +221,17 @@ const execute=()=>{
 }
 
 
+
 $(document).ready(()=>{
 	//Basic settings!
-	$globalZoomVariables.ZoomWidth=window.getComputedStyle(document.getElementsByClassName("buttons")[0]).getPropertyValue('width');
-
+$globalZoomVariables.ZoomWidth=window.getComputedStyle(document.getElementsByClassName("buttons")[0]).getPropertyValue('width');
+$globalZoomVariables.ZoomHeight=window.getComputedStyle(document.getElementsByClassName("buttons")[0]).getPropertyValue('height');
+$globalZoomVariables.ZoomMarginR=window.getComputedStyle(document.getElementsByClassName("buttons")[0]).getPropertyValue('margin-right');
 	$('.buttons').on('mousedown',event=>{
 		$(event.currentTarget).css({
-			width: "195px",
-			height: "97.5px",
-			marginRight: "8px",
+			width: `${changeToNumber($globalZoomVariables.ZoomWidth)/screen.width*97.5}vw`,
+			height: `${changeToNumber($globalZoomVariables.ZoomHeight)/screen.width*97.5}vw`,
+			marginRight: `${changeToNumber($globalZoomVariables.ZoomMarginR)/screen.width*266.2}vw`,
 			backgroundColor: "black",
 			color: "white",
 		})
@@ -232,9 +239,9 @@ $(document).ready(()=>{
 	})
 	$('.buttons').on('mouseup',event=>{
 		$(event.currentTarget).css({
-			width: "200px",
-			height: "100px",
-			marginRight: "3px",
+			width: `${changeToNumber($globalZoomVariables.ZoomWidth)/screen.width*100}vw`,
+			height: `${changeToNumber($globalZoomVariables.ZoomHeight)/screen.width*100}vw`,
+			marginRight: `${changeToNumber($globalZoomVariables.ZoomMarginR)/screen.width*100}vw`,
 			backgroundColor: "green",
 			color: "black",
 		})
@@ -243,9 +250,9 @@ $(document).ready(()=>{
 
 	$('.buttons').on('mouseleave',event=>{
 		$(event.currentTarget).css({
-			width: "200px",
-			height: "100px",
-			marginRight: "3px",
+			width: `${changeToNumber($globalZoomVariables.ZoomWidth)/screen.width*100}vw`,
+			height: `${changeToNumber($globalZoomVariables.ZoomHeight)/screen.width*100}vw`,
+			marginRight: `${changeToNumber($globalZoomVariables.ZoomMarginR)/screen.width*100}vw`,
 			backgroundColor: "green",
 			color: "black",
 		})
@@ -261,15 +268,26 @@ $(document).ready(()=>{
 			$globalvalue=$('#Input').val();
 			execute();
 		}
+		else{
+			alert("Input required!");
+		}
+
 		
 	})
 
 	$('#Input').on('keyup',(event)=>{
-		if(event.keyCode === 13){
+		if((event.keyCode === 13)){
+			if($('#Input').val().length!== 0)
+			{
 			$globallabel=$('#Inputlabel').html();
 			$globalvalue=$('#Input').val();
 			execute();
+			}
+			else{
+				alert("Input required!");	
+			}
 		}
+
 	})
 
 

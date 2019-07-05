@@ -91,7 +91,7 @@
      }
 
      #CalculatorBrokenNeighbour{
-         display: inline-block;
+         display: none;
          width: 50.5vw;
          height: 38.4vw;
          background:url('Calculator.png') center fixed;

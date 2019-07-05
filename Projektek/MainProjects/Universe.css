@@ -1,0 +1,2834 @@
+  
+@media (min-width: 320px) and (max-width:  480px){
+
+    #Info {
+      font-family: 'Ranga', cursive;
+      font-size: 5vw;
+      letter-spacing: 0.15vw;
+      color: white;
+    }
+
+    #Universe{
+      background: url('Universe.jpg');
+      background-repeat: no-repeat;
+      height: 160vw;
+    }
+
+   .main {
+      position: absolute;
+      width: 100%;
+      left: 0vw;
+      height: 73.21vw;
+
+    }
+
+    #Galaxy1 {
+      position: absolute;
+      top: 33vw;
+      left:10vw;
+      width: 30vw;
+      height:30vw;
+    }
+
+    #Galaxy2 {
+      position: absolute;
+      top: 22vw;
+      left: 50vw;
+      width: 35vw;
+      height: 35vw;
+    }
+
+    #MilkyWay{
+      position: relative;
+      top:85vw;
+      left:40.26vw;
+      border-radius: 120%;
+      width: 33vw;
+      height: 33vw;
+    }
+
+    #Andromeda{
+      top: 37vw;
+      left: 15vw;
+      width: 21vw;
+      height: 21vw;
+      border-radius: 50%;
+
+    }
+
+    #Cosmos_Redshift{
+      top: 29vw;
+      left: 55vw;
+      width: 27vw;
+      height: 22vw;
+      border-radius: 50%;
+    }
+
+    #Milky-Way{
+      top: 85vw;
+      left: 41vw;
+      width: 32vw;
+      height: 32vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #CRTooltip{
+      font-size: 6vw;
+      top:17vw;
+      right:10.5vw;
+    }
+
+    #AdrTooltip{
+      font-size: 5vw;
+      text-align: center;
+      top:26.5vw;
+      right:57vw;
+
+    }
+
+    #MWTooltip{
+      font-size: 6vw;
+      top:73vw;
+      right:21.5vw;
+    }
+
+
+
+    /*The extras (320px-480px)*/
+    /*No extras at phones!*/
+    #CG,#CGTooltip,#M81,#M81Tooltip,#M82, #M82Tooltip,#CIG,#CIGTooltip,#BEG,#BEGTooltip,#UYS, #UYSTooltip{
+        display: none !important;
+    }
+
+
+
+
+
+    /*Milky Way Galaxy (320px-480px)*/
+    #Galaxy{
+      height: 160vw;
+      background:url('MilkyWay.jpg');
+      background-size: 100% 160vw;
+      background-repeat: no-repeat;
+      display: none;
+    }
+
+    #Sun{
+      position: absolute;
+      top: 69.13vw;
+      left: 75vw;
+      width: 7vw;
+      height: 7vw;
+    }
+
+    #GalacticCentre{
+      color: white;
+      cursor: pointer;
+      width: 15vw;
+      height: 15vw;
+      top: 65vw;
+      left: 44vw;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    #GALCTooltip{
+      top:55vw;
+      left:35vw;
+      font-size: 5vw;
+      z-index: 0;
+    }
+
+    #WOHG64{
+      color: white;
+      cursor: pointer;
+      top: 31vw;
+      left: 21vw;
+      border-radius: 50%;
+      width:7vw;
+      height: 7vw;
+      z-index: 1;
+    }
+
+    #WOHTooltip{
+      top:42.2vw;
+      left:12.5vw;
+      z-index: 0;
+    }
+
+    #Nebula{
+      color: white;
+      cursor: pointer;
+      top:23vw;
+      left: 55vw;
+      border-radius: 50%;
+      width:7vw;
+      height: 7vw;
+      z-index: 1;
+    }
+
+    #NebulaTooltip{
+      top:34.5vw;
+      left:48.5vw;
+      font-size:6vw;
+      z-index: 0;
+    }
+
+    #SunClick{
+      color: white;
+      cursor: pointer;
+      top: 69.13vw;
+      left: 75.5vw;
+      border-radius: 50%;
+      width:7vw;
+      height: 7vw;
+      z-index: 1;
+    }
+
+    #OurSunTooltip{
+      top: 80.5vw;
+      left:69vw;
+      font-size: 5vw;
+      z-index: 0;
+    }
+
+
+
+
+
+    /*The Main Things(320px-480px)*/
+    #SolarSystem{
+      height: 160vw;
+      background:url('Solar System.jpg');
+      background-size: 100% 160vw;
+      background-repeat: no-repeat;display: none;
+    }
+    #SolarSun{
+      position: absolute;
+      top: 5vw;
+      left: 25vw;
+      width: 53%;
+      height: 55vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #Mercury{
+      width: 7.5vw;
+      height: 7.5vw;
+      position: absolute;
+      left: 48vw;
+      top: 58vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #MercuryLabel{
+      color: white;
+      position: absolute;
+      left: 30vw;
+      top:58vw;
+      font-size: 5vw;
+    }
+
+    #Venus{
+      width: 11vw;
+      height: 11vw;
+      position: absolute;
+      left: 46.5vw;
+      top: 64vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #VenusLabel{
+      color: white;
+      position: absolute;
+      left: 33vw;
+      top:66vw;
+      font-size: 5vw;
+    }
+
+    #Earth{
+      width: 11.3vw;
+      height: 11.3vw;
+      position: absolute;
+      left: 46vw;
+      top: 74vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #EarthLabel{
+      color: white;
+      position: absolute;
+      left: 34vw;
+      top:76vw;
+      font-size: 5vw;
+    }
+
+    #Mars{
+      width: 11vw;
+      height: 11vw;
+      position: absolute;
+      left: 46.5vw;
+      top: 86vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #MarsLabel{
+      color: white;
+      position: absolute;
+      left: 34vw;
+      top:88vw;
+      font-size: 5vw;
+    }
+
+    #Jupiter{
+      width: 18.25vw;
+      height: 18.25vw;
+      position: absolute;
+      left: 42.5vw;
+      top: 97.5vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #JupiterLabel{
+      color: white;
+      position: absolute;
+      left: 28vw;
+      top:102vw;
+      font-size: 5vw;
+    }
+
+    #Saturn{
+      width: 17.4vw;
+      height: 13.75vw;
+      position: absolute;
+      left: 43vw;
+      top: 113vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #SaturnLabel{
+      color: white;
+      position: absolute;
+      left:30vw;
+      top:117vw;
+      font-size: 5vw;
+    }
+
+    #Uranus{
+      width: 15.5vw;
+      height: 15.5vw;
+      position: absolute;
+      left: 44vw;
+      top: 123vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #UranusLabel{
+      color: white;
+      position: absolute;
+      left: 30vw;
+      top:127vw;
+      font-size: 5vw;
+    }
+
+    #Neptune{
+      width: 15.35vw;
+      height: 15.35vw;
+      position: absolute;
+      left: 44vw;
+      top: 136vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #NeptuneLabel{
+      color: white;
+      position: absolute;
+      left: 26vw;
+      top:140vw;
+      font-size: 5vw;
+    }
+
+    #Pluto{
+      width: 7.4vw;
+      height: 7.4vw;
+      position: absolute;
+      left: 47.5vw;
+      top: 151vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #PlutoLabel{
+      color: white;
+      position: absolute;
+      left: 34vw;
+      top:152vw;
+      font-size: 5vw;
+    }
+
+
+
+
+
+    /*The Information items!(320px-480px)*/
+    #Information{
+      width: 80%;
+      height: 100vw;
+      background-color: black;
+      color: white;
+      font-size: 5vw;
+      position: absolute;
+      top: 36.5%;
+      left: 10%;
+      box-shadow: 0.3vw 0.3vw 0.73vw gray, -0.3vw 0vw 0.73vw gray, 0vw -0.3vw 0.73vw gray, -0.3vw -0.3vw 0.73vw gray;
+      word-wrap: break-word;
+      overflow: auto;
+      display: none;
+    }
+
+    #Titles{
+      text-align: center;
+    }
+
+    #Basic1,#Basic2,#Basic3{
+      font-size: 5vw;
+    }
+    #BackButton{
+      font-size: 8vw;
+      position: absolute;
+      top: 3vw;
+      left:60vw;
+      color: blue;
+      cursor: pointer;
+    }
+
+
+
+
+
+    /*The universal classes (320px-480px)*/
+    .ref {
+      position: absolute;
+      width: 5.12vw;
+      height: 5.12vw;
+      display: inline-block;
+      background-color: transparent;
+    }
+    /*Tooltips*/
+    .tooltiptext {
+      font-size: 5vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1;
+      display: none;
+
+      
+    }
+    .tooltiptext::after{
+      content: "";
+      position: absolute;
+      top: 98.5%;
+      left: 42%;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+      margin-left: -0.36vw;
+      border-width: 4.83vw;
+    }
+
+
+    .tooltiptextUp {
+      font-size: 5vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+  .tooltiptextUp::after{
+      content: "";
+      position: absolute;
+      bottom:95%;
+      left: 35%;
+      border-style: solid;
+      border-color: transparent transparent black transparent;
+      margin-left: -0.36vw;
+      border-width: 4.5vw;
+    }
+    .tooltiptextLeft {
+      font-size: 5vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+    .tooltiptextRight {
+      font-size: 5vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+
+    .tooltiptextLeft::after{
+      content: "";
+      position: absolute;
+      top:0;
+      right: 100%;
+      border-style: solid;
+      border-color: transparent black transparent transparent;
+      margin-left: -0.36vw;
+      border-width: 4.31vw;
+    }
+
+    .tooltiptextRight::after{
+      content: "";
+      position: absolute;
+      bottom:0;
+      left: 100%;
+      border-style: solid;
+      border-color: transparent transparent transparent black;
+      margin-left: 0.1vw;
+      border-width: 4.31vw;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 767px)
+{
+    #Info {
+      font-family: 'Ranga', cursive;
+      font-size: 4vw;
+      letter-spacing: 0.15vw;
+      color: white;
+    }
+
+    #Universe{
+      background: url('Universe.jpg');
+      background-repeat: no-repeat;
+      height: 113vw;
+    }
+
+   .main {
+      position: absolute;
+      width: 100%;
+      left: 0vw;
+      height: 73.21vw;
+
+    }
+
+    #Galaxy1 {
+      position: absolute;
+      top: 33vw;
+      left: 18.3vw;
+      width: 18vw;
+      height: 18vw;
+    }
+
+    #Galaxy2 {
+      position: absolute;
+      top: 22vw;
+      left: 62.22vw;
+      width: 20vw;
+      height: 20vw;
+    }
+
+    #MilkyWay{
+      position: relative;
+      top:55vw;
+      left:40.26vw;
+      border-radius: 120%;
+      width: 23vw;
+      height: 23vw;
+    }
+
+    #Andromeda{
+      top: 33.9vw;
+      left: 19.55vw;
+      width: 18vw;
+      height: 18vw;
+      border-radius: 50%;
+
+    }
+    #Cosmos_Redshift{
+      top: 23.06vw;
+      left: 62.6vw;
+      width: 20vw;
+      height: 20vw;
+      border-radius: 50%;
+    }
+
+    #Milky-Way{
+      top: 55vw;
+      left: 40.26vw;
+      width: 23vw;
+      height: 23vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #CRTooltip{
+      top:17.5vw;
+      right:12vw;
+    }
+
+    #AdrTooltip{
+      top:27vw;
+      right:58vw;
+    }
+
+    #MWTooltip{
+      top:47.5vw;
+      right:33vw;
+    }
+
+
+
+    /*The extras (1281px+)*/
+    #CG{
+      top: 10vw;
+      left: 53.07vw;
+      width: 10.12vw;
+      height: 6.6vw;
+      border-radius: 50%;
+      transform: rotate(120deg);
+      cursor: pointer;
+    }
+
+    #CGTooltip{
+      top:20.5vw;
+      left:42vw;
+    }
+
+    #M81{
+      top: 8vw;
+      left: 88vw;
+      width: 11vw;
+      height: 6.5vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #M81Tooltip{
+      top:1vw;
+      left:82vw;
+    }
+
+    #BEG{
+      top: 47vw;
+      left:35vw;
+      width: 7.5vw;
+      height: 7.5vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #BEGTooltip{
+      top:48vw;
+      left:45vw;
+      font-size: 5vw;
+    }
+
+    #M82, #M82Tooltip,#CIG,#CIGTooltip,#UYS,#UYSTooltip{
+      display: none !important;
+    }
+
+
+
+
+
+    /*Milky Way Galaxy (481px-767px)*/
+    #Galaxy{
+      background:url('MilkyWay.jpg');
+      background-size: 100% 113vw;
+      height: 113vw;
+      background-repeat: no-repeat;
+      display: none;
+    }
+
+    #Sun{
+      position: absolute;
+      top: 29.13vw;
+      left: 71vw;
+      width: 5vw;
+      height: 5vw;
+    }
+
+    #GalacticCentre{
+      color: white;
+      cursor: pointer;
+      top: 50vw;
+      width: 9vw;
+      height: 9vw;
+      left: 46.12vw;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    #GALCTooltip{
+      top:42.8vw;
+      left:38vw;
+      z-index: 0;
+    }
+
+    #WOHG64{
+      color: white;
+      cursor: pointer;
+      top: 24vw;
+      left: 22vw;
+      border-radius: 50%;
+      width:5vw;
+      height: 5vw;
+      z-index: 1;
+    }
+
+    #WOHTooltip{
+      top:32vw;
+      left:19vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+    #Nebula{
+      color: white;
+      cursor: pointer;
+      top:14vw;
+      left: 45vw;
+      border-radius: 50%;
+      width:5vw;
+      height: 5vw;
+      z-index: 1;
+    }
+
+    #NebulaTooltip{
+      top:22.5vw;
+      left:41.5vw;
+      z-index: 0;
+    }
+
+    #SunClick{
+      color: white;
+      cursor: pointer;
+      top: 29.13vw;
+      left: 71vw;
+      border-radius: 50%;
+      width:5vw;
+      height: 5vw;
+      z-index: 1;
+    }
+
+    #OurSunTooltip{
+      top: 39vw;
+      left:66.7vw;
+     
+    }
+
+
+
+
+
+    /*The Main Things(481px-767px)*/
+    #SolarSystem{
+      background:url('Solar System.jpg');
+      background-size: 100% 113vw;
+      height: 113vw;
+      background-repeat: no-repeat;display: none;
+    }
+    #SolarSun{
+      position: absolute;
+      top: 22vw;
+      left: 0vw;
+      width: 51%;
+      height: 53vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #Mercury{
+      width: 6vw;
+      height: 6vw;
+      position: absolute;
+      left: 32vw;
+      top: 18vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #MercuryLabel{
+      color: white;
+      position: absolute;
+      left: 30vw;
+      top:15vw;
+      font-size: 3.5vw;
+    }
+
+    #Venus{
+      width: 8.8vw;
+      height: 8.8vw;
+      position: absolute;
+      left: 45vw;
+      top: 15.5vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #VenusLabel{
+      color: white;
+      position: absolute;
+      left: 45vw;
+      top: 12.5vw;
+      font-size: 3.5vw;
+    }
+
+    #Earth{
+      width: 9.1vw;
+      height: 9.1vw;
+      position: absolute;
+      left: 56vw;
+      top: 25vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #EarthLabel{
+      color: white;
+      position: absolute;
+      left: 57vw;
+      top:21.5vw;
+      font-size: 3.5vw;
+    }
+
+    #Mars{
+      width: 8.8vw;
+      height: 8.8vw;
+      position: absolute;
+      left: 65vw;
+      top: 43vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #MarsLabel{
+      color: white;
+      position: absolute;
+      left: 66vw;
+      top:39.5vw;
+      font-size: 3.5vw;
+    }
+
+    #Jupiter{
+      width: 15vw;
+      height: 15vw;
+      position: absolute;
+      left: 68vw;
+      top: 55vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #JupiterLabel{
+      color: white;
+      position: absolute;
+      left: 71vw;
+      top:51.5vw;
+      font-size: 3.5vw;
+    }
+
+    #Saturn{
+      width: 14vw;
+      height: 11vw;
+      position: absolute;
+      left: 60vw;
+      top: 73vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #SaturnLabel{
+      color: white;
+      position: absolute;
+      left:62vw;
+      top:71vw;
+      font-size: 3.5vw;
+    }
+
+    #Uranus{
+      width: 13.2vw;
+      height: 13.2vw;
+      position: absolute;
+      left: 37vw;
+      top: 90vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #UranusLabel{
+      color: white;
+      position: absolute;
+      left: 39vw;
+      top:87vw;
+      font-size: 3.5vw;
+    }
+
+    #Neptune{
+      width: 12.5vw;
+      height: 12.5vw;
+      position: absolute;
+      left: 10vw;
+      top: 98vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #NeptuneLabel{
+      color: white;
+      position: absolute;
+      left: 11vw;
+      top:95vw;
+      font-size: 3.5vw;
+    }
+
+    #Pluto{
+      width: 6vw;
+      height: 6vw;
+      position: absolute;
+      left: 87vw;
+      top: 100vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #PlutoLabel{
+      color: white;
+      position: absolute;
+      left: 86.5vw;
+      top:96vw;
+      font-size: 3.5vw;
+    }
+
+
+
+
+
+    /*The Information items!(481px-767px)*/
+    #Information{
+      width: 50%;
+      height: 70vw;
+      background-color: black;
+      color: white;
+      font-size: 4vw;
+      position: absolute;
+      top: 20%;
+      left: 49.5%;
+      box-shadow: 0.3vw 0.3vw 0.73vw gray, -0.3vw 0vw 0.73vw gray, 0vw -0.3vw 0.73vw gray, -0.3vw -0.3vw 0.73vw gray;
+      word-wrap: break-word;
+      overflow: auto;
+      display: none;
+    }
+
+    #Titles{
+      text-align: center;
+    }
+
+    #Basic1,#Basic2,#Basic3{
+      font-size: 3vw;
+    }
+
+    #BackButton{
+      font-size: 4vw;
+      position: absolute;
+      top: 3vw;
+      left:40.26vw;
+      color: blue;
+      cursor: pointer;
+    }
+
+
+
+
+
+    /*The universal classes (481px-767px)*/
+    .ref {
+      position: absolute;
+      width: 5.12vw;
+      height: 5.12vw;
+      display: inline-block;
+      background-color: transparent;
+    }
+
+
+    /*Tooltips*/
+    .tooltiptext {
+      font-size: 4vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1;
+      display: none;
+
+      
+    }
+    .tooltiptext::after{
+      content: "";
+      position: absolute;
+      top: 95%;
+      left: 42%;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+      margin-left: -0.36vw;
+      border-width: 3vw;
+    }
+
+
+    .tooltiptextUp {
+      font-size: 4vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+  .tooltiptextUp::after{
+      content: "";
+      position: absolute;
+      bottom:100%;
+      left: 30%;
+      border-style: solid;
+      border-color: transparent transparent black transparent;
+      margin-left: -0.36vw;
+      border-width: 3vw;
+    }
+    .tooltiptextLeft {
+      font-size: 4vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+    .tooltiptextRight {
+      font-size: 4vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+
+    .tooltiptextLeft::after{
+      content: "";
+      position: absolute;
+      top:0;
+      right: 100%;
+      border-style: solid;
+      border-color: transparent black transparent transparent;
+      margin-left: -0.36vw;
+      border-width: 2.7vw;
+    }
+
+    .tooltiptextRight::after{
+      content: "";
+      position: absolute;
+      bottom:0;
+      left: 100%;
+      border-style: solid;
+      border-color: transparent transparent transparent black;
+      margin-left: 0vw;
+      border-width: 2.7vw;
+    }
+
+}
+
+
+@media (min-width: 768px) and (max-width:1024px){
+  #Info {
+      font-family: 'Ranga', cursive;
+      font-size: 3vw;
+      letter-spacing: 0.15vw;
+      color: white;
+    }
+
+    #Universe{
+      background: url('Universe.jpg');
+    }
+
+   .main {
+      position: absolute;
+      width: 100%;
+      left: 0vw;
+      height: 73.21vw;
+
+    }
+
+    #Galaxy1 {
+      position: absolute;
+      top: 33vw;
+      left: 18.3vw;
+      width: 10vw;
+      height: 10vw;
+    }
+
+    #Galaxy2 {
+      position: absolute;
+      top: 22vw;
+      left: 62.22vw;
+      width: 12vw;
+      height: 12vw;
+    }
+
+    #MilkyWay{
+      position: relative;
+      top:47.6vw;
+      left:40.26vw;
+      border-radius: 120%;
+      width: 14vw;
+      height: 14vw;
+    }
+
+    #Andromeda{
+      top: 33.9vw;
+      left: 19.55vw;
+      border-radius: 50%;
+      width: 9vw;
+      height: 9vw;
+
+    }
+    #Cosmos_Redshift{
+      top: 23.06vw;
+      left: 62.6vw;
+      width: 12vw;
+      height: 10vw;
+      border-radius: 50%;
+    }
+
+    #Milky-Way{
+      top: 47.6vw;
+      left: 40.26vw;
+      width: 14vw;
+      height: 14vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #CRTooltip{
+      top:17.71vw;
+      right:20.13vw;
+    }
+
+    #AdrTooltip{
+      top:28.5vw;
+      right:64vw;
+    }
+
+    #MWTooltip{
+      top:42vw;
+      right:41vw;
+    }
+
+
+
+    /*The extras (768px-1024px)*/
+    #CG{
+      top: 15vw;
+      left: 48vw;
+      width: 6vw;
+      height: 4vw;
+      border-radius: 50%;
+      transform: rotate(90deg);
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    #CGTooltip{
+      top:23vw;
+      left:39vw;
+      z-index: 0;
+    }
+
+    #M81{
+      top: 7vw;
+      left: 83vw;
+      width: 5.5vw;
+      height: 4.76vw;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    #M81Tooltip{
+      top:1.5vw;
+      left:79vw;
+      z-index: 0;
+    }
+
+    #M82{
+      top: 5vw;
+      left: 12.08vw;
+      width:4vw;
+      height: 5vw;
+      border-radius: 50%;
+      cursor: pointer;
+      transform: rotate(-30deg);
+      z-index: 1;
+    }
+
+    #M82Tooltip{
+      top:13.2vw;
+      left:6vw;
+      z-index: 0;
+    }
+
+    #CIG{
+      top: 30vw;
+      left: 47vw;
+      width: 5vw;
+      height: 5vw;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1;
+
+    }
+
+    #CIGTooltip{
+      top:38vw;
+      left:38.5vw;
+      z-index: 0;
+    }
+
+    #BEG{
+      top: 30vw;
+      left: 22vw;
+      width: 4vw;
+      height: 4vw;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    #BEGTooltip{
+      font-size:3vw; 
+      top:30.5vw;
+      left:28.5vw;
+      z-index: 0;
+    }
+
+    #UYS{
+      top: 64vw;
+      left: 77.5vw;
+      width: 3.66vw;
+      height: 3.66vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #UYSTooltip{
+      top:64vw;
+      left:66.5vw;
+      font-size: 2.2vw;
+    }
+
+
+
+
+    /*Milky Way Galaxy (768px-1024px)*/
+    #Galaxy{
+      background:url('MilkyWay.jpg');
+      background-size: 100% 73.2vw;
+      background-repeat: no-repeat;
+      display: none;
+    }
+
+    #Sun{
+      position: absolute;
+      top: 29.13vw;
+      left: 71vw;
+      width: 2.2vw;
+      height: 2.2vw;
+    }
+
+    #GalacticCentre{
+      color: white;
+      cursor: pointer;
+      top: 34.4vw;
+      left: 46.12vw;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    #GALCTooltip{
+      top:30vw;
+      left:41.58vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+    #WOHG64{
+      color: white;
+      cursor: pointer;
+      top: 16.1vw;
+      left: 22.11vw;
+      border-radius: 50%;
+      width:3.3vw;
+      height: 3.3vw;
+      z-index: 1;
+    }
+
+    #WOHTooltip{
+      top:20.13vw;
+      left:18.66vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+    #Nebula{
+      color: white;
+      cursor: pointer;
+      top:14.64vw;
+      left: 41.72vw;
+      border-radius: 50%;
+      width:2.93vw;
+      height: 2.93vw;
+      z-index: 1;
+    }
+
+    #NebulaTooltip{
+      top:18.67vw;
+      left:39.53vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+    #SunClick{
+      color: white;
+      cursor: pointer;
+      top: 29.13vw;
+      left: 71vw;
+      border-radius: 50%;
+      width:2.3vw;
+      height: 2.3vw;
+      z-index: 1;
+    }
+
+    #OurSunTooltip{
+      top: 33.5vw;
+      left:66vw;
+      font-size: 3vw;
+      z-index: 0;
+    }
+
+
+
+
+
+    /*The Main Things(768px-1024px)*/
+    #SolarSystem{
+      background:url('Solar System.jpg');
+      background-size: 100% 73.2vw;
+      background-repeat: no-repeat;display: none;
+    }
+    #SolarSun{
+      position: absolute;
+      top: 11vw;
+      left: 0vw;
+      width: 50%;
+      height: 51.25vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #Mercury{
+      width: 3vw;
+      height: 3vw;
+      position: absolute;
+      left: 50vw;
+      top: 26vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #MercuryLabel{
+      color: white;
+      position: absolute;
+      left: 48vw;
+      top:24vw;
+      font-size: 2vw;
+    }
+
+    #Venus{
+      width: 5vw;
+      height: 5vw;
+      position: absolute;
+      left: 53vw;
+      top: 28vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #VenusLabel{
+      color: white;
+      position: absolute;
+      left: 53vw;
+      top:26.5vw;
+      font-size: 2vw;
+    }
+
+    #Earth{
+      width: 5.1vw;
+      height: 5.1vw;
+      position: absolute;
+      left: 56.5vw;
+      top: 34vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #EarthLabel{
+      color: white;
+      position: absolute;
+      left: 57vw;
+      top:32vw;
+      font-size: 2vw;
+    }
+
+    #Mars{
+      width: 5vw;
+      height: 5vw;
+      position: absolute;
+      left: 60vw;
+      top: 41vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #MarsLabel{
+      color: white;
+      position: absolute;
+      left: 60.5vw;
+      top:39vw;
+      font-size: 2vw;
+    }
+
+    #Jupiter{
+      width: 8.5vw;
+      height: 8.5vw;
+      position: absolute;
+      left: 66vw;
+      top: 34.4vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #JupiterLabel{
+      color: white;
+      position: absolute;
+      left: 67.5vw;
+      top:32vw;
+      font-size: 2vw;
+    }
+
+    #Saturn{
+      width: 7.5vw;
+      height: 6vw;
+      position: absolute;
+      left: 67vw;
+      top: 45.5vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #SaturnLabel{
+      color: white;
+      position: absolute;
+      left:68vw;
+      top:44vw;
+      font-size: 2vw;
+    }
+
+    #Uranus{
+      width: 7.5vw;
+      height: 7.5vw;
+      position: absolute;
+      left: 77vw;
+      top: 42vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #UranusLabel{
+      color: white;
+      position: absolute;
+      left: 78vw;
+      top:40.5vw;
+      font-size: 2vw;
+    }
+
+    #Neptune{
+      width: 7.25vw;
+      height: 7.25vw;
+      position: absolute;
+      left: 78.5vw;
+      top: 51vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #NeptuneLabel{
+      color: white;
+      position: absolute;
+      left: 78.5vw;
+      top:49vw;
+      font-size: 2vw;
+    }
+
+    #Pluto{
+      width: 3vw;
+      height: 3vw;
+      position: absolute;
+      left: 90vw;
+      top: 67vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #PlutoLabel{
+      color: white;
+      position: absolute;
+      left: 89.5vw;
+      top:64.5vw;
+      font-size: 2vw;
+    }
+
+
+
+
+
+    /*The Information items!(768px-1024px)*/
+    #Information{
+      width: 53%;
+      height: 50vw;
+      background-color: black;
+      color: white;
+      font-size: 3vw;
+      position: absolute;
+      top: 20%;
+      left: 45%;
+      box-shadow: 0.3vw 0.3vw 0.73vw gray, -0.3vw 0vw 0.73vw gray, 0vw -0.3vw 0.73vw gray, -0.3vw -0.3vw 0.73vw gray;
+      word-wrap: break-word;
+      overflow: auto;
+      display: none;
+    }
+
+    #Titles{
+      text-align: center;
+    }
+
+    #Basic1,#Basic2,#Basic3{
+      font-size: 2.2vw;
+    }
+    #BackButton{
+      font-size: 4vw;
+      position: absolute;
+      top: 3vw;
+      left:40.26vw;
+      color: blue;
+      cursor: pointer;
+    }
+
+
+
+
+
+    /*The universal classes (768px-1024px)*/
+    .ref {
+      position: absolute;
+      width: 5.12vw;
+      height: 5.12vw;
+      display: inline-block;
+      background-color: transparent;
+    }
+
+
+    /*Tooltips*/
+    .tooltiptext {
+      font-size: 3vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1;
+      display: none;
+
+      
+    }
+    .tooltiptext::after{
+      content: "";
+      position: absolute;
+      top: 98%;
+      left: 42%;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+      margin-left: -0.36vw;
+      border-width: 1.83vw;
+    }
+
+
+    .tooltiptextUp {
+      font-size: 3vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+  .tooltiptextUp::after{
+      content: "";
+      position: absolute;
+      bottom:95%;
+      left: 42%;
+      border-style: solid;
+      border-color: transparent transparent black transparent;
+      margin-left: -0.36vw;
+      border-width: 2.5vw;
+    }
+    .tooltiptextLeft {
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+    .tooltiptextRight {
+      font-size: 2vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+
+    .tooltiptextLeft::after{
+      content: "";
+      position: absolute;
+      top:0;
+      right: 100%;
+      border-style: solid;
+      border-color: transparent black transparent transparent;
+      margin-left: -0.36vw;
+      border-width: 2vw;
+    }
+
+    .tooltiptextRight::after{
+      content: "";
+      position: absolute;
+      bottom:0;
+      left: 100%;
+      border-style: solid;
+      border-color: transparent transparent transparent black;
+      margin-left: 0vw;
+      border-width: 1.31vw;
+    }
+}
+
+
+
+
+
+@media (min-width: 1025px) and (max-width:1280px)
+{
+    #Info {
+      font-family: 'Ranga', cursive;
+      font-size: 3vw;
+      letter-spacing: 0.15vw;
+      color: white;
+    }
+
+    #Universe{
+      background: url('Universe.jpg');
+    }
+
+   .main {
+      position: absolute;
+      width: 100%;
+      left: 0vw;
+      height: 73.21vw;
+
+    }
+
+    #Galaxy1 {
+      position: absolute;
+      top: 33vw;
+      left: 18.3vw;
+      width: 7.32vw;
+      height: 7.32vw;
+    }
+
+    #Galaxy2 {
+      position: absolute;
+      top: 22vw;
+      left: 62.22vw;
+      width: 9.15vw;
+      height: 9.15vw;
+    }
+
+    #MilkyWay{
+      position: relative;
+      top:47.6vw;
+      left:40.26vw;
+      border-radius: 120%;
+      width: 11vw;
+      height: 11vw;
+    }
+
+    #Andromeda{
+      top: 33.9vw;
+      left: 19.55vw;
+      border-radius: 50%;
+
+    }
+    #Cosmos_Redshift{
+      top: 23.06vw;
+      left: 62.6vw;
+      width: 8.8vw;
+      height: 6.95vw;
+      border-radius: 50%;
+    }
+
+    #Milky-Way{
+      top: 47.6vw;
+      left: 40.26vw;
+      width: 11vw;
+      height: 11vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #CRTooltip{
+      top:17.71vw;
+      right:20.13vw;
+    }
+
+    #AdrTooltip{
+      top:29.28vw;
+      right:66.61vw;
+      font-size: 2.5vw; 
+    }
+
+    #MWTooltip{
+      top:42.24vw;
+      right:41.21vw;
+    }
+
+
+
+    /*The extras (1025px-1280px)*/
+    #CG{
+      top: 13.91vw;
+      left: 53.07vw;
+      width: 5.12vw;
+      height: 3.3vw;
+      border-radius: 50%;
+      transform: rotate(90deg);
+      cursor: pointer;
+    }
+
+    #CGTooltip{
+      top:19vw;
+      left:48.31vw;
+    }
+
+    #M81{
+      top: 12.81vw;
+      left: 64.78vw;
+      width: 5.5vw;
+      height: 4.76vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #M81Tooltip{
+      top:8.56vw;
+      left:63.32vw;
+      font-size: 2.2vw;
+    }
+
+    #M82{
+      top: 16.7vw;
+      left: 12.08vw;
+      width:2.78vw;
+      height: 2.2vw;
+      border-radius: 50%;
+      cursor: pointer;
+      transform: rotate(-30deg);
+    }
+
+    #M82Tooltip{
+      top:20.57vw;
+      left:8.42vw;
+    }
+
+    #CIG{
+      top: 53.8vw;
+      left: 24.15vw;
+      width: 2.93vw;
+      height: 5.12vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #CIGTooltip{
+      top:60.03vw;
+      left:18.3vw;
+      font-size: 2.2vw;
+    }
+
+    #BEG{
+      top: 58.6vw;
+      left: 49.63vw;
+      width: 3.66vw;
+      height: 3.66vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #BEGTooltip{
+      top:59.29vw;
+      left:54.53vw;
+      font-size: 2.2vw;
+    }
+
+    #UYS{
+      top: 62.22vw;
+      left: 80.52vw;
+      width: 3.66vw;
+      height: 3.66vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #UYSTooltip{
+      top:62.95vw;
+      left:69.54vw;
+      font-size: 2.2vw;
+    }
+
+
+
+
+    /*Milky Way Galaxy (1025px-1280px)*/
+    #Galaxy{
+      background:url('MilkyWay.jpg');
+      background-size: 100% 73.2vw;
+      background-repeat: no-repeat;
+      display: none;
+    }
+
+    #Sun{
+      position: absolute;
+      top: 29.13vw;
+      left: 71vw;
+      width: 1.5vw;
+      height: 1.5vw;
+    }
+
+    #GalacticCentre{
+      color: white;
+      cursor: pointer;
+      top: 34.4vw;
+      left: 46.12vw;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    #GALCTooltip{
+      top:30vw;
+      left:41.58vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+    #WOHG64{
+      color: white;
+      cursor: pointer;
+      top: 16.1vw;
+      left: 22.11vw;
+      border-radius: 50%;
+      width:3.3vw;
+      height: 3.3vw;
+      z-index: 1;
+    }
+
+    #WOHTooltip{
+      top:20.13vw;
+      left:18.66vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+    #Nebula{
+      color: white;
+      cursor: pointer;
+      top:14.64vw;
+      left: 41.72vw;
+      border-radius: 50%;
+      width:2.93vw;
+      height: 2.93vw;
+      z-index: 1;
+    }
+
+    #NebulaTooltip{
+      top:18.67vw;
+      left:39.53vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+    #SunClick{
+      color: white;
+      cursor: pointer;
+      top: 29.13vw;
+      left: 71vw;
+      border-radius: 50%;
+      width:1.83vw;
+      height: 1.83vw;
+      z-index: 1;
+    }
+
+    #OurSunTooltip{
+      top: 31.47vw;
+      left:67.71vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+
+
+
+
+    /*The Main Things(1025px-1280px)*/
+    #SolarSystem{
+      background:url('Solar System.jpg');
+      background-size: 100% 73.2vw;
+      background-repeat: no-repeat;display: none;
+    }
+    #SolarSun{
+      position: absolute;
+      top: 11vw;
+      left: 0vw;
+      width: 50%;
+      height: 51.25vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #Mercury{
+      width: 2.93vw;
+      height: 2.93vw;
+      position: absolute;
+      left: 51.24vw;
+      top: 36.6vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #MercuryLabel{
+      color: white;
+      position: absolute;
+      left: 49.5vw;
+      top:35.14vw;
+      font-size: 1.8vw;
+    }
+
+    #Venus{
+      width: 4.4vw;
+      height: 4.4vw;
+      position: absolute;
+      left: 54.17vw;
+      top: 35.87vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #VenusLabel{
+      color: white;
+      position: absolute;
+      left: 54.5vw;
+      top:34vw;
+      font-size: 1.8vw;
+    }
+
+    #Earth{
+      width: 4.54vw;
+      height: 4.54vw;
+      position: absolute;
+      left: 58.56vw;
+      top: 35.87vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #EarthLabel{
+      color: white;
+      position: absolute;
+      left: 59.3vw;
+      top:34vw;
+      font-size: 1.8vw;
+    }
+
+    #Mars{
+      width: 4.4vw;
+      height: 4.4vw;
+      position: absolute;
+      left: 63.68vw;
+      top: 35.87vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #MarsLabel{
+      color: white;
+      position: absolute;
+      left: 64.5vw;
+      top:34vw;
+      font-size: 1.8vw;
+    }
+
+    #Jupiter{
+      width: 7.32vw;
+      height: 7.32vw;
+      position: absolute;
+      left: 68.81vw;
+      top: 34.4vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #JupiterLabel{
+      color: white;
+      position: absolute;
+      left: 70.3vw;
+      top:32.5vw;
+      font-size: 1.8vw;
+    }
+
+    #Saturn{
+      width: 6.95vw;
+      height: 5.5vw;
+      position: absolute;
+      left: 76.13vw;
+      top: 35.5vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #SaturnLabel{
+      color: white;
+      position: absolute;
+      left:77.6vw;
+      top:34.6vw;
+      font-size: 1.8vw;
+    }
+
+    #Uranus{
+      width: 6.6vw;
+      height: 6.6vw;
+      position: absolute;
+      left: 82.35vw;
+      top: 35.5vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #UranusLabel{
+      color: white;
+      position: absolute;
+      left: 83.3vw;
+      top:34.5vw;
+      font-size: 1.8vw;
+    }
+
+    #Neptune{
+      width: 6.22vw;
+      height: 6.22vw;
+      position: absolute;
+      left: 88.21vw;
+      top: 35.5vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #NeptuneLabel{
+      color: white;
+      position: absolute;
+      left: 88.8vw;
+      top:34vw;
+      font-size: 1.8vw;
+    }
+
+    #Pluto{
+      width: 2.93vw;
+      height: 2.93vw;
+      position: absolute;
+      left: 94.8vw;
+      top: 36.97vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #PlutoLabel{
+      color: white;
+      position: absolute;
+      left: 94.5vw;
+      top:35.3vw;
+      font-size: 1.8vw;
+    }
+
+
+
+
+
+    /*The Information items!(1025px-1280px)*/
+    #Information{
+      width: 48%;
+      height: 50vw;
+      background-color: black;
+      color: white;
+      font-size: 3vw;
+      position: absolute;
+      top: 20%;
+      left: 51%;
+      box-shadow: 0.3vw 0.3vw 0.73vw gray, -0.3vw 0vw 0.73vw gray, 0vw -0.3vw 0.73vw gray, -0.3vw -0.3vw 0.73vw gray;
+      word-wrap: break-word;
+      overflow: auto;
+      display: none;
+    }
+
+    #Titles{
+      text-align: center;
+    }
+
+    #Basic1,#Basic2,#Basic3{
+      font-size: 2vw;
+    }
+    #BackButton{
+      font-size: 2.5vw;
+      position: absolute;
+      top: 3vw;
+      left:40.26vw;
+      color: blue;
+      cursor: pointer;
+    }
+
+
+
+
+
+    /*The universal classes (1025px-1280px+)*/
+    .ref {
+      position: absolute;
+      width: 5.12vw;
+      height: 5.12vw;
+      display: inline-block;
+      background-color: transparent;
+    }
+
+
+    /*Tooltips*/
+    .tooltiptext {
+      font-size: 3vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1;
+      display: none;
+
+      
+    }
+    .tooltiptext::after{
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 42%;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+      margin-left: -0.36vw;
+      border-width: 1.83vw;
+    }
+
+
+    .tooltiptextUp {
+      font-size: 2vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+  .tooltiptextUp::after{
+      content: "";
+      position: absolute;
+      bottom:80%;
+      left: 42%;
+      border-style: solid;
+      border-color: transparent transparent black transparent;
+      margin-left: -0.36vw;
+      border-width: 1.46vw;
+    }
+    .tooltiptextLeft {
+      font-size: 2vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+    .tooltiptextRight {
+      font-size: 2vw;
+      background-color: black;
+      color: white;
+      position: absolute;
+      z-index: 1; 
+      display: none;
+    }
+
+
+    .tooltiptextLeft::after{
+      content: "";
+      position: absolute;
+      top:0;
+      right: 100%;
+      border-style: solid;
+      border-color: transparent black transparent transparent;
+      margin-left: -0.36vw;
+      border-width: 1.31vw;
+    }
+
+    .tooltiptextRight::after{
+      content: "";
+      position: absolute;
+      bottom:0;
+      left: 100%;
+      border-style: solid;
+      border-color: transparent transparent transparent black;
+      margin-left: 0vw;
+      border-width: 1.31vw;
+    }
+}
+
+
+
+
+
+
+    /*Media for (1281px+) The main Galaxies!*/
+
+  @media screen and (min-width: 1281px)
+  {
+  	#Info {
+  		font-family: 'Ranga', cursive;
+  		font-size: 3vw;
+  		letter-spacing: 0.15vw;
+  		color: white;
+  	}
+
+    #Universe{
+      background: url('Universe.jpg');
+    }
+
+   .main {
+      position: absolute;
+      width: 100%;
+      left: 0vw;
+      height: 73.21vw;
+
+    }
+
+    #Galaxy1 {
+      position: absolute;
+      top: 33vw;
+      left: 18.3vw;
+      width: 7.32vw;
+      height: 7.32vw;
+    }
+
+    #Galaxy2 {
+      position: absolute;
+      top: 22vw;
+      left: 62.22vw;
+      width: 9.15vw;
+      height: 9.15vw;
+    }
+
+    #MilkyWay{
+      position: relative;
+      top:47.6vw;
+      left:40.26vw;
+      border-radius: 120%;
+      width: 11vw;
+      height: 11vw;
+    }
+
+    #Andromeda{
+      top: 33.9vw;
+      left: 19.55vw;
+      border-radius: 50%;
+
+    }
+    #Cosmos_Redshift{
+      top: 23.06vw;
+      left: 62.6vw;
+      width: 8.8vw;
+      height: 6.95vw;
+      border-radius: 50%;
+    }
+
+    #Milky-Way{
+      top: 47.6vw;
+      left: 40.26vw;
+      width: 11vw;
+      height: 11vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #CRTooltip{
+      top:17.71vw;
+      right:20.13vw;
+    }
+
+    #AdrTooltip{
+      top:29.28vw;
+      right:66.61vw;
+      font-size: 2.5vw; 
+    }
+
+    #MWTooltip{
+      top:42.24vw;
+      right:41.21vw;
+    }
+
+
+
+    /*The extras (1281px+)*/
+    #CG{
+      top: 13.91vw;
+      left: 53.07vw;
+      width: 5.12vw;
+      height: 3.3vw;
+      border-radius: 50%;
+      transform: rotate(90deg);
+      cursor: pointer;
+    }
+
+    #CGTooltip{
+      top:19vw;
+      left:48.31vw;
+    }
+
+    #M81{
+      top: 12.81vw;
+      left: 64.78vw;
+      width: 5.5vw;
+      height: 4.76vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #M81Tooltip{
+      top:8.56vw;
+      left:63.32vw;
+      font-size: 2.2vw;
+    }
+
+    #M82{
+      top: 16.7vw;
+      left: 12.08vw;
+      width:2.78vw;
+      height: 2.2vw;
+      border-radius: 50%;
+      cursor: pointer;
+      transform: rotate(-30deg);
+    }
+
+    #M82Tooltip{
+      top:20.57vw;
+      left:8.42vw;
+    }
+
+    #CIG{
+      top: 53.8vw;
+      left: 24.15vw;
+      width: 2.93vw;
+      height: 5.12vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #CIGTooltip{
+      top:60.03vw;
+      left:18.3vw;
+      font-size: 2.2vw;
+    }
+
+    #BEG{
+      top: 58.6vw;
+      left: 49.63vw;
+      width: 3.66vw;
+      height: 3.66vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #BEGTooltip{
+      top:59.29vw;
+      left:54.53vw;
+      font-size: 2.2vw;
+    }
+
+    #UYS{
+      top: 62.22vw;
+      left: 80.52vw;
+      width: 3.66vw;
+      height: 3.66vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #UYSTooltip{
+      top:62.95vw;
+      left:69.54vw;
+      font-size: 2.2vw;
+    }
+
+
+
+
+    /*Milky Way Galaxy (1281px+)*/
+    #Galaxy{
+      background:url('MilkyWay.jpg');
+      background-size: 100% 73.2vw;
+      background-repeat: no-repeat;
+      display: none;
+    }
+
+    #Sun{
+      position: absolute;
+      top: 29.13vw;
+      left: 71vw;
+      width: 1.5vw;
+      height: 1.5vw;
+    }
+
+    #GalacticCentre{
+      color: white;
+      cursor: pointer;
+      top: 34.4vw;
+      left: 46.12vw;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    #GALCTooltip{
+      top:30vw;
+      left:41.58vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+    #WOHG64{
+      color: white;
+      cursor: pointer;
+      top: 16.1vw;
+      left: 22.11vw;
+      border-radius: 50%;
+      width:3.3vw;
+      height: 3.3vw;
+      z-index: 1;
+    }
+
+    #WOHTooltip{
+      top:20.13vw;
+      left:18.66vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+    #Nebula{
+      color: white;
+      cursor: pointer;
+      top:14.64vw;
+      left: 41.72vw;
+      border-radius: 50%;
+      width:2.93vw;
+      height: 2.93vw;
+      z-index: 1;
+    }
+
+    #NebulaTooltip{
+      top:18.67vw;
+      left:39.53vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+    #SunClick{
+      color: white;
+      cursor: pointer;
+      top: 29.13vw;
+      left: 71vw;
+      border-radius: 50%;
+      width:1.83vw;
+      height: 1.83vw;
+      z-index: 1;
+    }
+
+    #OurSunTooltip{
+      top: 31.47vw;
+      left:67.71vw;
+      font-size: 2.2vw;
+      z-index: 0;
+    }
+
+
+
+
+
+    /*The Main Things(1281px+)*/
+    #SolarSystem{
+      background:url('Solar System.jpg');
+      background-size: 100% 73.2vw;
+      background-repeat: no-repeat;display: none;
+    }
+    #SolarSun{
+      position: absolute;
+      top: 11vw;
+      left: 0vw;
+      width: 50%;
+      height: 51.25vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #Mercury{
+      width: 2.93vw;
+      height: 2.93vw;
+      position: absolute;
+      left: 51.24vw;
+      top: 36.6vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #MercuryLabel{
+      color: white;
+      position: absolute;
+      left: 50vw;
+      top:35.14vw;
+      font-size: 1.5vw;
+    }
+
+    #Venus{
+      width: 4.4vw;
+      height: 4.4vw;
+      position: absolute;
+      left: 54.17vw;
+      top: 35.87vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #VenusLabel{
+      color: white;
+      position: absolute;
+      left: 54.5vw;
+      top:34.4vw;
+      font-size: 1.5vw;
+    }
+
+    #Earth{
+      width: 4.54vw;
+      height: 4.54vw;
+      position: absolute;
+      left: 58.5vw;
+      top: 35.87vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #EarthLabel{
+      color: white;
+      position: absolute;
+      left: 59.44vw;
+      top:34.4vw;
+      font-size: 1.5vw;
+    }
+
+    #Mars{
+      width: 4.4vw;
+      height: 4.4vw;
+      position: absolute;
+      left: 63.68vw;
+      top: 35.87vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #MarsLabel{
+      color: white;
+      position: absolute;
+      left: 64.5vw;
+      top:34.3vw;
+      font-size: 1.5vw;
+    }
+
+    #Jupiter{
+      width: 7.32vw;
+      height: 7.32vw;
+      position: absolute;
+      left: 68.81vw;
+      top: 34.4vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #JupiterLabel{
+      color: white;
+      position: absolute;
+      left: 70.5vw;
+      top:32.8vw;
+      font-size: 1.5vw;
+    }
+
+    #Saturn{
+      width: 6.95vw;
+      height: 5.5vw;
+      position: absolute;
+      left: 76.13vw;
+      top: 35.5vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #SaturnLabel{
+      color: white;
+      position: absolute;
+      left:77.5vw;
+      top:34.6vw;
+      font-size: 1.5vw;
+    }
+
+    #Uranus{
+      width: 6.6vw;
+      height: 6.6vw;
+      position: absolute;
+      left: 82.35vw;
+      top: 35.5vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #UranusLabel{
+      color: white;
+      position: absolute;
+      left: 83.5vw;
+      top:34.5vw;
+      font-size: 1.5vw;
+    }
+
+    #Neptune{
+      width: 6.22vw;
+      height: 6.22vw;
+      position: absolute;
+      left: 88.21vw;
+      top: 35.5vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #NeptuneLabel{
+      color: white;
+      position: absolute;
+      left: 89vw;
+      top:34.4vw;
+      font-size: 1.5vw;
+    }
+
+    #Pluto{
+      width: 2.93vw;
+      height: 2.93vw;
+      position: absolute;
+      left: 94.8vw;
+      top: 36.97vw;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #PlutoLabel{
+      color: white;
+      position: absolute;
+      left: 94.7vw;
+      top:35.5vw;
+      font-size: 1.5vw;
+    }
+
+
+
+
+
+    /*The Information items!(1281px+)*/
+    #Information{
+      width: 48%;
+      height: 44vw;
+      background-color: black;
+      color: white;
+      font-size: 3vw;
+      position: absolute;
+      top: 20%;
+      left: 51%;
+      box-shadow: 0.3vw 0.3vw 0.73vw gray, -0.3vw 0vw 0.73vw gray, 0vw -0.3vw 0.73vw gray, -0.3vw -0.3vw 0.73vw gray;
+      word-wrap: break-word;
+      overflow: auto;
+      display: none;
+    }
+
+    #Titles{
+      text-align: center;
+    }
+
+    #Basic1,#Basic2,#Basic3{
+      font-size: 2vw;
+    }
+    #BackButton{
+      font-size: 2.5vw;
+      position: absolute;
+      top: 3vw;
+      left:40.26vw;
+      color: blue;
+      cursor: pointer;
+    }
+
+
+
+
+
+    /*The universal classes (1281px+)*/
+  	.ref {
+  		position: absolute;
+  		width: 5.12vw;
+  		height: 5.12vw;
+  		display: inline-block;
+  		background-color: transparent;
+  	}
+
+
+  	/*Tooltips*/
+  	.tooltiptext {
+  		font-size: 3vw;
+  		background-color: black;
+  		color: white;
+  		position: absolute;
+  		z-index: 1;
+  		display: none;
+
+  		
+  	}
+  	.tooltiptext::after{
+  		content: "";
+  		position: absolute;
+  		top: 100%;
+  		left: 42%;
+  		border-style: solid;
+ 		  border-color: black transparent transparent transparent;
+ 	  	margin-left: -0.36vw;
+  		border-width: 1.83vw;
+  	}
+
+
+  	.tooltiptextUp {
+  		font-size: 2vw;
+  		background-color: black;
+  		color: white;
+  		position: absolute;
+  		z-index: 1;	
+  		display: none;
+  	}
+
+  .tooltiptextUp::after{
+  		content: "";
+  		position: absolute;
+  		bottom:80%;
+  		left: 42%;
+  		border-style: solid;
+ 		  border-color: transparent transparent black transparent;
+ 		  margin-left: -0.36vw;
+  		border-width: 1.46vw;
+  	}
+  	.tooltiptextLeft {
+  		font-size: 2vw;
+  		background-color: black;
+  		color: white;
+  		position: absolute;
+  		z-index: 1;	
+  		display: none;
+  	}
+
+  	.tooltiptextRight {
+  		font-size: 2vw;
+  		background-color: black;
+  		color: white;
+  		position: absolute;
+  		z-index: 1;	
+  		display: none;
+  	}
+
+
+  	.tooltiptextLeft::after{
+  		content: "";
+  		position: absolute;
+  		top:0;
+  		right: 100%;
+  		border-style: solid;
+ 	  	border-color: transparent black transparent transparent;
+ 		  margin-left: -0.36vw;
+  		border-width: 1.31vw;
+  	}
+
+  	.tooltiptextRight::after{
+  		content: "";
+  		position: absolute;
+  		bottom:0;
+  		left: 100%;
+  		border-style: solid;
+ 	  	border-color: transparent transparent transparent black;
+ 	  	margin-left: 0vw;
+  		border-width: 1.31vw;
+  	}
+  }
+
+
+
+
+ 	img::selection{
+  		background-color: transparent;
+  	}

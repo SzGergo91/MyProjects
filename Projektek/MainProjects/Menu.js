@@ -129,9 +129,25 @@ $(document).ready(()=>
 			}
 
 		//C. Basics
+		if($globalBG === "universe"){
+					$('.A1').css({
+						color: "yellow",
+						borderColor: "yellow",
+					})
+					$('#MenuContacts').css({
+						backgroundColor: "transparent",
+						color: "white",
+					})
+
+					$('#bgimg1').css({
+						backgroundColor: "transparent",
+						color: "white",
+					})
+		}
+
 		$('#bgimg1').on('click',()=>{
 			if($globalchange){
-				if($globalBG === "universebg")
+				if($globalBG === "universe")
 				{
 					$('#bgimg1').css({
 						backgroundColor: "white",
@@ -151,7 +167,7 @@ $(document).ready(()=>
 				}
 			}
 			else{
-				if($globalBG === "universebg")
+				if($globalBG === "universe")
 				{
 					$('#tartalom').slideToggle(500,()=>{
 						$('#bgimg1').css({
