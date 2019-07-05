@@ -79,8 +79,8 @@
 			position: absolute;
 			z-index: 5;
 			padding: none;
-			text-shadow: 2px 0px white 0px 2px white -2px 0px white 0px -2px white;
-			color: blue;
+			text-shadow: 0.15vw 0px blue, 0px 0.15vw blue, -0.15vw 0px blue, 0px -0.15vw blue;
+			color: white;
 			position: relative;
 		}
 
@@ -721,8 +721,8 @@
 			font-size: 5vw;
 			width: 50%;
 			padding: none;
-			text-shadow: 2px 0px white 0px 2px white -2px 0px white 0px -2px white;
-			color: blue;
+			text-shadow: 0.15vw 0px blue, 0px 0.15vw blue, -0.15vw 0px blue, 0px -0.15vw blue;
+			color: white;
 			position: relative;
 		}
 
@@ -1350,8 +1350,9 @@
 			padding: none;
 			top: 20vw;
 			left: 20vw;
-			text-shadow: 3px 0px white 0px 3px white -3px 0px white 0px -3px white;
-			color: blue;
+			text-shadow: 0.15vw 0px blue, 0px 0.15vw blue, -0.15vw 0px blue, 0px -0.15vw blue;
+
+			color: white;
 			position: relative;
 		}
 
@@ -1979,8 +1980,8 @@
 			padding: none;
 			top: 20vw;
 			left: 20vw;
-			text-shadow: 3px 0px white 0px 3px white -3px 0px white 0px -3px white;
-			color: blue;
+			text-shadow: 0.15vw 0px blue, 0px 0.15vw blue, -0.15vw 0px blue, 0px -0.15vw blue;
+			color: white;
 			position: relative;
 		}
 
@@ -2608,8 +2609,8 @@
 			padding: none;
 			top: 20vw;
 			left: 20vw;
-			text-shadow: 3px 0px white 0px 3px white -3px 0px white 0px -3px white;
-			color: blue;
+			text-shadow: 0.15vw 0px blue, 0px 0.15vw blue, -0.15vw 0px blue, 0px -0.15vw blue;
+			color: white;
 			position: relative;
 		}
 

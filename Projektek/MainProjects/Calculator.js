@@ -53,19 +53,22 @@ $(document).ready(()=>{
 
 	//A.Settings
 	if(($globalWidth>=320) && ($globalWidth<=480)){
-		$('#Ac').css({
-			left: `${46.5-(screen.width-320)*0.0043}vw`
-		})
-		if(($globalWidth>=320) && ($globalWidth<400)){
-			$('#CalculatorBrokenNeighbour').css({
-				backgroundPosition: `25vw ${170-(screen.width-320)*0.425}vw`
+		if($globalWidth<=350){
+			$('#CalculatorContainerDiv').css({
+				height: `101.2vw`,
 			})
+			$('#Ac').css({
+			left: `${46.8-(screen.width-320)*0.0043}vw`
+		})
 		}
 		else{
-			$('#CalculatorBrokenNeighbour').css({
-				backgroundPosition: `25vw ${136-(screen.width-400)*0.375}vw`
-			})
+			$('#Ac').css({
+			left: `${46.5-(screen.width-320)*0.0043}vw`
+				})
 		}
+		
+
+
 	}
 
 
