@@ -5,15 +5,16 @@
 	<title></title>
 	  <link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="Menu.css">
-      <link rel="stylesheet" type="text/css" href="FilterCss.css">
+      <link rel="stylesheet" type="text/css" href="BigFilter.css">
 		<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.js "></script>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 
-<body style="background: url('Filter/FilterBG.jpg') center fixed;">
+<body id="BigFilterBackground" ng-app="FilterElements">
 	<!--The Menu!-->
 	  <p class="A1">Mini Projects</p>
 	<a id="MenuHome" href="../Main.html" target="_blank">
@@ -30,33 +31,40 @@
 	  <li>JungleFinder</li>
 	</ul>
 
+
 	<!--Filter type menu!-->
-	<input id="Input" placeholder="Search...">
-	<img src="Filter/AddSign.png" width="50px" height="50px" style="position: relative;top: 10px;cursor: pointer;border-radius: 50%;" id="Extras">
+	<label id="BigFilterFilterByLabel">FilterBy: None</label>
+	<input placeholder="Search..." id="BigFilterInput">
 	<br>
-	<ul style="list-style-type: none;background-color: white;background-color: transparent; width: 43%;position: relative;left: 500px;visibility: hidden;opacity: 0;" id="FilterMenu">
-	  <li style="font-size: 3vw;float: left;color: white;text-shadow: 3px 3px 6px black,-3px 0px 6px black,0px -3px 6px black,-3px -3px 6px black;margin-right: 25px;background-color: blue;box-shadow: 3px 3px 5px lightblue;border-radius: 15px;">Filter by: </li>
-	  <li id="Name" style="font-size: 3vw;text-align: center;float: left;margin-right: 25px;border-radius: 50%;cursor: pointer;font-weight: 900;text-shadow: 3px 3px 5px white, -3px 0px 5px white,0px -3px 5px white,-3px -3px 5px white;">Name</li>
-	  <li id="DMG" style="font-size: 3vw;text-align: center;float: left;margin-right: 25px;border-radius: 50%;cursor: pointer;"><img src="Filter/DualSwords.png" width="50px" height="50px"> </li>
-	  <li id="Health" style="font-size: 3vw;text-align: center;float: left;margin-right: 25px;border-radius: 50%;cursor: pointer;"><img src="Filter/Hearts.png" width="50px" height="50px"> </li>
-	  <li id="Species"style="text-align: center;margin-right: 25px;border-radius: 50%;cursor: pointer;"><img src="Filter/FrogSpecies.png" width="50px" height="50px"> </li>
+	<div>
+	<img src="Filter/AddSign.png" id="BigFilterExtras">
+	<ul id="BigFilterFilterMenu">
+	  <li id="BigFilterBy">Filter by: </li>
+	  <li id="BigFilterByName">name</li>
+	  <li id="BigFilterDMG"><img src="Filter/DualSwords.png"> </li>
+	  <li id="BigFilterHealth"><img src="Filter/Hearts.png"> </li>
+	  <li id="BigFilterSpecies"><img src="Filter/FrogSpecies.png"></li>
+	  </li>
 	</ul>
-
-
-	<!--The Important things(Name,DMG,Heath,Species)-->
-	<div id="Main" style="width: 100%;height: auto;">
-	  <div class="set">
-	    <h1 class="names">Fenrir</h1>
-	  	<img src="Filter/Fenrir.png" width="95%" height="185px;" style="cursor: pointer;border-right: 50%;" class="img">
-	  	<div class="details">
-	  	  <p class="dmg">100DMG</p>
-	  	  <p class="health">2000HP</p>
-	  	  <p style="font-size: 2.5vw;position: relative;top: -55px;text-align: center;">Species: <i class="species">God</i></p>
-	  	</div> 
-	  </div>
+	<ul id="BigFilterSelectionList">
+		<li id="BigFilterSelectionAnimals">Animal</li>
+		<li id="BigFilterSelectionCreatures">Creature</li>
+		<li id="BigFilterSelectionDemons">Demon</li>
+		<li id="BigFilterSelectionGods">God</li>
+		<li id="BigFilterSelectionHumans">Human</li>
+		<li id="BigFilterSelectionOthers">Other</li>
+		<li id="BigFilterSelectionUndeads">Undead</li>
+	 </ul>
 	</div>
 
+
+	<!--The Important things(Name,DMG,Heath,Species)Find it in the Angular JS!-->
+	<br><br><br>
+	<all-sets></all-sets>
+
+
 	<script type="text/javascript" src="Menu.js"></script>
+	<script type="text/javascript" src="AngularForFilter.js"></script>
 	<script type="text/javascript" src="BigFilter.js"></script>
 </body>
 </html>

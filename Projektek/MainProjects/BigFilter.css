@@ -1,0 +1,279 @@
+/*@media screen and (min-width: 1281px){}*/
+
+*{
+	box-sizing: border-box;
+}
+
+#BigFilterBackground
+{
+	background: url('Filter/FilterBG.jpg') center fixed;
+	background-repeat: no-repeat;
+}
+
+  	#BigFilterInput {
+  		outline: none;
+  		width: 400px;
+  		padding: 20px;
+  		font-size: 3vw;
+  		border-radius: 15px;
+  		box-shadow: 3px 3px 5px gray;
+  		padding-left: 50px;
+  		background-image:url('Filter/Search.png');
+  		background-size: 45px 45px;
+  		background-position: 0px 20px;
+  		background-repeat: no-repeat;
+
+  	}
+  	#BigFilterInput:focus {
+  		width: 100%;
+  		background-color: lightgreen;
+  		transition: 2s;
+  	}
+
+  	#BigFilterExtras{
+  		width: 50px;
+  		height: 50px;
+  		position: relative;
+  		top: 10px;
+  		cursor: pointer;
+  		border-radius: 50%;
+  	}
+
+  	#BigFilterFilterByLabel{
+  		position: absolute;
+  		bottom: 420px;
+  		left:75px;
+  		font-size: 3vw;
+  		color: blue;
+  		text-shadow: 3px 3px 5px gray, -3px -3px 5px gray;
+  	}
+
+  	#BigFilterFilterMenu{
+  		list-style-type: none;
+  		background-color: white;
+  		background-color: transparent;
+  		position: absolute;
+  		left: 500px;
+  		bottom: 225px;
+  		visibility: hidden;
+  		opacity: 0;
+  	}
+
+  	#BigFilterBy{
+  		font-size: 3vw;
+  		float: left;
+  		color: white;
+  		text-shadow: 3px 3px 6px black,-3px 0px 6px black,0px -3px 6px black,-3px -3px 6px black;
+  		margin-right: 15px;
+  		background-color: blue;
+  		box-shadow: 3px 3px 5px lightblue;
+  		border-radius: 15px;
+  	}
+
+  	#BigFilterByName{
+  		font-size: 3vw;
+  		text-align: center;
+  		float: left;
+  		margin-right: 30px;
+  		border-radius: 50%;
+  		cursor: pointer;
+  		font-weight: 900;
+  		text-shadow: 3px 3px 5px white, -3px 0px 5px white,0px -3px 5px white,-3px -3px 5px white;
+  	}
+
+  	#BigFilterDMG{
+  		font-size: 3vw;
+  		text-align: center;
+  		float: left;
+  		margin-right: 40px;
+  		border-radius: 50%;
+  		cursor: pointer;
+  	}
+
+  	#BigFilterDMG img {
+  		width: 50px;
+  		height: 50px;
+  	}
+
+  	#BigFilterHealth{
+  		font-size: 3vw;
+  		text-align: center;
+  		float: left;
+  		margin-right: 40px;
+  		border-radius: 50%;
+  		cursor: pointer;
+  	}
+
+  	#BigFilterHealth img {
+  		width: 50px;
+  		height: 50px;
+  	}
+
+  	#BigFilterSpecies{
+  		text-align: center;
+  		cursor: pointer;
+  		float: left;
+  	}
+    #BigFilterSpecies img {
+      width: 50px;
+      height: 50px;
+    }
+
+    #BigFilterSelectionList{
+      position: absolute;
+      left:615px;
+      top:330px;
+      text-align: center;
+      font-size: 2.5vw;
+      list-style-type: none;
+      display: none;
+    }
+
+    #BigFilterSelectionList li{
+       position: relative;
+       width: 135%;
+       right: 32%;
+       background-repeat: no-repeat;
+       background-size: 100% 50px;
+       font-weight: 900;
+       cursor: pointer;
+       z-index: 1;
+    }
+
+
+    #BigFilterSelectionAnimals{
+      background-image: url('Filter/AnimalSelectionBG.gif');
+      color: darkblue;
+    }
+
+    #BigFilterSelectionCreatures{
+      background-image: url('Filter/CreatureSelectionBG.gif');
+      color: brown;
+    }
+
+    #BigFilterSelectionDemons{
+      background-image: url('Filter/DemonSelectionBG.gif');
+      color: red;
+    }
+
+    #BigFilterSelectionGods{
+      background-image: url('Filter/GodSelectionBG.gif');
+      color: white;
+    }
+
+    #BigFilterSelectionHumans{
+      background-image: url('Filter/HumanSelectionBG.gif');
+      color: black;
+    }
+
+    #BigFilterSelectionOthers{
+      background-image: url('Filter/OtherSelectionBG.gif');
+      color: green;
+    }
+
+    #BigFilterSelectionUndeads{
+      background-image: url('Filter/UndeadSelectionBG.gif');
+      color: yellow;
+    }
+
+
+
+
+ /*The sets!!!*/
+  	#BigFilterMain{
+  		width: 100%;
+  		height: auto;
+      display: flex;
+      flex-flow: row wrap;
+      
+  	}
+
+	.img {
+  		position: absolute;
+  		cursor: pointer;
+  		border-right: 50%;
+  		width: 95%;
+  	  height: 185px;
+
+  	}
+  	.BigFilterDivset{
+  		display: inline-block;
+  		position: relative;
+  		width: 19.4%;
+  		height: 360px;
+  		margin-right: 4px;
+  		margin-top: 5px;
+  		background-color:transparent; 
+  	}
+
+  	.BigFilterNames{
+      font-size: 2vw;
+      text-align: center;
+      text-shadow: 2px 2px 5px white;
+    }
+
+  	.details{
+  		width: 100%;
+  		height: 120px;
+  		position: absolute;
+  		top: 260px;
+  		background-color: transparent;
+        display: none;
+
+  	}
+
+    .dmg{
+      display: inline-block;
+      width: 49%;
+      height: 40px;
+      position: relative;
+      top: -15px;
+      background-color: green;
+      font-size: 23px;
+      padding-top: 8px;
+      padding-left: 45px;
+      color: yellow;
+      text-shadow: 2px 2px 5px gray, -2px 0px 5px gray, 0px -2px 5px gray, -2px -2px 5px gray;
+      background-image: url('Filter/DualSwords.png');
+      background-size: 40px 40px;
+      background-position: 0px 0px;
+      background-repeat: no-repeat;
+    }
+
+    .health{
+      display: inline-block;
+      width: 49%;
+      height: 40px;
+      position: relative;
+      top: -15px;
+      background-color: green;
+      font-size: 23px;
+      padding-top: 8px;
+      padding-left: 45px;
+      color: red;
+      text-shadow: 2px 2px 5px black, -2px 0px 5px black, 0px -2px 5px black, -2px -2px 5px black;
+      background-image: url('Filter/Hearts.png');
+      background-size: 40px 40px;
+      background-position: 0px 0px;
+      background-repeat: no-repeat;
+    }
+    #FilterSpecies{
+    	font-size: 2.5vw;
+    	position: relative;
+    	top: -70px;
+    	text-align: center;
+    }
+    .species{
+      color: white;
+      text-shadow: 2px 2px 5px lightblue;
+    }
+
+
+
+    /*Toggle classes!*/
+    .BigFilterBorder{
+    	border: 5px ridge red;
+    	border-radius: 15px;
+    	background-color: blue;
+
+    }
