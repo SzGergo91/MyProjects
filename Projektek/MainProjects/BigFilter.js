@@ -8,6 +8,7 @@ let $globalStringSpecies="";
 
 let $globalCurrentElementPositionContainer=[];
 let $globalElementHelper=[];
+let $globalElementComplementer=[];
 
 let $globalDMG=0;
 let $globalHealth=0;
@@ -17,7 +18,7 @@ let $globalElementsDamage=[];
 let $globalElementsHealth=[];
 
 let $globalSpeciesTF=false;
-
+let $globalSpeciesCommunication=false;
 
 //Sort methods
 
@@ -240,49 +241,363 @@ const ascendingOrder=(str)=>{
 
 }
 
-//Ket reszre osztani!
-//I. Elobb filter aztan animal!
-//Mukodik!!!
 
-//II. resz elobb animal aztan filter!
-//Mukodik!!!
+//I.resz Amikor beirod, es aztan valasztol mukodik!
+//II.Elobb valasztol, aztan beirod nem mukodik!
 
-
+//Reszeletesen Vesszuk a G-betuvel kezdodoeket!(amiben van 5 creature es 1 animals)
 const groupSelection=(str)=>{
 	$globalSpeciesTF=true;
 	$globalElementHelper=[];
 	switch(str){
 		case ",Animals only":
-			//console.log("ok");
-			//for(let i=0;i<document.getElementsByClassName('BigFilterDivset').length;i++) 
-			for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+			if($globalSpeciesCommunication)
+			{
+				$globalCurrentElementPositionContainer=$globalElementComplementer;
+				$globalElementComplementer=[];
+				for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
 				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
 					if(species === "Animals"){
 						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
 						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
 					}
 					else{
 						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
 					}
 			}
 			//kiiras
 			$globalCurrentElementPositionContainer=$globalElementHelper;
 			$globalElementHelper=[];
+			$globalString=`FilterBy: None`;
+			$globalStringAttributes="";
+			$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+			$('#BigFilterHealth').children().attr("src","Filter/Hearts.png");
+				$('#BigFilterDMG').css({
+				transform: "rotate(0deg)",
+			})	
+				$globalDMG=0;
+				$GlobalHealth=0;
+			}
+			else
+			{
+			for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "Animals"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+			}
+			//kiiras
+			$globalCurrentElementPositionContainer=$globalElementHelper;
+			$globalElementHelper=[];
+			$globalSpeciesCommunication=true;
+			}
 			break;
 
 		case ",Creatures only":
+			if($globalSpeciesCommunication){
+				$globalCurrentElementPositionContainer=$globalElementComplementer;
+				$globalElementComplementer=[];
+				for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "Creature"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+				}
+				$globalCurrentElementPositionContainer=$globalElementHelper;
+				$globalElementHelper=[];
+				$globalString=`FilterBy: None`;
+				$globalStringAttributes="";
+				$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+				$('#BigFilterHealth').children().attr("src","Filter/Hearts.png");
+				$('#BigFilterDMG').css({
+				transform: "rotate(0deg)",
+			})	
+				$globalDMG=0;
+				$GlobalHealth=0;
+				}
+			else
+			{
 			for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
 				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
 					if(species === "Creature"){
 						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
 						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
 					}
 					else{
 						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
 					}
 			}
 			$globalCurrentElementPositionContainer=$globalElementHelper;
 			$globalElementHelper=[];
+			$globalSpeciesCommunication=true;
+			}
+			break;
+
+			case ",Demons only":
+			if($globalSpeciesCommunication){
+				$globalCurrentElementPositionContainer=$globalElementComplementer;
+				$globalElementComplementer=[];
+				for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "Demon"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+			}
+			//kiiras
+			$globalCurrentElementPositionContainer=$globalElementHelper;
+			$globalElementHelper=[];
+			$globalString=`FilterBy: None`;
+			$globalStringAttributes="";
+			$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+			$('#BigFilterHealth').children().attr("src","Filter/Hearts.png");
+				$('#BigFilterDMG').css({
+				transform: "rotate(0deg)",
+			})	
+				$globalDMG=0;
+				$GlobalHealth=0;
+			
+			}
+			else
+			{
+			for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "Demon"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+			}
+			//kiiras
+			$globalCurrentElementPositionContainer=$globalElementHelper;
+			$globalElementHelper=[];
+			$globalSpeciesCommunication=true;
+			}
+			break;
+
+			case ",Gods only":
+			if($globalSpeciesCommunication){
+				$globalCurrentElementPositionContainer=$globalElementComplementer;
+				$globalElementComplementer=[];
+				for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "God"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+			}
+			//kiiras
+			$globalCurrentElementPositionContainer=$globalElementHelper;
+			$globalElementHelper=[];
+			$globalString=`FilterBy: None`;
+			$globalStringAttributes="";
+			$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+			$('#BigFilterHealth').children().attr("src","Filter/Hearts.png");
+				$('#BigFilterDMG').css({
+				transform: "rotate(0deg)",
+			})	
+				$globalDMG=0;
+				$GlobalHealth=0;
+			}
+			else
+			{
+			for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "God"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+			}
+			//kiiras
+			$globalCurrentElementPositionContainer=$globalElementHelper;
+			$globalElementHelper=[];
+			$globalSpeciesCommunication=true;
+			}
+			break;
+			case ",Humans only":
+			if($globalSpeciesCommunication){
+				$globalCurrentElementPositionContainer=$globalElementComplementer;
+				$globalElementComplementer=[];
+				for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "Human"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+			}
+			//kiiras
+			$globalCurrentElementPositionContainer=$globalElementHelper;
+			$globalElementHelper=[];
+			$globalString=`FilterBy: None`;
+			$globalStringAttributes="";
+			$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+			$('#BigFilterHealth').children().attr("src","Filter/Hearts.png");
+				$('#BigFilterDMG').css({
+				transform: "rotate(0deg)",
+			})	
+				$globalDMG=0;
+				$GlobalHealth=0;
+			
+			}
+			else
+			{
+			for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "Human"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+			}
+			//kiiras
+			$globalCurrentElementPositionContainer=$globalElementHelper;
+			$globalElementHelper=[];
+			$globalSpeciesCommunication=true;
+			}
+			break;
+			case ",Others only":
+			if($globalSpeciesCommunication){
+				$globalCurrentElementPositionContainer=$globalElementComplementer;
+				$globalElementComplementer=[];
+				for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "Other"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+			}
+			//kiiras
+			$globalCurrentElementPositionContainer=$globalElementHelper;
+			$globalElementHelper=[];
+			$globalString=`FilterBy: None`;
+			$globalStringAttributes="";
+			$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+			$('#BigFilterHealth').children().attr("src","Filter/Hearts.png");
+				$('#BigFilterDMG').css({
+				transform: "rotate(0deg)",
+			})	
+				$globalDMG=0;
+				$GlobalHealth=0;
+			
+			}
+			else
+			{
+			for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "Other"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+			}
+			//kiiras
+			$globalCurrentElementPositionContainer=$globalElementHelper;
+			$globalElementHelper=[];
+			$globalSpeciesCommunication=true;
+			}
+			break;
+			case ",Undeads only":
+			if($globalSpeciesCommunication){
+				$globalCurrentElementPositionContainer=$globalElementComplementer;
+				$globalElementComplementer=[];
+				for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "Undead"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+			}
+			//kiiras
+			$globalCurrentElementPositionContainer=$globalElementHelper;
+			$globalElementHelper=[];
+			$globalString=`FilterBy: None`;
+			$globalStringAttributes="";
+			$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+			$('#BigFilterHealth').children().attr("src","Filter/Hearts.png");
+				$('#BigFilterDMG').css({
+				transform: "rotate(0deg)",
+			})	
+				$globalDMG=0;
+				$GlobalHealth=0;
+			
+			}
+			else
+			{
+			for(let i=0;i<$globalCurrentElementPositionContainer.length;i++){
+				let species=document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].getElementsByClassName("species")[0].innerHTML;
+					if(species === "Undead"){
+						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+					else{
+						document.getElementsByClassName("BigFilterDivset")[$globalCurrentElementPositionContainer[i]].style.display="none";
+						$globalElementComplementer.push($globalCurrentElementPositionContainer[i]);
+					}
+			}
+			//kiiras
+			$globalCurrentElementPositionContainer=$globalElementHelper;
+			$globalElementHelper=[];
+			$globalSpeciesCommunication=true;
+			}
 			break;
 
 	}
@@ -442,6 +757,39 @@ $(document).ready(()=>{
 			groupSelection($globalStringSpecies);
 		})
 
+		$('#BigFilterSelectionDemons').on('click',()=>{
+			$globalStringSpecies=",Demons only";
+			$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+			$('#BigFilterSelectionList').hide();
+			groupSelection($globalStringSpecies);
+		})
+
+		$('#BigFilterSelectionGods').on('click',()=>{
+			$globalStringSpecies=",Gods only";
+			$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+			$('#BigFilterSelectionList').hide();
+			groupSelection($globalStringSpecies);
+		})
+
+		$('#BigFilterSelectionHumans').on('click',()=>{
+			$globalStringSpecies=",Humans only";
+			$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+			$('#BigFilterSelectionList').hide();
+			groupSelection($globalStringSpecies);
+		})
+		$('#BigFilterSelectionOthers').on('click',()=>{
+			$globalStringSpecies=",Others only";
+			$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+			$('#BigFilterSelectionList').hide();
+			groupSelection($globalStringSpecies);
+		})
+		$('#BigFilterSelectionUndeads').on('click',()=>{
+			$globalStringSpecies=",Undeads only";
+			$('#BigFilterFilterByLabel').html(`${$globalString}${$globalStringAttributes}${$globalStringSpecies}`);
+			$('#BigFilterSelectionList').hide();
+			groupSelection($globalStringSpecies);
+		})
+
 
 
 	//All images
@@ -493,11 +841,35 @@ $(document).ready(()=>{
 			}
 			}
 			else{
+				//I.resz Amikor beirod, es aztan valasztol mukodik!(pipa)
+				//II.Elobb valasztol, aztan beirod NEM mukodik!
+				//Ha elsore filterezek nem megy bele ebbe az agazatba!
+				//A komplementerbol is kilehet valasztani amit kell!
+
 					$globalElementHelper=[];
 					let value=document.getElementById('BigFilterInput').value;
 					value=value.toLowerCase();
 					value=value.charAt(0).toUpperCase()+value.slice(1);
+					//megkell szurni a komplementert is
+					for(let i=0;i<$globalElementComplementer.length;i++)
+					{		
+						let str=document.getElementsByClassName('BigFilterNames')[$globalElementComplementer[i]].innerHTML;
+						//console.log(str);
+						if(str.startsWith(value))
+					{
+						$globalElementHelper.push($globalElementComplementer[i]);
 
+						//document.getElementsByClassName('BigFilterDivset')[$globalElementComplementer[i]].style.display="inline-block";
+
+					}
+					else
+					{
+						//document.getElementsByClassName('BigFilterDivset')[$globalElementComplementer[i]].style.display="none";
+					}
+				}
+				$globalElementComplementer=$globalElementHelper;
+				$globalElementHelper=[];
+					//Normalis filter
 					for(let i=0;i<$globalCurrentElementPositionContainer.length;i++)
 					{		
 						let str=document.getElementsByClassName('BigFilterNames')[$globalCurrentElementPositionContainer[i]].innerHTML;
@@ -505,6 +877,7 @@ $(document).ready(()=>{
 						if(str.startsWith(value))
 					{
 						$globalElementHelper.push($globalCurrentElementPositionContainer[i]);
+
 						document.getElementsByClassName('BigFilterDivset')[$globalCurrentElementPositionContainer[i]].style.display="inline-block";
 
 					}
@@ -515,12 +888,18 @@ $(document).ready(()=>{
 				}
 				$globalCurrentElementPositionContainer=$globalElementHelper;
 				$globalElementHelper=[];
+				//???
+
+				$globalSpeciesTF =false;
+
 			}
 		}
 
 		else{
 			$globalElementHelper=[];
+			$globalElementComplementer=[];
 			$globalSpeciesTF=false;
+			$globalSpeciesCommunication=false;
 			$globalCurrentElementPositionContainer=[];
 				$globalString=`FilterBy: None`;
 				$('#BigFilterFilterByLabel').html($globalString);
