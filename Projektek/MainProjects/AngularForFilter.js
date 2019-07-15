@@ -552,8 +552,8 @@ elements.directive('allSets',()=>{
 	    <h1 class="BigFilterNames">Sobek</h1>
 	  	<img src="Filter/Sobek.png" class="img">
 	  	<div class="details">
-	  	  <p class="dmg">1000</p>
-	  	  <p class="health">762500</p>
+	  	  <p class="dmg">1821</p>
+	  	  <p class="health">977981</p>
 	  	  <p id="FilterSpecies">Species: <i class="species">God</i></p>
 	  	</div> 
 	  </div>

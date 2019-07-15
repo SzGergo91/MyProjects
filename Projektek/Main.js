@@ -143,7 +143,16 @@ $(document).ready(()=>{
 			}
 		})
 
+		//Setting the content of the menu!
+			if(($globalwidth>=320) && ($globalwidth<=480)){
+				$('#tartalom ').css({
+					top: `${28+(screen.width-320)*0.025}vw`,
+				})
+			}
 
+			if($globalwidth>=1281){
+				
+			}
 
 		$('#bgimg1').on('click',()=>{
 			$('#tartalom').slideToggle('slow');
