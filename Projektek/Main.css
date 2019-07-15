@@ -11,7 +11,7 @@
 		    letter-spacing: -1px;
 		    margin-left: 8%;
 		    margin-top: 2%; 
-		    border: 2px solid blue;
+		    border: 0.36vw solid blue;
 		    max-width: 100%;
 		    color: darkblue;
 			}
@@ -51,7 +51,7 @@
 			line-height: 4.6vw;
 			position: absolute;
 			left: 51vw;
-			top: 32vw;
+			top: 28vw;
 			z-index: 1;
 			display: none;
 			
@@ -653,7 +653,7 @@
 		    letter-spacing: -1px;
 		    margin-left: 4%;
 		    margin-top: 2%; 
-		    border: 2px solid blue;
+		    border: 0.36vw solid blue;
 		    max-width: 28%;
 		    color: darkblue;
 			}
@@ -1281,7 +1281,7 @@
 		    letter-spacing: -1px;
 		    margin-left: 4%;
 		    margin-top: 2%; 
-		    border: 2px solid blue;
+		    border: 0.36vw solid blue;
 		    max-width: 28%;
 		    color: darkblue;
 			}
@@ -1911,7 +1911,7 @@
 		    letter-spacing: -1px;
 		    margin-left: 4%;
 		    margin-top: 2%; 
-		    border: 2px solid blue;
+		    border: 0.36vw solid blue;
 		    max-width: 28%;
 		    color: darkblue;
 			}
@@ -2540,10 +2540,15 @@
 		    letter-spacing: -1px;
 		    margin-left: 4%;
 		    margin-top: 2%; 
-		    border: 2px solid blue;
+		    border: 0.36vw solid blue;
 		    max-width: 28%;
 		    color: darkblue;
 			}
+
+		/*Only for Desktops!*/
+		#MenuSettingsBC{
+			top: 1vw;
+		}
 
 		.A2 {
 			display: inline-block;
@@ -2581,7 +2586,7 @@
 			line-height: 3.5vw;
 			position: absolute;
 			left: 67vw;
-			top: 9vw;
+			top: 7vw;
 			z-index: 1;
 			display: none;
 			
@@ -2615,11 +2620,11 @@
 		}
 
 		#helpdiv1 {
-			width: 32vw;
+			width: 34vw;
 			height: 18vw;
 			background-color: white;
 			position: absolute;
-			left: 68vw;
+			left: 66vw;
 			bottom:78vw;
 			display: none;
 		}
