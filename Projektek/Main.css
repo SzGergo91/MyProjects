@@ -3163,6 +3163,25 @@
 			bottom: 3.66vw;
 			cursor: pointer;
 		}
+
+		/* React for SettingsGame Advertisment!(1281px+) 0752434090*/
+		#News{
+			text-align: center;
+			font-size: 4.4vw;
+		}
+		#IntroductionTextForNews{
+			font-size: 3vw;
+			font-style: italic;
+		}
+		#SettingsGameHeader{
+			font-size: 2vw;
+		}
+
+		#SettingsGameExplanation{
+			font-size: 2vw;
+		}
+
+
 	}
 	
 
