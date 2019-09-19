@@ -635,6 +635,19 @@
 			cursor: pointer;
 		}
 
+		/*SettingsGame (320px-480px*/
+		#News{
+			text-align: center;
+			font-size: 10vw;
+		}
+		#IntroductionTextForNews{
+			font-size: 6vw;
+			font-style: italic;
+		}
+		#SettingsGameHeader{
+			font-size: 8vw;
+		}
+
 
 
 
@@ -1270,6 +1283,19 @@
 			cursor: pointer;
 		}
 
+		/*SettingsGame (481px-767px)*/
+		#News{
+			text-align: center;
+			font-size: 10vw;
+		}
+		#IntroductionTextForNews{
+			font-size: 6vw;
+			font-style: italic;
+		}
+		#SettingsGameHeader{
+			font-size: 8vw;
+		}
+
 	}
 
 
@@ -1892,6 +1918,19 @@
 			padding-top: 3.66vw;
 			bottom: 3.66vw;
 			cursor: pointer;
+		}
+
+		/*SettingsGame (768px-1024px)*/
+		#News{
+			text-align: center;
+			font-size: 3vw;
+		}
+		#IntroductionTextForNews{
+			font-size: 2vw;
+			font-style: italic;
+		}
+		#SettingsGameHeader{
+			font-size: 2.5vw;
 		}
 
 
@@ -2520,6 +2559,18 @@
 			padding-top: 3.66vw;
 			bottom: 3.66vw;
 			cursor: pointer;
+		}
+		/*SettingsGame (1025px-1280px)*/
+		#News{
+			text-align: center;
+			font-size: 3vw;
+		}
+		#IntroductionTextForNews{
+			font-size: 2vw;
+			font-style: italic;
+		}
+		#SettingsGameHeader{
+			font-size: 2.5vw;
 		}
 
 
@@ -3177,8 +3228,11 @@
 			font-size: 2vw;
 		}
 
-		#SettingsGameExplanation{
+		#InputLabel{
+			position: relative;
 			font-size: 2vw;
+			top: -5.1vw;
+			left: 10vw;
 		}
 
 
