@@ -1,0 +1,333 @@
+
+#MainDiv{
+	width: 100%;
+	min-height: 120vw;
+}
+
+
+#IntroHeader{
+	text-align: center;
+	font-size: 5vw;
+	text-shadow: 0.3vw 0vw yellow, 0vw 0.3vw yellow, -0.3vw 0vw yellow, 0vw -0.3vw yellow;
+	font-family: 'Bowlby One SC', cursive;
+}
+
+.IntroParagraph{
+	font-size: 3.5vw;
+	text-shadow: 0.2vw 0vw white, 0vw 0.2vw white, -0.2vw 0vw white, 0vw -0.2vw white;
+	font-family: 'Dancing Script', cursive;
+}
+
+#NonWarriorTextParagraph{
+	font-size: 3.5vw;
+	text-shadow: 0.2vw 0vw white, 0vw 0.2vw white, -0.2vw 0vw white, 0vw -0.2vw white;
+	font-family: 'Dancing Script', cursive;
+	display: inline-block;
+	margin-left: 5vw;
+}
+
+#WarriorTextParagraph{
+	font-size: 3.5vw;
+	text-shadow: 0.2vw 0vw white, 0vw 0.2vw white, -0.2vw 0vw white, 0vw -0.2vw white;
+	font-family: 'Dancing Script', cursive;
+	display: inline-block;
+	margin-left: 10vw;
+}
+
+#NonWarriorDrawing{
+	width: 15vw;
+	height: 15vw;
+	display: inline-block;
+	float: bottom;
+	border:1vw solid red;
+	margin-left: 6vw;
+	border-radius: 5px;
+}
+
+#WarriorDrawing{
+	width: 15vw;
+	height: 15vw;
+	display: inline-block;
+	float: bottom;
+	border:1vw solid green;
+	margin-left: 10vw;
+	border-radius: 5px;
+}
+
+
+#ArrowLeft{
+	width: 13vw;
+	height: 13vw;
+	display: inline-block;
+	background-image: url('SettingsGame/ArrowLeft.png');
+	background-size: 13vw 13vw;
+	cursor: pointer;
+}
+
+.CharacterListContainer{
+	display: inline-block;
+	width: 13vw;
+	height: 13vw;
+	border: 0.3vw ridge red;
+	background-color: white;
+	box-sizing: border-box;
+
+}
+
+.CharacterElements{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	box-sizing: border-box;
+	cursor: pointer;
+	background-size: 13vw 13vw;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#ArrowRight{
+	width: 13vw;
+	height: 13vw;
+	display: inline-block;
+	background-image: url('SettingsGame/ArrowRight.png');
+	background-size: 13vw 13vw;
+	cursor: pointer;
+}
+
+
+/*Osszuk ket reszre! Ket div egymas mellett! egyik 15vw a masik 25vw*/
+
+#CharacterInformationDiv1{
+	width: 30%;
+	min-height: 15vw;
+	margin-left: 0.5vw;
+	display: none;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-gap: 0.5vw;
+	background-color: transparent;
+	box-sizing: border-box;
+	box-shadow: 0.3vw 0.3vw 0.45vw black;
+	border: 0.25vw ridge brown;
+	border-radius: 0.3vw;
+
+
+}
+
+#CharacterImage1{
+	grid-area: 1/1/5/5;
+	background-color: yellow;
+}
+
+#DivInfoDamage1{
+	grid-area: 2/6/3/9;
+	font-size: 2.5vw;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 0.2vw 0vw 0.3vw red, 0vw 0.2vw 0.3vw red, -0.2vw 0vw 0.3vw red, 0vw -0.2vw 0.3vw red;
+}
+
+#DivInfoDefense1{
+	grid-area: 3/6/4/9;
+	font-size: 2.5vw;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 0.2vw 0vw 0.3vw white, 0vw 0.2vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white;
+}
+
+#DivInfoHealth1{
+	grid-area: 4/6/4/9;
+	font-size: 2.5vw;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 0.2vw 0vw 0.3vw green, 0vw 0.2vw 0.3vw green, -0.2vw 0vw 0.3vw green, 0vw -0.2vw 0.3vw green;
+}
+
+#CharacterInformationDiv2{
+	width: 30%;
+	min-height: 15vw;
+	margin-left: 38vw;
+	display: none;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-gap: 0.5vw;
+	background-color: transparent;
+	box-sizing: border-box;
+	box-shadow: 0.3vw 0.3vw 0.45vw black;
+	border: 0.25vw ridge brown;
+	border-radius: 0.3vw;
+}
+
+#CharacterImage2{
+	grid-area: 1/1/5/5;
+	background-color: yellow;
+}
+
+
+#DivInfoDamage2{
+	grid-area: 2/6/3/9;
+	font-size: 2.5vw;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 0.2vw 0vw 0.3vw red, 0vw 0.2vw 0.3vw red, -0.2vw 0vw 0.3vw red, 0vw -0.2vw 0.3vw red;
+}
+
+#DivInfoDefense2{
+	grid-area: 3/6/4/9;
+	font-size: 2.5vw;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 0.2vw 0vw 0.3vw white, 0vw 0.2vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white;
+}
+
+#DivInfoHealth2{
+	grid-area: 4/6/4/9;
+	font-size: 2.5vw;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 0.2vw 0vw 0.3vw green, 0vw 0.2vw 0.3vw green, -0.2vw 0vw 0.3vw green, 0vw -0.2vw 0.3vw green;
+}
+
+.InformationDiv{
+	font-size: 2.5vw;
+	grid-area: 1/5/2/9;
+	font-family: 'Big Shoulders Text', cursive;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 0.2vw 0vw 0.3vw white, 0vw 0.2vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white;
+
+}
+
+.DamageIcon{
+	grid-area: 2/5/3/6;
+	background-image: url('SettingsGame/DamagePic.png');
+	background-size: 100% 100%;
+}
+
+.DefenseIcon{
+	grid-area: 3/5/4/6;
+	background-image: url('SettingsGame/DefensePic.png');
+	background-size: 100% 100%;
+}
+
+.HealthIcon{
+	grid-area: 4/5/4/6;
+	background-image: url('SettingsGame/HealthPic.png');
+	background-size: 100% 100%;
+}
+
+
+
+
+
+#GameModeHeader{
+	text-align: center;
+	font-size: 5vw;
+	text-shadow: 0.3vw 0vw yellow, 0vw 0.3vw yellow, -0.3vw 0vw yellow, 0vw -0.3vw yellow;
+	font-family: 'Bowlby One SC', cursive;
+}
+
+#ArenaMod{
+	font-family: 'Big Shoulders Text', cursive;
+	font-size: 4vw;
+	margin-left: 15vw;
+	background-color: green;
+	cursor: pointer;
+	border-radius: 10%;
+	box-shadow: 0.22vw 0vw 1vw lightblue, 0vw 0.22vw 1vw lightblue, -0.22vw 0vw 1vw lightblue, 0vw -0.22vw 1vw lightblue;
+}
+
+#SurvivalMod{
+	font-family: 'Big Shoulders Text', cursive;
+	font-size: 4vw;
+	margin-left: 35vw;
+	background-color: red;
+	cursor: pointer;
+	border-radius: 10%;
+	box-shadow: 0.22vw 0vw 1vw lightblue, 0vw 0.22vw 1vw lightblue, -0.22vw 0vw 1vw lightblue, 0vw -0.22vw 1vw lightblue;
+}
+
+#WeaponsContainer{
+	width: 40%;
+	height: 10vw;
+	overflow-y: hidden;
+	background-color: gray;
+	margin-left: 26vw;
+
+}
+
+#WeaponsLogo{
+	width: 15vw;
+	height: 10vw;
+	background-image: url('SettingsGame/Plus.png');
+	background-size: 100% 100%;
+	display: inline-block;
+	cursor: pointer;
+}
+
+
+#WeaponsText{
+	font-family: 'Big Shoulders Text', cursive;
+	display: inline-block;
+	font-size: 6.2vw;
+	position: relative;
+	bottom: 3vw;
+	margin-left: 2vw;
+	letter-spacing: 0.1vw;
+	text-shadow: 0.22vw 0vw 1vw lightblue, 0vw 0.22vw 1vw lightblue, -0.22vw 0vw 1vw lightblue, 0vw -0.22vw 1vw lightblue;
+}
+
+#Weapons1Container{
+	display: inline-block;
+	width: 40%;
+	height: 25vw;
+	background-color: green;
+	margin-left: -15vw;
+	margin-right: 17vw;
+	border: 0.3vw solid lightblue;
+	border-radius: 0.3vw;
+	overflow-y: auto;
+}
+
+#Weapons2Container{
+	display: inline-block;
+	width: 40%;
+	height: 25vw;
+	background-color: green;
+	border: 0.3vw solid lightblue;
+	border-radius: 0.3vw;
+	overflow-y: auto;
+}
+
+.ContainerInText{
+	font-family: 'Big Shoulders Text', cursive;
+	text-align: center;
+	text-shadow: 0.22vw 0vw 1vw red, 0vw 0.22vw 1vw red, -0.22vw 0vw 1vw red, 0vw -0.22vw 1vw red;
+	font-size: 5vw;
+}
+
+
+.tools{
+	display: inline-block;
+	width: 10vw;
+	height: 10vw;
+	background-size: 100% 100%;
+	cursor: pointer;
+	margin-left: 0.3vw;
+	background-color: green;
+	border: 0.3vw solid black;
+}
+
+#EmptySpace{
+	width: 100%;
+	height: 30vw;
+}
+
+#Arena{
+	width: 100%;
+	min-height: 80vw;
+	background-image: url('SettingsGame/ArenaBG/CoxValley.jpg');
+	background-size: 100% 80vw;
+	background-repeat: no-repeat;
+	background-position: center;
+}
