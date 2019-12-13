@@ -660,16 +660,78 @@
 }
 
 
-#EmptySpace{
+.EmptySpace{
 	width: 100%;
-	height: 20vw;
+	height: 15vw;
+}
+
+#ArenaMapSelection{
+	height: auto;
+	font-size: 4vw;
+	margin-left: 25%;
+	margin-bottom: 3vw;
+	display: none;
 }
 
 #Arena{
 	width: 100%;
 	min-height: 80vw;
-	background-image: url('SettingsGame/ArenaBG/CoxValley.jpg');
+	background-image: url('SettingsGame/ArenaBG/Arena.jpg');
 	background-size: 100% 80vw;
 	background-repeat: no-repeat;
 	background-position: center;
+	display: none;
 }
+
+#FightActivate{
+	font-size: 4vw;
+	background-color: red;
+	color: white;
+	margin-left: 40vw;
+}
+
+#BattleDiv{
+	background-image: url('SettingsGame/Fight.gif');
+	background-size: 100% 100%;
+	background-color: red;
+	background-repeat: no-repeat;
+	visibility: hidden;
+	width: 25vw;
+	height: 20vw;
+	border-radius: 50%;
+	margin-left: 20vw;
+	position: relative;
+	overflow-y: hidden;
+	display: inline-block;
+}
+
+#BattleParagraph{
+	display: none;
+	font-size: 4vw;
+	word-wrap: break-word;
+}
+
+#NewBattleButton{
+	font-size: 4vw;
+	display: none;
+	background-color: red;
+}
+
+#FirstFighter{
+	width: 12vw;
+	height: 12vw;
+	display: inline-block;
+	background-size: 12vw 12vw;
+	background-repeat: no-repeat;
+	margin-left: 5vw;
+}
+
+#SecondFighter{
+	width: 12vw;
+	height: 12vw;
+	display: inline-block;
+	margin-left: 20vw;
+	background-size: 12vw 12vw;
+	background-repeat: no-repeat;
+}
+
