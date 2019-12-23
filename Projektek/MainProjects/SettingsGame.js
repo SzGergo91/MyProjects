@@ -19,11 +19,89 @@ let $globalHealthInput2=true;
 let $globalSkillSelection1=0;
 let $globalSkillSelection2=0;
 let $globalResultString=``;
+let $globalEnemy=``;
+let $globalEnemyWeaponChance=20; //(//20%)
+let $globalSkillsChance=50;
+let $globalSkillsAccuracy=100;
+let $globalSkillsHighAccuracy=100;
+let $globalSkillsFaktor=1;
+let $globalSkillsRange=100;
+let $globalMyHP=0;
+let $globalMapChooser=0;
+//Megj. 155 a masoik egyenlites, 214 a 3. egyenlites 
+let $globalSkillsEnemy=['Gymnastics','Acrobatics','WeaponMaster','Swiftness','Luck','Power','StoneSkin'];
 let $globalWarriors=[`url('SettingsGame/Warriors/Lizardmen.png')`,`url('SettingsGame/Warriors/Archer.png')`,
 					 `url('SettingsGame/Warriors/Swordman.png')`,`url('SettingsGame/Warriors/SnowFairy.png')`,
 					 `url('SettingsGame/Warriors/Jason.png')`,`url('SettingsGame/Warriors/EgyptionWarrior.png')`,
 					 `url('SettingsGame/Warriors/MummyWarrior.png')`,`url('SettingsGame/Warriors/SkeletonWarrior.png')`];
 
+let SurvivalMaps=[`SettingsGame/SurvivalMaps/DesertVillage.jpg`,`SettingsGame/SurvivalMaps/DesertDunes.jpg`,
+				  `SettingsGame/SurvivalMaps/DesertPyramids.jpg`,`SettingsGame/SurvivalMaps/DesertNight.jpg`,
+				  `SettingsGame/SurvivalMaps/DesertOasis.jpg`,`SettingsGame/SurvivalMaps/ForestJungle.jpg`,
+				  `SettingsGame/SurvivalMaps/ForestGlade.jpg`,`SettingsGame/SurvivalMaps/ForestGlade2.jpg`,
+				  `SettingsGame/SurvivalMaps/ForestPineGlade.jpg`,`SettingsGame/SurvivalMaps/ForestPineGlade2.jpg`,
+				  `SettingsGame/SurvivalMaps/SnowLandDown.jpg`,`SettingsGame/SurvivalMaps/SnowLandForestGlade.jpg`,
+				  `SettingsGame/SurvivalMaps/SnowLandRiver.jpg`,`SettingsGame/SurvivalMaps/SnowLandGlade.jpg`,
+				  `SettingsGame/SurvivalMaps/SnowLandMountain.jpg`,`SettingsGame/SurvivalMaps/SnowLandNight.jpg`,
+				  `SettingsGame/SurvivalMaps/SnowLandIceCavern.jpg`,];
+				 //Weapons
+let Weapons=[{link: `url('SettingsGame/Weapons/Cleaver.png')`, name: `Cleaver`, damage:`5-15`},
+			{link: `url('SettingsGame/Weapons/GodSword.png')`, name: `GodSword`, damage:`45-55`},
+			{link: `url('SettingsGame/Weapons/GoldenSword.png')`, name: `GoldenSword`, damage:`14-24`},
+			{link: `url('SettingsGame/Weapons/Hammer.png')`, name: `Hammer`, damage:`7-9`},
+			{link: `url('SettingsGame/Weapons/HandAxe.png')`, name: `HandAxe`, damage:`7-10`},
+			{link: `url('SettingsGame/Weapons/HeavyAxe.png')`, name: `HeavyAxe`, damage:`14-20`},
+			{link: `url('SettingsGame/Weapons/IronSword.png')`, name: `IronSword`, damage:`10-13`},
+			{link: `url('SettingsGame/Weapons/Knife.png')`, name: `Knife`, damage:`1-3`},
+			{link: `url('SettingsGame/Weapons/OldHammer.png')`, name: `OldHammer`, damage:`6-8`},
+			{link: `url('SettingsGame/Weapons/PickAxeDark.png')`, name: `PickAxeDark`, damage:`9-17`},
+			{link: `url('SettingsGame/Weapons/PocketKnife.png')`, name: `PocketKnife`, damage:`2-4`},
+			{link: `url('SettingsGame/Weapons/Scythe.png')`, name: `Scythe`, damage:`12-25`},
+			{link: `url('SettingsGame/Weapons/ShadowSword.png')`, name: `ShadowSword`, damage:`17-25`},
+			{link: `url('SettingsGame/Weapons/SmallAxe.png')`, name: `SmallAxe`, damage:`5-8`},
+			{link: `url('SettingsGame/Weapons/StrongKnife.png')`, name: `StrongKnife`, damage:`3-5`},
+			{link: `url('SettingsGame/Weapons/StrongScythe.png')`, name: `StrongScythe`, damage:`18-37`},
+			{link: `url('SettingsGame/Weapons/Sword.png')`, name: `Sword`, damage:`10-12`},
+			{link: `url('SettingsGame/Weapons/TacticalAxe.png')`, name: `TacticalAxe`, damage:`1-25`},
+			{link: `url('SettingsGame/Weapons/WoodenHammer.png')`, name: `WoodenHammer`, damage:`1-99`},
+			{link: `url('SettingsGame/Weapons/ZorroSword.png')`, name: `ZorroSword`, damage:`8-18`},];
+
+let $globalOpponents=[{Opponent:`Bear`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Bear.png')`,
+						Health: 1455, Defense: 9, Attack: `20-24`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Deer`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Deer.png')`,
+						Health: 804, Defense: 6, Attack: `8-35`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`FireGolem`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/FireGolem.png')`,
+						Health: 2811, Defense: 20, Attack: `70-132`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`ForestWitch`,Region: `Forest`,  Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/ForestWitch.png')`,
+						Health: 601, Defense: 2, Attack: `3-300`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`FrostZombie`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/FrostZombie.png')`,
+						Health: 1021, Defense: 5, Attack: `5-80`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`IceGolem`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/IceGolem.png')`,
+						Health: 3968, Defense: 25, Attack: `49-78`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`LichKing`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/LichKing.png')`,
+						Health: 9811, Defense: 50, Attack: `270-361`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Naga`,Region: `Desert`, Weak: `Forest`, link:`url('SettingsGame/NonWarriors/Naga.png')`,
+						Health: 2691, Defense: 18, Attack: `25-72`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Phoenix`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Phoenix.png')`,
+						Health: 4326, Defense: 100, Attack: `51-98`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`PolarBear`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/PolarBear.png')`,
+						Health: 1950, Defense: 17, Attack: `25-43`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Wolf`,Region: `Forest`, Weak: `None`, link:`url('SettingsGame/NonWarriors/Wolf.png')`,
+						Health: 503, Defense: 3, Attack: `4-13`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Yeti`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Yeti.png')`,
+						Health: 3582, Defense: 8, Attack: `58-109`, Weapon: `none`, Skills:[] },
+						];
 
 let $globalCharacters=[{Character: `SettingsGame/Characters/Lizardmen.jpg`,NotCharacter: `SettingsGame/BigX.png`,count: 1,
 						 warrior: true,selected: false,active: false, Health: 952, Defense:7, Attack: `15-23`},
@@ -84,6 +162,7 @@ let $globalCharacters=[{Character: `SettingsGame/Characters/Lizardmen.jpg`,NotCh
 
 					   {Character: `SettingsGame/Characters/Phoenix.jpg`,NotCharacter: `SettingsGame/BigX.png`,count: 4,
 					    warrior:false,selected: false,Health: 4326, Defense: 100, Attack: `51-98`},]
+
 
 
 class Settings extends React.Component{
@@ -236,6 +315,9 @@ class Settings extends React.Component{
 					React.createElement('source',{src: `SettingsGame/Audio/WeaponsSelect.mp3`, type:`audio/mpeg`},null)),
 				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `WeaponsNotSelected`},
 					React.createElement('source',{src: `SettingsGame/Audio/WeaponsSelectNot.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `FightExplosion`},
+					React.createElement('source',{src: `SettingsGame/Audio/FightExplosion.mp3`, type:`audio/mpeg`},null)),
+				
 				//Skills and stats!
 				React.createElement('div',{id: `StatsSkillsContainer`},
 					React.createElement('div',{id: `StatsSkillsLogo`},null),
@@ -358,7 +440,6 @@ class Settings extends React.Component{
 						30%, also reduces critical damage to 1.2x at all cases!Your skin is like stone!` 
 
 						)),
-
 				React.createElement('div',{className: `EmptySpace`},null),
 				React.createElement('select',{id: `ArenaMapSelection`},
 					React.createElement('option',{value: `url('SettingsGame/ArenaBG/Arena.jpg')`},`First Arena`),
@@ -369,6 +450,7 @@ class Settings extends React.Component{
 					React.createElement('option',{value: `url('SettingsGame/ArenaBG/SummitLacke(MT).jpg')`},`Moutain Summit`),
 					React.createElement('option',{value: `url('SettingsGame/ArenaBG/Desert.jpg')`},`Desert Sands`),
 					React.createElement('option',{value: `url('SettingsGame/ArenaBG/SnowWorld.jpg')`},`Snow Landscape`),),
+				//Arena Mod!
 				React.createElement('div',{id:`Arena`,},
 					React.createElement('div',{className: `EmptySpace`},null),
 					React.createElement('button',{id: `FightActivate`},`Fight!`),
@@ -385,6 +467,27 @@ class Settings extends React.Component{
 						React.createElement('p',{id:`BattleParagraph`},null),
 						React.createElement('button',{id:`NewBattleButton`},`New Fight!`)),
 					React.createElement('div',{id: `SecondFighter`},null)),
+				//Survival Mod!
+
+				React.createElement('div',{id: `Survival`},
+					React.createElement('h1',{id: `SurvivalRegion`},`Desert`),
+					React.createElement('h2',{id: `SurvivalMapName`},`Desert Village 1/5`),
+					React.createElement('button',{id: `AttackSurvial`},`Attack`),
+					React.createElement('div',{id: `SurvivalOpponentInfo`},`Opponent Information`),
+					React.createElement('br',{},null),
+					React.createElement('br',{},null),
+					React.createElement('br',{},null),
+					React.createElement('br',{},null),
+					React.createElement('br',{},null),
+					React.createElement('br',{},null),
+					React.createElement('br',{},null),
+					React.createElement('br',{},null),
+					React.createElement('div',{id:`SurvivalFighter`},null),
+					React.createElement('div',{id:`SurvivalBattle`},
+						React.createElement('p',{id: `SurvivalParagraph`},null),
+						React.createElement('button',{id: `SurvivalNextButton`},`Next>>>`),
+						React.createElement('button',{id: `SurvivalFinishButton`},`Finish!`)),
+					React.createElement('div',{id:`SurvivalEnemy`},null)),
 				)
 			
 
@@ -616,44 +719,64 @@ const PutInformationIn=(Information)=>{
 					$('#StatsSkillsAttackValue2').html(`${$globalCharacters[i].Attack}`);
 					$('#StatsSkillsHealthValue2').html(`${$globalCharacters[i].Health}`);
 					switch(uniqueValue){
-						case `Lizardmen.jpg`:
-							$('#SecondFighter').css({
-								backgroundImage: $globalWarriors[0],
+						case `Bear.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[0].link,
 							})
 							break;
-						case `Archer.jpg`:
-							$('#SecondFighter').css({
-								backgroundImage: $globalWarriors[1],
+						case `Deer.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[1].link,
 							})
 							break;
-						case `Swordsman.jpg`:
-							$('#SecondFighter').css({
-								backgroundImage: $globalWarriors[2],
+						case `FireGolem.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[2].link,
 							})
 							break;
-						case `SnowFairy.jpg`:
-							$('#SecondFighter').css({
-								backgroundImage: $globalWarriors[3],
+						case `ForestWitch.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[3].link,
 							})
 							break;
-						case `JasonVoorhees.jpg`:
-							$('#SecondFighter').css({
-								backgroundImage: $globalWarriors[4],
+						case `FrostZombie.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[4].link,
 							})
 							break;
-						case `EgyptionWarrior.jpg`:
-							$('#SecondFighter').css({
-								backgroundImage: $globalWarriors[5],
+						case `IceGolem.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[5].link,
 							})
 							break;
-						case `MummyWarrior.jpg`:
-							$('#SecondFighter').css({
-								backgroundImage: $globalWarriors[6],
+						case `LichKing.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[6].link,
 							})
 							break;
-						case `SkeletonWarrior.jpg`:
-							$('#SecondFighter').css({
-								backgroundImage: $globalWarriors[7],
+						case `Naga.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[7].link,
+							})
+							break;
+						case `Phoenix.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[8].link,
+							})
+							break;
+						case `PolarBear.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[9].link,
+							})
+							break;
+						case `Wolf.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[10].link,
+							})
+							break;
+						case `Yeti.jpg`:
+							$('#SurvivalFighter').css({
+								backgroundImage: $globalOpponents[11].link,
 							})
 							break;
 
@@ -762,6 +885,10 @@ const PutInformationOut=(Information)=>{
 							position: `relative`,
 							display: `inline-block`,
 					})
+					$('#SurvivalFighter').css({
+						backgroundImage: ``,
+					})
+
 				}
 
 			}
@@ -769,6 +896,7 @@ const PutInformationOut=(Information)=>{
 
 		}
 	}
+
 
 }
 
@@ -2392,6 +2520,7 @@ const battleResult=(value)=>{
 				Speed1+=SpeedStep1;
 			}
 		}
+		//!!!!!!(1 x)
 		else{
 			//If both of them selected Luck, nothing will happen!
 			if((Luck1) && (Luck2)){
@@ -3064,10 +3193,706 @@ const battleResult=(value)=>{
 
 
 
-	//survival mod!
+	//survival mod! (BattleResult false)
 	else{
+		let blokk1=document.getElementById('StatsSelectedImage2').style.backgroundImage.split('/');
+		let blokk2=document.getElementById('SurvivalEnemy').style.backgroundImage.split('/');
+		let blokk3=$('#Survival').css('background-image').split('/');
+		let CharacterFighter=blokk1[blokk1.length-1].slice(0,-6); //Fighter!
+		let CharacterOpponent=blokk2[blokk2.length-1].slice(0,-6);
+		let BattleMap=blokk3[blokk3.length-1].slice(0,-2);
+		const weaponFighter=document.getElementById('StatsSkillsWeapon2').innerHTML;
+		//Eldontjuk hogy lesz-e fegyvere vagy sem!Generaljuk!
+		let HasWeapon=Math.floor(Math.random()*100)+1;
+		//Ez eldonti, hogy lesz-e vagy sem!
+	    //Ha lesz(beteljesedik akkor a kovetkezo all fenn)akkor 70% hogy 1 skill lesz,
+		// 20% hogy 2 skill lesz, 8% hogy 3 skill es 2% hogy Luck!
+		let SkillsChance=Math.floor(Math.random()*100)+1;
+		let SkillsCount=0; 
+		if(HasWeapon<=$globalEnemyWeaponChance){
+			$globalEnemy.Weapon=Weapons[Math.floor(Math.random()*Weapons.length)];
+		}
 
-	}
+		//Skillt adunk
+		//Mukodik le ellenoriztem!
+		//Fontos hogy a Acc illetve a high ACC legyenek egyformak mikor valtoztatom oket!(A high pedig nagyobb mikor egyenlitek!)
+		if(SkillsChance<=$globalSkillsChance){
+			let PercentArea=Math.floor(Math.random()*$globalSkillsRange)+$globalSkillsFaktor;
+			//console.log(PercentArea);
+				if(PercentArea<=70){
+					SkillsCount=1;
+				}
+				else{//140 akkor 1/2 1/2 az elso 2 valoszinuseg 154-ig
+					if((PercentArea>70) && (PercentArea<=($globalSkillsAccuracy*0.9))){
+						SkillsCount=2;
+					}
+					else{//Mikor lesznek 1/3ban akkor a 3.at 214-ig kell generaljam es annyit is kell berakjak a rangenek!
+						if((PercentArea>($globalSkillsAccuracy*0.9)) && (PercentArea<=($globalSkillsHighAccuracy*0.98))){
+							SkillsCount=3;
+						}
+						else{//A faktort novelem 70-el es akkor felcsereltem a luckot az elsovel kb. Ez a 3. valoszinusege!
+							SkillsCount=4;//Luck
+						}
+					}
+				}
+		}
+		let ATKFighter=document.getElementById('StatsSkillsAttackValue2').innerHTML.split('-');
+		let DEFFighter=Number(document.getElementById('StatsSkillsDefenseValue2').innerHTML);
+		let HPFighter=Number(document.getElementById('StatsSkillsHealthValue2').innerHTML);
+		let ATKOpponent=$globalEnemy.Attack.split('-');
+		let DEFOpponent=$globalEnemy.Defense;
+		let HPOpponent=$globalEnemy.Health;
+		let minDamageFighter=Number(ATKFighter[0]);
+		let maxDamageFighter=Number(ATKFighter[1]);
+		let minDamageOpponent=Number(ATKOpponent[0]);
+		let maxDamageOpponent=Number(ATKOpponent[1]);
+		let minWeaponDamageFighter=0;
+		let maxWeaponDamageFighter=0;
+		let minWeaponDamageOpponent=0;
+		let maxWeaponDamageOpponent=0;
+		//Skills
+		let SkillFighter=[];
+		let SkillOpponent=[];
+		let FinalAttackMinFighter=0;
+		let FinalAttackMaxFighter=0;
+		let FinalAttackMinOpponent=0;
+		let FinalAttackMaxOpponent=0;
+		let SpeedFighter=1;
+		let SpeedOpponent=1;
+		let SpeedStepFighter=1;
+		let SpeedStepOpponent=1;
+		let EvasionFighter=0;
+		let EvasionOpponent=0;
+		let critChanceFighter=0;
+		let critChanceOpponent=0;
+		let critDamageFighter=2;
+		let critDamageOpponent=2;
+
+		let LuckFighter=false;
+		let LuckOpponent=false;
+		let MaxHPFighter=HPFighter;
+		let MaxHPOpponent=HPOpponent;
+		let critChanceCopy=0
+		let evadeChanceCopy=0;
+		let DamageReceivedFighter=1;
+		let DamageReceivedOpponent=1;
+		let StoneskinFighter=false;
+		let StoneskinOpponent=false;
+		let turn=1;
+		let step=0;
+		let ResultString=``;
+		/*if(weapon1!==`Weapon`){
+			let weaponblokk1=document.getElementById('StatsSkillsDamageValue1').innerHTML.split('-');
+			minWeaponDamage1=Number(weaponblokk1[0]);
+			maxWeaponDamage1=Number(weaponblokk1[1]);
+		}*/
+		if(weaponFighter!==`Weapon`){
+			let weaponblokkFighter=document.getElementById('StatsSkillsDamageValue2').innerHTML.split('-');
+			minWeaponDamageFighter=Number(weaponblokkFighter[0]);
+			maxWeaponDamageFighter=Number(weaponblokkFighter[1]);
+		}
+		if($globalEnemy.Weapon!==`none`){
+			let weaponblokkOpponent=$globalEnemy.Weapon.damage.split('-');
+			minWeaponDamageOpponent=Number(weaponblokkOpponent[0]);
+			maxWeaponDamageOpponent=Number(weaponblokkOpponent[1]);
+		}
+
+		//Fighters stats check!
+		if($globalSkillSelection2!==0){
+			let gym=document.getElementsByClassName('StatsSkillsGymnastics')[1].style.backgroundColor;
+			let acro=document.getElementsByClassName('StatsSkillsAcrobatics')[1].style.backgroundColor;
+			let WM=document.getElementsByClassName('StatsSkillsWeaponMaster')[1].style.backgroundColor;
+			let Swift=document.getElementsByClassName('StatsSkillsSwiftness')[1].style.backgroundColor;
+			let Luck=document.getElementsByClassName('StatsSkillsLuck')[1].style.backgroundColor;
+			let Power=document.getElementsByClassName('StatsSkillsPower')[1].style.backgroundColor;
+			let SK=document.getElementsByClassName('StatsSkillsStoneSkin')[1].style.backgroundColor;
+			if(gym===`purple`){
+				SkillFighter.push(`Gymnastics`);
+			}
+			if(acro===`purple`){
+				SkillFighter.push(`Acrobatics`);
+			}
+			if(WM===`purple`){
+				SkillFighter.push(`WeaponMaster`);
+			}
+			if(Swift===`purple`){
+				SkillFighter.push(`Swiftness`);
+			}
+			if(Luck===`purple`){
+				SkillFighter.push(`Luck`);
+			}
+			if(Power===`purple`){
+				SkillFighter.push(`Power`);
+			}
+			if(SK===`purple`){
+				SkillFighter.push(`StoneSkin`);
+				StoneskinFighter=true;
+			}
+
+		}
+
+		//Let's add skills
+		if(SkillsCount!==0){
+			while (SkillsCount!==0){
+				if(SkillsCount===4){
+					$globalEnemy.Skills.push('Luck');
+					SkillsCount=0;
+				}
+				else{
+					let ok=true;
+					let Skill=$globalSkillsEnemy[Math.floor(Math.random()*$globalSkillsEnemy.length)];
+					//Here Acrobatics not working together with gymnastics! (Not logic)
+					if(Skill!==`Luck`){
+						for(let i=0;i<$globalEnemy.Skills.length;i++){
+							if(Skill===$globalEnemy.Skills[i]){
+								ok=false;
+								break;
+							}
+
+						}
+						if(ok){
+							$globalEnemy.Skills.push(Skill);
+							SkillsCount-=1;
+						}
+					}
+				}
+			}
+		}
+
+
+
+		//Checking
+		if($globalSkillSelection2!==0){
+			for(let i=0;i<SkillFighter.length;i++){
+				switch(SkillFighter[i]){
+					case `Gymnastics`:
+						FinalAttackMinFighter=Math.round(minDamageFighter*1.5)+minWeaponDamageFighter;
+						FinalAttackMaxFighter=Math.round(maxDamageFighter*1.5)+maxWeaponDamageFighter;
+						HPFighter=Math.round(HPFighter*1.2)
+						SpeedFighter*=1.2;
+						SpeedStepFighter*=1.2;
+					break;
+
+					case `Acrobatics`:
+						FinalAttackMinFighter=Math.round(minDamageFighter*1.3)+minWeaponDamageFighter;
+						FinalAttackMaxFighter=Math.round(maxDamageFighter*1.3)+maxWeaponDamageFighter;
+						HPFighter=Math.round(HPFighter*1.3);
+						SpeedFighter*=1.5;
+						SpeedStepFighter*=1.5;
+						EvasionFighter+=35;
+					break;
+
+					case `WeaponMaster`:
+						if((minWeaponDamageFighter!==0) && (maxWeaponDamageFighter!==0)){
+							DEFFighter=Math.round(DEFFighter*1.15);
+							FinalAttackMinFighter=Math.round(minDamageFighter*1.25)+minWeaponDamageFighter;
+							FinalAttackMaxFighter=Math.round(maxDamageFighter*1.25)+maxWeaponDamageFighter;
+							SpeedFighter*=1.25;
+							SpeedStepFighter*=1.25;
+							EvasionFighter+=80;
+							critChanceFighter+=30;
+						}
+						break;
+
+					case `Swiftness`:
+						FinalAttackMinFighter=Math.round(minDamageFighter)+minWeaponDamageFighter;
+						FinalAttackMaxFighter=Math.round(maxDamageFighter)+maxWeaponDamageFighter;
+						HPFighter=Math.round(HPFighter*1.75);
+						SpeedFighter*=1.8;
+						SpeedStepFighter*=1.8;
+						EvasionFighter+=50;
+						critChanceFighter+=15;
+					break;
+
+					case `Luck`:
+							LuckFighter=true;		
+							FinalAttackMinFighter=Math.round(minDamageFighter)+minWeaponDamageFighter;
+							FinalAttackMaxFighter=Math.round(maxDamageFighter)+maxWeaponDamageFighter;
+							evadeChanceCopy=EvasionFighter;
+							critChanceCopy=critChanceFighter;	
+					break;
+
+					case `Power`:
+						FinalAttackMinFighter=Math.round(minDamageFighter*2)+minWeaponDamageFighter;
+						FinalAttackMaxFighter=Math.round(maxDamageFighter*2)+maxWeaponDamageFighter;
+						HPFighter=Math.round(HPFighter*2);
+						critChanceFighter+=20;
+						if(!StoneskinOpponent){
+							critDamageFighter=3;
+						}
+					break;
+
+					case `StoneSkin`:
+						FinalAttackMinFighter=Math.round(minDamageFighter)+minWeaponDamageFighter;
+						FinalAttackMaxFighter=Math.round(maxDamageFighter)+maxWeaponDamageFighter;
+						DEFFighter=Math.round(DEFFighter*3.5);
+						DamageReceivedFighter=0.7;
+						critDamageFighter=1.2;
+						
+					break;
+
+
+				}
+			}
+		}
+				else{
+				FinalAttackMinFighter=Math.round(minDamageFighter)+minWeaponDamageFighter;
+				FinalAttackMaxFighter=Math.round(maxDamageFighter)+maxWeaponDamageFighter;
+		}
+		
+
+				//Opponent check!
+		if($globalEnemy.Skills.length!==0){
+			for(let i=0;i<$globalEnemy.Skills.length;i++){
+					switch($globalEnemy.Skills[i]){
+					case `Gymnastics`:
+						FinalAttackMinOpponent=Math.round(minDamageOpponent*1.5)+minWeaponDamageOpponent;
+						FinalAttackMaxOpponent=Math.round(maxDamageOpponent*1.5)+maxWeaponDamageOpponent;
+						HPOpponent=Math.round(HPOpponent*1.2)
+						SpeedOpponent*=1.2;
+						SpeedStepOpponent*=1.2;
+					break;
+
+					case `Acrobatics`:
+						FinalAttackMinOpponent=Math.round(minDamageOpponent*1.3)+minWeaponDamageOpponent;
+						FinalAttackMaxOpponent=Math.round(maxDamageOpponent*1.3)+maxWeaponDamageOpponent;
+						HPOpponent=Math.round(HPOpponent*1.3);
+						SpeedOpponent*=1.5;
+						SpeedStepOpponent*=1.5;
+						EvasionOpponent+=35;
+					break;
+
+					case `WeaponMaster`:
+						if((minWeaponDamageOpponent!==0) && (maxWeaponDamageOpponent!==0)){
+							DEFOpponent=Math.round(DEFOpponent*1.15);
+							FinalAttackMinOpponent=Math.round(minDamageOpponent*1.25)+minWeaponDamageOpponent;
+							FinalAttackMaxOpponent=Math.round(maxDamageOpponent*1.25)+maxWeaponDamageOpponent;
+							SpeedOpponent*=1.25;
+							SpeedStepOpponent*=1.25;
+							EvasionOpponent+=80;
+							critChanceOpponent+=30;
+						}
+						break;
+
+					case `Swiftness`:
+						FinalAttackMinOpponent=Math.round(minDamageOpponent)+minWeaponDamageOpponent;
+						FinalAttackMaxOpponent=Math.round(maxDamageOpponent)+maxWeaponDamageOpponent;
+						HPOpponent=Math.round(HPOpponent*1.75);
+						SpeedOpponent*=1.8;
+						SpeedStepOpponent*=1.8;
+						EvasionOpponent+=50;
+						critChanceOpponent+=15;
+					break;
+
+					case `Luck`:
+							LuckOpponent=true;		
+							FinalAttackMinOpponent=Math.round(minDamageOpponent)+minWeaponDamageOpponent;
+							FinalAttackMaxOpponent=Math.round(maxDamageOpponent)+maxWeaponDamageOpponent;
+							evadeChanceCopy=EvasionOpponent;
+							critChanceCopy=critChanceOpponent;	
+					break;
+
+					case `Power`:
+						FinalAttackMinOpponent=Math.round(minDamageOpponent*2)+minWeaponDamageOpponent;
+						FinalAttackMaxOpponent=Math.round(maxDamageOpponent*2)+maxWeaponDamageOpponent;
+						HPOpponent=Math.round(HPOpponent*2);
+						critChanceOpponent+=20;
+						if(!StoneskinFighter){
+							critDamageOpponent=3;
+						}
+					break;
+
+					case `StoneSkin`:
+						FinalAttackMinOpponent=Math.round(minDamageOpponent)+minWeaponDamageOpponent;
+						FinalAttackMaxOpponent=Math.round(maxDamageOpponent)+maxWeaponDamageOpponent;
+						DEFOpponent=Math.round(DEFOpponent*3.5);
+						DamageReceivedOpponent=0.7;
+						critDamageOpponent=1.2;
+						
+					break;
+
+
+				}
+			}
+		}
+		else{
+				FinalAttackMinOpponent=Math.round(minDamageOpponent)+minWeaponDamageOpponent;
+				FinalAttackMaxOpponent=Math.round(maxDamageOpponent)+maxWeaponDamageOpponent;
+		}
+
+		//console.log(`${FinalAttackMinOpponent}-${FinalAttackMaxOpponent}, speed:${SpeedOpponent}, HP${HPOpponent}`)
+		//BattleMap
+		console.log(BattleMap);
+		let check=BattleMap.slice(0,6);
+		console.log(check);
+		if(check===`SnowLa`){
+			check=BattleMap.slice(0,8);
+		}
+
+
+		//A Check kell eldontse, azt hogy hol vagyunk!
+		//Most akkor lekerjuk az Opponentet illetve a fightert es megnezzuk hova tartoznak!
+		//Elsore a fightert!
+		for(let i=0;i<$globalOpponents.length;i++){
+			if(CharacterFighter===$globalOpponents[i].Opponent){
+				if(check===$globalOpponents[i].Region){
+				switch($globalOpponents[i].Region){
+					case `Forest`:
+						FinalAttackMinFighter=Math.round(FinalAttackMinFighter*1.2);
+						FinalAttackMaxFighter=Math.round(FinalAttackMaxFighter*1.2);
+						DEFFighter=Math.round(DEFFighter*1.2);
+						HPFighter=Math.round(HPFighter*1.2);
+						SpeedFighter*=1.2;
+						SpeedStepFighter*=1.2;
+						critChanceFighter+=10;
+						if(!StoneskinOpponent){
+							critDamageFighter*=1.25;
+						}
+						EvasionFighter+=10;
+						EvasionOpponent-=10; //Hit chance!
+						break;
+					case `Desert`:
+						FinalAttackMinFighter=Math.round(FinalAttackMinFighter*1.2);
+						FinalAttackMaxFighter=Math.round(FinalAttackMaxFighter*1.2);
+						DEFFighter=Math.round(DEFFighter*1.2);
+						HPFighter=Math.round(HPFighter*1.2);
+						SpeedFighter*=1.2;
+						SpeedStepFighter*=1.2;
+						critChanceFighter+=10;
+						if(!StoneskinOpponent){
+							critDamageFighter*=1.25;
+						}
+						EvasionFighter+=10;
+						EvasionOpponent-=10; //Hit chance!
+						break;
+					case `SnowLand`:
+							FinalAttackMinFighter=Math.round(FinalAttackMinFighter*1.5);
+							FinalAttackMaxFighter=Math.round(FinalAttackMaxFighter*1.5);
+							DEFFighter=Math.round(DEFFighter*1.5);
+							HPFighter=Math.round(HPFighter*1.5);
+							SpeedFighter*=1.5;
+							SpeedStepFighter*=1.5;
+							critChanceFighter+=20;
+							critChanceOpponent-=20; //Snow/Weather makes difficult to hit a crit!
+							if(!StoneskinOpponent){
+								critDamageFighter*=1.5;
+							}
+							critDamageOpponent/=1.5;
+							EvasionFighter+=25;
+							EvasionOpponent-=25; //Hit chance!
+							break;
+				}
+			}
+			else{
+				//Weakness
+				if(check===$globalOpponents[i].Weak){
+				switch($globalOpponents[i].Weak){
+					case `Forest`:
+						FinalAttackMinFighter=Math.round(FinalAttackMinFighter/1.2);
+						FinalAttackMaxFighter=Math.round(FinalAttackMaxFighter/1.2);
+						DEFFighter=Math.round(DEFFighter/1.2);
+						HPFighter=Math.round(HPFighter/1.2);
+						SpeedFighter/=1.2;
+						SpeedStepFighter/=1.2;
+						critChanceFighter-=10;
+						critDamageFighter/=1.25;
+						EvasionFighter-=10;
+						EvasionOpponent+=10; //Hit chance!
+						break;
+					case `Desert`:
+						FinalAttackMinFighter=Math.round(FinalAttackMinFighter/1.2);
+						FinalAttackMaxFighter=Math.round(FinalAttackMaxFighter/1.2);
+						DEFFighter=Math.round(DEFFighter/1.2);
+						HPFighter=Math.round(HPFighter/1.2);
+						SpeedFighter/=1.2;
+						SpeedStepFighter/=1.2;
+						critChanceFighter-=10;
+						critDamageFighter/=1.25;
+						EvasionFighter-=10;
+						EvasionOpponent+=10; //Hit chance!
+						break;
+					case `SnowLand`:
+							FinalAttackMinFighter=Math.round(FinalAttackMinFighter/1.3);
+							FinalAttackMaxFighter=Math.round(FinalAttackMaxFighter/1.3);
+							DEFFighter=Math.round(DEFFighter/1.3);
+							HPFighter=Math.round(HPFighter/1.3);
+							SpeedFighter/=1.3;
+							SpeedStepFighter/=1.3;
+							critChanceFighter-=20;
+							critDamageFighter/=1.4;
+							EvasionFighter-=20;
+							EvasionOpponent+=20; //Hit chance!
+							break;
+				}
+			}
+
+			}
+
+				break;
+			}
+		}
+
+		//Most beallitsuk az Opponentet is
+		for(let i=0;i<$globalOpponents.length;i++){
+			if(CharacterOpponent===$globalOpponents[i].Opponent){
+				if(check===$globalOpponents[i].Region){
+				switch($globalOpponents[i].Region){
+					case `Forest`:
+						FinalAttackMinOpponent=Math.round(FinalAttackMinOpponent*1.2);
+						FinalAttackMaxOpponent=Math.round(FinalAttackMaxOpponent*1.2);
+						DEFOpponent=Math.round(DEFOpponent*1.2);
+						HPOpponent=Math.round(HPOpponent*1.2);
+						SpeedOpponent*=1.2;
+						SpeedStepOpponent*=1.2;
+						critChanceOpponent+=10;
+						if(!StoneskinFighter){
+							critDamageOpponent*=1.25;
+						}
+						EvasionOpponent+=10;
+						EvasionFighter-=10; //Hit chance!
+						break;
+					case `Desert`:
+						FinalAttackMinOpponent=Math.round(FinalAttackMinOpponent*1.2);
+						FinalAttackMaxOpponent=Math.round(FinalAttackMaxOpponent*1.2);
+						DEFOpponent=Math.round(DEFOpponent*1.2);
+						HPOpponent=Math.round(HPOpponent*1.2);
+						SpeedOpponent*=1.2;
+						SpeedStepOpponent*=1.2;
+						critChanceOpponent+=10;
+						if(!StoneskinFighter){
+							critDamageOpponent*=1.25;
+						}
+						EvasionOpponent+=10;
+						EvasionFighter-=10; //Hit chance!
+						break;
+					case `SnowLand`:
+							FinalAttackMinOpponent=Math.round(FinalAttackMinOpponent*1.5);
+							FinalAttackMaxOpponent=Math.round(FinalAttackMaxOpponent*1.5);
+							DEFOpponent=Math.round(DEFOpponent*1.5);
+							HPOpponent=Math.round(HPOpponent*1.5);
+							SpeedOpponent*=1.5;
+							SpeedStepOpponent*=1.5;
+							critChanceOpponent+=20;
+							critChanceFighter-=20; //Snow/Weather makes difficult to hit a crit!
+							if(!StoneskinFighter){
+								critDamageOpponent*=1.5;
+							}
+							critDamageFighter/=1.5;
+							EvasionOpponent+=25;
+							EvasionFighter-=25; //Hit chance!
+							break;
+				}
+			}
+			else{
+				//Weakness
+				if(check===$globalOpponents[i].Weak){
+				switch($globalOpponents[i].Weak){
+					case `Forest`:
+						FinalAttackMinOpponent=Math.round(FinalAttackMinOpponent/1.2);
+						FinalAttackMaxOpponent=Math.round(FinalAttackMaxOpponent/1.2);
+						DEFOpponent=Math.round(DEFOpponent/1.2);
+						HPOpponent=Math.round(HPOpponent/1.2);
+						SpeedOpponent/=1.2;
+						SpeedStepOpponent/=1.2;
+						critChanceOpponent-=10;
+						critDamageOpponent/=1.25;
+						EvasionOpponent-=10;
+						EvasionFighter+=10; //Hit chance!
+						break;
+					case `Desert`:
+						FinalAttackMinOpponent=Math.round(FinalAttackMinOpponent/1.2);
+						FinalAttackMaxOpponent=Math.round(FinalAttackMaxOpponent/1.2);
+						DEFOpponent=Math.round(DEFOpponent/1.2);
+						HPOpponent=Math.round(HPOpponent/1.2);
+						SpeedOpponent/=1.2;
+						SpeedStepOpponent/=1.2;
+						critChanceOpponent-=10;
+						critDamageOpponent/=1.25;
+						EvasionOpponent-=10;
+						EvasionFighter+=10; //Hit chance!
+						break;
+						
+					case `SnowLand`:
+							FinalAttackMinOpponent=Math.round(FinalAttackMinOpponent/1.3);
+							FinalAttackMaxOpponent=Math.round(FinalAttackMaxOpponent/1.3);
+							DEFOpponent=Math.round(DEFOpponent/1.3);
+							HPOpponent=Math.round(HPOpponent/1.3);
+							SpeedOpponent/=1.3;
+							SpeedStepOpponent/=1.3;
+							critChanceOpponent-=20;
+							critDamageOpponent/=1.4;
+							EvasionOpponent-=20;
+							EvasionFighter+=20; //Hit chance!
+							break;
+				}
+			}
+			}
+
+				break;
+			}
+		}
+		//console.log(`${CharacterFighter}; ${FinalAttackMinFighter}-${FinalAttackMaxFighter}DMG; ${HPFighter}HP; ${SpeedFighter}Speed`);
+		//console.log(`${CharacterOpponent}; ${FinalAttackMinOpponent}-${FinalAttackMaxOpponent} DMG; ${HPOpponent}HP; ${SpeedOpponent}Speed; ${$globalEnemy.Skills[0]}`);
+		if(critDamageFighter<1.1){
+			critDamageFighter=1.1;
+		}
+		if(critDamageOpponent<1.1){
+			critDamageOpponent=1.1;
+		}
+
+		if(EvasionFighter>90){
+				EvasionFighter=90;
+			}
+		if(EvasionOpponent>90){
+				EvasionOpponent=90;
+			}
+		MaxHPFighter=HPFighter;
+		MaxHPOpponent=HPOpponent;
+		//Luckot berakni hogy majd visszalehessen allitani oket!
+		if(LuckFighter){
+			critChanceCopy=critChanceOpponent;
+			evadeChanceCopy=EvasionOpponent;
+		}
+		else{
+			if(LuckOpponent){
+				critChanceCopy=critChanceFighter;
+				evadeChanceCopy=EvasionFighter;
+			}
+		}
+		if($globalMyHP!==0){
+			HPFighter=$globalMyHP;
+		}
+		ResultString+=`${CharacterFighter} with ${HPFighter}HP!<br><br> VS <br><br> ${CharacterOpponent} with ${HPOpponent}HP!<br><br> Result<br><br>`;
+
+
+			while((HPFighter>0) && (HPOpponent>0) && (step<20000)){
+			if((!LuckFighter) && (!LuckOpponent)){
+			let DamageFighter=FinalAttackMinFighter+Math.floor(Math.random()*(FinalAttackMaxFighter-FinalAttackMinFighter+1))
+			let DamageOpponent=FinalAttackMinOpponent+Math.floor(Math.random()*(FinalAttackMaxOpponent-FinalAttackMinOpponent+1))
+			let evadeFighter=Math.floor(Math.random()*100)+1;	
+			let evadeOpponent=Math.floor(Math.random()*100)+1;
+			let critRateFighter=Math.floor(Math.random()*100)+1;
+			let critRateOpponent=Math.floor(Math.random()*100)+1;
+			SpeedFighter=Number(SpeedFighter.toFixed(2));
+			SpeedOpponent=Number(SpeedOpponent.toFixed(2));
+			if(SpeedOpponent>SpeedFighter){
+				turn=2;
+			}
+			else{
+				turn=1;
+			}
+			if(turn===1)
+			{
+				if(evadeOpponent>EvasionOpponent){
+					if(critRateFighter<=critChanceFighter){
+						let ReceivedDamage=DamageFighter*critDamageFighter-DEFOpponent;
+						step+=1;
+						if(ReceivedDamage<=0){
+							ReceivedDamage=0;
+							console.log(`${CharacterFighter} Critical hit was blocked!`);
+							ResultString+=`-${CharacterFighter} Critical hit was blocked!<br><br>`;
+	
+						}
+					else{
+						//Itt a vegso kiertekeles!
+						HPOpponent-=(ReceivedDamage*DamageReceivedFighter);
+						console.log(`${CharacterFighter} Critcally hit ${CharacterOpponent} with ${ReceivedDamage}! My HP ${HPFighter}; Speed ${SpeedFighter}`);
+						ResultString+=`-${CharacterFighter} Critcally hit ${CharacterOpponent} with ${ReceivedDamage} Damage! ${CharacterOpponent} has ${HPOpponent}Hp remained!<br><br>`;
+						}
+					}
+					else{
+					let ReceivedDamage=DamageFighter-DEFOpponent;
+					step+=1;
+					if(ReceivedDamage<=0){
+						ReceivedDamage=0;
+						console.log(`${CharacterFighter} hit was blocked!`);
+						ResultString+=`-${CharacterFighter} hit was blocked!<br><br>`;
+					}
+					else{
+					//Itt a vegso kiertekeles!	
+					HPOpponent-=(ReceivedDamage*DamageReceivedFighter);
+					console.log(`${CharacterFighter} successfully hit ${CharacterOpponent} with ${ReceivedDamage}! My HP ${HPFighter}; Speed ${SpeedFighter}`);
+					ResultString+=`-${CharacterFighter} successfully hit ${CharacterOpponent} with ${ReceivedDamage} Damage! ${CharacterOpponent} has ${HPOpponent}Hp remained!<br><br>`;
+						}
+					}
+				}
+				else{
+					console.log(`The ${CharacterFighter} missed!`);
+					ResultString+=`-The ${CharacterFighter} missed!<br><br>`;
+				}
+
+				turn=2;
+				SpeedOpponent+=SpeedStepOpponent;
+			}
+			else{
+				//Masodik kore!
+				if(evadeFighter>EvasionFighter){
+					if(critRateOpponent<=critChanceOpponent){
+						let ReceivedDamage=DamageOpponent*critDamageOpponent-DEFFighter;
+						step+=1;
+						if(ReceivedDamage<=0){
+							ReceivedDamage=0;
+							console.log(`${CharacterOpponent} Critical hit was blocked!`);
+							ResultString+=`-${CharacterOpponent} Critical hit was blocked!<br><br>`;
+						}
+					else{
+						//Itt a vegso kiertekeles!
+						HPFighter-=(ReceivedDamage*DamageReceivedOpponent);
+						console.log(`${CharacterOpponent} Critcally hit ${CharacterFighter} with ${ReceivedDamage}! My HP ${HPOpponent}; Speed ${SpeedOpponent}`);
+						ResultString+=`-${CharacterOpponent} Critcally hit ${CharacterFighter} with ${ReceivedDamage} Damage! ${CharacterFighter} has ${HPFighter}Hp remained!<br><br>`;
+						}
+					}
+					else{
+					step+=1;
+					let ReceivedDamage=DamageOpponent-DEFFighter;
+					if(ReceivedDamage<=0){
+						ReceivedDamage=0;
+						console.log(`${CharacterOpponent} hit was blocked!`);
+						ResultString+=`-${CharacterOpponent} hit was blocked!<br><br>`;
+					}
+					else{
+						//Itt a vegso kiertekeles!
+						HPFighter-=(ReceivedDamage*DamageReceivedOpponent);
+						console.log(`${CharacterOpponent} successfully hit ${CharacterFighter} with ${ReceivedDamage}! My HP ${HPOpponent}; Speed ${SpeedOpponent}`);
+						ResultString+=`-${CharacterOpponent} successfully hit ${CharacterFighter} with ${ReceivedDamage} Damage! ${CharacterFighter} has ${HPFighter}Hp remained!<br><br>`;
+					}
+				}
+				}
+				else{
+					console.log(`The ${CharacterOpponent} missed!`);
+					ResultString+=`-The ${CharacterOpponent} missed!<br><br>`;
+				}
+
+				turn=1;
+				SpeedFighter+=SpeedStepFighter;
+			}
+		}
+
+
+	}//end while
+
+
+
+	//Ki gyozott
+		if(HPFighter<=0){
+			console.log(`The ${CharacterOpponent} with ${HPOpponent}Hp remained! You lost your journey!`);
+			ResultString+=`${CharacterOpponent} won with ${HPOpponent.toFixed(2)}Hp remained!(Game Over)`;
+			$globalMyHP=0;
+		}
+		else{
+			if(HPOpponent<=0){
+				console.log(`The first fighter won! ${CharacterFighter} with ${HPFighter}Hp remained`);
+				ResultString+=`You successfully won this battle with ${HPFighter.toFixed(2)}Hp remained!`;
+				$globalMyHP=HPFighter.toFixed(2);
+			}
+			else{
+				console.log(`It's a draw!`);
+				ResultString+=`It's a draw!`;
+				$globalMyHP=0;
+			}
+		}
+		$globalResultString=ResultString;
+	}//Else end(Survival end)
 }
 
 
@@ -3716,6 +4541,17 @@ $(document).ready(()=>{
 						}
 					}
 				}
+			//Megjelenitsuk a terkepet!
+			$('#Survival').css({
+				display: `block`
+			})
+
+			//Adunk egy ellenseget a palyara veletlenszeruen!
+			let enemy=Math.floor(Math.random()*$globalOpponents.length);
+			$globalEnemy=$globalOpponents[enemy];
+			$('#SurvivalEnemy').css({
+				backgroundImage: $globalEnemy.link,
+			})
 
 		}
 		else{
@@ -3917,6 +4753,27 @@ $(document).ready(()=>{
 					$('#SecondFighter').css({
 								backgroundImage: ``,
 							})
+
+					//Eltuntetjuk a terkepet!
+
+			$('#Survival').css({
+				display: `none`
+			})
+			//Visszarakjuk a kivalasztott karaktert is!
+			$('#SurvivalFighter').css({
+				backgroundImage: ``,
+			})
+			$('#SurvivalEnemy').css({
+				backgroundImage: ``,
+			})
+			$globalEnemy.Weapon=`none`;
+			$globalEnemy.Skills=[];
+			$globalEnemy=``;
+			for(let j=0;j<$globalOpponents.length;j++){
+				$globalOpponents[j].Weapon=`none`;
+				$globalOpponents[j].Skills=[];
+			}
+			$globalResultString=``;
 			$globalClicks=0;
 			
 		}
@@ -5500,6 +6357,27 @@ $(document).ready(()=>{
 			}
 	})
 
+
+	//Background Music!
+	$('#BackgroundMusic').on('click',()=>{
+		let blokk=$('#BackgroundMusic').css('background-image').split('/');
+		let bgValue=blokk[blokk.length-1].slice(0,-2);
+		let blokk2=$('#ArenaMapSelection').val().split('/');
+		let ArenaMap=blokk2[blokk2.length-1].slice(0,-2);
+		switch(bgValue){
+			case `SoundOn.jpg`:
+				$('#BackgroundMusic').css({
+					backgroundImage: `url('SettingsGame/SoundOff.png')`
+				})
+				break;
+			case `SoundOff.png`:
+				$('#BackgroundMusic').css({
+					backgroundImage: `url('SettingsGame/SoundOn.jpg')`
+				})
+				break;
+		}
+	})
+
 	//Map selections!
 	$('#ArenaMapSelection').on('change',()=>{
 		let MapArena=$('#ArenaMapSelection').val();
@@ -5561,6 +6439,7 @@ $(document).ready(()=>{
 						display: `none`
 					})
 					battleResult(true);
+					document.getElementById('FightExplosion').play();
 				}).animate({backgroundRepeat: `no-repeat`},10000,()=>{
 					$('#FirstFighter').css({
 						marginLeft: `5vw`,
@@ -5588,13 +6467,10 @@ $(document).ready(()=>{
 					})
 				})
 			}
-		}
-		else{
-			if($globalSurvivalMod){
-
-			}
+		
 		}
 	})	
+
 
 $('#NewBattleButton').on('click',()=>{
 		$('#ListForCharacters').css({
@@ -5636,7 +6512,7 @@ $('#NewBattleButton').on('click',()=>{
 		visibility: `visible`
 	})
 	//Vissza kell rakjam a selecteket!
-				let characters=document.getElementsByClassName('CharacterElements');
+			let characters=document.getElementsByClassName('CharacterElements');
 			//Kikell szedjem a selecteket is!(Ha esetleg valami bevan jelolve!)
 			//Ami warrior azt nem kell jobban sliceolni!
 			let C0=String(characters[0].style.backgroundImage.slice(14).slice(0,-2));
@@ -5746,8 +6622,339 @@ $('#NewBattleButton').on('click',()=>{
 			document.getElementById('CharacterInformationDiv1').style.display=`none`;
 			document.getElementById('CharacterInformationDiv2').style.display=`none`;
 	$('#BattleParagraph').html(``);
+						$('#StatsSelectedImage1').css({
+						backgroundImage: ``,
+					})
+					$('#StatsSkillsDefenseValue1').html(`D`);
+					$('#StatsSkillsAttackValue1').html(`A`);
+					$('#StatsSkillsHealthValue1').html(`H`);
+
+					$('#StatsSelectedImage2').css({
+						backgroundImage: ``,
+					})
+					$('#StatsSkillsDefenseValue2').html(`D`);
+					$('#StatsSkillsAttackValue2').html(`A`);
+					$('#StatsSkillsHealthValue2').html(`H`);
+
+					$('#StatsSkillsWeapon1').html(`Weapon`);
+					$('#StatsSkillsDamageValue1').html('damage');
+					$('#StatsSkillsWeaponPicture1').css({
+						backgroundImage: ``,
+					})
+					$('#StatsSkillsWeapon2').html(`Weapon`);
+					$('#StatsSkillsDamageValue2').html('damage');
+					$('#StatsSkillsWeaponPicture2').css({
+						backgroundImage: ``,
+					})
+
+			//Put back the Def,Atk,Hp values to their default values and its platform
+			//def
+				$globalDefenseInput1=true;
+					$('#StatsSkillsDefenseValue1').css({
+						color:`black`,
+						textShadow: `0vw 0.2vw 0.3vw white, 0.2vw 0vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white`,
+					})
+
+				$globalAttackInput1=true;
+					$('#StatsSkillsAttackValue1').css({
+						color:`black`,
+						textShadow: `0vw 0.2vw 0.3vw white, 0.2vw 0vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white`,
+					})
+
+				$globalHealthInput1=true;
+					$('#StatsSkillsHealthValue1').css({
+						color:`black`,
+						textShadow: `0vw 0.2vw 0.3vw white, 0.2vw 0vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white`,
+					})
+
+				$globalDefenseInput2=true;
+					$('#StatsSkillsDefenseValue2').css({
+						color:`black`,
+						textShadow: `0vw 0.2vw 0.3vw white, 0.2vw 0vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white`,
+					})
+
+					$globalAttackInput2=true;
+					$('#StatsSkillsAttackValue2').css({
+							color:`black`,
+							textShadow: `0vw 0.2vw 0.3vw white, 0.2vw 0vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white`,
+					})
+
+					$globalHealthInput2=true;
+					$('#StatsSkillsHealthValue2').css({
+							color:`black`,
+							textShadow: `0vw 0.2vw 0.3vw white, 0.2vw 0vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white`,
+					})
+
+					//Put back the skills for both cases!
+					document.getElementsByClassName('StatsSkillsGymnastics')[0].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsGymnastics')[0].style.color=`black`;
+					document.getElementsByClassName('StatsSkillsGymnastics')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsGymnastics')[1].style.color=`black`;
+
+					document.getElementsByClassName('StatsSkillsAcrobatics')[0].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsAcrobatics')[0].style.color=`black`;
+					document.getElementsByClassName('StatsSkillsAcrobatics')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsAcrobatics')[1].style.color=`black`;
+
+
+					document.getElementsByClassName('StatsSkillsWeaponMaster')[0].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsWeaponMaster')[0].style.color=`black`;
+					document.getElementsByClassName('StatsSkillsWeaponMaster')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsWeaponMaster')[1].style.color=`black`;
+
+					document.getElementsByClassName('StatsSkillsSwiftness')[0].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsSwiftness')[0].style.color=`black`;
+					document.getElementsByClassName('StatsSkillsSwiftness')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsSwiftness')[1].style.color=`black`;
+
+					document.getElementsByClassName('StatsSkillsLuck')[0].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsLuck')[0].style.color=`black`;
+					document.getElementsByClassName('StatsSkillsLuck')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsLuck')[1].style.color=`black`;
+
+					document.getElementsByClassName('StatsSkillsPower')[0].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsPower')[0].style.color=`black`;
+					document.getElementsByClassName('StatsSkillsPower')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsPower')[1].style.color=`black`;
+
+					document.getElementsByClassName('StatsSkillsStoneSkin')[0].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsStoneSkin')[0].style.color=`black`;
+					document.getElementsByClassName('StatsSkillsStoneSkin')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsStoneSkin')[1].style.color=`black`;
+					$globalSkillSelection1=0;
+					$globalSkillSelection2=0;
 	$globalResultString=``;
 })
+
+	//Survival battle
+	$('#AttackSurvial').on('click',()=>{
+		let bgImage=document.getElementById('SurvivalFighter').style.backgroundImage;
+		if(bgImage!==``){
+			//Kiszedjuk a dolgokat
+			$('#ListForCharacters').css({
+				visibility: `hidden`
+			});
+			$('#SurvivalMod').css({
+				visibility: `hidden`
+			})
+
+			$('#WeaponsContainer').css({
+				visibility: `hidden`
+			})
+			$('#StatsSkillsContainer').css({
+				visibility: `hidden`
+			})
+
+			$('#AttackSurvial').css({
+				visibility: `hidden`
+			})
+
+				$('#SurvivalFighter').animate({marginLeft: `37.5vw`},3000);
+				$('#SurvivalEnemy').animate({marginLeft: `0vw`},3000);
+				$('#SurvivalBattle').animate({marginLeft: `0vw`,width:`0vw`},3000,()=>{
+					$('#SurvivalBattle').css({
+						width: `25vw`,
+						marginLeft: `37vw`,
+						visibility: `visible`
+					})
+					$('#SurvivalFighter').css({
+						display: `none`
+					})
+					$('#SurvivalEnemy').css({
+						display: `none`
+					})
+					battleResult(false);
+					document.getElementById('FightExplosion').play();
+					//Copy paste a survivalra is! (A Battlefieldes caseket maskeppen)
+				}).animate({backgroundRepeat: `no-repeat`},10000,()=>{
+					$('#SurvivalFighter').css({
+						marginLeft: `5vw`,
+						display: `inline-block`
+					})
+					$('#SurvivalEnemy').css({
+						marginLeft: `20vw`,
+						display: `inline-block`
+					})
+					//BattleResults!
+					$('#SurvivalBattle').css({
+						width: `25vw`,
+						marginLeft:`20vw`,
+						overflowY: `auto`,
+						borderRadius:`1%`,
+						backgroundImage:`url('')`,
+						border:`0.22vw solid red`
+					})
+					$('#SurvivalParagraph').css({
+						display: `block`,
+					})
+					$('#SurvivalParagraph').html(`${$globalResultString}`);
+					if($globalMyHP===0)
+					{
+						$('#SurvivalFinishButton').css({
+							display:`inline-block`
+						})
+					}
+					else{
+						$('#SurvivalNextButton').css({
+							display:`inline-block`
+						})
+					}
+				});
+
+		}
+		else{
+			window.alert('Select a Challenger');
+		}
+	})
+
+	//A mapbol is egy objektumot kene csinaljak!
+	$('#SurvivalNextButton').on('click',()=>{
+		$globalMapChooser+=1;
+		$('#Survival').css({
+			backgroundImage: `url(${SurvivalMaps[$globalMapChooser]})`,
+		})
+	})
+
+
+//Kellene leirni neki egy jelenlegi HP-t! Ami nem modosul soha! Ezt elmenteni egy globalis valtozoba!
+	$('#SurvivalFinishButton').on('click',()=>{
+		$('#ListForCharacters').css({
+				visibility: `visible`
+		})
+		$('#SurvivalMod').css({
+				visibility: `visible`
+		})
+
+		$('#WeaponsContainer').css({
+				visibility: `visible`
+		})
+		$('#StatsSkillsContainer').css({
+				visibility: `visible`
+		})
+		$('#AttackSurvial').css({
+				visibility: `visible`
+			})
+
+	$('#SurvivalFinishButton').css({
+		display: `none`
+	})
+
+	$('#SurvivalFighter').css({
+			backgroundImage: ``,
+		})
+	$('#SurvivalEnemy').css({
+			backgroundImage: ``,
+		})
+	$('#SurvivalBattle').css({
+		overflowY: `hidden`,
+		borderRadius:`50%`,
+		backgroundImage:`url('SettingsGame/Fight.gif')`,
+		border:`none`,
+		visibility: `hidden`
+	})
+
+	let CurrentPage=document.getElementsByClassName('CharacterElements');
+				for(let i=0;i<CurrentPage.length;i++){
+					let element=String(CurrentPage[i].style.backgroundImage).slice(14).slice(0,-2);
+					//Lekell kerjem a bordert is!
+					let border=String(CurrentPage[i].parentElement.style.border).slice(12);
+						if(border ===`green`){
+							element=element.slice(21);
+						}
+					
+					for(let j=0;j<$globalCharacters.length;j++){
+						if(($globalCharacters[j].Character===element) && ($globalCharacters[j].warrior)){
+							CurrentPage[i].style.backgroundImage=`url(), url(${$globalCharacters[j].Character})`;
+							break;
+						}
+					}
+				}
+				//Elobb lokalisan a Selectet!
+				for(let i=0;i<CurrentPage.length;i++){
+					let element=String(CurrentPage[i].style.backgroundImage).slice(14).slice(0,-2);
+					for(let j=0;j<$globalCharacters.length;j++){
+						if(($globalCharacters[j].Character===element) && ($globalCharacters[j].selected)){
+							$globalCharacters[j].selected=false;
+							CurrentPage[i].style.opacity=`1`;
+							CurrentPage[i].style.border=`none`;
+							$globalSelected=0;
+							break; //Because we only have one element!
+						}
+					}
+				}
+				//Azokat amik kivul esnek!
+				for(let j=0;j<$globalCharacters.length;j++){
+					if($globalCharacters[j].selected){
+						$globalCharacters[j].selected=false;
+						$globalSelected=0;
+						break;
+					}
+				}
+
+
+
+
+			//Kiszedem a meglevo diveket!
+			document.getElementById('CharacterInformationDiv2').style.display=`none`;
+			$('#SurvivalParagraph').html(``);
+					$('#StatsSelectedImage2').css({
+						backgroundImage: ``,
+					})
+					$('#StatsSkillsDefenseValue2').html(`D`);
+					$('#StatsSkillsAttackValue2').html(`A`);
+					$('#StatsSkillsHealthValue2').html(`H`);
+
+					$('#StatsSkillsWeapon2').html(`Weapon`);
+					$('#StatsSkillsDamageValue2').html('damage');
+					$('#StatsSkillsWeaponPicture2').css({
+						backgroundImage: ``,
+					})
+
+			//Put back the Def,Atk,Hp values to their default values and its platform
+			//def
+				$globalDefenseInput2=true;
+					$('#StatsSkillsDefenseValue2').css({
+						color:`black`,
+						textShadow: `0vw 0.2vw 0.3vw white, 0.2vw 0vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white`,
+					})
+
+					$globalAttackInput2=true;
+					$('#StatsSkillsAttackValue2').css({
+							color:`black`,
+							textShadow: `0vw 0.2vw 0.3vw white, 0.2vw 0vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white`,
+					})
+
+					$globalHealthInput2=true;
+					$('#StatsSkillsHealthValue2').css({
+							color:`black`,
+							textShadow: `0vw 0.2vw 0.3vw white, 0.2vw 0vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white`,
+					})
+
+					//Put back the skills for both cases!
+					document.getElementsByClassName('StatsSkillsGymnastics')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsGymnastics')[1].style.color=`black`;
+
+					document.getElementsByClassName('StatsSkillsAcrobatics')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsAcrobatics')[1].style.color=`black`;
+
+					document.getElementsByClassName('StatsSkillsWeaponMaster')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsWeaponMaster')[1].style.color=`black`;
+
+					document.getElementsByClassName('StatsSkillsSwiftness')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsSwiftness')[1].style.color=`black`;
+
+					document.getElementsByClassName('StatsSkillsLuck')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsLuck')[1].style.color=`black`;
+
+					document.getElementsByClassName('StatsSkillsPower')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsPower')[1].style.color=`black`;
+
+					document.getElementsByClassName('StatsSkillsStoneSkin')[1].style.backgroundColor=`green`;
+					document.getElementsByClassName('StatsSkillsStoneSkin')[1].style.color=`black`;
+					$globalSkillSelection2=0;
+					$globalResultString=``;
+
+	})
 
 
 });

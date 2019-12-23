@@ -651,6 +651,7 @@
 	display: none;
 }
 
+
 #LuckTextMore{
 	font-family: 'Times New Roman', Times, serif;
 	font-style: italic;
@@ -690,6 +691,24 @@
 	margin-left: 40vw;
 }
 
+#FirstFighter{
+	width: 12vw;
+	height: 12vw;
+	display: inline-block;
+	background-size: 12vw 12vw;
+	background-repeat: no-repeat;
+	margin-left: 5vw;
+}
+
+#SecondFighter{
+	width: 12vw;
+	height: 12vw;
+	display: inline-block;
+	margin-left: 20vw;
+	background-size: 12vw 12vw;
+	background-repeat: no-repeat;
+}
+
 #BattleDiv{
 	background-image: url('SettingsGame/Fight.gif');
 	background-size: 100% 100%;
@@ -717,21 +736,105 @@
 	background-color: red;
 }
 
-#FirstFighter{
-	width: 12vw;
-	height: 12vw;
-	display: inline-block;
-	background-size: 12vw 12vw;
+/*Survival Components Below!*/
+#Survival{
+	width: 100%;
+	min-height: 80vw;
+	background-image: url('SettingsGame/SurvivalMaps/DesertVillage.jpg');
+	background-size: 100% 80vw;
 	background-repeat: no-repeat;
-	margin-left: 5vw;
+	background-position: center;
+	display: none;
 }
 
-#SecondFighter{
+#SurvivalRegion{
+	font-size: 6vw;
+	font-family: 'Big Shoulders Text', cursive;
+	text-shadow: 0.25vw 0vw 0.5vw white, 0vw 0.25vw 0.5vw white, 0vw -0.25vw 0.5vw white, -0.25vw 0vw 0.5vw white;
+	color: red;
+	text-align: center;
+}
+
+#SurvivalMapName{
+	font-size: 5vw;
+	font-family: 'Big Shoulders Text', cursive;
+	text-shadow: 0.25vw 0vw 0.5vw white, 0vw 0.25vw 0.5vw white, 0vw -0.25vw 0.5vw white, -0.25vw 0vw 0.5vw white;
+	color: red;
+}
+
+#AttackSurvial{
+	font-size: 4vw;
+	background-color: red;
+	color: white;
+	margin-left: 40vw;
+}
+
+#SurvivalOpponentInfo{
+	width: 25vw;
+	height: 25vw;
+	overflow-y: auto;
+	font-size: 6vw;
+	display: inline-block;
+	font-family: 'Big Shoulders Text', cursive;
+	text-shadow: 0.25vw 0vw 0.5vw white, 0vw 0.25vw 0.5vw white, 0vw -0.25vw 0.5vw white, -0.25vw 0vw 0.5vw white;
+	margin-left: 70vw;
+	color: red;
+}
+
+#SurvivalFighter{
 	width: 12vw;
 	height: 12vw;
 	display: inline-block;
-	margin-left: 20vw;
+	margin-left: 5vw;
 	background-size: 12vw 12vw;
 	background-repeat: no-repeat;
 }
+
+
+#SurvivalBattle{
+	background-image: url('SettingsGame/Fight.gif');
+	background-size: 100% 100%;
+	background-color: red;
+	background-repeat: no-repeat;
+	visibility: hidden;
+	width: 25vw;
+	height: 20vw;
+	border-radius: 50%;
+	margin-left: 20vw;
+	position: relative;
+	overflow-y: hidden;
+	display: inline-block;
+}
+
+#SurvivalParagraph{
+	display: none;
+	font-size: 4vw;
+	word-wrap: break-word;
+}
+
+#SurvivalNextButton{
+	font-size: 4vw;
+	display: none;
+	background-color: red;
+}
+
+#SurvivalFinishButton{
+	font-size: 4vw;
+	display: none;
+	background-color: red;
+}
+
+#SurvivalEnemy{
+	width: 12vw;
+	height: 12vw;
+	display: inline-block;
+	background-size: 12vw 12vw;
+	background-repeat: no-repeat;
+	margin-left: 20vw;
+}
+
+
+
+
+
 
