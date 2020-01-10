@@ -20,14 +20,16 @@ let $globalSkillSelection1=0;
 let $globalSkillSelection2=0;
 let $globalResultString=``;
 let $globalEnemy=``;
-let $globalEnemyWeaponChance=20; //(//20%)
-let $globalSkillsChance=50;
+let $globalDifficulty=0;
+let $globalEnemyWeaponChance=0; //(//20%)
+let $globalSkillsChance=0;
 let $globalSkillsAccuracy=100;
 let $globalSkillsHighAccuracy=100;
-let $globalSkillsFaktor=1;
+let $globalSkillsFaktor=1;//Luck
 let $globalSkillsRange=100;
 let $globalMyHP=0;
 let $globalMapChooser=0;
+//Opponent Information variables below!
 //Megj. 155 a masoik egyenlites, 214 a 3. egyenlites 
 let $globalSkillsEnemy=['Gymnastics','Acrobatics','WeaponMaster','Swiftness','Luck','Power','StoneSkin'];
 let $globalWarriors=[`url('SettingsGame/Warriors/Lizardmen.png')`,`url('SettingsGame/Warriors/Archer.png')`,
@@ -36,14 +38,20 @@ let $globalWarriors=[`url('SettingsGame/Warriors/Lizardmen.png')`,`url('Settings
 					 `url('SettingsGame/Warriors/MummyWarrior.png')`,`url('SettingsGame/Warriors/SkeletonWarrior.png')`];
 
 let SurvivalMaps=[`SettingsGame/SurvivalMaps/DesertVillage.jpg`,`SettingsGame/SurvivalMaps/DesertDunes.jpg`,
-				  `SettingsGame/SurvivalMaps/DesertPyramids.jpg`,`SettingsGame/SurvivalMaps/DesertNight.jpg`,
-				  `SettingsGame/SurvivalMaps/DesertOasis.jpg`,`SettingsGame/SurvivalMaps/ForestJungle.jpg`,
-				  `SettingsGame/SurvivalMaps/ForestGlade.jpg`,`SettingsGame/SurvivalMaps/ForestGlade2.jpg`,
-				  `SettingsGame/SurvivalMaps/ForestPineGlade.jpg`,`SettingsGame/SurvivalMaps/ForestPineGlade2.jpg`,
-				  `SettingsGame/SurvivalMaps/SnowLandDown.jpg`,`SettingsGame/SurvivalMaps/SnowLandForestGlade.jpg`,
-				  `SettingsGame/SurvivalMaps/SnowLandRiver.jpg`,`SettingsGame/SurvivalMaps/SnowLandGlade.jpg`,
-				  `SettingsGame/SurvivalMaps/SnowLandMountain.jpg`,`SettingsGame/SurvivalMaps/SnowLandNight.jpg`,
-				  `SettingsGame/SurvivalMaps/SnowLandIceCavern.jpg`,];
+				  `SettingsGame/SurvivalMaps/DesertSands.jpg`,`SettingsGame/SurvivalMaps/DesertPyramids.jpg`,
+				  `SettingsGame/SurvivalMaps/DesertSunSet.jpg`,`SettingsGame/SurvivalMaps/DesertNight.jpg`,
+				  `SettingsGame/SurvivalMaps/DesertOasis.jpg`,`SettingsGame/SurvivalMaps/ForestFields.jpg`,
+				  `SettingsGame/SurvivalMaps/ForestInside.jpg`,`SettingsGame/SurvivalMaps/ForestPath.jpg`,
+				  `SettingsGame/SurvivalMaps/ForestDarkPath.jpg`,`SettingsGame/SurvivalMaps/ForestGhost.jpg`,
+				  `SettingsGame/SurvivalMaps/ForestDark.jpg`,`SettingsGame/SurvivalMaps/ForestAutumnLakeside.jpg`,
+				  `SettingsGame/SurvivalMaps/ForestAutumnPath.jpg`,`SettingsGame/SurvivalMaps/ForestPineGlade.jpg`,
+				  `SettingsGame/SurvivalMaps/ForestTop.jpg`,`SettingsGame/SurvivalMaps/SnowLandDownNight.jpg`,
+				  `SettingsGame/SurvivalMaps/SnowLandDesolation.jpg`,`SettingsGame/SurvivalMaps/SnowLandDown.jpg`,
+				  `SettingsGame/SurvivalMaps/SnowLandForestGlade.jpg`,`SettingsGame/SurvivalMaps/SnowLandForestInside.jpg`,
+				  `SettingsGame/SurvivalMaps/SnowLandRiver.jpg`,`SettingsGame/SurvivalMaps/SnowLandBridge.jpg`,
+				  `SettingsGame/SurvivalMaps/SnowLandNight.jpg`,`SettingsGame/SurvivalMaps/SnowLandGlade.jpg`,
+				  `SettingsGame/SurvivalMaps/SnowLandMountain.jpg`,`SettingsGame/SurvivalMaps/SnowLandRoadUp.jpg`,
+				  `SettingsGame/SurvivalMaps/SnowLandTopNight.jpg`,`SettingsGame/SurvivalMaps/SnowLandIceCavern.jpg`,];
 				 //Weapons
 let Weapons=[{link: `url('SettingsGame/Weapons/Cleaver.png')`, name: `Cleaver`, damage:`5-15`},
 			{link: `url('SettingsGame/Weapons/GodSword.png')`, name: `GodSword`, damage:`45-55`},
@@ -66,14 +74,24 @@ let Weapons=[{link: `url('SettingsGame/Weapons/Cleaver.png')`, name: `Cleaver`, 
 			{link: `url('SettingsGame/Weapons/WoodenHammer.png')`, name: `WoodenHammer`, damage:`1-99`},
 			{link: `url('SettingsGame/Weapons/ZorroSword.png')`, name: `ZorroSword`, damage:`8-18`},];
 
-let $globalOpponents=[{Opponent:`Bear`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Bear.png')`,
-						Health: 1455, Defense: 9, Attack: `20-24`, Weapon: `none`, Skills:[] },
+let $globalOpponents=[		//Selection Area Below!
+					  {Opponent:`FireGolem`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/FireGolem.png')`,
+						Health: 2811, Defense: 20, Attack: `70-132`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Naga`,Region: `Desert`, Weak: `Forest`, link:`url('SettingsGame/NonWarriors/Naga.png')`,
+						Health: 2691, Defense: 18, Attack: `25-72`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Phoenix`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Phoenix.png')`,
+						Health: 4326, Defense: 50, Attack: `51-398`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Bear`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Bear.png')`,
+						Health: 1900, Defense: 19, Attack: `30-34`, Weapon: `none`, Skills:[] },
 
 					  {Opponent:`Deer`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Deer.png')`,
 						Health: 804, Defense: 6, Attack: `8-35`, Weapon: `none`, Skills:[] },
 
-					  {Opponent:`FireGolem`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/FireGolem.png')`,
-						Health: 2811, Defense: 20, Attack: `70-132`, Weapon: `none`, Skills:[] },
+					  {Opponent:`Wolf`,Region: `Forest`, Weak: `None`, link:`url('SettingsGame/NonWarriors/Wolf.png')`,
+						Health: 503, Defense: 3, Attack: `4-13`, Weapon: `none`, Skills:[] },
 
 					  {Opponent:`ForestWitch`,Region: `Forest`,  Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/ForestWitch.png')`,
 						Health: 601, Defense: 2, Attack: `3-300`, Weapon: `none`, Skills:[] },
@@ -87,20 +105,134 @@ let $globalOpponents=[{Opponent:`Bear`,Region: `Forest`, Weak: `Desert`, link:`u
 					  {Opponent:`LichKing`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/LichKing.png')`,
 						Health: 9811, Defense: 50, Attack: `270-361`, Weapon: `none`, Skills:[] },
 
-					  {Opponent:`Naga`,Region: `Desert`, Weak: `Forest`, link:`url('SettingsGame/NonWarriors/Naga.png')`,
-						Health: 2691, Defense: 18, Attack: `25-72`, Weapon: `none`, Skills:[] },
-
-					  {Opponent:`Phoenix`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Phoenix.png')`,
-						Health: 4326, Defense: 100, Attack: `51-98`, Weapon: `none`, Skills:[] },
-
 					  {Opponent:`PolarBear`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/PolarBear.png')`,
-						Health: 1950, Defense: 17, Attack: `25-43`, Weapon: `none`, Skills:[] },
+						Health: 3000, Defense: 30, Attack: `35-53`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Yeti`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Yeti.png')`,
+						Health: 3582, Defense: 8, Attack: `58-109`, Weapon: `none`, Skills:[] },
+
+						//I.Easy mode below from 12
+						//1.desert (14 random)
+					  {Opponent:`DesertWarrior`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/DesertWarrior.png')`,
+						Health: 800, Defense: 3, Attack: `10-15`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Scorpion`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/DesertScorpion.png')`,
+						Health: 1113, Defense: 4, Attack: `15-45`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Camel`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Camel.png')`,
+						Health: 880, Defense: 7, Attack: `7-30`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Nomad`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Nomad.png')`,
+						Health: 785, Defense: 9, Attack: `20-30`, Weapon: `none`, Skills:[] },
+
+						//2.Jungle
+					  {Opponent:`Boar`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Boar.png')`,
+						Health: 1180, Defense: 5, Attack: `17-32`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Deer`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Deer.png')`,
+						Health: 804, Defense: 6, Attack: `8-35`, Weapon: `none`, Skills:[] },
 
 					  {Opponent:`Wolf`,Region: `Forest`, Weak: `None`, link:`url('SettingsGame/NonWarriors/Wolf.png')`,
 						Health: 503, Defense: 3, Attack: `4-13`, Weapon: `none`, Skills:[] },
 
-					  {Opponent:`Yeti`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Yeti.png')`,
-						Health: 3582, Defense: 8, Attack: `58-109`, Weapon: `none`, Skills:[] },
+					  {Opponent:`Panther`,Region: `Forest`, Weak: `None`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Panther.png')`,
+						Health: 1301, Defense: 5, Attack: `19-23`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Gorilla`,Region: `Forest`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Ape.png')`,
+						Health: 1200, Defense: 15, Attack: `10-35`, Weapon: `none`, Skills:[] },
+
+						//3.SnowLand
+					  {Opponent:`Malamut`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Malamut.png')`,
+						Health: 751, Defense: 5, Attack: `6-19`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`ArcticFox`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/ArcticFox.png')`,
+						Health: 650, Defense: 2, Attack: `2-5`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Eskimo`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Eskimo.png')`,
+						Health: 800, Defense: 20, Attack: `5-16`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Rozmar`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Rozmar.png')`,
+						Health: 2371, Defense: 12, Attack: `25-30`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Penguin`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Penguin.png')`,
+						Health: 600, Defense: 2, Attack: `1-3`, Weapon: `none`, Skills:[] },
+
+						//Normal mode below 26 obj ami folotte van
+						//Desert Normal
+					  {Opponent:`DesertWarrior`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/DesertWarrior.png')`,
+						Health: 800, Defense: 3, Attack: `10-15`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Scorpion`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/DesertScorpion.png')`,
+						Health: 1113, Defense: 4, Attack: `15-45`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Camel`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Camel.png')`,
+						Health: 880, Defense: 7, Attack: `7-30`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Nomad`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Nomad.png')`,
+						Health: 785, Defense: 9, Attack: `20-30`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Genie`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/Genie.png')`,
+						Health: 1273, Defense: 3, Attack: `15-105`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Naga`,Region: `Desert`, Weak: `Forest`, link:`url('SettingsGame/NonWarriors/Naga.png')`,
+						Health: 2691, Defense: 18, Attack: `25-72`, Weapon: `none`, Skills:[] },
+						//Jungle Normal(32)
+
+					  {Opponent:`Bear`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Bear.png')`,
+						Health: 1900, Defense: 19, Attack: `30-34`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Deer`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Deer.png')`,
+						Health: 804, Defense: 6, Attack: `8-35`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Wolf`,Region: `Forest`, Weak: `None`, link:`url('SettingsGame/NonWarriors/Wolf.png')`,
+						Health: 503, Defense: 3, Attack: `4-13`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Panther`,Region: `Forest`, Weak: `None`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Panther.png')`,
+						Health: 1301, Defense: 5, Attack: `19-23`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Gorilla`,Region: `Forest`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Ape.png')`,
+						Health: 1200, Defense: 15, Attack: `10-35`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Boar`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Boar.png')`,
+						Health: 1180, Defense: 5, Attack: `17-32`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Fairy`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/Fairy.png')`,
+						Health: 450, Defense: 30, Attack: `49-51`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Eagle`,Region: `Forest`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/Eagle.png')`,
+						Health: 490, Defense: 3, Attack: `25-25`, Weapon: `none`, Skills:[] },
+
+						//40 from 0
+					  {Opponent:`Rozmar`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Rozmar.png')`,
+						Health: 2371, Defense: 12, Attack: `25-30`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Penguin`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Penguin.png')`,
+						Health: 600, Defense: 2, Attack: `1-3`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`PolarBear`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/PolarBear.png')`,
+						Health: 3000, Defense: 30, Attack: `35-53`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`FrostZombie`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/FrostZombie.png')`,
+						Health: 1021, Defense: 5, Attack: `5-80`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`ArcticFox`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/ArcticFox.png')`,
+						Health: 650, Defense: 2, Attack: `2-5`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Eskimo`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Eskimo.png')`,
+						Health: 800, Defense: 20, Attack: `5-16`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Malamut`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Malamut.png')`,
+						Health: 751, Defense: 5, Attack: `6-19`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Strange Thing`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/LightBeing.png')`,
+						Health: 300, Defense: 70, Attack: `10-15`, Weapon: `none`, Skills:[] },
+
+						//Mini Bosses //48 ghost, 49 monster
+					  {Opponent:`Ghost`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/Ghost.png')`,
+						Health: 801, Defense: 90, Attack: `1-39`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Ice Monster`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/FrostMonster.png')`,
+						Health: 5000, Defense: 1, Attack: `30-35`, Weapon: `none`, Skills:[] },
 						];
 
 let $globalCharacters=[{Character: `SettingsGame/Characters/Lizardmen.jpg`,NotCharacter: `SettingsGame/BigX.png`,count: 1,
@@ -113,7 +245,7 @@ let $globalCharacters=[{Character: `SettingsGame/Characters/Lizardmen.jpg`,NotCh
 					    warrior: false,selected: false,Health: 2811, Defense: 20, Attack: `70-132`},
 
 					   {Character: `SettingsGame/Characters/PolarBear.jpg`,NotCharacter: `SettingsGame/BigX.png`,count: 1,
-					    warrior: false,selected: false,Health: 1950, Defense: 17, Attack: `25-43`},
+					    warrior: false,selected: false,Health: 3000, Defense: 30, Attack: `35-53`},
 
 					   {Character: `SettingsGame/Characters/LichKing.jpg`,NotCharacter: `SettingsGame/BigX.png`,count: 1,
 					    warrior:false,selected: false,Health: 9811, Defense: 50, Attack: `270-361`},
@@ -128,7 +260,7 @@ let $globalCharacters=[{Character: `SettingsGame/Characters/Lizardmen.jpg`,NotCh
 					    warrior:true,selected: false,Health: 680, Defense: 10, Attack: `8-25`},
 
 					   {Character: `SettingsGame/Characters/Bear.jpg`,NotCharacter: `SettingsGame/BigX.png`,count: 2,
-					    warrior:false,selected: false,Health: 1455, Defense: 9, Attack: `20-24`},
+					    warrior:false,selected: false,Health: 1900, Defense: 19, Attack: `30-34`},
 
 					   {Character: `SettingsGame/Characters/Wolf.jpg`,NotCharacter: `SettingsGame/BigX.png`,count: 2,
 					    warrior:false,selected: false,Health: 503, Defense: 3, Attack: `4-13`},
@@ -161,7 +293,7 @@ let $globalCharacters=[{Character: `SettingsGame/Characters/Lizardmen.jpg`,NotCh
 					    warrior:true,selected: false,Health: 748, Defense: 7, Attack: `6-14`},
 
 					   {Character: `SettingsGame/Characters/Phoenix.jpg`,NotCharacter: `SettingsGame/BigX.png`,count: 4,
-					    warrior:false,selected: false,Health: 4326, Defense: 100, Attack: `51-98`},]
+					    warrior:false,selected: false,Health: 4326, Defense: 50, Attack: `51-398`},]
 
 
 
@@ -188,20 +320,54 @@ class Settings extends React.Component{
 			React.createElement('div',{style: { backgroundImage: `linear-gradient(${this.state.Deg}deg,lightblue ,blue 30% ,black 75%)`}, onMouseMove: this.PassiveBgIntro,
 				onMouseOver: this.PassiveBgIntro,onMouseOut:this.PassiveBgIntro,onWheel:this.PassiveBgIntro},
 				React.createElement('h1',{id: `IntroHeader`},`Settings Game`),
-				React.createElement('p',{className: `IntroParagraph`},`This Game is about fighting between two characters or doing a dungeon!
-					Each character has their own default characteristics. You can specify these characteristics and this
-					will influence the result of the battle as well!`),
-				React.createElement('p',{className: `IntroParagraph`},`-You can specify the following characteristics:
-				    Attack, defense, health and size!`),
-				React.createElement('p',{className:`IntroParagraph`},`Other specifications are also options like skills and weapons!`),
-				React.createElement('p',{className:`IntroParagraph`},`-In the page we can change the default skills or give them skills like MasterFighter,
-				MasterAcrobatics etc. The MasterFighter gives average chance to critical and dodge, and the MasterAcrobatics gives very hight
-				chance to dodge! `),
-				React.createElement('p',{className:`IntroParagraph`},`The last about what to know is weapons. You can choose weapons to influence the
-					battle between the fighters!`),
-				//Setting Accesories!
-				React.createElement('p',{className:`IntroParagraph`},`Warriors can only be selected in the arena mod, and the non-warrior
-					characters only in the survival mod!`),
+				React.createElement('p',{className: `IntroParagraph`},`This Game is about fighting between two characters or multiple fights!
+					The Game has two modes! Arena mode and Survival mode!`),
+				React.createElement('p',{className: `IntroParagraph`},`-In Arena mode you can select two warrior characters and make them fight!
+					In Survival mode you need to complete a journey that walks through the Deserts followed by the Forests and finally
+					the Snowlands! Also this mod has three difficulties(Easy,Normal,Hard).`),
+				React.createElement('p',{className:`IntroParagraph`},`-Lets talk about characters! There are two types of
+					characters. The first type is called Warrior and the second type is called NonWarrior. You can distinguish them
+					by checking the border of their profile in the list! The green bordered is warrior and the red bordered is the NonWarrior!
+					In the Arena Mode you can only choose warrior type characters, while in Survival mode you can choose only NonWarrior characters!`),
+				React.createElement('p',{className:`IntroParagraph`},`-Characteristics & Skills of a character:`),
+				React.createElement('p',{className:`IntroParagraph`},`Each Character has three basic characteristics:
+					Health,Defense and Attack! These basic characteristics can be changed by manually or/and by Skills!
+					Output damage is calculated Defense-Attack and it is substracted from the Health.
+					If the Defense is higher or equal then the Attack, then the output damage is 0 with a message "Character hit was blocked"!
+					Hidden Characteristics: speed,critChance,critDamage,Evasion,Luck Effects(only for Luck Skill).
+					These characteristics cannot be changed manually. It can only be changed by skills or/and by Envirement!
+					Speed is how many times a character takes it's turn! Example: If Character1 has speed=2 and Character2 has speed1 then
+					Character1 comes 2 times in a row, while Character2 comes one time!
+					CritChance is used to determene a Characters chances to hit it's Opponent with a criticalDamage!By default the criticalDamage is 2x 
+					the damage of a normal attack!
+					CritDamage is used to determene the strenght of the criticalDamage. Some skills can make critdamage=20(Luck), which means, when it's critical it deals 20x the normal damage!
+					Evasion is used to evade an attack. Example: If a Character has 50% Evasion then it's opponent has a 50% chance to miss with it's attack!
+					The information about the skills click on a mode the select the "I" icon and read all about them!`
+					),
+				React.createElement('p',{className:`IntroParagraph`},`-Weapons: Weapons are used to increase a Character's attack!
+					You can only choose one weapon at a time!`),
+				React.createElement('p',{className:`IntroParagraph`},`Envirements: -Envirements effect characters as well!
+					Exemple: A Polar bear will receive Buffs from SnowLands, nothing from Forests and Debuffs from Deserts!
+					Another Example: A mummyWarrior will receive buffs from deserts debuffs from Snowlands and nothing from Forests!Forest can make debuffs
+					as well but mostly in Arena Mode! These buffs/Debuffs change depending on which mode we select!
+					In Arena Mode there are 5 kinds of buffs/debuffs. Strong, Weak, No Buff/Debuff, Weak Opposite, Strong Opposite.
+					(Strong Buff,Weak Buff,No Buff,Weak Debuff,Strong Debuff)
+					A weak debuff gives 10% to all stats including the hidden stats! A Strong gives 20%! A Strong can give 30%
+					as well in the Snowlands or more at Survival mode!`),
+				React.createElement('p',{className:`IntroParagraph`},`-Extra about modes! In Arena Mode we can select
+					two warriors, and modify their stats, give them skills or change the envirement!The standard
+					envirement is the Arena Collosseum which gives no buffs and no debuffs for anybody! We can
+					select different envirements(Maps), that gives buff/debuff for specified characters!
+					After two characters were specified we need to start the fight by clicking on the fight button!
+					In the following 10 seconds the fight will be finished,and we can check the battle result!
+					In survival mode we only choose one character, to complete a journey. A journey depends on which difficulty is selected!
+					The journey always begin in the desert and ends in the SnowLand Cavern. If you lose health, your health won't be regenerated
+					in the next battle! The opponents get stronger and stronger on each time you continue your journey!(move to the
+					next area)! In the end of every region is a boss waiting for you.
+					In easy mode anything can be in anywhere, and the creatures are weaker, the bosses are weak as well!
+					In normal mode every creature belongs to their own realm. (Scorpion to desert,panther to forest, pinguin to snowlands).
+					Also some more powerfull creatures can be on your path and the bosses are stronger!`),
+				//Setting Accesories!	
 				React.createElement('p',{id:`NonWarriorTextParagraph`},`Non-Warrior`),
 				React.createElement('p',{id: `WarriorTextParagraph`},`Warrior`),
 				React.createElement('br',{},null),
@@ -243,8 +409,8 @@ class Settings extends React.Component{
 
 				React.createElement('h1',{id: `GameModeHeader`},`Game Modes`),
 				React.createElement('br',{},null),
-				React.createElement('span',{id:`ArenaMod`},`Arena Mod`),
-				React.createElement('span',{id:`SurvivalMod`},`Survival Mod`),
+				React.createElement('span',{id:`ArenaMod`},`Arena Mode`),
+				React.createElement('span',{id:`SurvivalMod`},`Survival Mode`),
 				React.createElement('br',{},null),
 				React.createElement('br',{},null),
 				//Ide jon majd a Fegyverek opcio illetve a stats & Skills opcio!
@@ -315,6 +481,10 @@ class Settings extends React.Component{
 					React.createElement('source',{src: `SettingsGame/Audio/WeaponsSelect.mp3`, type:`audio/mpeg`},null)),
 				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `WeaponsNotSelected`},
 					React.createElement('source',{src: `SettingsGame/Audio/WeaponsSelectNot.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `EasySelectSound`},
+					React.createElement('source',{src: `SettingsGame/Audio/EasySelectSound.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `NormalSelectSound`},
+					React.createElement('source',{src: `SettingsGame/Audio/NormalSelectSound.mp3`, type:`audio/mpeg`},null)),
 				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `FightExplosion`},
 					React.createElement('source',{src: `SettingsGame/Audio/FightExplosion.mp3`, type:`audio/mpeg`},null)),
 				
@@ -400,9 +570,8 @@ class Settings extends React.Component{
 						React.createElement('br',{},null),
 						React.createElement('br',{},null),
 						React.createElement('mark',{},`-Swiftness:`),
-						` This skill gives 80% Speed, 50% Evasion, 75% Health and 15% chance to land a 2x critical damage,
-						 without a weapon! With weapon this skill gives 50% Speed, 40% Evasion, 75% Health,20% Defense and
-						 a 15% chance to land a 2x critical damage!This skill really makes you vital!`,
+						` This skill gives 80% Speed, 50% Evasion, 75% Health and 15% chance to land a 2x critical damage!
+						This skill really makes you vital!`,
 						React.createElement('br',{},null),
 						React.createElement('br',{},null),
 						React.createElement('mark',{},`-Luck:`),
@@ -440,6 +609,11 @@ class Settings extends React.Component{
 						30%, also reduces critical damage to 1.2x at all cases!Your skin is like stone!` 
 
 						)),
+
+				React.createElement('h1',{id: `SurvivalDifficultyHeader`},`Difficulties`),
+				React.createElement('span',{id:`SurvivalEasy`},`Easy`),
+				React.createElement('span',{id: `SurvivalNormal`},`Normal`),
+
 				React.createElement('div',{className: `EmptySpace`},null),
 				React.createElement('select',{id: `ArenaMapSelection`},
 					React.createElement('option',{value: `url('SettingsGame/ArenaBG/Arena.jpg')`},`First Arena`),
@@ -471,11 +645,13 @@ class Settings extends React.Component{
 
 				React.createElement('div',{id: `Survival`},
 					React.createElement('h1',{id: `SurvivalRegion`},`Desert`),
-					React.createElement('h2',{id: `SurvivalMapName`},`Desert Village 1/5`),
+					React.createElement('h2',{id: `SurvivalDifficulty`},`Difficulty: `,
+						React.createElement('span',{},`Easy`)),
+					React.createElement('h2',{id: `SurvivalMapName`},`Desert Village 1/7`),
 					React.createElement('button',{id: `AttackSurvial`},`Attack`),
-					React.createElement('div',{id: `SurvivalOpponentInfo`},`Opponent Information`),
-					React.createElement('br',{},null),
-					React.createElement('br',{},null),
+					React.createElement('div',{id: `SurvivalOpponentInfo`},`Opponent Information`,
+						React.createElement('p',{},null),
+						React.createElement('p',{},null)),
 					React.createElement('br',{},null),
 					React.createElement('br',{},null),
 					React.createElement('br',{},null),
@@ -719,57 +895,57 @@ const PutInformationIn=(Information)=>{
 					$('#StatsSkillsAttackValue2').html(`${$globalCharacters[i].Attack}`);
 					$('#StatsSkillsHealthValue2').html(`${$globalCharacters[i].Health}`);
 					switch(uniqueValue){
-						case `Bear.jpg`:
+						case `FireGolem.jpg`:
 							$('#SurvivalFighter').css({
 								backgroundImage: $globalOpponents[0].link,
 							})
 							break;
-						case `Deer.jpg`:
+						case `Naga.jpg`:
 							$('#SurvivalFighter').css({
 								backgroundImage: $globalOpponents[1].link,
 							})
 							break;
-						case `FireGolem.jpg`:
+						case `Phoenix.jpg`:
 							$('#SurvivalFighter').css({
 								backgroundImage: $globalOpponents[2].link,
 							})
 							break;
-						case `ForestWitch.jpg`:
+						case `Bear.jpg`:
 							$('#SurvivalFighter').css({
 								backgroundImage: $globalOpponents[3].link,
 							})
 							break;
-						case `FrostZombie.jpg`:
+						case `Deer.jpg`:
 							$('#SurvivalFighter').css({
 								backgroundImage: $globalOpponents[4].link,
 							})
 							break;
-						case `IceGolem.jpg`:
+						case `Wolf.jpg`:
 							$('#SurvivalFighter').css({
 								backgroundImage: $globalOpponents[5].link,
 							})
 							break;
-						case `LichKing.jpg`:
+						case `ForestWitch.jpg`:
 							$('#SurvivalFighter').css({
 								backgroundImage: $globalOpponents[6].link,
 							})
 							break;
-						case `Naga.jpg`:
+						case `FrostZombie.jpg`:
 							$('#SurvivalFighter').css({
 								backgroundImage: $globalOpponents[7].link,
 							})
 							break;
-						case `Phoenix.jpg`:
+						case `IceGolem.jpg`:
 							$('#SurvivalFighter').css({
 								backgroundImage: $globalOpponents[8].link,
 							})
 							break;
-						case `PolarBear.jpg`:
+						case `LichKing.jpg`:
 							$('#SurvivalFighter').css({
 								backgroundImage: $globalOpponents[9].link,
 							})
 							break;
-						case `Wolf.jpg`:
+						case `PolarBear.jpg`:
 							$('#SurvivalFighter').css({
 								backgroundImage: $globalOpponents[10].link,
 							})
@@ -3209,33 +3385,11 @@ const battleResult=(value)=>{
 		// 20% hogy 2 skill lesz, 8% hogy 3 skill es 2% hogy Luck!
 		let SkillsChance=Math.floor(Math.random()*100)+1;
 		let SkillsCount=0; 
-		if(HasWeapon<=$globalEnemyWeaponChance){
-			$globalEnemy.Weapon=Weapons[Math.floor(Math.random()*Weapons.length)];
-		}
+		//Beallitom automatikusan az infokat is
+		let infoArray=document.getElementById('SurvivalOpponentInfo').getElementsByTagName('p');
+		infoArray[0].innerHTML=`<span>Weapon: </span>none`;
+		infoArray[1].innerHTML=`<span>Skills: </span>none`;
 
-		//Skillt adunk
-		//Mukodik le ellenoriztem!
-		//Fontos hogy a Acc illetve a high ACC legyenek egyformak mikor valtoztatom oket!(A high pedig nagyobb mikor egyenlitek!)
-		if(SkillsChance<=$globalSkillsChance){
-			let PercentArea=Math.floor(Math.random()*$globalSkillsRange)+$globalSkillsFaktor;
-			//console.log(PercentArea);
-				if(PercentArea<=70){
-					SkillsCount=1;
-				}
-				else{//140 akkor 1/2 1/2 az elso 2 valoszinuseg 154-ig
-					if((PercentArea>70) && (PercentArea<=($globalSkillsAccuracy*0.9))){
-						SkillsCount=2;
-					}
-					else{//Mikor lesznek 1/3ban akkor a 3.at 214-ig kell generaljam es annyit is kell berakjak a rangenek!
-						if((PercentArea>($globalSkillsAccuracy*0.9)) && (PercentArea<=($globalSkillsHighAccuracy*0.98))){
-							SkillsCount=3;
-						}
-						else{//A faktort novelem 70-el es akkor felcsereltem a luckot az elsovel kb. Ez a 3. valoszinusege!
-							SkillsCount=4;//Luck
-						}
-					}
-				}
-		}
 		let ATKFighter=document.getElementById('StatsSkillsAttackValue2').innerHTML.split('-');
 		let DEFFighter=Number(document.getElementById('StatsSkillsDefenseValue2').innerHTML);
 		let HPFighter=Number(document.getElementById('StatsSkillsHealthValue2').innerHTML);
@@ -3281,21 +3435,80 @@ const battleResult=(value)=>{
 		let turn=1;
 		let step=0;
 		let ResultString=``;
-		/*if(weapon1!==`Weapon`){
-			let weaponblokk1=document.getElementById('StatsSkillsDamageValue1').innerHTML.split('-');
-			minWeaponDamage1=Number(weaponblokk1[0]);
-			maxWeaponDamage1=Number(weaponblokk1[1]);
-		}*/
+
+
+		if(HasWeapon<=$globalEnemyWeaponChance){
+			$globalEnemy.Weapon=Weapons[Math.floor(Math.random()*Weapons.length)];
+			infoArray[0].innerHTML=`<span>Weapon: </span>${$globalEnemy.Weapon.name}`			
+		}
 		if(weaponFighter!==`Weapon`){
 			let weaponblokkFighter=document.getElementById('StatsSkillsDamageValue2').innerHTML.split('-');
 			minWeaponDamageFighter=Number(weaponblokkFighter[0]);
 			maxWeaponDamageFighter=Number(weaponblokkFighter[1]);
 		}
+
 		if($globalEnemy.Weapon!==`none`){
 			let weaponblokkOpponent=$globalEnemy.Weapon.damage.split('-');
 			minWeaponDamageOpponent=Number(weaponblokkOpponent[0]);
 			maxWeaponDamageOpponent=Number(weaponblokkOpponent[1]);
 		}
+
+		//Skill add
+		//Mukodik le ellenoriztem!
+		//Fontos hogy a Acc illetve a high ACC legyenek egyformak mikor valtoztatom oket!(A high pedig nagyobb mikor egyenlitek!)
+		if(SkillsChance<=$globalSkillsChance){
+			let PercentArea=Math.floor(Math.random()*$globalSkillsRange)+$globalSkillsFaktor;
+			//console.log(PercentArea);
+				if(PercentArea<=70){
+					SkillsCount=1;
+				}
+				else{//140 akkor 1/2 1/2 az elso 2 valoszinuseg 154-ig
+					if((PercentArea>70) && (PercentArea<=($globalSkillsAccuracy*0.9))){
+						SkillsCount=2;
+					}
+					else{//Mikor lesznek 1/3ban akkor a 3.at 214-ig kell generaljam es annyit is kell berakjak a rangenek!
+						if((PercentArea>($globalSkillsAccuracy*0.9)) && (PercentArea<=($globalSkillsHighAccuracy*0.98))){
+							SkillsCount=3;
+						}
+						else{//A faktort novelem 70-el es akkor felcsereltem a luckot az elsovel kb. Ez a 3. valoszinusege!
+							SkillsCount=4;//Luck
+						}
+					}
+				}
+		}
+		//Let's add skills
+		if(SkillsCount!==0){
+			while (SkillsCount!==0){
+				if(SkillsCount===4){
+					$globalEnemy.Skills.push('Luck');
+					SkillsCount=0;
+				}
+				else{
+					let ok=true;
+					let Skill=$globalSkillsEnemy[Math.floor(Math.random()*$globalSkillsEnemy.length)];
+					//Here Acrobatics not working together with gymnastics! (Not logic)
+					if(Skill!==`Luck`){
+						for(let i=0;i<$globalEnemy.Skills.length;i++){
+							if(Skill===$globalEnemy.Skills[i]){
+								ok=false;
+								break;
+							}
+
+						}
+						if(ok){
+							$globalEnemy.Skills.push(Skill);
+							SkillsCount-=1;
+
+						}
+					}
+				}
+			}
+			infoArray[1].innerHTML=`<span>Skills: </span>`;
+			for(let i=0;i<$globalEnemy.Skills.length;i++){
+				infoArray[1].innerHTML+=`${$globalEnemy.Skills[i]}, `
+			}
+		}
+
 
 		//Fighters stats check!
 		if($globalSkillSelection2!==0){
@@ -3331,33 +3544,7 @@ const battleResult=(value)=>{
 
 		}
 
-		//Let's add skills
-		if(SkillsCount!==0){
-			while (SkillsCount!==0){
-				if(SkillsCount===4){
-					$globalEnemy.Skills.push('Luck');
-					SkillsCount=0;
-				}
-				else{
-					let ok=true;
-					let Skill=$globalSkillsEnemy[Math.floor(Math.random()*$globalSkillsEnemy.length)];
-					//Here Acrobatics not working together with gymnastics! (Not logic)
-					if(Skill!==`Luck`){
-						for(let i=0;i<$globalEnemy.Skills.length;i++){
-							if(Skill===$globalEnemy.Skills[i]){
-								ok=false;
-								break;
-							}
 
-						}
-						if(ok){
-							$globalEnemy.Skills.push(Skill);
-							SkillsCount-=1;
-						}
-					}
-				}
-			}
-		}
 
 
 
@@ -3761,11 +3948,12 @@ const battleResult=(value)=>{
 		}
 		if($globalMyHP!==0){
 			HPFighter=$globalMyHP;
+			MaxHPFighter=$globalMyHP;
 		}
 		ResultString+=`${CharacterFighter} with ${HPFighter}HP!<br><br> VS <br><br> ${CharacterOpponent} with ${HPOpponent}HP!<br><br> Result<br><br>`;
 
 
-			while((HPFighter>0) && (HPOpponent>0) && (step<20000)){
+		while((HPFighter>0) && (HPOpponent>0) && (step<20000)){
 			if((!LuckFighter) && (!LuckOpponent)){
 			let DamageFighter=FinalAttackMinFighter+Math.floor(Math.random()*(FinalAttackMaxFighter-FinalAttackMinFighter+1))
 			let DamageOpponent=FinalAttackMinOpponent+Math.floor(Math.random()*(FinalAttackMaxOpponent-FinalAttackMinOpponent+1))
@@ -3866,8 +4054,652 @@ const battleResult=(value)=>{
 				turn=1;
 				SpeedFighter+=SpeedStepFighter;
 			}
-		}
+		}//If vege!
+		else{
+			//If both of them selected Luck, nothing will happen!
+			if((LuckFighter) && (LuckOpponent)){
+			let DamageFighter=FinalAttackMinFighter+Math.floor(Math.random()*(FinalAttackMaxFighter-FinalAttackMinFighter+1));
+			let DamageOpponent=FinalAttackMinOpponent+Math.floor(Math.random()*(FinalAttackMaxOpponent-FinalAttackMinOpponent+1));
+			let evadeFighter=Math.floor(Math.random()*100)+1;	
+			let evadeOpponent=Math.floor(Math.random()*100)+1;
+			let critRateFighter=Math.floor(Math.random()*100)+1;
+			let critRateOpponent=Math.floor(Math.random()*100)+1;
+			SpeedFighter=Number(SpeedFighter.toFixed(2));
+			SpeedOpponent=Number(SpeedOpponent.toFixed(2));
+			if(SpeedOpponent>SpeedFighter){
+				turn=2;
+			}
+			else{
+				turn=1;
+			}
+			if(turn===1)
+			{
+				if(evadeOpponent>EvasionOpponent){
+					if(critRateFighter<=critChanceFighter){
+						let ReceivedDamage=DamageFighter*critDamageFighter-DEFOpponent;
+						step+=1;
+						if(ReceivedDamage<=0){
+							ReceivedDamage=0;
+							console.log(`${CharacterFighter} Critical hit was blocked!`);
+							ResultString+=`-${CharacterFighter} Critical hit was blocked!<br><br>`;
+						}
+					else{
+						//Itt a vegso kiertekeles!
+						HPOpponent-=(ReceivedDamage*DamageReceivedFighter);
+						console.log(`${CharacterFighter} Critcally hit ${CharacterOpponent} with ${ReceivedDamage}! My HP ${HPFighter}; Speed ${SpeedFighter}`);
+						ResultString+=`-${CharacterFighter} Critcally hit ${CharacterOpponent} with ${ReceivedDamage} Damage! ${CharacterOpponent} has ${HPOpponent}Hp remained!<br><br>`;
+						}
+					}
+					else{
+					let ReceivedDamage=DamageFighter-DEFOpponent;
+					step+=1;
+					if(ReceivedDamage<=0){
+						ReceivedDamage=0;
+						console.log(`${CharacterFighter} hit was blocked!`);
+						ResultString+=`-${CharacterFighter} hit was blocked!<br><br>`;
+					}
+					else{
+					//Itt a vegso kiertekeles!	
+					HPOpponent-=(ReceivedDamage*DamageReceivedFighter);
+					console.log(`${CharacterFighter} successfully hit ${CharacterOpponent} with ${ReceivedDamage}! My HP ${HPFighter}; Speed ${SpeedFighter}`);
+					ResultString+=`-${CharacterFighter} successfully hit ${CharacterOpponent} with ${ReceivedDamage} Damage! ${CharacterOpponent} has ${HPOpponent}Hp remained!<br><br>`;
+					}
+					}
+				}
+				else{
+					console.log(`The ${CharacterFighter} missed!`);
+					ResultString+=`-The ${CharacterFighter} missed!<br><br>`;
+				}
 
+				turn=2;
+				SpeedOpponent+=SpeedStepOpponent;
+			}
+			else{
+				//Masodik kore!
+				if(evadeFighter>EvasionFighter){
+					if(critRateOpponent<=critChanceOpponent){
+						let ReceivedDamage=DamageOpponent*critDamageOpponent-DEFFighter;
+						step+=1;
+						if(ReceivedDamage<=0){
+							ReceivedDamage=0;
+							console.log(`${CharacterOpponent} Critical hit was blocked!`);
+							ResultString+=`-${CharacterOpponent} Critical hit was blocked!<br><br>`;
+						}
+					else{
+						//Itt a vegso kiertekeles!
+						HPFighter-=(ReceivedDamage*DamageReceivedOpponent);
+						console.log(`${CharacterOpponent} Critcally hit ${CharacterFighter} with ${ReceivedDamage}! My HP ${HPOpponent}; Speed ${SpeedOpponent}`);
+						ResultString+=`-${CharacterOpponent} Critcally hit ${CharacterFighter} with ${ReceivedDamage} Damage! ${CharacterFighter} has ${HPFighter}Hp remained!<br><br>`;
+						}
+					}
+					else{
+					step+=1;
+					let ReceivedDamage=DamageOpponent-DEFFighter;
+					if(ReceivedDamage<=0){
+						ReceivedDamage=0;
+						console.log(`${CharacterOpponent} hit was blocked!`);
+						ResultString+=`-${CharacterOpponent} hit was blocked!<br><br>`;
+					}
+					else{
+						//Itt a vegso kiertekeles!
+						HPFighter-=(ReceivedDamage*DamageReceivedOpponent);
+						console.log(`${CharacterOpponent} successfully hit ${CharacterFighter} with ${ReceivedDamage}! My HP ${HPOpponent}; Speed ${SpeedOpponent}`);
+						ResultString+=`-${CharacterOpponent} successfully hit ${CharacterFighter} with ${ReceivedDamage} Damage! ${CharacterFighter} has ${HPFighter}Hp remained!<br><br>`;
+					}
+				}
+				}
+				else{
+					console.log(`The ${CharacterOpponent} missed!`);
+					ResultString+=`-The ${CharacterOpponent} missed!<br><br>`;
+				}
+
+				turn=1;
+				SpeedFighter+=SpeedStepFighter;
+			}
+		}
+		else {
+			//Luck for the first one!
+			if((LuckFighter) && (!LuckOpponent))
+			{	
+				let LuckStrength=Math.floor(Math.random()*100)+1;
+				//strong
+				let highCritChance=Math.floor(Math.random()*120)+1;
+				let regeneration=Math.random();
+				let BadLuckEnemy=Math.floor(Math.random()*100);
+				//Very Powerfull
+				let VPLuckGiftChance=Math.floor(Math.random()*100)+1;
+				let ChuckNorris=false;
+				let EnemiesProblem=['Stroke','HeartAttack','Meteor'];
+				//Main stuff
+				let DamageFighter=FinalAttackMinFighter+Math.floor(Math.random()*(FinalAttackMaxFighter-FinalAttackMinFighter+1))
+				let DamageOpponent=FinalAttackMinOpponent+Math.floor(Math.random()*(FinalAttackMaxOpponent-FinalAttackMinOpponent+1))
+				let evadeFighter=Math.floor(Math.random()*100)+1;	
+				let evadeOpponent=Math.floor(Math.random()*100)+1;
+				let critRateFighter=Math.floor(Math.random()*100)+1;
+				let critRateOpponent=Math.floor(Math.random()*100)+1;
+				SpeedFighter=Number(SpeedFighter.toFixed(2));
+				SpeedOpponent=Number(SpeedOpponent.toFixed(2));
+				critChanceOpponent=critChanceCopy;
+				EvasionOpponent=evadeChanceCopy;
+				//Average
+				if(LuckStrength<=75){
+					EvasionFighter=60;
+					critChanceFighter=90;
+					critDamageFighter=2;
+					if(EvasionOpponent>20){
+						EvasionOpponent=20;
+					}
+					if(critChanceOpponent>10){
+						critChanceOpponent=10;
+					}	
+				}
+				//strong
+				else{
+					if((LuckStrength>75) && (LuckStrength<=92))
+					{
+					critChanceFighter=100;
+					if(highCritChance>=100){
+						critDamageFighter=5;
+					}
+					else{
+						critDamageFighter=2;
+					}
+					EvasionFighter=90;
+					if(regeneration>=0.5){
+						HPFighter+=HPFighter*0.15;
+						if(HPFighter>MaxHPFighter){
+							HPFighter=MaxHPFighter;
+						}
+						SpeedOpponent+=SpeedStepOpponent;
+						console.log(`The ${CharacterFighter} looked up in the sky and suddenly healed itself by 15% of it's max hp. A miracle just happened!`)
+						ResultString+=`The ${CharacterFighter} looked up in the sky and suddenly healed itself by 15% of it's max hp. A miracle just happened!<br><br>`;
+					}
+					//Opponents bad luck!
+					critChanceOpponent=0;
+					EvasionOpponent=0;
+					//Fall illetve ground explosion, ha o kovetkezik majd!
+					}
+					else{
+						//Very powerfull
+						critChanceFighter=100;
+						if(VPLuckGiftChance<=80){
+							critDamageFighter=20;
+						}
+						else{
+							ChuckNorris=true;
+						}
+
+					}
+				}
+				//The basic calulculations
+			if(SpeedOpponent>SpeedFighter){
+				turn=2;
+			}
+			else{
+				turn=1;
+			}
+			if(turn===1)
+			{
+			if(!ChuckNorris){		
+				if(evadeOpponent>EvasionOpponent){
+					if(critRateFighter<=critChanceFighter){
+						let ReceivedDamage=DamageFighter*critDamageFighter-DEFOpponent;
+						step+=1;
+						if(ReceivedDamage<=0){
+							ReceivedDamage=0;
+							console.log(`${CharacterFighter} Critical hit was blocked!`);
+							ResultString+=`-${CharacterFighter} Critical hit was blocked!<br><br>`;
+						}
+					else{
+						//Itt a vegso kiertekeles!
+						HPOpponent-=(ReceivedDamage*DamageReceivedFighter);
+						console.log(`${CharacterFighter} Critcally hit ${CharacterOpponent} with ${ReceivedDamage}! My HP ${HPFighter}; Speed ${SpeedFighter}`);
+						ResultString+=`-${CharacterFighter} Critcally hit ${CharacterOpponent} with ${ReceivedDamage} Damage! ${CharacterOpponent} has ${HPOpponent.toFixed(2)}Hp remained!<br><br>`;
+						}
+					}
+					else{
+					let ReceivedDamage=DamageFighter-DEFOpponent;
+					step+=1;
+					if(ReceivedDamage<=0){
+						ReceivedDamage=0;
+						console.log(`${CharacterFighter} hit was blocked!`);
+						ResultString+=`-${CharacterFighter} hit was blocked!<br><br>`;
+					}
+					else{
+					//Itt a vegso kiertekeles!	
+					HPOpponent-=(ReceivedDamage*DamageReceivedFighter);
+					console.log(`${CharacterFighter} successfully hit ${CharacterOpponent} with ${ReceivedDamage}! My HP ${HPFighter}; Speed ${SpeedFighter}`);
+					ResultString+=`-${CharacterFighter} successfully hit ${CharacterOpponent} with ${ReceivedDamage} Damage! ${CharacterOpponent} has ${HPOpponent.toFixed(2)}Hp remained!<br><br>`;	
+						}
+					}
+				}
+				else{
+					console.log(`The ${CharacterFighter} missed!`);
+					ResultString+=`-The ${CharacterFighter} missed!<br><br>`;
+				}
+				}
+			else
+			{
+				HPOpponent=0;
+				console.log(`Chuck Norris Appeared to help ${CharacterFighter} and knocked out ${CharacterOpponent} (Game Over)!`);
+				ResultString+=`Chuck Norris Appeared to help ${CharacterFighter} and knocked out ${CharacterOpponent} (Game Over)!<br><br>`;
+				break;
+			}
+				turn=2;
+				SpeedOpponent+=SpeedStepOpponent;
+			}
+			else{
+				//Masodik kore!
+				if(LuckStrength<=75)
+				{
+				if(evadeFighter>EvasionFighter){
+					if(critRateOpponent<=critChanceOpponent){
+						let ReceivedDamage=DamageOpponent*critDamageOpponent-DEFFighter;
+						step+=1;
+						if(ReceivedDamage<=0){
+							ReceivedDamage=0;
+							console.log(`${CharacterOpponent} Critical hit was blocked!`);
+							ResultString+=`-${CharacterOpponent} Critical hit was blocked!<br><br>`;
+						}
+					else{
+						//Itt a vegso kiertekeles!
+						HPFighter-=(ReceivedDamage*DamageReceivedOpponent);
+						console.log(`${CharacterOpponent} Critcally hit ${CharacterFighter} with ${ReceivedDamage}! My HP ${HPOpponent}; Speed ${SpeedOpponent}`);
+						ResultString+=`-${CharacterOpponent} Critcally hit ${CharacterFighter} with ${ReceivedDamage} Damage! ${CharacterFighter} has ${HPFighter.toFixed(2)}Hp remained!<br><br>`;
+						}
+					}
+					else{
+					step+=1;
+					let ReceivedDamage=DamageOpponent-DEFFighter;
+					if(ReceivedDamage<=0){
+						ReceivedDamage=0;
+						console.log(`${CharacterOpponent} hit was blocked!`);
+						ResultString+=`-${CharacterOpponent} hit was blocked!<br><br>`;
+					}
+					else{
+						//Itt a vegso kiertekeles!
+						HPFighter-=(ReceivedDamage*DamageReceivedOpponent);
+						console.log(`${CharacterOpponent} successfully hit ${CharacterFighter} with ${ReceivedDamage}! My HP ${HPOpponent}; Speed ${SpeedOpponent}`);
+						ResultString+=`-${CharacterOpponent} successfully hit ${CharacterFighter} with ${ReceivedDamage} Damage! ${CharacterFighter} has ${HPFighter.toFixed(2)}Hp remained!<br><br>`;	
+					}
+				}
+				}
+				else{
+					console.log(`The ${CharacterOpponent} missed!`);
+					ResultString+=`-The ${CharacterOpponent} missed!<br><br>`;
+				}
+			}
+			else{
+				//Opponents bad Luck!
+				if((LuckStrength>75) && (LuckStrength<=92)){
+					if(BadLuckEnemy<=30){
+						//80% to fall and 20% for ground explosion!
+						if(BadLuckEnemy<=24){
+							if((minWeaponDamageOpponent!==0) && (maxWeaponDamageOpponent!==0)){
+								let fallDamage=minWeaponDamageOpponent+Math.floor(Math.random()*(maxWeaponDamageOpponent-minWeaponDamageOpponent)+1);
+								HPOpponent-=fallDamage;
+								console.log(`${CharacterOpponent} tried to hit ${CharacterFighter} but it slipped and hit itself, with ${fallDamage}`);
+								ResultString+=`${CharacterOpponent} tried to hit ${CharacterFighter} but it slipped and hit itself, with ${fallDamage}<br><br>`;
+							}
+							else{
+								console.log(`${CharacterOpponent} tried to hit ${CharacterFighter} but it slipped!`);
+								ResultString+=`${CharacterOpponent} tried to hit ${CharacterFighter} but it slipped!<br><br>`;
+							}
+							step+=1;	
+						}
+						else{
+							let groundExplosion=MaxHPOpponent*0.2;
+							HPOpponent-=groundExplosion;
+							console.log(`When ${CharacterOpponent} tried to attack, suddenly the ground below it exploded! ${CharacterOpponent} is injured and had to skip it's turn!`);
+							ResultString+=`When ${CharacterOpponent} tried to attack, suddenly the ground below it exploded! ${CharacterOpponent} is injured and had to skip it's turn!<br><br>`;
+						}
+					}
+					//It has a chance for an attack!
+					else{
+						if(evadeFighter>EvasionFighter){
+						step+=1;
+						let ReceivedDamage=DamageOpponent-DEFFighter;
+						if(ReceivedDamage<=0){
+							ReceivedDamage=0;
+							console.log(`${CharacterOpponent} hit was blocked!`);
+							ResultString+=`-${CharacterOpponent} hit was blocked!<br><br>`;
+						}
+						else{
+							//Itt a vegso kiertekeles!
+							HPFighter-=(ReceivedDamage*DamageReceivedOpponent);
+							console.log(`${CharacterOpponent} successfully hit ${CharacterFighter} with ${ReceivedDamage}! My HP ${HPOpponent}; Speed ${SpeedOpponent}`);
+							ResultString+=`-${CharacterOpponent} successfully hit ${CharacterFighter} with ${ReceivedDamage} Damage! ${CharacterFighter} has ${HPFighter.toFixed(2)}Hp remained!<br><br>`;
+						}
+					}
+					}
+				}
+				//Very Powerfull bad Luck!
+				else{
+					//50% chance ground explosion!
+					if(BadLuckEnemy<=50){
+						let groundExplosion=MaxHPOpponent*0.2;
+						HPOpponent-=groundExplosion;
+						console.log(`When ${CharacterOpponent} tried to attack, suddenly the ground below it exploded! ${CharacterOpponent} is injured and had to skip it's turn!`);
+						ResultString+=`When ${CharacterOpponent} tried to attack, suddenly the ground below it exploded! ${CharacterOpponent} is injured and had to skip it's turn!<br><br>`;
+					}
+					else{
+						if((BadLuckEnemy>50) && (BadLuckEnemy<=85)){
+							let lightningStrike=MaxHPOpponent*0.5;
+							HPOpponent-=lightningStrike;
+						console.log(`When ${CharacterOpponent} tried to attack, suddenly a lightning from the sky just striked him! ${CharacterOpponent} is seriously injured and surly skiped it's turn!`);	
+						ResultString+=`When ${CharacterOpponent} tried to attack, suddenly a lightning from the sky just striked him! ${CharacterOpponent} is seriously injured and surly skiped it's turn!<br><br>`;
+						}
+						else{
+							HPOpponent=0;
+							let BadLuckResult=EnemiesProblem[Math.floor(Math.random()*3)];
+							switch(BadLuckResult){
+								case `Stroke`:
+									console.log(`${CharacterOpponent} started to attack, but suddenly, he fall and did not stand up! Later when the
+										Specialist's examened him they recognised that he died from a stroke!`);
+									ResultString+=`${CharacterOpponent} started to attack, but suddenly, he fall and did not stand up! Later when the
+										Specialist's examened him they recognised that he died from a stroke!`;
+								break;
+								case `HeartAttack`:
+									console.log(`When ${CharacterOpponent} started it's turn he suddenly felt a heart pain! It put it's hands on
+										it's chest and fell to the ground! After a couple of minutes you Checked it's pulse and you realized that
+										your opponent had a heart attack!`);
+									ResultString+=`When ${CharacterOpponent} started it's turn he suddenly felt a heart pain! It put it's hands on
+										it's chest and fell to the ground! After a couple of minutes you Checked it's pulse and you realized that
+										your opponent had a heart attack!`;
+								break;
+								case `Meteor`:
+									console.log(`${CharacterOpponent} started to run towards you, but suddenly a meteor from the sky just crashed
+										into him!But the most important thing is that you didn't even got injured from it.Now that's what I call a miracle!`);
+									ResultString+=`${CharacterOpponent} started to run towards you, but suddenly a meteor from the sky just crashed
+										into him!But the most important thing is that you didn't even got injured from it.Now that's what I call a miracle!`;
+								break;
+							}
+							
+						}
+					}
+				}
+
+			}
+
+				turn=1;
+				SpeedFighter+=SpeedStepFighter;
+			}
+			} 
+
+			else{
+				if((!LuckFighter) && (LuckOpponent)){
+				let LuckStrength=Math.floor(Math.random()*100)+1;
+				//strong
+				let highCritChance=Math.floor(Math.random()*120)+1;
+				let regeneration=Math.random();
+				let BadLuckEnemy=Math.floor(Math.random()*100);
+				//Very Powerfull
+				let VPLuckGiftChance=Math.floor(Math.random()*100)+1;
+				let ChuckNorris=false;
+				let EnemiesProblem=['Stroke','HeartAttack','Meteor'];
+				//Main stuff
+				let DamageFighter=FinalAttackMinFighter+Math.floor(Math.random()*(FinalAttackMaxFighter-FinalAttackMinFighter+1))
+				let DamageOpponent=FinalAttackMinOpponent+Math.floor(Math.random()*(FinalAttackMaxOpponent-FinalAttackMinOpponent+1))
+				let evadeFighter=Math.floor(Math.random()*100)+1;	
+				let evadeOpponent=Math.floor(Math.random()*100)+1;
+				let critRateFighter=Math.floor(Math.random()*100)+1;
+				let critRateOpponent=Math.floor(Math.random()*100)+1;
+				SpeedFighter=Number(SpeedFighter.toFixed(2));
+				SpeedOpponent=Number(SpeedOpponent.toFixed(2));
+				critChanceOpponent=critChanceCopy;
+				EvasionOpponent=evadeChanceCopy;
+				//Average
+				if(LuckStrength<=75){
+					EvasionOpponent=60;
+					critChanceOpponent=90;
+					critDamageOpponent=2;
+					if(EvasionFighter>20){
+						EvasionFighter=20;
+					}
+					if(critChanceFighter>10){
+						critChanceFighter=10;
+					}	
+				}
+				//strong
+				else{
+					if((LuckStrength>75) && (LuckStrength<=92))
+					{
+					critChanceOpponent=100;
+					if(highCritChance>=100){
+						critDamageOpponent=5;
+					}
+					else{
+						critDamageOpponent=2;
+					}
+					EvasionOpponent=90;
+					if(regeneration>=0.5){
+						HPOpponent+=HPOpponent*0.15;
+						if(HPOpponent>MaxHPOpponent){
+							HPOpponent=MaxHPOpponent;
+						}
+						SpeedFighter+=SpeedStepFighter;
+						console.log(`The ${CharacterOpponent} looked up in the sky and suddenly healed itself by 15% of it's max hp. A miracle just happened!`);
+						ResultString+=`The ${CharacterOpponent} looked up in the sky and suddenly healed itself by 15% of it's max hp. A miracle just happened!`;
+					}
+					//Opponents bad luck!
+					critChanceFighter=0;
+					EvasionFighter=0;
+					//Fall illetve ground explosion, ha o kovetkezik majd!
+					}
+					else{
+						//Very powerfull
+						critChanceOpponent=100;
+						if(VPLuckGiftChance<=80){
+							critDamageOpponent=20;
+						}
+						else{
+							ChuckNorris=true;
+						}
+
+					}
+				}
+				//The basic calulculations
+			if(SpeedOpponent>SpeedFighter){
+				turn=2;
+			}
+			else{
+				turn=1;
+			}
+
+			//Megkell csereljem a kettot!
+			//Masodik kore!
+			if(turn===2)
+			{
+			if(!ChuckNorris){		
+				if(evadeFighter>EvasionFighter){
+					if(critRateOpponent<=critChanceOpponent){
+						let ReceivedDamage=DamageOpponent*critDamageOpponent-DEFFighter;
+						step+=1;
+						if(ReceivedDamage<=0){
+							ReceivedDamage=0;
+							console.log(`${CharacterOpponent} Critical hit was blocked!`);
+							ResultString+=`-${CharacterOpponent} Critical hit was blocked!<br><br>`;
+						}
+					else{
+						//Itt a vegso kiertekeles!
+						HPFighter-=(ReceivedDamage*DamageReceivedFighter);
+						console.log(`${CharacterOpponent} Critcally hit ${CharacterFighter} with ${ReceivedDamage}! My HP ${HPOpponent}; Speed ${SpeedOpponent}`);
+						ResultString+=`-${CharacterOpponent} Critcally hit ${CharacterFighter} with ${ReceivedDamage} Damage! ${CharacterFighter} has ${HPFighter.toFixed(2)}Hp remained!<br><br>`;
+						}
+					}
+					else{
+					let ReceivedDamage=DamageOpponent-DEFFighter;
+					step+=1;
+					if(ReceivedDamage<=0){
+						ReceivedDamage=0;
+						console.log(`${CharacterOpponent} hit was blocked!`);
+						ResultString+=`-${CharacterOpponent} hit was blocked!<br><br>`;
+					}
+					else{
+					//Itt a vegso kiertekeles!	
+					HPFighter-=(ReceivedDamage*DamageReceivedOpponent);
+					console.log(`${CharacterOpponent} successfully hit ${CharacterFighter} with ${ReceivedDamage}! My HP ${HPOpponent}; Speed ${SpeedOpponent}`);
+					ResultString+=`-${CharacterOpponent} successfully hit ${CharacterFighter} with ${ReceivedDamage} Damage! ${CharacterFighter} has ${HPFighter.toFixed(2)}Hp remained!<br><br>`;
+						}
+					}
+				}
+				else{
+					console.log(`The ${CharacterOpponent} missed!`);
+					ResultString+=`-The ${CharacterOpponent} missed!<br><br>`;
+				}
+				}
+			else
+			{
+				HPFighter=0;
+				console.log(`Chuck Norris Appeared to help ${CharacterOpponent} and knocked out ${CharacterFighter} (Game Over)!`);
+				ResultString+=`Chuck Norris Appeared to help ${CharacterOpponent} and knocked out ${CharacterFighter} (Game Over)!`;
+				break;
+			}
+				turn=1;
+				SpeedFighter+=SpeedStepFighter;
+			}
+			else{
+				//Elso kore!
+				if(LuckStrength<=75)
+				{
+				if(evadeOpponent>EvasionOpponent){
+					if(critRateFighter<=critChanceFighter){
+						let ReceivedDamage=DamageFighter*critDamageFighter-DEFOpponent;
+						step+=1;
+						if(ReceivedDamage<=0){
+							ReceivedDamage=0;
+							console.log(`${CharacterFighter} Critical hit was blocked!`);
+							ResultString+=`-${CharacterFighter} Critical hit was blocked!<br><br>`;
+						}
+					else{
+						//Itt a vegso kiertekeles!
+						HPFighter-=(ReceivedDamage*DamageReceivedFighter);
+						console.log(`${CharacterFighter} Critcally hit ${CharacterOpponent} with ${ReceivedDamage}! My HP ${HPFighter}; Speed ${SpeedFighter}`);
+						ResultString+=`-${CharacterFighter} Critcally hit ${CharacterOpponent} with ${ReceivedDamage} Damage! ${CharacterOpponent} has ${HPOpponent.toFixed(2)}Hp remained!<br><br>`;
+						}
+					}
+					else{
+					step+=1;
+					let ReceivedDamage=DamageFighter-DEFOpponent;
+					if(ReceivedDamage<=0){
+						ReceivedDamage=0;
+						console.log(`${CharacterFighter} hit was blocked!`);
+						ResultString+=`-${CharacterFighter} hit was blocked!<br><br>`;
+
+					}
+					else{
+						//Itt a vegso kiertekeles!
+						HPOpponent-=(ReceivedDamage*DamageReceivedFighter);
+						console.log(`${CharacterFighter} successfully hit ${CharacterOpponent} with ${ReceivedDamage}! My HP ${HPFighter}; Speed ${SpeedFighter}`);
+						ResultString+=`-${CharacterFighter} successfully hit ${CharacterOpponent} with ${ReceivedDamage} Damage! ${CharacterOpponent} has ${HPOpponent.toFixed(2)}Hp remained!<br><br>`;
+					}
+				}
+				}
+				else{
+					console.log(`The ${CharacterFighter} missed!`);
+					ResultString+=`-The ${CharacterFighter} missed!<br><br>`;
+				}
+			}
+			else{
+				//Opponents bad Luck!
+				if((LuckStrength>75) && (LuckStrength<=92)){
+					if(BadLuckEnemy<=30){
+						//80% to fall and 20% for ground explosion!
+						if(BadLuckEnemy<=24){
+							if((minWeaponDamageFighter!==0) && (maxWeaponDamageFighter!==0)){
+								let fallDamage=minWeaponDamageFighter+Math.floor(Math.random()*(maxWeaponDamageFighter-minWeaponDamageFighter)+1);
+								HPFighter-=fallDamage;
+								console.log(`${CharacterFighter} tried to hit ${CharacterOpponent} but it slipped and hit itself, with ${fallDamage}`);
+								ResultString+=`${CharacterFighter} tried to hit ${CharacterOpponent} but it slipped and hit itself, with ${fallDamage}`;
+							}
+							else{
+								console.log(`${CharacterFighter} tried to hit ${CharacterOpponent} but it slipped!`);
+								ResultString+=`${CharacterFighter} tried to hit ${CharacterOpponent} but it slipped!`;
+							}
+							step+=1;	
+						}
+						else{
+							let groundExplosion=MaxHPFighter*0.2;
+							HPFighter-=groundExplosion;
+							console.log(`When ${CharacterFighter} tried to attack, suddenly the ground below it exploded! ${CharacterFighter} is injured and had to skip it's turn!`);
+							ResultString+=`When ${CharacterFighter} tried to attack, suddenly the ground below it exploded! ${CharacterFighter} is injured and had to skip it's turn!`;
+						}
+					}
+					//It has a chance for an attack!
+					else{
+						if(evadeOpponent>EvasionOpponent){
+						step+=1;
+						let ReceivedDamage=DamageFighter-DEFOpponent;
+						if(ReceivedDamage<=0){
+							ReceivedDamage=0;
+							console.log(`${CharacterFighter} hit was blocked!`);
+							ResultString+=`${CharacterFighter} hit was blocked!`;
+						}
+						else{
+							//Itt a vegso kiertekeles!
+							HPOpponent-=(ReceivedDamage*DamageReceivedFighter);
+							console.log(`${CharacterFighter} successfully hit ${CharacterOpponent} with ${ReceivedDamage}! My HP ${HPFighter}; Speed ${SpeedFighter}`);
+							ResultString+=`-${CharacterFighter} successfully hit ${CharacterOpponent} with ${ReceivedDamage} Damage! ${CharacterOpponent} has ${HPOpponent.toFixed(2)}Hp remained!<br><br>`;
+						}
+					}
+					}
+				}
+				//Very Powerfull bad Luck!
+				else{
+					//50% chance ground explosion!
+					if(BadLuckEnemy<=50){
+						let groundExplosion=MaxHPFighter*0.2;
+						HPFighter-=groundExplosion;
+						console.log(`When ${CharacterFighter} tried to attack, suddenly the ground below it exploded! ${CharacterFighter} is injured and had to skip it's turn!`);
+						ResultString+=`When ${CharacterFighter} tried to attack, suddenly the ground below it exploded! ${CharacterFighter} is injured and had to skip it's turn!`;
+					}
+					else{
+						if((BadLuckEnemy>50) && (BadLuckEnemy<=85)){
+							let lightningStrike=MaxHPFighter*0.5;
+							HPFighter-=lightningStrike;
+						console.log(`When ${CharacterFighter} tried to attack, suddenly a lightning from the sky just striked him! ${CharacterFighter} is seriously injured and surly skiped it's turn!`);	
+						ResultString+=`When ${CharacterFighter} tried to attack, suddenly a lightning from the sky just striked him! ${CharacterFighter} is seriously injured and surly skiped it's turn!`;
+						}
+						else{
+							HPFighter=0;
+							let BadLuckResult=EnemiesProblem[Math.floor(Math.random()*3)];
+							switch(BadLuckResult){
+								case `Stroke`:
+									console.log(`${CharacterFighter} started to attack, but suddenly, he fall and did not stand up! Later when the
+										Specialist's examened him they recognised that he died from a stroke!`);
+									ResultString+=`${CharacterFighter} started to attack, but suddenly, he fall and did not stand up! Later when the
+										Specialist's examened him they recognised that he died from a stroke!`;
+								break;
+								case `HeartAttack`:
+									console.log(`When ${CharacterFighter} started it's turn he suddenly felt a heart pain! It put it's hands on
+										it's chest and fell to the ground! After a couple of minutes you Checked it's pulse and you realized that
+										your opponent had a heart attack!`);
+									ResultString+=`When ${CharacterFighter} started it's turn he suddenly felt a heart pain! It put it's hands on
+										it's chest and fell to the ground! After a couple of minutes you Checked it's pulse and you realized that
+										your opponent had a heart attack!`;
+								break;
+								case `Meteor`:
+									console.log(`${CharacterFighter} started to run towards you, but suddenly a meteor from the sky just crashed
+										into him!But the most important thing is that you didn't even got injured from it.Now that's what I call a miracle!`);
+									ResultString+=`${CharacterFighter} started to run towards you, but suddenly a meteor from the sky just crashed
+										into him!But the most important thing is that you didn't even got injured from it.Now that's what I call a miracle!`;
+								break;
+							}
+							
+						}
+					}
+				}
+
+			}
+
+				turn=2;
+				SpeedOpponent+=SpeedStepOpponent;
+			}
+				}
+			}
+		} 
+
+		}
 
 	}//end while
 
@@ -3882,12 +4714,12 @@ const battleResult=(value)=>{
 		else{
 			if(HPOpponent<=0){
 				console.log(`The first fighter won! ${CharacterFighter} with ${HPFighter}Hp remained`);
-				ResultString+=`You successfully won this battle with ${HPFighter.toFixed(2)}Hp remained!`;
-				$globalMyHP=HPFighter.toFixed(2);
+				ResultString+=`You have successfully won this battle with ${HPFighter.toFixed(2)}Hp remained!`;
+				$globalMyHP=Math.floor(HPFighter);
 			}
 			else{
 				console.log(`It's a draw!`);
-				ResultString+=`It's a draw!`;
+				ResultString+=`It's a draw!You cannot pass your opponent! (Your journey ended)`;
 				$globalMyHP=0;
 			}
 		}
@@ -4098,7 +4930,7 @@ $(document).ready(()=>{
 				display: `inline`,
 			})
 			$('#ArenaMod').css({
-				marginLeft: `15vw`,
+				marginLeft: `14vw`,
 			})
 			//Visszapakolom a fegyvereket es a statseket!
 			$('#WeaponsContainer').toggle('slide');
@@ -4541,12 +5373,18 @@ $(document).ready(()=>{
 						}
 					}
 				}
-			//Megjelenitsuk a terkepet!
-			$('#Survival').css({
+			//Megjelenitsuk a fokozatokat!
+			$('#SurvivalDifficultyHeader').css({
 				display: `block`
 			})
+			$('#SurvivalEasy').css({
+				display: `inline`
+			})
+			$('#SurvivalNormal').css({
+				display: `inline`
+			})
 
-			//Adunk egy ellenseget a palyara veletlenszeruen!
+			//Adunk egy ellenseget a palyara veletlenszeruen!(Mas fuggveny fogja vegezni)
 			let enemy=Math.floor(Math.random()*$globalOpponents.length);
 			$globalEnemy=$globalOpponents[enemy];
 			$('#SurvivalEnemy').css({
@@ -4554,6 +5392,7 @@ $(document).ready(()=>{
 			})
 
 		}
+		//Visszarakunk mindent!
 		else{
 			$('#ArenaMod').css({
 				display: `inline`,
@@ -4754,11 +5593,25 @@ $(document).ready(()=>{
 								backgroundImage: ``,
 							})
 
+			//Eltuntetjuk a fokozatokat!
+			$('#SurvivalDifficultyHeader').css({
+				display: `none`
+			})
+			$('#SurvivalEasy').css({
+				display: `none`
+			})
+			$('#SurvivalNormal').css({
+				display: `none`
+			})
+
 					//Eltuntetjuk a terkepet!
 
 			$('#Survival').css({
 				display: `none`
 			})
+			//Visszarakjuk a szineket a fokozatoknak
+			document.getElementById('SurvivalDifficulty').getElementsByTagName('span')[0].innerHTML=`Easy`;
+			document.getElementById('SurvivalDifficulty').getElementsByTagName('span')[0].style.color=`green`;
 			//Visszarakjuk a kivalasztott karaktert is!
 			$('#SurvivalFighter').css({
 				backgroundImage: ``,
@@ -4775,7 +5628,7 @@ $(document).ready(()=>{
 			}
 			$globalResultString=``;
 			$globalClicks=0;
-			
+
 		}
 	})
 
@@ -6725,6 +7578,59 @@ $('#NewBattleButton').on('click',()=>{
 					$globalSkillSelection2=0;
 	$globalResultString=``;
 })
+//Survival components!
+//Survival difficulties
+
+	$('#SurvivalEasy').on('click',()=>{
+		//hangok adasa is!
+		$('#SurvivalDifficultyHeader').css({
+			display: `none`
+		})
+		$('#SurvivalEasy').css({
+			display: `none`
+		})
+		$('#SurvivalNormal').css({
+			display: `none`
+		})
+
+		$('#Survival').css({
+			display: `block`,
+		})
+		$globalDifficulty=0;
+		document.getElementById('EasySelectSound').play();
+		//Uj torvenyek szerint ujrageneraljuk a dolgokat
+		let enemy=Math.floor(Math.random()*14)+12;
+			$globalEnemy=$globalOpponents[enemy];
+			$('#SurvivalEnemy').css({
+				backgroundImage: $globalEnemy.link,
+			})
+	})
+
+	$('#SurvivalNormal').on('click',()=>{
+		//hangok adasa is!
+		$('#SurvivalDifficultyHeader').css({
+			display: `none`
+		})
+		$('#SurvivalEasy').css({
+			display: `none`
+		})
+		$('#SurvivalNormal').css({
+			display: `none`
+		})
+
+		$('#Survival').css({
+			display: `block`,
+		})
+		document.getElementById('SurvivalDifficulty').getElementsByTagName('span')[0].innerHTML=`Normal`;
+		document.getElementById('SurvivalDifficulty').getElementsByTagName('span')[0].style.color=`orange`;
+		$globalDifficulty=1;
+		document.getElementById('NormalSelectSound').play();
+		let enemy=Math.floor(Math.random()*6)+26;
+			$globalEnemy=$globalOpponents[enemy];
+			$('#SurvivalEnemy').css({
+				backgroundImage: $globalEnemy.link,
+			})
+	})
 
 	//Survival battle
 	$('#AttackSurvial').on('click',()=>{
@@ -6787,18 +7693,29 @@ $('#NewBattleButton').on('click',()=>{
 					$('#SurvivalParagraph').css({
 						display: `block`,
 					})
-					$('#SurvivalParagraph').html(`${$globalResultString}`);
-					if($globalMyHP===0)
-					{
-						$('#SurvivalFinishButton').css({
-							display:`inline-block`
-						})
-					}
-					else{
-						$('#SurvivalNextButton').css({
-							display:`inline-block`
-						})
-					}
+					
+					//Megnezem hogy a vegen vagyok-e vagy sem!
+					let blokk=SurvivalMaps[$globalMapChooser].split('/');
+					let mapName=blokk[blokk.length-1];
+						if(($globalMyHP===0) || (mapName===`SnowLandIceCavern.jpg`))
+						{
+							$('#SurvivalFinishButton').css({
+								display:`inline-block`
+							})
+							$('#SurvivalNextButton').css({
+								display: `none`,
+							})
+							if($globalMyHP>0){
+								$globalResultString+=`<br> YOU HAVE SUCCESSFULLY COMPLETED YOUR JOURNEY!`
+							}
+							//Lekell ellenorizzem a dontetlent is
+						}
+						else{
+							$('#SurvivalNextButton').css({
+								display:`inline-block`
+							})
+						}
+						$('#SurvivalParagraph').html(`${$globalResultString}`);
 				});
 
 		}
@@ -6813,6 +7730,416 @@ $('#NewBattleButton').on('click',()=>{
 		$('#Survival').css({
 			backgroundImage: `url(${SurvivalMaps[$globalMapChooser]})`,
 		})
+		//Visszarakjuk a skilleket a jelenlevonek
+		$globalEnemy.Skills=[];
+		//Adunk egy uj ellenseget!
+		//Egyengetni!
+		let enemy;
+		if($globalDifficulty===0){
+			enemy=Math.floor(Math.random()*14)+12;
+		}
+		else{
+			if($globalDifficulty===1){
+				//Sivatagi lenyek
+				if($globalMapChooser<7){
+					enemy=Math.floor(Math.random()*6)+26;
+				}
+				else{
+					//Forests
+					if(($globalMapChooser>=7) && ($globalMapChooser<17)){
+						enemy=Math.floor(Math.random()*8)+32;
+					}
+					//Snowland
+					else{
+						enemy=Math.floor(Math.random()*8)+40;
+					}
+					
+				}
+				
+			}
+			
+		}
+		 
+		$globalEnemy=$globalOpponents[enemy];
+			$('#SurvivalEnemy').css({
+				backgroundImage: $globalEnemy.link,
+		})
+
+		//A gombokat vissza kell allitsam majd!
+	$('#SurvivalBattle').css({
+		overflowY: `hidden`,
+		borderRadius:`50%`,
+		backgroundImage:`url('SettingsGame/Fight.gif')`,
+		border:`none`,
+		visibility: `hidden`
+	})
+		$('#AttackSurvial').css({
+			visibility: `visible`
+		})
+		let infos=document.getElementById('SurvivalOpponentInfo').getElementsByTagName('p');
+		infos[0].innerHTML=``;
+		infos[1].innerHTML=``;	
+	$globalResultString=``;
+	$('#SurvivalParagraph').html(``);
+	$('#SurvivalNextButton').css({
+		display: `none`
+	})
+	//A terkepeket allitom be!
+		let blokk=SurvivalMaps[$globalMapChooser].split('/');
+		let mapName=blokk[blokk.length-1];
+		switch(mapName){
+			case `DesertDunes.jpg`:
+				document.getElementById('SurvivalMapName').innerHTML=`Desert Dunes 2/7`;
+				$globalEnemyWeaponChance=20;
+				break;
+			case `DesertSands.jpg`:
+				document.getElementById('SurvivalMapName').innerHTML=`Desert Sands 3/7`;
+				$globalEnemyWeaponChance=30;
+				break;
+			case `DesertPyramids.jpg`:
+				document.getElementById('SurvivalMapName').innerHTML=`Desert Pyramids 4/7`;
+				$globalEnemyWeaponChance=40;
+				//Hard //Naga
+					switch($globalDifficulty){
+						case 2:
+							$globalEnemy=$globalOpponents[1];
+							$('#SurvivalEnemy').css({
+								backgroundImage: $globalEnemy.link,
+							})
+						break;
+					}
+				break;
+			case `DesertSunSet.jpg`:
+				document.getElementById('SurvivalMapName').innerHTML=`Desert SunSet 5/7`;
+				$globalEnemyWeaponChance=50;
+					//Normal Naga
+					switch($globalDifficulty){
+						case 1:
+							$globalEnemy=$globalOpponents[1];
+							$('#SurvivalEnemy').css({
+								backgroundImage: $globalEnemy.link,
+							})
+						break;
+						//Hard FireGolem
+						case 2:
+							$globalEnemy=$globalOpponents[0];
+							$('#SurvivalEnemy').css({
+								backgroundImage: $globalEnemy.link,
+							})
+						break;
+					}
+				break;
+			case `DesertNight.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`Desert Night 6/7`;
+			    $globalEnemyWeaponChance=75;
+			    	//Normal Golem
+			    	switch($globalDifficulty){
+			    		case 1:
+			    			$globalEnemy=$globalOpponents[0];
+			    			$('#SurvivalEnemy').css({
+								backgroundImage: $globalEnemy.link,
+							})
+			    		break;
+			    		//Hard Phoenix
+			    		case 2:
+			    			$globalEnemy=$globalOpponents[2];
+			    			$('#SurvivalEnemy').css({
+								backgroundImage: $globalEnemy.link,
+							})
+			    		break;
+			    	}
+
+				break;
+			case `DesertOasis.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`Desert Oasis 7/7(Boss)`;
+			    $globalEnemyWeaponChance=100;
+			    //Boss depending on difficulty
+			    //Easy Golem
+			    switch($globalDifficulty){
+			    	case 0:
+			    		$globalEnemy=$globalOpponents[0];
+			    		$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+						$globalSkillsChance=10;
+			    	break;
+			    	//Normal Phoenix
+			    	case 1:
+			    		$globalEnemy=$globalOpponents[2];
+			    		$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+						$globalSkillsChance=30;
+			    	break;
+			    	//Hard Ra!
+			    	case 2:
+			    		$globalSkillsChance=50;
+			    	break;
+			    }
+				break;
+
+			//Jungle
+			case `ForestFields.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`Forest Fields 1/10`;
+			    document.getElementById('SurvivalRegion').innerHTML=`Forest`;
+			    $globalSkillsChance=10;
+			    $globalEnemyWeaponChance=90;
+				break;
+			case `ForestInside.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`Forest Inside 2/10`;
+			    $globalSkillsChance=20;
+				break;
+			case `ForestPath.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`Forest Path 3/10`;
+			    $globalSkillsChance=30;
+				break;
+			case `ForestDarkPath.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`Forest Dark Path 4/10`;
+			    $globalSkillsChance=40;
+				break;
+			case `ForestGhost.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`Forest Ghost 5/10 (Creepy)`;
+			    $globalSkillsChance=50;
+			    //Easy Panther,ghost,banshee
+			    switch($globalDifficulty){
+			    	case 0:
+			    		$globalEnemy=$globalOpponents[19];
+			    		$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+					break;
+						//Normal
+					case 1:
+						$globalEnemy=$globalOpponents[48];
+			    		$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+			    	break;
+			    }
+				break;
+			case `ForestDark.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`Forest DarkEnd 6/10`;
+			    $globalSkillsChance=60;
+				break;
+			case `ForestAutumnLakeside.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`Forest Lakeside 7/10`;
+			    $globalSkillsChance=70;
+				break;
+			case `ForestAutumnPath.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`Forest Upwards 8/10`;
+			    $globalSkillsChance=80;
+				break;
+			case `ForestPineGlade.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`Forest Pine Glade 9/10`;
+			    $globalSkillsChance=90;
+			    //Normal Bear
+			    switch($globalDifficulty){
+			    	case 1:
+			    		$globalEnemy=$globalOpponents[3]
+			    		$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+			    	break;
+			    }
+				break;
+			case `ForestTop.jpg`:
+				document.getElementById('SurvivalMapName').innerHTML=`Forest Top 10/10(Boss)`;
+				//Easy Bear
+			    switch($globalDifficulty){
+			    	case 0:
+			    		$globalEnemy=$globalOpponents[3]
+			    		$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+			    	break;
+			    	case 1:
+			    		$globalEnemy=$globalOpponents[6]
+			    		$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+			    	break;
+			    }
+				$globalSkillsRange=154;
+				$globalSkillsAccuracy=154;
+ 				$globalSkillsHighAccuracy=154;
+				break;
+
+			//SNOWLAND
+			case `SnowLandDownNight.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand Downside Night`;
+			    document.getElementById('SurvivalRegion').innerHTML=`SnowLand`;
+			   	$globalSkillsRange=100;
+				$globalSkillsAccuracy=100;
+ 				$globalSkillsHighAccuracy=100;
+				break;
+			case `SnowLandDesolation.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand Desolation`;
+			   	$globalSkillsRange=115;
+				$globalSkillsAccuracy=115;
+ 				$globalSkillsHighAccuracy=115;
+				break;
+			case `SnowLandDown.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand Desolation end`;
+			   	$globalSkillsRange=130;
+				$globalSkillsAccuracy=130;
+ 				$globalSkillsHighAccuracy=130;
+				break;
+			case `SnowLandForestGlade.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand Forest Edge`;
+			   	$globalSkillsRange=155;
+				$globalSkillsAccuracy=155;
+ 				$globalSkillsHighAccuracy=155;
+				break;
+			case `SnowLandForestInside.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand Forest`;
+			   	$globalSkillsRange=170;
+				$globalSkillsAccuracy=155;
+ 				$globalSkillsHighAccuracy=170;
+				break;
+			case `SnowLandRiver.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand River`;
+			   	$globalSkillsRange=190;
+				$globalSkillsAccuracy=155;
+ 				$globalSkillsHighAccuracy=190;
+				break;
+			case `SnowLandBridge.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand Bridge Cross`;
+			    $globalEnemyWeaponChance=95;
+			    $globalSkillsChance=95;
+			   	$globalSkillsRange=214;
+				$globalSkillsAccuracy=155;
+ 				$globalSkillsHighAccuracy=214;
+ 				switch($globalDifficulty){
+ 					//Easy Zombie
+ 					case 0:
+ 						$globalEnemy=$globalOpponents[7];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+ 					break;
+ 					//Normal IceMonster
+ 					case 1:
+ 						$globalEnemy=$globalOpponents[49];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+						 document.getElementById('SurvivalMapName').innerHTML=`SnowLand Bridge Cross(Mini Boss)`;
+ 					break;
+ 				}
+				break;
+			case `SnowLandNight.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand Night`;
+			   	$globalSkillsRange=214;
+				$globalSkillsAccuracy=155;
+ 				$globalSkillsHighAccuracy=214;
+ 				//Lucks
+ 				switch($globalDifficulty){
+ 					//No Luck at easy mode!
+ 					case 0:
+ 						$globalSkillsHighAccuracy=230;
+ 						$globalSkillsRange=Math.floor($globalSkillsHighAccuracy*0.98);
+ 					break;
+ 					case 1:
+ 						$globalSkillsFaktor=11;
+ 					break;
+ 				}
+				break;
+			case `SnowLandGlade.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand Glade`;
+			     switch($globalDifficulty){
+ 					//No Luck at easy mode!
+ 					case 0:
+ 						$globalSkillsHighAccuracy=250;
+ 						$globalSkillsRange=Math.floor($globalSkillsHighAccuracy*0.98);
+ 					break;
+ 					case 1:
+ 						$globalSkillsFaktor=21;
+ 					break;
+ 				}   			
+				break;
+			case `SnowLandMountain.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand Mountain`;
+			    switch($globalDifficulty){
+ 					//No Luck at easy mode!
+ 					case 0:
+ 						$globalSkillsHighAccuracy=260;
+ 						$globalSkillsRange=Math.floor($globalSkillsHighAccuracy*0.98);
+ 					break;
+ 					//Normal Polar Bear
+ 					case 1:
+ 						$globalSkillsFaktor=31;
+ 						$globalEnemy=$globalOpponents[10];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+ 					break;
+ 				}
+				break;
+			case `SnowLandRoadUp.jpg`:
+			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand Path to Cavern`;
+			    switch($globalDifficulty){
+ 					//No Luck at easy mode!
+ 					case 0:
+ 						$globalSkillsHighAccuracy=270;
+ 						$globalSkillsRange=Math.floor($globalSkillsHighAccuracy*0.98);
+ 					break;
+ 					//Normal Yeti
+ 					case 1:
+ 						$globalSkillsFaktor=41;
+ 						$globalEnemy=$globalOpponents[11];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+ 					break;
+ 				}
+				break;
+			case `SnowLandTopNight.jpg`:
+				document.getElementById('SurvivalMapName').innerHTML=`SnowLand Summit Night`;
+				switch($globalDifficulty){
+ 					//Easy Yeti
+ 					case 0:
+ 						$globalEnemy=$globalOpponents[11];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+ 						$globalSkillsHighAccuracy=280;
+ 						$globalSkillsRange=Math.floor($globalSkillsHighAccuracy*0.98);
+ 					break;
+ 					//Normal IceGolem
+ 					case 1:
+ 						$globalEnemy=$globalOpponents[8];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+ 						$globalSkillsFaktor=51;
+ 					break;
+ 				}
+				break;
+			case `SnowLandIceCavern.jpg`:
+				document.getElementById('SurvivalMapName').innerHTML=`SnowLand Ice Cavern (Highest summit point, Final Boss)`;
+ 				switch($globalDifficulty){
+ 					//Easy IceGolem
+ 					case 0:
+						$globalEnemy=$globalOpponents[8];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+ 						$globalSkillsHighAccuracy=300;
+ 						$globalSkillsRange=Math.floor($globalSkillsHighAccuracy*0.98);
+ 					break;
+ 					//Normal LichKing
+ 					case 1:
+						$globalEnemy=$globalOpponents[9];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+ 						$globalSkillsFaktor=71;
+ 					break;
+ 				}
+				break;
+		}	
+		//bekell majd allitsam a karaktereket!
+
 	})
 
 
@@ -6852,7 +8179,9 @@ $('#NewBattleButton').on('click',()=>{
 		border:`none`,
 		visibility: `hidden`
 	})
-
+	let infos=document.getElementById('SurvivalOpponentInfo').getElementsByTagName('p');
+		infos[0].innerHTML=``;
+		infos[1].innerHTML=``;	
 	let CurrentPage=document.getElementsByClassName('CharacterElements');
 				for(let i=0;i<CurrentPage.length;i++){
 					let element=String(CurrentPage[i].style.backgroundImage).slice(14).slice(0,-2);
@@ -6953,6 +8282,40 @@ $('#NewBattleButton').on('click',()=>{
 					document.getElementsByClassName('StatsSkillsStoneSkin')[1].style.color=`black`;
 					$globalSkillSelection2=0;
 					$globalResultString=``;
+					//Visszaallitsuk a palyat alapertelmezetre, illetve rakunk egy uj karaktert!
+					$globalMapChooser=0;
+					$('#Survival').css({
+					backgroundImage: `url(${SurvivalMaps[$globalMapChooser]})`,
+				})
+					document.getElementById('SurvivalMapName').innerHTML=`Desert Village 1/7`;
+					document.getElementById('SurvivalRegion').innerHTML=`Desert`;
+					//Visszarakjuk a skillt
+					$globalEnemy.Skills=[];
+					//Adunk egy ellenseget veletlenszeruen!
+
+					let enemy;
+					if($globalDifficulty===0){
+						enemy=Math.floor(Math.random()*14)+12;
+					}
+					else{
+						if($globalDifficulty===1){
+							enemy=Math.floor(Math.random()*6)+26;
+						}
+						
+					}
+					$globalEnemy=$globalOpponents[enemy];
+				$('#SurvivalEnemy').css({
+					backgroundImage: $globalEnemy.link,
+				})
+				//Visszaallitom a $globalHp-t
+				$globalMyHP=0;
+				//Visszaallitom a globalis szazalekokat is!
+				 $globalEnemyWeaponChance=0; //(//20%)
+				 $globalSkillsChance=0;
+ 				 $globalSkillsAccuracy=100;
+				 $globalSkillsHighAccuracy=100;
+ 				 $globalSkillsFaktor=1;//Luck
+ 				 $globalSkillsRange=100;
 
 	})
 
