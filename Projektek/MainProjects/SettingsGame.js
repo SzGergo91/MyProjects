@@ -29,6 +29,8 @@ let $globalSkillsFaktor=1;//Luck
 let $globalSkillsRange=100;
 let $globalMyHP=0;
 let $globalMapChooser=0;
+//MediaQuery variable
+let MQVar=screen.width;
 //Opponent Information variables below!
 //Megj. 155 a masoik egyenlites, 214 a 3. egyenlites 
 let $globalSkillsEnemy=['Gymnastics','Acrobatics','WeaponMaster','Swiftness','Luck','Power','StoneSkin'];
@@ -226,13 +228,107 @@ let $globalOpponents=[		//Selection Area Below!
 
 					  {Opponent:`Strange Thing`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/LightBeing.png')`,
 						Health: 300, Defense: 70, Attack: `10-15`, Weapon: `none`, Skills:[] },
+						//Hard Mode Below 48
+						//Desert
+			  /*48*/  
+					  {Opponent:`Scorpion`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/DesertScorpion.png')`,
+						Health: 1113, Defense: 4, Attack: `15-45`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Genie`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/Genie.png')`,
+						Health: 1273, Defense: 3, Attack: `15-105`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Sand Worm`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/SandWorm.png')`,
+						Health: 3000, Defense: 3, Attack: `100-102`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Naga`,Region: `Desert`, Weak: `Forest`, link:`url('SettingsGame/NonWarriors/Naga.png')`,
+						Health: 2691, Defense: 18, Attack: `25-72`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`FireGolem`,Region: `Desert`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/FireGolem.png')`,
+						Health: 2811, Defense: 20, Attack: `70-132`, Weapon: `none`, Skills:[] },
+						
+						//Forest
+					  {Opponent:`Bear`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Bear.png')`,
+						Health: 1900, Defense: 19, Attack: `30-34`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`ForestWitch`,Region: `Forest`,  Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/ForestWitch.png')`,
+						Health: 601, Defense: 2, Attack: `3-300`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Boar`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Boar.png')`,
+						Health: 1180, Defense: 5, Attack: `17-32`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Fairy`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/Fairy.png')`,
+						Health: 450, Defense: 30, Attack: `49-51`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Ghost`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/Ghost.png')`,
+						Health: 801, Defense: 90, Attack: `1-39`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`GiantSpider`,Region: `Forest`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/GiantSpider.png')`,
+						Health: 1800, Defense: 10, Attack: `29-172`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Giant Mantis`,Region: `Forest`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/Mantis.png')`,
+						Health: 1500, Defense: 13, Attack: `50-69`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`T-Rex`,Region: `Forest`, Weak: `SnowLand`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/TRex.png')`,
+						Health: 6000, Defense: 24, Attack: `100-250`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Unicorn`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/Unicorn.png')`,
+						Health: 1731, Defense: 39, Attack: `189-199`, Weapon: `none`, Skills:[] },
+						
+						//SnowLand
+
+					  {Opponent:`IceGolem`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/IceGolem.png')`,
+						Health: 3968, Defense: 25, Attack: `49-78`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Yeti`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Yeti.png')`,
+						Health: 3582, Defense: 8, Attack: `58-109`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`FrostZombie`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/FrostZombie.png')`,
+						Health: 1021, Defense: 5, Attack: `5-80`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`PolarBear`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/PolarBear.png')`,
+						Health: 3000, Defense: 30, Attack: `35-53`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Rozmar`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/EasyMode/Rozmar.png')`,
+						Health: 2371, Defense: 12, Attack: `25-30`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Ice Monster`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/FrostMonster.png')`,
+						Health: 5000, Defense: 1, Attack: `30-35`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Ice Sorceress`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/IceSorceress.png')`,
+						Health: 780, Defense: 112, Attack: `91-130`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`SnowMan`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/SnowMan.png')`,
+						Health: 2000, Defense: 0, Attack: `15-340`, Weapon: `none`, Skills:[] },
+
+
 
 						//Mini Bosses //48 ghost, 49 monster
+						//Normal(70)
 					  {Opponent:`Ghost`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/Ghost.png')`,
 						Health: 801, Defense: 90, Attack: `1-39`, Weapon: `none`, Skills:[] },
 
 					  {Opponent:`Ice Monster`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/NormalMode/FrostMonster.png')`,
 						Health: 5000, Defense: 1, Attack: `30-35`, Weapon: `none`, Skills:[] },
+						
+						//Hard
+					  {Opponent:`Ra`,Region: `Desert`, Weak: `none`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/Ra.png')`,
+						Health: 4500, Defense: 20, Attack: `24-799`, Weapon: `none`, Skills:[] },
+						//Forest mini below Hard
+					  {Opponent:`Banshee`,Region: `Forest`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/Banshee.png')`,
+						Health: 1000, Defense: 202, Attack: `13-117`, Weapon: `none`, Skills:[] },
+						//Forest Final Boss
+					  {Opponent:`Dragon`,Region: `Forest`, Weak: `none`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/Dragon.png')`,
+						Health: 9000, Defense: 32, Attack: `158-333`, Weapon: `none`, Skills:[] },
+						//Hard Snowland mini below
+					  {Opponent:`Hollow Guardian`,Region: `SnowLand`, Weak: `Desert`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/Hollow.png')`,
+						Health: 2250, Defense: 50, Attack: `251-471`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Bone Dragon`,Region: `SnowLand`, Weak: `Forest`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/BoneDragon.png')`,
+						Health: 8500, Defense: 40, Attack: `175-350`, Weapon: `none`, Skills:[] },
+
+					  {Opponent:`Athena`,Region: `SnowLand`, Weak: `none`, link:`url('SettingsGame/NonWarriors/Hidden/HardMode/Athena.png')`,
+						Health: 20000, Defense: 125, Attack: `115-225`, Weapon: `none`, Skills:[] },
+					    //Hard Snowland final boss
 						];
 
 let $globalCharacters=[{Character: `SettingsGame/Characters/Lizardmen.jpg`,NotCharacter: `SettingsGame/BigX.png`,count: 1,
@@ -485,6 +581,8 @@ class Settings extends React.Component{
 					React.createElement('source',{src: `SettingsGame/Audio/EasySelectSound.mp3`, type:`audio/mpeg`},null)),
 				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `NormalSelectSound`},
 					React.createElement('source',{src: `SettingsGame/Audio/NormalSelectSound.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `HardSelectSound`},
+					React.createElement('source',{src: `SettingsGame/Audio/HardSelectSound.mp3`, type:`audio/mpeg`},null)),
 				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `FightExplosion`},
 					React.createElement('source',{src: `SettingsGame/Audio/FightExplosion.mp3`, type:`audio/mpeg`},null)),
 				
@@ -613,6 +711,7 @@ class Settings extends React.Component{
 				React.createElement('h1',{id: `SurvivalDifficultyHeader`},`Difficulties`),
 				React.createElement('span',{id:`SurvivalEasy`},`Easy`),
 				React.createElement('span',{id: `SurvivalNormal`},`Normal`),
+				React.createElement('span',{id: `SurvivalHard`},`Hard`),
 
 				React.createElement('div',{className: `EmptySpace`},null),
 				React.createElement('select',{id: `ArenaMapSelection`},
@@ -4707,7 +4806,7 @@ const battleResult=(value)=>{
 
 	//Ki gyozott
 		if(HPFighter<=0){
-			console.log(`The ${CharacterOpponent} with ${HPOpponent}Hp remained! You lost your journey!`);
+			console.log(`The ${CharacterOpponent} with ${HPOpponent}Hp remained! You have failed to complete your journey!`);
 			ResultString+=`${CharacterOpponent} won with ${HPOpponent.toFixed(2)}Hp remained!(Game Over)`;
 			$globalMyHP=0;
 		}
@@ -5383,6 +5482,9 @@ $(document).ready(()=>{
 			$('#SurvivalNormal').css({
 				display: `inline`
 			})
+			$('#SurvivalHard').css({
+				display: `inline`
+			})
 
 			//Adunk egy ellenseget a palyara veletlenszeruen!(Mas fuggveny fogja vegezni)
 			let enemy=Math.floor(Math.random()*$globalOpponents.length);
@@ -5603,6 +5705,9 @@ $(document).ready(()=>{
 			$('#SurvivalNormal').css({
 				display: `none`
 			})
+			$('#SurvivalHard').css({
+				display: `none`
+			})
 
 					//Eltuntetjuk a terkepet!
 
@@ -5803,10 +5908,26 @@ $(document).ready(()=>{
 		let ParentCheck=$(event.currentTarget).parent().attr('id');
 		if((ParentCheck===`Weapons1Container`) && ($globalWeapons1)){
 		$globalWeapons1=false;
+		if((MQVar>=320) && (MQVar<=480)){
+			$(event.currentTarget).css({
+				backgroundColor: `red`,
+				fontSize: `6vw`,
+			})
+		}
+		else{
+			if((MQVar>=481) && (MQVar<=767)){
+			$(event.currentTarget).css({
+				backgroundColor: `red`,
+				fontSize: `6vw`,
+			})
+			}
+			else{
 			$(event.currentTarget).css({
 				backgroundColor: `red`,
 				fontSize: `4vw`,
 			})
+			}
+		}
 			//Beallitom a skill/statset is majd kikell szedjem arena illetve survival modnal!
 			$('#StatsSkillsWeapon1').html(value.slice(0,-4));
 		document.getElementById('WeaponsSelected').play();
@@ -5956,13 +6077,33 @@ $(document).ready(()=>{
 	}
 	else{
 		//!Eleg egyszer beallitani a curenttargetnek a bg illetve a fontsizeat! A casebe csak a htmleket rakom!
+
 		if((ParentCheck===`Weapons1Container`) && (!$globalWeapons1)){
 			if(bgValue!==128){
 				$globalWeapons1=true;
+				if((MQVar>=320) && (MQVar<=480)){
+					$(event.currentTarget).css({
+						backgroundColor: `green`,
+						fontSize: `5vw`
+					})
+				}
+				else
+				{
+				if((MQVar>=481) && (MQVar<=767))
+				{
+					$(event.currentTarget).css({
+						backgroundColor: `green`,
+						fontSize: `5vw`,
+				})
+				}
+				else
+				{
 				$(event.currentTarget).css({
 						backgroundColor: `green`,
 						fontSize: `3vw`
 					})
+				}
+				}
 			$('#StatsSkillsWeapon1').html(`Weapon`);
 			document.getElementById('WeaponsNotSelected').play();
 				switch(value){
@@ -6114,10 +6255,27 @@ $(document).ready(()=>{
 		else{
 		if((ParentCheck===`Weapons2Container`) && ($globalWeapons2)){
 		$globalWeapons2=false;
-			$(event.currentTarget).css({
-				backgroundColor: `red`,
-				fontSize: `4vw`,
-			})
+			if((MQVar>=320) && (MQVar<=480)){
+					$(event.currentTarget).css({
+						backgroundColor: `red`,
+						fontSize: `6vw`
+					})
+				}
+			else
+			{
+				if((MQVar>=481) && (MQVar<=767)){
+				$(event.currentTarget).css({
+					backgroundColor: `red`,
+					fontSize: `6vw`,
+				})
+			}
+			else{
+				$(event.currentTarget).css({
+					backgroundColor: `red`,
+					fontSize: `4vw`,
+				})
+			}
+			}
 			$('#StatsSkillsWeapon2').html(value.slice(0,-4));
 			document.getElementById('WeaponsSelected').play();
 		switch(value){
@@ -6275,10 +6433,28 @@ $(document).ready(()=>{
 			if((ParentCheck===`Weapons2Container`) && (!$globalWeapons2)){
 			if(bgValue!==128){
 				$globalWeapons2=true;
+				if((MQVar>=320) && (MQVar<=480)){
+					$(event.currentTarget).css({
+						backgroundColor: `green`,
+						fontSize: `5vw`
+					})
+				}
+				else
+				{
+					if((MQVar>=481) && (MQVar<=767)){
+					$(event.currentTarget).css({
+						backgroundColor: `green`,
+						fontSize: `5vw`,
+					})
+					}
+				else
+				{
 				$(event.currentTarget).css({
 						backgroundColor: `green`,
 						fontSize: `3vw`
 					})
+				}
+				}
 			$('#StatsSkillsWeapon2').html(`Weapon`);
 			document.getElementById('WeaponsNotSelected').play();
 			switch(value){
@@ -7592,6 +7768,9 @@ $('#NewBattleButton').on('click',()=>{
 		$('#SurvivalNormal').css({
 			display: `none`
 		})
+		$('#SurvivalHard').css({
+				display: `none`
+		})
 
 		$('#Survival').css({
 			display: `block`,
@@ -7604,6 +7783,7 @@ $('#NewBattleButton').on('click',()=>{
 			$('#SurvivalEnemy').css({
 				backgroundImage: $globalEnemy.link,
 			})
+		document.getElementById('SurvivalRegion').innerHTML=`Wonderfull Desert`;
 	})
 
 	$('#SurvivalNormal').on('click',()=>{
@@ -7617,6 +7797,9 @@ $('#NewBattleButton').on('click',()=>{
 		$('#SurvivalNormal').css({
 			display: `none`
 		})
+		$('#SurvivalHard').css({
+				display: `none`
+			})
 
 		$('#Survival').css({
 			display: `block`,
@@ -7630,7 +7813,41 @@ $('#NewBattleButton').on('click',()=>{
 			$('#SurvivalEnemy').css({
 				backgroundImage: $globalEnemy.link,
 			})
+		document.getElementById('SurvivalRegion').innerHTML=`Desert`;
+
 	})
+
+		$('#SurvivalHard').on('click',()=>{
+		//hangok adasa is!
+		$('#SurvivalDifficultyHeader').css({
+			display: `none`
+		})
+		$('#SurvivalEasy').css({
+			display: `none`
+		})
+		$('#SurvivalNormal').css({
+			display: `none`
+		})
+		$('#SurvivalHard').css({
+			display: `none`
+		})
+
+		$('#Survival').css({
+			display: `block`,
+		})
+		document.getElementById('SurvivalDifficulty').getElementsByTagName('span')[0].innerHTML=`Hard`;
+		document.getElementById('SurvivalDifficulty').getElementsByTagName('span')[0].style.color=`red`;
+		$globalDifficulty=2;
+		document.getElementById('HardSelectSound').play();
+		let enemy=Math.floor(Math.random()*5)+48;
+			$globalEnemy=$globalOpponents[enemy];
+			$('#SurvivalEnemy').css({
+				backgroundImage: $globalEnemy.link,
+			})
+		document.getElementById('SurvivalRegion').innerHTML=`Draco Desert`;
+
+	})
+
 
 	//Survival battle
 	$('#AttackSurvial').on('click',()=>{
@@ -7757,6 +7974,24 @@ $('#NewBattleButton').on('click',()=>{
 				}
 				
 			}
+			else{
+				//Sivatagi lenyek
+				if($globalMapChooser<7){
+					enemy=Math.floor(Math.random()*5)+48;
+				}
+				else{
+					//Forests
+					if(($globalMapChooser>=7) && ($globalMapChooser<17)){
+						enemy=Math.floor(Math.random()*9)+53;
+					}
+					//Snowland
+					else{
+						enemy=Math.floor(Math.random()*8)+62;
+					}
+					
+				}
+				
+			}
 			
 		}
 		 
@@ -7873,7 +8108,11 @@ $('#NewBattleButton').on('click',()=>{
 			    	break;
 			    	//Hard Ra!
 			    	case 2:
-			    		$globalSkillsChance=50;
+			    		$globalEnemy=$globalOpponents[72];
+			    		$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+			    		$globalSkillsChance=30;
 			    	break;
 			    }
 				break;
@@ -7881,7 +8120,18 @@ $('#NewBattleButton').on('click',()=>{
 			//Jungle
 			case `ForestFields.jpg`:
 			    document.getElementById('SurvivalMapName').innerHTML=`Forest Fields 1/10`;
-			    document.getElementById('SurvivalRegion').innerHTML=`Forest`;
+			    	switch($globalDifficulty){
+						case 0:
+							document.getElementById('SurvivalRegion').innerHTML=`Peacefull Forest`;
+						break;
+						case 1:
+							document.getElementById('SurvivalRegion').innerHTML=`Forest`;
+						break;
+						case 2:
+							document.getElementById('SurvivalRegion').innerHTML=`Abbandoned Forest`;
+						break;
+					}
+			    
 			    $globalSkillsChance=10;
 			    $globalEnemyWeaponChance=90;
 				break;
@@ -7910,7 +8160,13 @@ $('#NewBattleButton').on('click',()=>{
 					break;
 						//Normal
 					case 1:
-						$globalEnemy=$globalOpponents[48];
+						$globalEnemy=$globalOpponents[70];
+			    		$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+					break;
+					case 2:
+						$globalEnemy=$globalOpponents[73];
 			    		$('#SurvivalEnemy').css({
 							backgroundImage: $globalEnemy.link,
 						})
@@ -7952,12 +8208,21 @@ $('#NewBattleButton').on('click',()=>{
 							backgroundImage: $globalEnemy.link,
 						})
 			    	break;
+			    	//ForestWitch
 			    	case 1:
 			    		$globalEnemy=$globalOpponents[6]
 			    		$('#SurvivalEnemy').css({
 							backgroundImage: $globalEnemy.link,
 						})
-			    	break;
+					break;
+					case 2:
+					//Dragon
+						$globalEnemy=$globalOpponents[74]
+			    		$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+					break;
+			    	
 			    }
 				$globalSkillsRange=154;
 				$globalSkillsAccuracy=154;
@@ -7967,7 +8232,17 @@ $('#NewBattleButton').on('click',()=>{
 			//SNOWLAND
 			case `SnowLandDownNight.jpg`:
 			    document.getElementById('SurvivalMapName').innerHTML=`SnowLand Downside Night`;
-			    document.getElementById('SurvivalRegion').innerHTML=`SnowLand`;
+			    	switch($globalDifficulty){
+						case 0:
+							document.getElementById('SurvivalRegion').innerHTML=`Beautiful SnowLand`;
+						break;
+						case 1:
+							document.getElementById('SurvivalRegion').innerHTML=`SnowLand`;
+						break;
+						case 2:
+							document.getElementById('SurvivalRegion').innerHTML=`Nightmare SnowLand`;
+						break;
+					}
 			   	$globalSkillsRange=100;
 				$globalSkillsAccuracy=100;
  				$globalSkillsHighAccuracy=100;
@@ -8019,7 +8294,15 @@ $('#NewBattleButton').on('click',()=>{
  					break;
  					//Normal IceMonster
  					case 1:
- 						$globalEnemy=$globalOpponents[49];
+ 						$globalEnemy=$globalOpponents[71];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+						 document.getElementById('SurvivalMapName').innerHTML=`SnowLand Bridge Cross(Mini Boss)`;
+ 					break;
+ 					//Hard Guardian(Hollow)
+ 					case 2:
+ 						$globalEnemy=$globalOpponents[75];
 						$('#SurvivalEnemy').css({
 							backgroundImage: $globalEnemy.link,
 						})
@@ -8042,6 +8325,9 @@ $('#NewBattleButton').on('click',()=>{
  					case 1:
  						$globalSkillsFaktor=11;
  					break;
+ 					 case 2:
+ 						$globalSkillsFaktor=16;
+ 					break;
  				}
 				break;
 			case `SnowLandGlade.jpg`:
@@ -8054,6 +8340,9 @@ $('#NewBattleButton').on('click',()=>{
  					break;
  					case 1:
  						$globalSkillsFaktor=21;
+ 					break;
+ 					case 2:
+ 						$globalSkillsFaktor=26;
  					break;
  				}   			
 				break;
@@ -8073,6 +8362,9 @@ $('#NewBattleButton').on('click',()=>{
 							backgroundImage: $globalEnemy.link,
 						})
  					break;
+ 					case 2:
+ 						$globalSkillsFaktor=41;
+ 					break;
  				}
 				break;
 			case `SnowLandRoadUp.jpg`:
@@ -8090,6 +8382,15 @@ $('#NewBattleButton').on('click',()=>{
 						$('#SurvivalEnemy').css({
 							backgroundImage: $globalEnemy.link,
 						})
+ 					break;
+ 					//Hard LichKing
+ 					case 2:
+ 						$globalSkillsFaktor=56;
+ 						$globalEnemy=$globalOpponents[9];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+						document.getElementById('SurvivalMapName').innerHTML=`SnowLand Path to Cavern(Lich King got kicked out)`;
  					break;
  				}
 				break;
@@ -8113,6 +8414,14 @@ $('#NewBattleButton').on('click',()=>{
 						})
  						$globalSkillsFaktor=51;
  					break;
+ 					//Hard Bone Dragon
+ 					case 2:
+ 						$globalSkillsFaktor=71;
+ 						$globalEnemy=$globalOpponents[76];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+						break;
  				}
 				break;
 			case `SnowLandIceCavern.jpg`:
@@ -8135,6 +8444,14 @@ $('#NewBattleButton').on('click',()=>{
 						})
  						$globalSkillsFaktor=71;
  					break;
+ 					//Hard Athena
+ 					case 2:
+ 						$globalSkillsFaktor=101;
+ 						$globalEnemy=$globalOpponents[77];
+						$('#SurvivalEnemy').css({
+							backgroundImage: $globalEnemy.link,
+						})
+						break;
  				}
 				break;
 		}	
@@ -8288,7 +8605,18 @@ $('#NewBattleButton').on('click',()=>{
 					backgroundImage: `url(${SurvivalMaps[$globalMapChooser]})`,
 				})
 					document.getElementById('SurvivalMapName').innerHTML=`Desert Village 1/7`;
-					document.getElementById('SurvivalRegion').innerHTML=`Desert`;
+					switch($globalDifficulty){
+						case 0:
+							document.getElementById('SurvivalRegion').innerHTML=`Wonderfull Desert`;
+						break;
+						case 1:
+							document.getElementById('SurvivalRegion').innerHTML=`Desert`;
+						break;
+						case 2:
+							document.getElementById('SurvivalRegion').innerHTML=`Draco Desert`;
+						break;
+					}
+					
 					//Visszarakjuk a skillt
 					$globalEnemy.Skills=[];
 					//Adunk egy ellenseget veletlenszeruen!
@@ -8300,6 +8628,10 @@ $('#NewBattleButton').on('click',()=>{
 					else{
 						if($globalDifficulty===1){
 							enemy=Math.floor(Math.random()*6)+26;
+						}
+						else{
+							enemy=Math.floor(Math.random()*5)+48;
+							
 						}
 						
 					}
