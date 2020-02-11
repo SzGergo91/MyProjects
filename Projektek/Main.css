@@ -4430,7 +4430,931 @@
 			width: 100%;
 			height: 15vw;
 		}
+
+		/* React for JungleFinder Advertisment!(1281px+)*/
+		#JungleMainDiv{
+			width: 100%;
+			min-height: 107vw;
+			background-color: forestgreen;
+			background-image: url('Pictures/JungleFinder/JungleMainBG.gif');
+			background-size: 100% 110vw;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		#JungleTitle{
+			font-family: 'Merriweather', serif;
+			text-align: center;
+			letter-spacing: 0.25vw;
+			font-size: 8vw;
+			color: white;
+			background-image: url('Pictures/JungleFinder/HeaderBG.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#JungleContainer{
+			width: 100%;
+			height: 50vw;
+			/*background-image: url('Pictures/JungleFinder/JungleFrame.png');*/
+			background-size: 100% 50vw;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		/*Main Accessories below*/
+		#JungleHPCurrentValue{
+			font-size: 3vw;
+			font-style: italic;
+			margin-left: 5vw;
+			text-shadow: 0.2vw 0vw red, 0vw 0.2vw red, -0.2vw 0vw red, 0vw -0.2vw red;
+			font-weight: 900;
+		}
+
+		#JungleHPMaxValue{
+			font-size: 3vw;
+			font-style: italic;
+			text-shadow: 0.2vw 0vw red, 0vw 0.2vw red, -0.2vw 0vw red, 0vw -0.2vw red;
+			font-weight: 900;
+		}
+
+		#JungleXPCurrentValue{
+			font-size: 3vw;
+			font-style: italic;
+			margin-left: 62vw;
+			text-shadow: 0.2vw 0vw blue, 0vw 0.2vw blue, -0.2vw 0vw blue, 0vw -0.2vw blue;
+			font-weight: 900;
+
+		}
+
+		#JungleXPMaxValue{
+			font-size: 3vw;
+			font-style: italic;
+			text-shadow: 0.2vw 0vw blue, 0vw 0.2vw blue, -0.2vw 0vw blue, 0vw -0.2vw blue;
+			font-weight: 900;
+		}
+
+		#JungleFinderLifeSphere{
+			display: inline-block;
+			width: 25vw;
+			height: 25vw;
+			cursor: pointer;
+			background-image:url('Pictures/JungleFinder/RoundImage.png'), url('Pictures/JungleFinder/Accessories/LifeBar.png');
+			background-size: 31vw 31vw, 25vw 25vw;
+			background-position: center, -2vw -2vw;
+			background-repeat: no-repeat;
+			border:2vw solid transparent;
+			border-radius: 50%;
+		}
+
+		#JungleGoldAccessory{
+			width: 17vw;
+			min-height: 5vw;
+			display: inline-block;
+			margin-left: 5vw;
+			font-size: 4vw;
+			padding-left: 4vw;
+			position: relative;
+			bottom: 15vw;
+			font-weight: bold;
+			background-image:url('Pictures/JungleFinder/Accessories/GoldCoin.png'), url('Pictures/JungleFinder/Consumables.gif');
+			background-size: 4.5vw 4.5vw, 17vw 5vw;
+			background-position: left, center;
+			background-repeat: no-repeat;
+		}
+
+		#JungleJewelAccessory{
+			width: 17vw;
+			min-height: 5vw;
+			display: inline-block;
+			margin-left: 4vw;
+			font-size: 4vw;
+			padding-left: 4vw;
+			position: relative;
+			bottom: 15vw;
+			font-weight: bold;
+			background-image:url('Pictures/JungleFinder/Accessories/Jewel.png'), url('Pictures/JungleFinder/Consumables.gif');
+			background-size: 4.5vw 4.5vw, 17vw 5vw;
+			background-position: left, center;
+			background-repeat: no-repeat;
+		}
+
+		#JungleFinderXPSphere{
+			display: inline-block;
+			margin-left: 3vw;
+			width: 25vw;
+			height: 25vw;
+			cursor: pointer;
+			background-image:url('Pictures/JungleFinder/RoundImage.png'), url('Pictures/JungleFinder/Accessories/XPBar.png');
+			background-size: 31vw 31vw, 25vw 25vw;
+			background-position: center, -2vw 22vw;
+			background-repeat: no-repeat;
+			border:2vw solid transparent;
+			border-radius: 50%;
+		}
+
+		#Menu{
+			display: inline-block;
+			width: 21%;
+			height: auto;
 		
+		}
+		.JungleLock{
+			position: absolute;
+			z-index: 3;
+			font-size: 3vw;
+			margin-left: 6vw;
+			color: transparent;
+			background-image: url('Pictures/JungleFinder/Lock.png');
+			background-repeat: no-repeat;
+			background-size: 5vw 4.5vw;
+			background-position: center;
+		}
+
+		.JungleLock::Selection{
+			color: transparent;
+			background-color: transparent;
+		}
+
+		#JungleMenuCharacterIcon{
+			width: 3vw;
+			height: auto;
+			color: transparent;
+			background-image: url('Pictures/JungleFinder/Icons/HelmIcon.png');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#JungleMenuCharacterIcon::Selection{
+			color: transparent;
+			background-color: transparent;
+		}
+
+		#JungleMenuCharacter{
+			font-family: 'Merriweather', serif;
+			font-size: 3vw;
+			width: 100%;
+			margin-bottom: 0.5vw;
+			font-weight: bold;
+			cursor: pointer;
+			background-image: url('Pictures/JungleFinder/MenuItemsSelected.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+			border: 0.5vw solid transparent;
+			border-image: url('Pictures/JungleFinder/JungleBorderMenuOption.png') 30 round;
+		}
+
+		#JungleMenuInventoryIcon{
+			width: 3vw;
+			height: auto;
+			color: transparent;
+			background-image: url('Pictures/JungleFinder/Icons/InventoryIcon.png');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#JungleMenuInventoryIcon::Selection{
+			color: transparent;
+			background-color: transparent;
+		}
+
+		#JungleMenuInventory{
+			font-family: 'Merriweather', serif;
+			font-size: 3vw;
+			width: 100%;
+			margin-bottom: 0.5vw;
+			font-weight: bold;
+			cursor: default;
+			opacity: 0.8;
+			background-image: url('Pictures/JungleFinder/HeaderBG.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+			border: 0.5vw solid transparent;
+			border-image: url('Pictures/JungleFinder/JungleBorderMenuOption.png') 30 stretch;
+		}
+
+		#JungleMenuQuestsIcon{
+			width: 3vw;
+			height: auto;
+			color: transparent;
+			background-image: url('Pictures/JungleFinder/Icons/MapIcon.png');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#JungleMenuQuestsIcon::Selection{
+			color: transparent;
+			background-color: transparent;
+		}
+
+		#JungleMenuQuests{
+			font-family: 'Merriweather', serif;
+			font-size: 3.2vw;
+			width: 100%;
+			letter-spacing: 0.2vw;
+			margin-bottom: 0.5vw;
+			font-weight: bold;
+			cursor: default;
+			opacity: 0.8;
+			background-image: url('Pictures/JungleFinder/HeaderBG.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+			border: 0.5vw solid transparent;
+			border-image: url('Pictures/JungleFinder/JungleBorderMenuOption.png') 30 stretch;
+		}
+
+		#JungleMenuJungleFinderIcon{
+			width: 3vw;
+			height: auto;
+			color: transparent;
+			background-image: url('Pictures/JungleFinder/Icons/JungleFinderIcon.png');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#JungleMenuJungleFinderIcon::Selection{
+			color: transparent;
+			background-color: transparent;
+		}
+
+		#JungleMenuJungleFinder{
+			font-family: 'Merriweather', serif;
+			font-size: 3vw;
+			width: 100%;
+			letter-spacing: 0.2vw;
+			margin-bottom: 0.5vw;
+			font-weight: bold;
+			cursor: default;
+			opacity: 0.8;
+			background-image: url('Pictures/JungleFinder/HeaderBG.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+			border: 0.5vw solid transparent;
+			border-image: url('Pictures/JungleFinder/JungleBorderMenuOption.png') 30 stretch;
+		}
+
+		#JungleMenuBattleIcon{
+			width: 3vw;
+			height: auto;
+			color: transparent;
+			background-image: url('Pictures/JungleFinder/Icons/BattleIcon.png');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#JungleMenuBattleIcon::Selection{
+			color: transparent;
+			background-color: transparent;
+		}
+
+
+		#JungleMenuBattle{
+			font-family: 'Merriweather', serif;
+			font-size: 3.3vw;
+			width: 100%;
+			letter-spacing: 0.2vw;
+			margin-bottom: 0.5vw;
+			font-weight: bold;
+			cursor: default;
+			opacity: 0.8;
+			background-image: url('Pictures/JungleFinder/HeaderBG.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+			border: 0.5vw solid transparent;
+			border-image: url('Pictures/JungleFinder/JungleBorderMenuOption.png') 30 stretch;
+		}
+
+		#JungleMenuHazardGameIcon{
+			width: 3vw;
+			height: auto;
+			color: transparent;
+			background-image: url('Pictures/JungleFinder/Icons/BetGameIcon.png');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#JungleMenuHazardGameIcon::Selection{
+			color: transparent;
+			background-color: transparent;
+		}
+
+		#JungleMenuHazardGame{
+			font-family: 'Merriweather', serif;
+			font-size: 3vw;
+			width: 100%;
+			margin-bottom: 0.5vw;
+			font-weight: bold;
+			cursor: pointer;
+			background-image: url('Pictures/JungleFinder/HeaderBG.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+			border: 0.5vw solid transparent;
+			border-image: url('Pictures/JungleFinder/JungleBorderMenuOption.png') 30 stretch;
+		}
+
+		#JungleMenuBuyJewelsIcon{
+			width: 3vw;
+			height: auto;
+			color: transparent;
+			background-image: url('Pictures/JungleFinder/Icons/JewelsIcon.png');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#JungleMenuBuyJewelsIcon::Selection{
+			color: transparent;
+			background-color: transparent;
+		}
+
+		#JungleMenuBuyJewels{
+			font-family: 'Merriweather', serif;
+			font-size: 2.8vw;
+			width: 100%;
+			font-weight: bold;
+			cursor: default;
+			opacity: 0.8;
+			background-image: url('Pictures/JungleFinder/HeaderBG.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: center;
+			border: 0.5vw solid transparent;
+			border-image: url('Pictures/JungleFinder/JungleBorderMenuOption.png') 30 stretch;
+		}
+
+		#JungleCharacterDiv{
+			display: inline-block;
+			width: 75%;
+			height: 60vw;
+			position: absolute;
+			margin-left: 2vw;
+			background-image: url('Pictures/JungleFinder/ItemsPotionsBG.png');
+			background-repeat: no-repeat;
+			background-size: 75vw 60vw;
+		}
+
+		#JungleCharacterItemsDiv{
+			display: inline-block;
+			width: 40%;
+			height: 50vw;
+		}
+
+		#JungleItemsHeader{
+			font-size: 5vw;
+			width: 100%;
+			display: inline;
+			margin-left: 9vw;
+		}
+
+		#JungleCurrentItems{
+			width: 106%;
+			height: 24vw;
+			background-image: url('Pictures/JungleFinder/ItemsContainer.png');
+			background-repeat: no-repeat;
+			background-position: center fixed;
+			background-size: 100% 23vw;
+			overflow-y: auto;
+		}
+
+		.JungleItems{
+			width: 10vw;
+			height: 10vw;
+			display: inline-block;
+			border: 0.25vw solid gray;
+			border-radius: 0.5vw;
+			background-repeat: no-repeat;
+			background-position: center fixed;
+			background-size: 9vw 9vw;
+			background-color: lightblue;
+			cursor: pointer;
+		}
+
+		.JungleItems span{
+			position: absolute;
+			top: 22%;
+			right: 102%;
+			font-size: 2.5vw;
+			color: white;
+			background-color: black;
+			word-spacing: break-word;
+		}
+
+		.JungleItems span::after{
+			content: " ";
+			position: absolute;
+			left: 100%;
+			top: 8%;
+			border-width: 1.5vw;
+  			border-style: solid;
+ 			border-color: transparent transparent transparent black;
+
+		}
+
+		#JunglePotionsHeader{
+			font-size: 5vw;
+			width: 100%;
+			display: inline;
+			margin-left: 9vw;
+		}
+
+		#JungleCurrentPotions{
+			width: 106%;
+			height: 24vw;
+			background-image: url('Pictures/JungleFinder/PotionsContainer.png');
+			background-repeat: no-repeat;
+			background-position: center fixed;
+			background-size: 100% 23vw;
+			overflow-y: auto;
+		}
+
+		/*Jungle Character Profile*/
+		#JungleCharacterProfile{
+			position: absolute;
+			display: inline-block;
+			width: 60%;
+			height: 60vw;
+			background-image: url('Pictures/JungleFinder/PaletteForCharacter.jpg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 50vw 60vw;
+		}
+
+
+		#JungleProfileImageSettings{
+			width: 100%;
+			height: 40vw;
+			background-image: url('Pictures/JungleFinder/Character.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 45vw 40vw;
+		}
+
+		#JungleHelmClassHelm{
+			width: 10vw;
+			height: 8vw;
+			background-repeat: no-repeat;
+			background-size: 8vw 8vw;
+			background-position: center;
+		}
+		/*Character Items Main*/
+		/*I.Helmet*/
+		#JungleHelmetProfile{
+			width: 10vw;
+			height: 8vw;
+			border: 0.25vw solid gray;
+			border-radius: 1vw;
+			margin-left: 18.5vw;
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-size: 8vw 8vw;
+			background-position: center;
+		}
+
+		#JungleHelmetProfile span{
+			position: absolute;
+			right: 62%;
+			font-size: 2.5vw;
+			color: white;
+			z-index: 5;
+			background-color: black;
+			word-spacing: break-word;
+		}
+
+		#JungleHelmetProfile span::after{
+			content: " ";
+			position: absolute;
+			left: 100%;
+			top: 10%;
+			border-width: 1.5vw;
+  			border-style: solid;
+ 			border-color: transparent transparent transparent black;
+
+		}
+
+		/*II.Amulet*/
+		#JungleAmuletProfile{
+			width: 7.5vw;
+			height: 6vw;
+			border: 0.25vw solid gray;
+			border-radius: 1vw;
+			margin-left: 4vw;
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-size: 6vw 6vw;
+			background-position: center;
+		}
+
+		#JungleAmuletProfile span{
+			position: absolute;
+			right: 30%;
+			font-size: 2.5vw;
+			max-width: 22vw;
+			color: white;
+			z-index: 5;
+			background-color: black;
+			word-spacing: break-word;
+		}
+
+		#JungleAmuletProfile span::after{
+			content: " ";
+			position: absolute;
+			left: 100%;
+			top: 10%;
+			border-width: 1.5vw;
+  			border-style: solid;
+ 			border-color: transparent transparent transparent black;
+		}
+
+		/*III.Weapons*/
+		#JungleWeaponsProfile{
+			width: 8vw;
+			height: 16vw;
+			border: 0.25vw solid gray;
+			border-radius: 1vw;
+			margin-left: 4vw;
+			transform: rotate(42deg);
+			background-repeat: no-repeat;
+			background-size: 8vw 8vw;
+			background-position: center;
+			display: inline-block;
+		}
+
+		#JungleWeaponsProfile span{
+			position: absolute;
+			right: 75%;
+			font-size: 2.5vw;
+			transform: rotate(-42deg);
+			color: white;
+			z-index: 5;
+			background-color: black;
+			word-spacing: break-word;
+		}
+
+		#JungleWeaponsProfile span::after{
+			content: " ";
+			position: absolute;
+			left: 100%;
+			top: 50%;
+			border-width: 1.5vw;
+  			border-style: solid;
+ 			border-color: transparent transparent transparent black;
+		}
+
+
+		/*IV.Chessplate*/
+		#JungleChessplateProfile{
+			width: 12vw;
+			height: 14vw;
+			border: 0.25vw solid gray;
+			border-radius: 1vw;
+			margin-left: 5vw;
+			position: relative;
+			bottom: 2vw;
+			background-repeat: no-repeat;
+			background-size: 12vw 14vw;
+			background-position: center;
+			display: inline-block;
+		}
+		#JungleChessplateProfile span{
+			position: absolute;
+			right: 100%;
+			font-size: 2.5vw;
+			color: white;
+			z-index: 5;
+			background-color: black;
+			word-spacing: break-word;
+		}
+
+		#JungleChessplateProfile span::after{
+			content: " ";
+			position: absolute;
+			left: 100%;
+			top: 10%;
+			border-width: 1.5vw;
+  			border-style: solid;
+ 			border-color: transparent transparent transparent black;
+		}
+
+		/*V.Gloves*/
+		#JungleGlovesProfile{
+			position: relative;
+			z-index: 1;
+			width: 9vw;
+			height: 12vw;
+			border: 0.25vw solid gray;
+			border-radius: 1vw;
+			margin-left: 4vw;
+			transform: rotate(-42deg);
+			background-repeat: no-repeat;
+			background-size: 9vw 9vw;
+			background-position: center;
+			display: inline-block;
+		}
+
+		#JungleGlovesProfile span{
+			position: absolute;
+			z-index: 5;
+			right: 60%;
+			bottom: 80%;
+			max-width: 25vw;
+			font-size: 2.5vw;
+			color: white;
+			transform: rotate(42deg);
+			background-color: black;
+			word-spacing: break-word;
+		}
+
+		#JungleGlovesProfile span::after{
+			content: " ";
+			position: absolute;
+			left: 100%;
+			top: 50%;
+			border-width: 1.5vw;
+  			border-style: solid;
+ 			border-color: transparent transparent transparent black;
+		}
+		/*VI.First ring*/
+
+		#JungleFirstRingProfile{
+			width: 7.5vw;
+			height: 6vw;
+			border: 0.25vw solid gray;
+			border-radius: 1vw;
+			margin-left: 4vw;
+			position: relative;
+			bottom: 4vw;
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-size: 6vw 6vw;
+			background-position: center;
+		}
+
+		#JungleFirstRingProfile span{
+			position: absolute;
+			right: 80%;
+			font-size: 2.5vw;
+			color: white;
+			background-color: black;
+			word-spacing: break-word;
+		}
+
+		#JungleFirstRingProfile span::after{
+			content: " ";
+			position: absolute;
+			left: 100%;
+			top: 10%;
+			border-width: 1.5vw;
+  			border-style: solid;
+ 			border-color: transparent transparent transparent black;
+		}
+		/*VII.Legs*/
+		#JungleLegsProfile{
+			width: 11vw;
+			height: 11vw;
+			border: 0.25vw solid gray;
+			border-radius: 1vw;
+			margin-left: 5.5vw;
+			position: relative;
+			bottom: 2vw;
+			background-repeat: no-repeat;
+			background-size: 12vw 14vw;
+			background-position: center;
+			display: inline-block;
+		}
+		#JungleLegsProfile span{
+			position: absolute;
+			z-index: 5;
+			right: 80%;
+			font-size: 2.5vw;
+			color: white;
+			background-color: black;
+			word-spacing: break-word;
+		}
+
+		#JungleLegsProfile span::after{
+			content: " ";
+			position: absolute;
+			left: 100%;
+			top: 10%;
+			border-width: 1.5vw;
+  			border-style: solid;
+ 			border-color: transparent transparent transparent black;
+		}
+
+		/*VIII. Second Ring*/
+
+		#JungleSecondRingProfile{
+			width: 7.5vw;
+			height: 6vw;
+			border: 0.25vw solid gray;
+			border-radius: 1vw;
+			margin-left: 4vw;
+			position: relative;
+			bottom: 4vw;
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-size: 6vw 6vw;
+			background-position: center;
+		}
+
+		#JungleSecondRingProfile span{
+			position: absolute;
+			z-index: 5;
+			right: 62%;
+			font-size: 2.5vw;
+			color: white;
+			background-color: black;
+			word-spacing: break-word;
+		}
+
+		#JungleSecondRingProfile span::after{
+			content: " ";
+			position: absolute;
+			left: 100%;
+			top: 10%;
+			border-width: 1.5vw;
+  			border-style: solid;
+ 			border-color: transparent transparent transparent black;
+		}
+
+		/*IX.Boots*/
+		#JungleBootsProfile{
+			width: 8vw;
+			height: 6vw;
+			border: 0.25vw solid gray;
+			border-radius: 1vw;
+			margin-left: 18.5vw;
+			position: relative;
+			bottom: 2vw;
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-size: 6vw 6vw;
+			background-position: center;
+		}
+
+		#JungleBootsProfile span{
+			position: absolute;
+			right: 82%;
+			font-size: 2.5vw;
+			color: white;
+			background-color: black;
+			word-spacing: break-word;
+		}
+
+		#JungleBootsProfile span::after{
+			content: " ";
+			position: absolute;
+			left: 100%;
+			top: 10%;
+			border-width: 1.5vw;
+  			border-style: solid;
+ 			border-color: transparent transparent transparent black;
+		}
+
+
+		#JungleProfileStats{
+			width: 100%;
+			height: auto;
+			display: inline-block;
+			overflow-y: auto;
+			overflow-x: auto;
+			white-space: nowrap;
+		}
+
+		.JungleGoldIcon{
+			width: 5vw;
+			height: auto;
+			font-size: 4vw;
+			background-image:url('Pictures/JungleFinder/Accessories/GoldCoin.png');
+			background-size: 4vw 4vw;
+			color: transparent;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.JungleGoldIcon::Selection{
+			color: transparent;
+			background-color: transparent;
+		}
+		/*JungleAttributes*/
+		#JungleProfileStrength{
+			min-width: 10vw;
+			font-size: 4vw;
+			color: white;
+		}
+		#JungleProfileStrengthPlus{
+			margin-left: 1vw;
+			font-size: 4vw;
+			background-color: black;
+			color: green;
+			cursor: pointer;
+			font-weight: 900;
+		}
+
+		#JungleProfileStrCost{
+			margin-left: 1vw;
+			font-size: 4vw;
+			color: white;
+			font-weight: 900;
+		}
+
+		#JungleProfileDex{
+			min-width: 10vw;
+			font-size: 4vw;
+			color: white;
+		}
+		#JungleProfileDexPlus{
+			margin-left: 1vw;
+			font-size: 4vw;
+			background-color: black;
+			color: green;
+			cursor: pointer;
+			font-weight: 900;
+		}
+
+		#JungleProfileDexCost{
+			margin-left: 1vw;
+			font-size: 4vw;
+			color: white;
+			font-weight: 900;
+		}
+
+		#JungleProfileWisdom{
+			min-width: 10vw;
+			font-size: 4vw;
+			color: white;
+		}
+		#JungleProfileWisdomPlus{
+			margin-left: 1vw;
+			font-size: 4vw;
+			background-color: black;
+			color: green;
+			cursor: pointer;
+			font-weight: 900;
+		}
+
+		#JungleProfileWisdomCost{
+			margin-left: 1vw;
+			font-size: 4vw;
+			color: white;
+			font-weight: 900;
+		}
+
+		#JungleProfileCrafting{
+			min-width: 10vw;
+			font-size: 4vw;
+			color: white;
+		}
+		/*Uj variacio, hogy a divet 100%-ra rakom es a cost melle fog kerulni, A tobbi info pedig lejebb lesz!*/
+		#JungleProfileCraftingPlus{
+			margin-left: 1vw;
+			font-size: 4vw;
+			background-color: black;
+			color: green;
+			cursor: pointer;
+			font-weight: 900;
+		}
+
+		#JungleProfileCraftingCost{
+			margin-left: 1vw;
+			font-size: 4vw;
+			color: white;
+			font-weight: 900;
+		}
+
+
+		/*Contacts*/
+		#Contacts{
+			width: 100%;
+			height: auto;
+		}
+
+		#Contacts hr{
+			border-width: 0.15vw;
+		}
+
+		#CopyRight{
+			text-align: center;
+			font-size: 2vw;
+		}
+
+		#Contacts span{
+			font-size: 1.5vw;
+			margin-left: 40vw;
+		}
+
+		#MailHeader{
+			text-align: center;
+			font-size: 2vw;
+		}
+
+
+
 	}
 	
 
