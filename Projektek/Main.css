@@ -4434,10 +4434,10 @@
 		/* React for JungleFinder Advertisment!(1281px+)*/
 		#JungleMainDiv{
 			width: 100%;
-			min-height: 107vw;
+			min-height: 120vw;
 			background-color: forestgreen;
 			background-image: url('Pictures/JungleFinder/JungleMainBG.gif');
-			background-size: 100% 110vw;
+			background-size: 100% 123vw;
 			background-repeat: no-repeat;
 			background-position: center;
 		}
@@ -4452,6 +4452,10 @@
 			background-size: 100% auto;
 			background-repeat: no-repeat;
 			background-position: center;
+			cursor: default;
+		}
+		#JungleTitle::Selection{
+			background-color: transparent;
 		}
 		#JungleContainer{
 			width: 100%;
@@ -4521,6 +4525,11 @@
 			background-size: 4.5vw 4.5vw, 17vw 5vw;
 			background-position: left, center;
 			background-repeat: no-repeat;
+			cursor: default;
+		}
+
+		#JungleGoldAccessory::Selection{
+			background-color: transparent;
 		}
 
 		#JungleJewelAccessory{
@@ -4537,6 +4546,11 @@
 			background-size: 4.5vw 4.5vw, 17vw 5vw;
 			background-position: left, center;
 			background-repeat: no-repeat;
+			cursor: default;
+		}
+
+		#JungleJewelAccessory::Selection{
+			background-color: transparent;
 		}
 
 		#JungleFinderXPSphere{
@@ -4559,6 +4573,9 @@
 			height: auto;
 		
 		}
+		#Menu *::Selection{
+			background-color: transparent;
+		}
 		.JungleLock{
 			position: absolute;
 			z-index: 3;
@@ -4571,10 +4588,6 @@
 			background-position: center;
 		}
 
-		.JungleLock::Selection{
-			color: transparent;
-			background-color: transparent;
-		}
 
 		#JungleMenuCharacterIcon{
 			width: 3vw;
@@ -4584,10 +4597,6 @@
 			background-size: 100% auto;
 			background-repeat: no-repeat;
 			background-position: center;
-		}
-		#JungleMenuCharacterIcon::Selection{
-			color: transparent;
-			background-color: transparent;
 		}
 
 		#JungleMenuCharacter{
@@ -4614,10 +4623,6 @@
 			background-repeat: no-repeat;
 			background-position: center;
 		}
-		#JungleMenuInventoryIcon::Selection{
-			color: transparent;
-			background-color: transparent;
-		}
 
 		#JungleMenuInventory{
 			font-family: 'Merriweather', serif;
@@ -4643,10 +4648,6 @@
 			background-size: 100% auto;
 			background-repeat: no-repeat;
 			background-position: center;
-		}
-		#JungleMenuQuestsIcon::Selection{
-			color: transparent;
-			background-color: transparent;
 		}
 
 		#JungleMenuQuests{
@@ -4675,10 +4676,6 @@
 			background-repeat: no-repeat;
 			background-position: center;
 		}
-		#JungleMenuJungleFinderIcon::Selection{
-			color: transparent;
-			background-color: transparent;
-		}
 
 		#JungleMenuJungleFinder{
 			font-family: 'Merriweather', serif;
@@ -4705,10 +4702,6 @@
 			background-size: 100% auto;
 			background-repeat: no-repeat;
 			background-position: center;
-		}
-		#JungleMenuBattleIcon::Selection{
-			color: transparent;
-			background-color: transparent;
 		}
 
 
@@ -4738,14 +4731,10 @@
 			background-repeat: no-repeat;
 			background-position: center;
 		}
-		#JungleMenuHazardGameIcon::Selection{
-			color: transparent;
-			background-color: transparent;
-		}
 
 		#JungleMenuHazardGame{
 			font-family: 'Merriweather', serif;
-			font-size: 3vw;
+			font-size: 2.9vw;
 			width: 100%;
 			margin-bottom: 0.5vw;
 			font-weight: bold;
@@ -4767,10 +4756,6 @@
 			background-repeat: no-repeat;
 			background-position: center;
 		}
-		#JungleMenuBuyJewelsIcon::Selection{
-			color: transparent;
-			background-color: transparent;
-		}
 
 		#JungleMenuBuyJewels{
 			font-family: 'Merriweather', serif;
@@ -4790,18 +4775,18 @@
 		#JungleCharacterDiv{
 			display: inline-block;
 			width: 75%;
-			height: 60vw;
+			height: 65vw;
 			position: absolute;
 			margin-left: 2vw;
 			background-image: url('Pictures/JungleFinder/ItemsPotionsBG.png');
 			background-repeat: no-repeat;
-			background-size: 75vw 60vw;
+			background-size: 75vw 65vw;
 		}
 
 		#JungleCharacterItemsDiv{
 			display: inline-block;
 			width: 40%;
-			height: 50vw;
+			height: 55vw;
 		}
 
 		#JungleItemsHeader{
@@ -4813,11 +4798,11 @@
 
 		#JungleCurrentItems{
 			width: 106%;
-			height: 24vw;
+			height: 26.5vw;
 			background-image: url('Pictures/JungleFinder/ItemsContainer.png');
 			background-repeat: no-repeat;
 			background-position: center fixed;
-			background-size: 100% 23vw;
+			background-size: 100% 25.5vw;
 			overflow-y: auto;
 		}
 
@@ -4836,7 +4821,7 @@
 
 		.JungleItems span{
 			position: absolute;
-			top: 22%;
+			top: 20%;
 			right: 102%;
 			font-size: 2.5vw;
 			color: white;
@@ -4864,11 +4849,11 @@
 
 		#JungleCurrentPotions{
 			width: 106%;
-			height: 24vw;
+			height: 26.5vw;
 			background-image: url('Pictures/JungleFinder/PotionsContainer.png');
 			background-repeat: no-repeat;
 			background-position: center fixed;
-			background-size: 100% 23vw;
+			background-size: 100% 25.5vw;
 			overflow-y: auto;
 		}
 
@@ -4877,21 +4862,21 @@
 			position: absolute;
 			display: inline-block;
 			width: 60%;
-			height: 60vw;
+			height: 65vw;
 			background-image: url('Pictures/JungleFinder/PaletteForCharacter.jpg');
 			background-repeat: no-repeat;
 			background-position: center;
-			background-size: 50vw 60vw;
+			background-size: 50vw 65vw;
 		}
 
 
 		#JungleProfileImageSettings{
 			width: 100%;
-			height: 40vw;
+			height: 45vw;
 			background-image: url('Pictures/JungleFinder/Character.png');
 			background-repeat: no-repeat;
 			background-position: center;
-			background-size: 45vw 40vw;
+			background-size: 45vw 45vw;
 		}
 
 		#JungleHelmClassHelm{
@@ -4942,7 +4927,7 @@
 			height: 6vw;
 			border: 0.25vw solid gray;
 			border-radius: 1vw;
-			margin-left: 4vw;
+			margin-left: 5vw;
 			display: inline-block;
 			background-repeat: no-repeat;
 			background-size: 6vw 6vw;
@@ -4951,7 +4936,8 @@
 
 		#JungleAmuletProfile span{
 			position: absolute;
-			right: 30%;
+			right: 25%;
+			top: 1vw;
 			font-size: 2.5vw;
 			max-width: 22vw;
 			color: white;
@@ -4976,6 +4962,8 @@
 			height: 16vw;
 			border: 0.25vw solid gray;
 			border-radius: 1vw;
+			position: relative;
+			top: 3vw;
 			margin-left: 4vw;
 			transform: rotate(42deg);
 			background-repeat: no-repeat;
@@ -4986,7 +4974,8 @@
 
 		#JungleWeaponsProfile span{
 			position: absolute;
-			right: 75%;
+			right: 65%;
+			top: 5vw;
 			font-size: 2.5vw;
 			transform: rotate(-42deg);
 			color: white;
@@ -5043,6 +5032,7 @@
 		/*V.Gloves*/
 		#JungleGlovesProfile{
 			position: relative;
+			top: 1vw;
 			z-index: 1;
 			width: 9vw;
 			height: 12vw;
@@ -5059,8 +5049,8 @@
 		#JungleGlovesProfile span{
 			position: absolute;
 			z-index: 5;
-			right: 60%;
-			bottom: 80%;
+			right: 50%;
+			bottom: 55%;
 			max-width: 25vw;
 			font-size: 2.5vw;
 			color: white;
@@ -5087,7 +5077,7 @@
 			border-radius: 1vw;
 			margin-left: 4vw;
 			position: relative;
-			bottom: 4vw;
+			bottom: 3vw;
 			display: inline-block;
 			background-repeat: no-repeat;
 			background-size: 6vw 6vw;
@@ -5096,7 +5086,8 @@
 
 		#JungleFirstRingProfile span{
 			position: absolute;
-			right: 80%;
+			right: 100%;
+			top: -2vw;
 			font-size: 2.5vw;
 			color: white;
 			background-color: black;
@@ -5114,22 +5105,22 @@
 		}
 		/*VII.Legs*/
 		#JungleLegsProfile{
-			width: 11vw;
-			height: 11vw;
+			width: 13vw;
+			height: 13vw;
 			border: 0.25vw solid gray;
 			border-radius: 1vw;
-			margin-left: 5.5vw;
+			margin-left: 4.5vw;
 			position: relative;
 			bottom: 2vw;
 			background-repeat: no-repeat;
-			background-size: 12vw 14vw;
+			background-size: 13vw 16vw;
 			background-position: center;
 			display: inline-block;
 		}
 		#JungleLegsProfile span{
 			position: absolute;
 			z-index: 5;
-			right: 80%;
+			right: 100%;
 			font-size: 2.5vw;
 			color: white;
 			background-color: black;
@@ -5155,7 +5146,7 @@
 			border-radius: 1vw;
 			margin-left: 4vw;
 			position: relative;
-			bottom: 4vw;
+			bottom: 3vw;
 			display: inline-block;
 			background-repeat: no-repeat;
 			background-size: 6vw 6vw;
@@ -5165,7 +5156,8 @@
 		#JungleSecondRingProfile span{
 			position: absolute;
 			z-index: 5;
-			right: 62%;
+			right: 102%;
+			top: -2vw;
 			font-size: 2.5vw;
 			color: white;
 			background-color: black;
@@ -5184,16 +5176,16 @@
 
 		/*IX.Boots*/
 		#JungleBootsProfile{
-			width: 8vw;
-			height: 6vw;
+			width: 12vw;
+			height: 8vw;
 			border: 0.25vw solid gray;
 			border-radius: 1vw;
-			margin-left: 18.5vw;
+			margin-left: 16.5vw;
 			position: relative;
 			bottom: 2vw;
 			display: inline-block;
 			background-repeat: no-repeat;
-			background-size: 6vw 6vw;
+			background-size: 8vw 8vw;
 			background-position: center;
 		}
 
@@ -5226,10 +5218,15 @@
 			white-space: nowrap;
 		}
 
+		#JungleProfileStats *::Selection{
+			background-color: transparent;
+		}
+
 		.JungleGoldIcon{
 			width: 5vw;
 			height: auto;
 			font-size: 4vw;
+			cursor: default;
 			background-image:url('Pictures/JungleFinder/Accessories/GoldCoin.png');
 			background-size: 4vw 4vw;
 			color: transparent;
@@ -5238,6 +5235,23 @@
 		}
 
 		.JungleGoldIcon::Selection{
+			color: transparent;
+			background-color: transparent;
+		}
+
+		.JungleJewelIcon{
+			width: 5vw;
+			height: auto;
+			font-size: 4vw;
+			cursor: default;
+			background-image:url('Pictures/JungleFinder/Accessories/Jewel.png');
+			background-size: 4vw 4vw;
+			color: transparent;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.JungleJewelIcon::Selection{
 			color: transparent;
 			background-color: transparent;
 		}
@@ -5263,7 +5277,7 @@
 			font-weight: 900;
 		}
 
-		#JungleProfileDex{
+		#JungleProfileDexterity{
 			min-width: 10vw;
 			font-size: 4vw;
 			color: white;
@@ -5326,6 +5340,472 @@
 			color: white;
 			font-weight: 900;
 		}
+
+
+
+		/*Jungle Hazard Game Div*/
+
+		#JungleHazardGameDiv{
+			display: inline-block;
+			width: 75%;
+			height: 95vw;
+			position: absolute;
+			margin-left: 2vw;
+			background-image:url('Pictures/JungleFinder/BetGameComponents/JungleBetGame.png') ,url('Pictures/JungleFinder/ItemsPotionsBG.png');
+			background-repeat: no-repeat;
+			background-size: 75vw 95vw;
+			border-radius: 0.5vw;
+		}
+
+		#JunglePathMoverGame{
+			width: 25vw;
+			font-size: 5vw;
+			display: inline-block;
+			margin-left: 5vw;
+			margin-top: 1vw;
+			cursor: pointer;
+			font-weight: bold;
+			background-repeat: no-repeat, no-repeat;
+			background-size: 22vw 10vw, 25vw auto;
+			background-position: 1.5vw -2vw, left top;
+			box-shadow: 0.25vw 0.25vw 0.5vw black;
+			text-shadow: 0.1vw 0vw 0.2vw lightgreen, 0vw 0.1vw 0.2vw lightgreen, -0.1vw 0vw 0.2vw lightgreen, 0vw -0.1vw 0.2vw lightgreen;
+			border: 0.5vw solid transparent;
+			border-image: url('Pictures/JungleFinder/BetGameComponents/Spikes.png') 40% round;
+			border-radius: 0.2vw;
+		}
+		/*A Game Framet hasznalom majd a masik divre amin lesz a jatek!*/
+		#JungleChestOpenGame{
+			width: 25vw;
+			font-size: 5vw;
+			display: inline-block;
+			margin-left: 5vw;
+			margin-top: 1vw;
+			cursor: pointer;
+			font-weight: bold;
+			background-repeat: no-repeat, no-repeat;
+			background-size: 14vw 10vw, 25vw auto;
+			background-position: 5vw -3vw, left top;
+			box-shadow: 0.25vw 0.25vw 0.5vw black;
+			text-shadow: 0.1vw 0vw 0.2vw lightgreen, 0vw 0.1vw 0.2vw lightgreen, -0.1vw 0vw 0.2vw lightgreen, 0vw -0.1vw 0.2vw lightgreen;
+			border: 0.5vw solid transparent;
+			border-image: url('Pictures/JungleFinder/BetGameComponents/Spikes.png') 40% round;
+			border-radius: 0.2vw;
+		}
+		/*Gold bet Part*/
+		#JungleGoldBet{
+			width: 28vw;
+			display: inline-block;
+			margin-left: 2vw;
+			margin-top: 1vw;
+		}
+
+		#GoldBetInput{
+			font-size: 4vw;
+			outline: none;
+			width: 23vw;
+			color: yellow;
+			border:none;
+			box-shadow: 0vw 0.2vw 0.3vw black, 0.2vw 0vw 0.3vw black, -0.2vw 0vw 0.3vw black, 0vw -0.2vw 0.3vw black;
+			background-color: saddlebrown;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/InputBG.png');
+			background-size: 10vw auto;
+			background-repeat: no-repeat;
+		}
+
+		#JugleBetActivate{
+			display: inline-block;
+			font-size: 4.5vw;
+			margin-left: 2.5vw;
+			margin-top: 1vw;
+			border-radius: 0.25vw;
+			cursor: pointer;
+			background-color: saddlebrown;
+			box-shadow: 0vw 0.2vw 0.3vw black, 0.2vw 0vw 0.3vw black, -0.2vw 0vw 0.3vw black, 0vw -0.2vw 0.3vw black;
+			text-shadow: 0.1vw 0vw 0.2vw white, 0vw 0.1vw 0.2vw white, -0.1vw 0vw 0.2vw white, 0vw -0.1vw 0.2vw white;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/WannaBet.png');
+			background-repeat: no-repeat;
+			background-size: 6vw 4vw;
+			background-position: center;
+		}
+		/*Jungle Jewels*/
+		#JungleJewelBet{
+			width: 30vw;
+			display: inline-block;
+			margin-left: 4vw;
+			margin-top: 1vw;
+		}
+
+		#JewelBetInput{
+			font-size: 4vw;
+			outline: none;
+			width: 25vw;
+			color: #3498DB;
+			border:none;
+			box-shadow: 0vw 0.2vw 0.3vw black, 0.2vw 0vw 0.3vw black, -0.2vw 0vw 0.3vw black, 0vw -0.2vw 0.3vw black;
+			background-color: saddlebrown;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/InputBG2.png');
+			background-size: 10vw auto;
+			background-repeat: no-repeat;
+		}
+		/*Jungle Betting Values*/
+		/*I.Gold*/
+
+		#JungleBettingValuesContainer{
+			font-size: 4.5vw;
+			font-weight: bold;
+			text-shadow: 0.1vw 0vw 0.2vw white, 0vw 0.1vw 0.2vw white, -0.1vw 0vw 0.2vw white, 0vw -0.1vw 0.2vw white;
+			margin-left: 2vw;
+		}
+
+		#JungleTotalGoldValue{
+			text-shadow: 0.1vw 0vw 0.2vw #3498DB, 0vw 0.1vw 0.2vw #3498DB, -0.1vw 0vw 0.2vw #3498DB, 0vw -0.1vw 0.2vw #3498DB;
+			font-size: 4.25vw;
+			color: yellow;
+		}
+		/*II.Jewels*/
+		#JungleTotalJewelBetContainer{
+			font-size: 5.5vw;
+			margin-left: 2vw;
+		}
+
+		#JungleTotalJewelValue{
+			text-shadow: 0.1vw 0vw 0.2vw yellow, 0vw 0.1vw 0.2vw yellow, -0.1vw 0vw 0.2vw yellow, 0vw -0.1vw 0.2vw yellow;
+			font-size: 4.25vw;
+			margin-left: 2vw;
+			color: #3498DB;
+		}
+
+		#JungleSelectedBetGameHeader{
+			text-align: center;
+			font-size: 5vw;
+			font-weight: 900;
+		}
+
+		#JungleSelectedGameFieldPathMover{
+			width: 100%;
+			height: 60vw;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/CardBoard.jpg');
+			background-size: 100% 60vw;
+			background-repeat: no-repeat;
+		}
+
+		#JungleGameInformation{
+			display: inline-block;
+			margin-right: 2vw;
+			position: relative;
+			left: 2vw;
+			top: 2vw;
+			width: 10vw;
+			height: 10vw;
+			background-image: url('Pictures/JungleFinder/Information.png');
+			background-repeat: no-repeat;
+			background-size: 10vw 10vw;
+			cursor: pointer;
+		}
+
+		#JungleGameDescription{
+			width: 28vw;
+			position: absolute;
+			bottom: -29vw;
+			z-index: 3;
+			height: 30vw;
+			overflow-y: auto;
+			background-color: yellow;
+			border-radius: 0.2vw;
+		}
+
+		#JungleGameDescription h1{
+			text-align: center;
+			font-size: 5vw;
+		}
+
+		#JungleGameDescription p {
+			font-size: 4.1vw;
+			font-style: italic;
+			word-spacing: break-word;
+		}
+
+		#JungleGameStandard{
+			font-size: 5vw;
+			display: inline-block;
+			position: relative;
+			bottom: 3vw;
+			margin-left: 2vw;
+			background-repeat: no-repeat;
+			background-size: 40% 100%, 100% 100%;
+			background-position: 6vw 0vw, center;
+			border-radius: 0.2vw;
+			box-shadow: 0.1vw 0.1vw 0.3vw black;
+			text-shadow: 0.1vw 0.1vw 0.2vw white;
+		}
+
+		#JungleGameRisky{
+			font-size: 5vw;
+			display: inline-block;
+			position: relative;
+			bottom: 3vw;
+			margin-left: 3vw;
+			background-repeat: no-repeat;
+			background-size: 40% 100%, 100% 100%;
+			background-position: 4vw 0vw, center;
+			border-radius: 0.2vw;
+			box-shadow: 0.1vw 0.1vw 0.3vw black;
+			text-shadow: 0.1vw 0.1vw 0.2vw black;
+		}
+
+		#JungleGameRiskiest{
+			font-size: 5vw;
+			display: inline-block;
+			position: relative;
+			bottom: 3vw;
+			margin-left: 3vw;
+			background-repeat: no-repeat;
+			background-size: 40% 100%, 100% 100%;
+			background-position: 5vw 0vw, center;
+			border-radius: 0.2vw;
+			box-shadow: 0.1vw 0.1vw 0.3vw black;
+			text-shadow: 0.1vw 0.1vw 0.2vw red;
+		}
+
+		#JungleBetGameSpecifyButton{
+			font-size: 5vw;
+			width: 25vw;
+			cursor: pointer;
+			text-align: center;
+			margin-left: 27vw;
+			background-color: brown;
+			text-shadow: 0vw 0.2vw 0.3vw white, 0.2vw 0vw 0.3vw white, -0.2vw 0vw 0.3vw white, 0vw -0.2vw 0.3vw white;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/PathButtonMonkeyLeft.png'), url('Pictures/JungleFinder/BetGameComponents/PathButtonMonkeyRight.png');
+			background-position: 0vw 1vw, 21vw 1vw;
+			background-repeat: no-repeat;
+			background-size: 5vw 5vw;
+			border-radius: 0.2vw;
+		}
+
+		#JungleGamePathMover{
+			margin-left: 2vw;
+			width: 70vw;
+			height: 40vw;
+		}
+
+		#JungleGamePathMover .multipliers{
+			display: inline-block;
+			font-size: 4.3vw;
+			width: 10vw;
+			border: 0.2vw solid black;
+			text-align: center;
+			text-shadow: 0vw 0.2vw 0.3vw white,0.2vw 0vw 0.3vw white,0vw -0.2vw 0.3vw white,-0.2vw 0vw 0.3vw white;
+			cursor: default;
+			font-weight: 900;
+		}
+
+		#JungleGamePathMover .multipliers::Selection{
+			background-color: transparent;
+		}
+
+		#JunglePathMoverStandard .cards{
+			display: inline-block;
+			width: 10vw;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		#JunglePathMoverStandard span{
+			display: inline-block;
+			width: 7.2vw;
+			margin-top: 0.2vw;
+			height: 10vw;
+			position: relative;
+			background-image: url('Pictures/JungleFinder/Accessories/CardsStandard.png');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+
+		/*PathMover Risky*/
+
+		#JunglePathMoverRisky .cards{
+			display: inline-block;
+			width: 10vw;
+			text-align: center;
+			cursor: pointer;
+
+		}
+
+		#JunglePathMoverRisky span{
+			display: inline-block;
+			width: 5.4vw;
+			margin-top: 0.2vw;
+			height: 7.5vw;
+			position: relative;
+			background-image: url('Pictures/JungleFinder/Accessories/CardsRisky.png');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			color: transparent;
+
+		}
+
+		/*Jungle Riskiest*/
+		#JunglePathMoverRiskiest .cards{
+			display: inline-block;
+			width: 10vw;
+			text-align: center;
+			cursor: pointer;
+
+		}
+
+		#JunglePathMoverRiskiest span{
+			display: inline-block;
+			width: 5.4vw;
+			margin-top: 0.2vw;
+			height: 7.5vw;
+			position: relative;
+			background-image: url('Pictures/JungleFinder/Accessories/CardsRiskiest.png');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+
+
+		/*ChestOpen Game*/
+		#JungleSelectedGameFieldChestOpen{
+			width: 100%;
+			height: 63vw;
+			border-radius: 0.25vw;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/SpiderWeb.png'),url('Pictures/JungleFinder/BetGameComponents/ChestGameGhost.png'),
+		    url('Pictures/JungleFinder/BetGameComponents/ChestOpenField.jpg');
+			background-size:35% 20vw, 25% 10vw,100% 63vw;
+			background-position: 50vw 5vw,25vw 5vw, center center;
+			background-repeat: no-repeat;
+		}
+
+		#InfoForChestGame{
+			display: inline-block;
+			margin-right: 2vw;
+			position: relative;
+			left: 2vw;
+			top: 2vw;
+			width: 10vw;
+			height: 10vw;
+			background-image: url('Pictures/JungleFinder/Information.png');
+			background-repeat: no-repeat;
+			background-size: 10vw 10vw;
+			cursor: pointer;
+		}
+
+		#JungleGameChestGamePlatform{
+			width: 28vw;
+			position: absolute;
+			bottom: -29vw;
+			z-index: 3;
+			height: 30vw;
+			overflow-y: auto;
+			background-color: yellow;
+			border-radius: 0.2vw;
+		}
+
+		#JungleGameChestGamePlatform h1{
+			text-align: center;
+			font-size: 5vw;
+		}
+
+		#JungleGameChestGamePlatform p{
+			font-size: 4.1vw;
+			font-style: italic;
+			word-spacing: break-word;
+		}
+
+		#ChestNumberInput{
+			margin-left: 1vw;
+			font-size: 4vw;
+			width: 18vw;
+			display: inline-block;
+			border-radius: 1%;
+			outline: none;
+			box-shadow: 0.2vw 0vw 0.3vw black,0vw 0.2vw 0.3vw black,-0.2vw 0vw 0.3vw black,0vw -0.2vw 0.3vw black;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/InputChestBG.gif');
+			background-size: 100% 100%;
+			color: white;
+		}
+
+		#ChestGameAccept{
+			font-size: 4.7vw;
+			margin-left: 1vw;
+			width: 20.2vw;
+			color: white;
+			outline: none;
+			text-shadow: 0.2vw 0.2vw yellow,-0.2vw -0.2vw yellow;
+			box-shadow: 0vw 0.2vw 0.3vw black, 0.2vw 0vw 0.3vw black, -0.2vw 0vw 0.3vw black,0vw -0.2vw 0.3vw black;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/Angels.png'),url('Pictures/JungleFinder/BetGameComponents/Ghosts.png');
+			background-repeat: no-repeat,no-repeat;
+			background-size: 4vw 4vw, 4vw 4vw;
+			background-position: -0.5vw 1vw, 16.5vw 1vw;
+			cursor: pointer;
+		}
+
+		#ChestOpenDifficulty{
+			display: inline-block;
+			margin-left: 1vw;
+			font-size: 4.5vw;
+			text-align: center;
+			width: 20vw;
+			height: 12vw;
+			text-shadow: 0.2vw 0vw white, 0vw 0.2vw white, -0.2vw 0vw white, 0vw -0.2vw white;
+			font-weight: 900;
+		}
+
+		#ChestOpenDifficulty::Selection{
+			background-color: transparent;
+		}
+
+		#ChestOpenDifficultyValue{
+			display: block;
+			color: green;
+		}
+
+		#ChestOpenDifficultyValue::Selection{
+			background-color: transparent;
+		}
+
+		#JungleChestOpenGamePlay{
+			width: 100%;
+			height: 47vw;
+		}
+
+		.Chests{
+			margin-top: 1.5vw;
+			width: 11vw;
+			height: 8vw;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/ChestOpenOff.png');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			display: inline-block;
+			margin-left: 1vw;
+			cursor: pointer;
+		}
+
+		.Chests div{
+			display: none;
+			width: 100%;
+			height: 50%;
+
+		}
+
+		.ChestsContent{
+			display: inline-block;
+			width: 5vw;
+			height: 5vw;
+			position: absolute;
+			margin-left: 4vw;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/ChestGameGhost.png');
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+		}
+
+
+
+
+
+
 
 
 		/*Contacts*/
