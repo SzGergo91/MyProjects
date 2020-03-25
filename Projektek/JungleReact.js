@@ -998,6 +998,9 @@ class Main extends React.Component{
 		    },
 		    //C. Chestopen Components
 		    ChestOpenInfo: `none`,
+		    ChestNumbers:5,
+		    FirstChestOpen:false,
+		    FirstChestConsumCheck: false,
 		   
 
 		};
@@ -1078,6 +1081,10 @@ class Main extends React.Component{
 		//B.ChestOpen
 		this.ChestGameInformation=this.ChestGameInformation.bind(this);
 		this.ChestOpen=this.ChestOpen.bind(this);
+		this.DivideNumbers=this.DivideNumbers.bind(this);
+		this.DivideMultipliers=this.DivideMultipliers.bind(this);
+		this.ChestInput=this.ChestInput.bind(this);
+		this.ChestAccept=this.ChestAccept.bind(this);
 
 
 	}
@@ -2581,7 +2588,7 @@ class Main extends React.Component{
 	//1.Gold and Jewel Event Handler for inputs!
 	ResourcesInputValue(e){
 		let InputId=e.target.id;
-		let value=Number(e.target.value);
+		let value=Math.floor(Number(e.target.value));
 		let GoldValue=this.state.GoldValue;
 		let JewelValue=this.state.JewelValue;
 		let AndGoldCheck=this.state.BetGoldValue;
@@ -4515,6 +4522,21 @@ class Main extends React.Component{
 				if(ID===`JungleChestOpenGame`)
 				{
 					document.getElementById('ChangeGameChest').play();
+					let ChestSet=document.getElementById('JungleChestOpenGamePlay').getElementsByClassName('Chests');
+					for(let i=0;i<ChestSet.length;i++)
+					{
+						if(i<=9)
+						{
+							ChestSet[i].style.display=`inline-block`;
+						}
+						else
+						{
+							ChestSet[i].style.display=`none`;
+						}
+					}
+					document.getElementById('ChestOpenDifficultyValue').style.color=`green`;
+					document.getElementById('ChestOpenDifficultyValue').innerHTML=`Easy`;
+
 					this.setState(prevState=>({
 						ChestOpen:{
 							...prevState.ChestOpen,
@@ -4529,7 +4551,8 @@ class Main extends React.Component{
 						PathGameActive: `none`,
 						ChestGameActive: `block`,
 						SelectedBetGameHeader:`ChestOpen`,
-						HazardGameBG: `url('Pictures/JungleFinder/BetGameComponents/HazardBG.gif') ,url('Pictures/JungleFinder/ItemsPotionsBG.png')`
+						HazardGameBG: `url('Pictures/JungleFinder/BetGameComponents/HazardBG.gif') ,url('Pictures/JungleFinder/ItemsPotionsBG.png')`,
+						ChestNumbers: 5,
 					}))
 				}
 				else
@@ -4576,14 +4599,77 @@ class Main extends React.Component{
 		//Jquery function (Animation mostly)
 		ChestOpen(event){
 			event.persist();
+			let Jewel=0;
+			let Gold=0;
+			if(this.state.BetJewelValue!==`Value`)
+			{
+				Jewel=Number(this.state.BetJewelValue);
+			}
+			if(this.state.BetGoldValue!==`Value`)
+			{
+				Gold=Number(this.state.BetGoldValue);
+			}				
 			if(this.state.BetState.Opac<1)
 			{
 				$(document).ready(()=>{
 					let Cursor=window.getComputedStyle(event.target,null).getPropertyValue('cursor');
 					if(Cursor===`pointer`)
 					{
+						if(!this.state.FirstChestConsumCheck)
+						{
+							if((Gold>=2000) ||(Jewel>=25))
+							{
+								this.setState({
+									FirstChestConsumCheck:true,
+								})
+							}
+							else
+							{
+								window.alert(`Minimum stakes are: 2000 for gold and 25 for jewels!`);
+							}
+						}
+						if(this.state.FirstChestConsumCheck)
+						{
+
 						let ChestContainer=document.getElementById('JungleChestOpenGamePlay').getElementsByClassName('Chests');
 						//Protect the 
+						let GoldGenerated=0;
+						let JewelGenerated=0;
+						let Multiplier=0;
+						let Ghost=false;
+						let Chests=this.state.ChestNumbers;
+						//Bizonyos dolgokat kiszedunk(Normalisan 1x kell vegrehajtani ne dolgozzunk potyara)
+						if(!this.state.FirstChestOpen)
+						{
+							this.setState(prevState=>({
+								PathMover:
+								{
+									...prevState.PathMover,
+									visibility:`hidden`,
+								},
+								FirstChestOpen: true,
+
+							}))
+							document.getElementById('ChestGameAccept').disabled=true;
+							document.getElementById('ChestGameAccept').style.opacity=0.7;
+							document.getElementById('ChestNumberInput').disabled=true;
+							document.getElementById('ChestNumberInput').style.opacity=0.7;
+
+						}
+						if(Chests!==0)
+						{
+							let a=Chests-1;
+							this.setState({
+								ChestNumbers: a,
+							})
+
+						}
+						else
+						{
+							document.getElementById('ChestGameAccept').disabled=false;
+							document.getElementById('ChestGameAccept').style.opacity=1;
+						}
+
 						for(let i=0;i<ChestContainer.length;i++)
 						{
 							ChestContainer[i].style.cursor=`default`;
@@ -4603,7 +4689,7 @@ class Main extends React.Component{
 						})
 
 
-						},1500)
+						},2000)
 
 						$(event.target).css({
 							backgroundImage: `url('Pictures/JungleFinder/BetGameComponents/ChestOpenOn.png')`,
@@ -4617,19 +4703,562 @@ class Main extends React.Component{
 						{
 							document.getElementById('ChestOpen2').play();
 						}
-						let inside=event.target.getElementsByTagName('div')[0];
-						$(inside).fadeToggle(750);
+						//Generalunk veletlenszeruen// MQ is required(necessary)
+						let Main=Math.floor(Math.random()*100)+1;
+						let show=event.target.getElementsByTagName('div')[0];
+						let inside=show.getElementsByTagName('span')[0];
+							if(Main<=75)
+							{
+								let GoldJewel=Math.floor(Math.random()*100)+1;
+								if(GoldJewel<=80)
+								{
+									//gold
+									//Melyik gold!
+									let GoldRandom=Math.floor(Math.random()*100)+1;
+									if(GoldRandom<=80)
+									{
+										let GoldValue=Math.floor(Math.random()*10)+1;
+										GoldGenerated=1;
+										this.DivideNumbers(GoldValue,inside,true);
+										this.setState({
+											BetGoldValue: `${Gold+GoldValue}`,
+											GoldPart: `inline`,
+										})
+										
+									}
+									else
+									{
+										if((GoldRandom>80) && (GoldRandom<=95))
+										{
+											let GoldValue=Math.floor(Math.random()*90)+11;
+											GoldGenerated=2;
+											this.DivideNumbers(GoldValue,inside,true);
+											this.setState({
+												BetGoldValue: `${Gold+GoldValue}`,
+												GoldPart: `inline`,
+											})
+										}
+										else
+										{
+											let GoldValue=Math.floor(Math.random()*9899)+101;
+											GoldGenerated=3;
+											this.DivideNumbers(GoldValue,inside,true);
+											this.setState({
+												BetGoldValue: `${Gold+GoldValue}`,
+												GoldPart: `inline`,
+											})
+										}
+
+									}	
+
+								}
+								else
+								{
+									//Jewel
+									let JewelRandom=Math.floor(Math.random()*100)+1;
+									if(JewelRandom<=90)
+									{
+										let JewelValue=Math.floor(Math.random()*10)+1;
+										this.DivideNumbers(JewelValue,inside,false);
+										JewelGenerated=1;
+										this.setState({
+											BetJewelValue: `${Jewel+JewelValue}`,
+											AndPart: `inline`,
+											JewelPart: `inline`,
+										})
+									}
+									else
+									{
+										let JewelValue=Math.floor(Math.random()*100)+1;
+										this.DivideNumbers(JewelValue,inside,false);
+										JewelGenerated=2;
+										this.setState({
+											BetJewelValue: `${Jewel+JewelValue}`,
+											AndPart: `inline`,
+											JewelPart: `inline`,
+										})
+									}
+								}		
+							}
+							else
+							{
+								//Szazalekok!
+								if((Main>75) && (Main<=95))
+								{
+									//Egyforma az eselye mind a pozitiv mind a negativ ertekekre nezve!
+									let PositivNegativ=Math.floor(Math.random()*100)+1;
+									if(PositivNegativ>50)
+									{
+											//Positiv 
+											//Gold/Jewel
+											let PositivPercent=Math.floor(Math.random()*899)+1;
+											this.DivideMultipliers(PositivPercent,inside,true);
+											Multiplier=1;	
+											this.setState({
+												BetGoldValue: `${Math.floor(Gold+Gold*(PositivPercent/100))}`,
+												BetJewelValue: `${Math.floor(Jewel+Jewel*(PositivPercent/100))}`,
+												GoldPart: `inline`,
+												AndPart: `inline`,
+												JewelPart: `inline`,
+										})	
+									}
+									else
+									{
+										//Negativ
+										let NegativPercent=Math.floor(Math.random()*89)+1;
+										this.DivideMultipliers(NegativPercent,inside,false);
+										this.setState({
+												BetGoldValue: `${Math.floor(Gold-(Gold*(NegativPercent/100)))}`,
+												BetJewelValue: `${Math.floor(Jewel-(Jewel*(NegativPercent/100)))}`,
+												GoldPart: `inline`,
+												AndPart: `inline`,
+												JewelPart: `inline`,
+										})	
+										Multiplier=-1;
+									}
+								}
+								else
+								{
+								Ghost=true;
+									this.setState({
+											BetGoldValue: `${0}`,
+											BetJewelValue: `${0}`,
+											GoldPart: `inline`,
+											AndPart: `inline`,
+											JewelPart: `inline`,
+									})	
+								inside.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/ChestGameGhost.png')`;
+								inside.style.backgroundSize=`5vw 4vw`;
+								inside.style.backgroundPosition=`0vw 0vw`;
+								}
+
+							}
+						$(show).fadeToggle(750,()=>{
+							if(GoldGenerated!==0)
+							{
+								if(GoldGenerated===1)
+								{
+									document.getElementById('CoinMinor').play();
+								}
+								else
+								{
+									if(GoldGenerated===2)
+									{
+										document.getElementById('CoinMedium').play();
+									}
+									else
+									{
+										document.getElementById('CoinMajor').play();
+									}
+								}
+							}
+
+							if(JewelGenerated!==0)
+							{
+								if(JewelGenerated===1)
+								{
+									document.getElementById('JewelMedium').play();
+								}
+								else
+								{
+									document.getElementById('JewelHigh').play();
+								}
+							}
+
+							if(Multiplier!==0)
+							{
+								if(Multiplier===1)
+								{
+									document.getElementById('PositivePercent').play();
+								}
+								else
+								{
+									document.getElementById('NegativePercent').play();
+								}
+								
+							}
+
+							if(Ghost)
+							{
+								document.getElementById('Ghost').play();
+							}
+							
+						});
+
+					//ide
+						}							
 
 					}
 				})
 			}
 			else
 			{
-				window.alert('Place a bet first!')
+				window.alert('Place a bet first!');
 			}
 
 		}
 
+		DivideNumbers(e,element,gold){
+				let value=e;
+				let check=value.toString().length;
+				let values=[];
+				let words=[];
+				//A wordot length szerint nezem
+				while(value!=0)
+				{
+					let Modvalue=value % 10;
+					values.unshift(Modvalue);
+					value=Math.floor(value/10);
+				}
+				while(values.length!==0)
+				{
+					switch(values[0])
+					{
+						case 1:
+							words.push('One');
+							values.shift();
+						break;
+						case 2:
+							words.push('Two');
+							values.shift();
+						break;
+						case 3:
+							words.push('Three');
+							values.shift();
+						break;
+						case 4:
+							words.push('Four');
+							values.shift();
+						break;
+						case 5:
+							words.push('Five');
+							values.shift();
+						break;
+						case 6:
+							words.push('Six');
+							values.shift();
+						break;
+						case 7:
+							words.push('Seven');
+							values.shift();
+						break;
+						case 8:
+							words.push('Eight');
+							values.shift();
+						break;
+						case 9:
+							words.push('Nine');
+							values.shift();
+						break;
+						case 0:
+							words.push('Zero');
+							values.shift();
+						break;									
+					}
+				}
+				if(gold)
+				{
+					element.style.backgroundSize=`2.9vw 4vw`;
+					element.style.backgroundPosition=`0vw 0vw,1.9vw 0vw,3.8vw 0vw,5.7vw 0vw`;
+					console.log(e);
+					switch(check)
+					{
+						//Szamjegy(Digits)
+						case 1:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/GoldNum/${words[0]}.png'), 
+														   url(''),
+														   url(''),
+														   url('')`;
+							
+						break;
+						case 2:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/GoldNum/${words[0]}.png'), 
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/GoldNum/${words[1]}.png'),
+														   url(''),
+														   url('')`;
+						break;
+						case 3:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/GoldNum/${words[0]}.png'), 
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/GoldNum/${words[1]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/GoldNum/${words[2]}.png'),
+														   url('')`;
+						break;
+						case 4:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/GoldNum/${words[0]}.png'), 
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/GoldNum/${words[1]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/GoldNum/${words[2]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/GoldNum/${words[3]}.png')`;
+						break;
+					}
+				}
+				else
+				{
+					element.style.backgroundSize=`3.7vw 5.3vw`;
+					element.style.backgroundPosition=`0vw 0vw,2.5vw 0vw,5vw 0vw`;
+					console.log(e);
+					switch(check)
+					{
+						//Szamjegy(Digits)
+						case 1:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/JewelNum/${words[0]}.png'), 
+														   url(''),
+														   url('')`;
+							console.log(words[0]);
+						break;
+						case 2:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/JewelNum/${words[0]}.png'), 
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/JewelNum/${words[1]}.png'),
+														   url('')`;
+						break;
+						case 3:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/JewelNum/${words[0]}.png'), 
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/JewelNum/${words[1]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/JewelNum/${words[2]}.png')`;
+						break;
+					}
+				}
+			
+		}
+
+
+		DivideMultipliers(e,element,positive){
+			let value=e;
+			let check=value.toString().length;
+			let values=[];
+			let words=[];
+			while(value!==0)
+			{
+				let Modvalue=value % 10;
+				values.unshift(Modvalue);
+				value=Math.floor(value/10);
+			}
+			while(values.length!==0)
+			{
+				switch(values[0])
+				{
+					case 1:
+						words.push(`One`);
+						values.shift();
+					break;
+					case 2:
+						words.push('Two');
+						values.shift();
+					break;
+					case 3:
+						words.push('Three');
+						values.shift();
+					break;
+					case 4:
+						words.push('Four');
+						values.shift();
+					break;
+					case 5:
+						words.push('Five');
+						values.shift();
+					break;
+					case 6:
+						words.push('Six');
+						values.shift();
+					break;
+					case 7:
+						words.push('Seven');
+						values.shift();
+					break;
+					case 8:
+						words.push('Eight');
+						values.shift();
+					break;
+					case 9:
+						words.push('Nine');
+						values.shift();
+					break;
+					case 0:
+						words.push('Zero');
+						values.shift();
+					break;
+				}
+			}
+			element.style.backgroundSize=`2.6vw 3.6vw`;
+			element.style.backgroundPosition=`0vw 0vw,1.7vw 0vw,3.4vw 0vw,5.1vw 0vw`;
+			if(positive)
+			{
+				//Positive values
+					switch(check)
+					{
+						case 1:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/PositivePercentages/${words[0]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/GreenPercent.png'),
+														   url(''),
+														   url('')`;
+						break;
+						case 2:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/PositivePercentages/${words[0]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/PositivePercentages/${words[1]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/GreenPercent.png'),
+														   url('')`;
+						break;
+						case 3:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/PositivePercentages/${words[0]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/PositivePercentages/${words[1]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/PositivePercentages/${words[2]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/GreenPercent.png')`;
+						break;	
+					}
+			}
+			else
+			{
+				//Negativ values
+				switch(check)
+					{
+						case 1:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/Minus.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/NegativPercentages/${words[0]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/RedPercent.png'),
+														   url('')`;
+						break;
+						case 2:
+							element.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/Numbers/Minus.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/NegativPercentages/${words[0]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/NegativPercentages/${words[1]}.png'),
+														   url('Pictures/JungleFinder/BetGameComponents/Numbers/RedPercent.png')`;
+						break;
+					}
+			}
+		}
+
+		//Chests Input
+		ChestInput(e)
+		{
+			let Target=Math.floor(e.target.value);
+			if(e.key===`Enter`)
+			{
+				if(e.target.value.length!==0)
+				{
+					if(e.target.value<10)
+					{
+						window.alert('Input value must be higher than 10!');
+					}
+					else
+					{
+						if(e.target.value>30)
+						{
+							window.alert(`Input's maximum value is 30!`);
+						}
+						else
+						{
+							this.setState({
+								ChestNumbers: Math.floor(Target/2)+1,
+							})
+							let Chests=document.getElementById('JungleChestOpenGamePlay').getElementsByClassName('Chests');
+							for(let i=0;i<Chests.length;i++)
+							{
+								if(i<e.target.value)
+								{
+									Chests[i].style.display=`inline-block`;
+								}
+								else
+								{
+									Chests[i].style.display=`none`;	
+								}
+							}
+							if(e.target.value<=15)
+							{
+								document.getElementById('ChestOpenDifficultyValue').style.color=`green`;
+								document.getElementById('ChestOpenDifficultyValue').innerHTML=`Easy`;
+							}
+							else
+							{
+								if((e.target.value>15) && (e.target.value<=25))
+								{
+									document.getElementById('ChestOpenDifficultyValue').style.color=`orange`;
+									document.getElementById('ChestOpenDifficultyValue').innerHTML=`Normal`;
+								}
+								else
+								{
+									document.getElementById('ChestOpenDifficultyValue').style.color=`red`;
+									document.getElementById('ChestOpenDifficultyValue').innerHTML=`Hard`;
+								}	
+							}
+						}
+					}
+				}
+				else
+				{
+					window.alert('Input field must contain a number!');
+				}
+			}
+		}
+
+		ChestAccept(e){
+			let BetOpac=this.state.BetState.Opac;
+			if(BetOpac<1)
+			{	
+				let Cursor=window.getComputedStyle(e.target,null).getPropertyValue('cursor');
+				if(Cursor===`pointer`)
+				{
+					let ReceivedGold=this.state.GoldValue;
+					let ReceivedJewel=this.state.JewelValue;
+					if(this.state.BetGoldValue!==`Value`)
+					{
+						ReceivedGold+=Number(this.state.BetGoldValue);
+					}
+					if(this.state.BetJewelValue!==`Value`)
+					{
+						ReceivedJewel+=Number(this.state.BetJewelValue);
+					}
+					this.setState(prevState=>({
+						GoldValue:ReceivedGold,
+						JewelValue:ReceivedJewel,
+						PathMover:{
+							...prevState.PathMover,
+							visibility:`visible`,
+						},
+						ChestOpen:{
+							...prevState.ChestOpen,
+							visibility:`visible`,
+						},
+						GoldInputState: {Disabled: false, Opac:1},
+						JewelInputState: {Disabled: false, Opac:1},
+						BetState:{Disabled: false, Opac:1, Curs:`pointer`},
+						BetGoldValue:`Value`,
+						BetJewelValue:`Value`,
+						JewelPart:`none`,
+						AndPart:`none`,
+						GoldPart:`none`,
+						//Chests vissza
+						ChestNumbers:5,
+		    			FirstChestOpen:false,
+		    			FirstChestConsumCheck: false,
+					}))
+					//Visszarakni a ladakat is!
+					document.getElementById('ChestNumberInput').disabled=false;
+					document.getElementById('ChestNumberInput').style.opacity=1;
+					let Chests=document.getElementById('JungleChestOpenGamePlay').getElementsByClassName('Chests');
+					for(let i=0;i<Chests.length;i++)
+					{
+						Chests[i].style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/ChestOpenOff.png')`;
+						Chests[i].getElementsByTagName('div')[0].style.display=`none`;
+						Chests[i].style.cursor=`pointer`;
+						Chests[i].style.color=`black`;
+						if(i<9)
+						{
+							Chests[i].style.display=`inline-block`;
+						}
+						else
+						{
+							Chests[i].style.display=`none`;
+						}
+					}
+
+					document.getElementById('AcceptGoldJewels').play();
+					document.getElementById('ChestOpenDifficultyValue').style.color=`green`;
+					document.getElementById('ChestOpenDifficultyValue').innerHTML=`Easy`;
+
+				}
+
+
+			}
+		}
 
 
 	render(){
@@ -5017,8 +5646,8 @@ class Main extends React.Component{
 										If you pick a ghost, don't worry, you can get golds as well in numbers back!
 										Good Luck!`))
 								),
-							React.createElement('input',{id:`ChestNumberInput`,placeholder:`Chests...`,type:`Number`},null),
-							React.createElement('button',{id:`ChestGameAccept`},`Accept`),
+							React.createElement('input',{id:`ChestNumberInput`,placeholder:`Chests...`,type:`Number`,onKeyPress:this.ChestInput},null),
+							React.createElement('button',{id:`ChestGameAccept`,onClick:this.ChestAccept},`Accept`),
 							React.createElement('div',{id:`ChestOpenDifficulty`},`Difficulty`,
 								React.createElement('span',{id:`ChestOpenDifficultyValue`},`Easy`)),
 							//GameDiv
@@ -5136,7 +5765,23 @@ class Main extends React.Component{
 				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `ChestOpen1`},
 					React.createElement('source',{src: `Pictures/JungleFinder/BetGameComponents/Sounds/ChestOpen1.mp3`, type:`audio/mpeg`},null)),
 				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `ChestOpen2`},
-					React.createElement('source',{src: `Pictures/JungleFinder/BetGameComponents/Sounds/ChestOpen2.mp3`, type:`audio/mpeg`},null)),)
+					React.createElement('source',{src: `Pictures/JungleFinder/BetGameComponents/Sounds/ChestOpen2.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `CoinMinor`},
+					React.createElement('source',{src: `Pictures/JungleFinder/BetGameComponents/Sounds/CoinMinor.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `CoinMedium`},
+					React.createElement('source',{src: `Pictures/JungleFinder/BetGameComponents/Sounds/CoinMedium.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `CoinMajor`},
+					React.createElement('source',{src: `Pictures/JungleFinder/BetGameComponents/Sounds/CoinMajor.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `JewelMedium`},
+					React.createElement('source',{src: `Pictures/JungleFinder/BetGameComponents/Sounds/JewelMedium.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `JewelHigh`},
+					React.createElement('source',{src: `Pictures/JungleFinder/BetGameComponents/Sounds/JewelHigh.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `PositivePercent`},
+					React.createElement('source',{src: `Pictures/JungleFinder/BetGameComponents/Sounds/PositivePercent.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `NegativePercent`},
+					React.createElement('source',{src: `Pictures/JungleFinder/BetGameComponents/Sounds/NegativePercent.mp3`, type:`audio/mpeg`},null)),
+				React.createElement('audio',{preload: `auto`, controls: `none`, style:{ display: `none`}, id: `Ghost`},
+					React.createElement('source',{src: `Pictures/JungleFinder/BetGameComponents/Sounds/Ghost.mp3`, type:`audio/mpeg`},null)),)
 					
 			);
 	}

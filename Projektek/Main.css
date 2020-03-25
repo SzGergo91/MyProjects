@@ -5346,7 +5346,7 @@
 		/*Jungle Hazard Game Div*/
 
 		#JungleHazardGameDiv{
-			display: inline-block;
+			display: none;
 			width: 75%;
 			height: 95vw;
 			position: absolute;
@@ -5792,12 +5792,10 @@
 
 		.ChestsContent{
 			display: inline-block;
-			width: 5vw;
+			width: 8vw;
 			height: 5vw;
 			position: absolute;
 			margin-left: 4vw;
-			background-image: url('Pictures/JungleFinder/BetGameComponents/ChestGameGhost.png');
-			background-size: 100% 100%;
 			background-repeat: no-repeat;
 		}
 
