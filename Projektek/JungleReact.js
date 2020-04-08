@@ -4,7 +4,7 @@
 let $globalHelmets=[];
 //A feltetel annyi, hogy ezeket mindig megkell adni es kesz!
 
-
+let $globalScreenWidthMQ=screen.width;
 
 //Specifikaljuk azt, hogy miket adhat a Helmet!(Mindent nem!)
 //1.Defense,2.Strength(opcionalis),3.Dexterity(opcionalis),4.Wisdom(opc),5.Crafting(opc),frost damage illetve lightning damage!
@@ -2566,19 +2566,62 @@ class Main extends React.Component{
 			}
 			element.style.backgroundImage=`url('Pictures/JungleFinder/MenuItemsSelected.jpg')`;
 			//Megnezzuk, hogy mire kattintottunk!
+			console.log($globalScreenWidthMQ);
 			switch(id){
 				case `JungleMenuCharacter`:
+				if(($globalScreenWidthMQ>=320) && ($globalScreenWidthMQ<=480))
+				{
+
 					document.getElementById('JungleCharacterDiv').style.display=`inline-block`;
 					document.getElementById('JungleHazardGameDiv').style.display=`none`;
-					document.getElementById('JungleMainDiv').style.minHeight=`120vw`;
-					document.getElementById('JungleMainDiv').style.backgroundSize=`100% 123vw`;
+					document.getElementById('JungleMainDiv').style.minHeight=`500vw`;
+					document.getElementById('JungleMainDiv').style.backgroundSize=`100% 510vw`;
+				}
+				else
+				{
+					if(($globalScreenWidthMQ>=481) && ($globalScreenWidthMQ<=767))
+					{
+						document.getElementById('JungleCharacterDiv').style.display=`inline-block`;
+						document.getElementById('JungleHazardGameDiv').style.display=`none`;
+						document.getElementById('JungleMainDiv').style.minHeight=`500vw`;
+						document.getElementById('JungleMainDiv').style.backgroundSize=`100% 510vw`;
+					}
+					else
+					{
+						document.getElementById('JungleCharacterDiv').style.display=`inline-block`;
+						document.getElementById('JungleHazardGameDiv').style.display=`none`;
+						document.getElementById('JungleMainDiv').style.minHeight=`120vw`;
+						document.getElementById('JungleMainDiv').style.backgroundSize=`100% 123vw`;
+					}
+				}
 				break;
 				case `JungleMenuHazardGame`:
+				if(($globalScreenWidthMQ>=320) && ($globalScreenWidthMQ<=480))
+				{
+
 				    document.getElementById('JungleHazardGameDiv').style.display=`inline-block`;
 					document.getElementById('JungleCharacterDiv').style.display=`none`;
-					//Beallitom a JungleMainDiv meretet is mivel a Jatek nagyobb helyet igenyel!
-					document.getElementById('JungleMainDiv').style.minHeight=`145vw`;
-					document.getElementById('JungleMainDiv').style.backgroundSize=`100% 148vw`;
+					document.getElementById('JungleMainDiv').style.minHeight=`605vw`;
+					document.getElementById('JungleMainDiv').style.backgroundSize=`100% 615vw`;
+				}
+				else
+				{
+					if(($globalScreenWidthMQ>=481) && ($globalScreenWidthMQ<=767))
+					{
+						document.getElementById('JungleHazardGameDiv').style.display=`inline-block`;
+						document.getElementById('JungleCharacterDiv').style.display=`none`;
+						document.getElementById('JungleMainDiv').style.minHeight=`605vw`;
+						document.getElementById('JungleMainDiv').style.backgroundSize=`100% 615vw`;
+					}
+					else
+					{
+						document.getElementById('JungleHazardGameDiv').style.display=`inline-block`;
+						document.getElementById('JungleCharacterDiv').style.display=`none`;
+						//Beallitom a JungleMainDiv meretet is mivel a Jatek nagyobb helyet igenyel!
+						document.getElementById('JungleMainDiv').style.minHeight=`145vw`;
+						document.getElementById('JungleMainDiv').style.backgroundSize=`100% 148vw`;
+					}
+				}
 				break;
 			}
 		}
@@ -4580,18 +4623,25 @@ class Main extends React.Component{
 
 		//ChestOpenGame Methods
 		ChestGameInformation(e){
-			let display=e.target.getElementsByTagName('div')[0].style.display;
-			if(display===`none`)
+			try
 			{
-				this.setState({
-					ChestOpenInfo: `block`
-				})
+				let display=e.target.getElementsByTagName('div')[0].style.display;
+				if(display===`none`)
+				{
+					this.setState({
+						ChestOpenInfo: `block`
+					})
+				}
+				else
+				{
+					this.setState({
+						ChestOpenInfo: `none`
+					})	
+				}
 			}
-			else
+			catch(error)
 			{
-				this.setState({
-					ChestOpenInfo: `none`
-				})	
+				console.log(`error: ${error}`);
 			}
 
 		}
@@ -4687,7 +4737,6 @@ class Main extends React.Component{
 							cursor: `default`,
 							color: `red`
 						})
-
 
 						},2000)
 
@@ -4826,10 +4875,30 @@ class Main extends React.Component{
 											GoldPart: `inline`,
 											AndPart: `inline`,
 											JewelPart: `inline`,
-									})	
-								inside.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/ChestGameGhost.png')`;
-								inside.style.backgroundSize=`5vw 4vw`;
-								inside.style.backgroundPosition=`0vw 0vw`;
+									})
+								if(($globalScreenWidthMQ>=320) && ($globalScreenWidthMQ<=480))
+								{
+									inside.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/ChestGameGhost.png')`;
+									inside.style.backgroundSize=`10vw 8vw`;
+									inside.style.backgroundPosition=`0vw 0vw`;
+								}
+								else
+								{
+									if(($globalScreenWidthMQ>=481) && ($globalScreenWidthMQ<=767))
+									{
+										inside.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/ChestGameGhost.png')`;
+										inside.style.backgroundSize=`10vw 8vw`;
+										inside.style.backgroundPosition=`0vw 0vw`;
+									}
+									else
+									{
+										inside.style.backgroundImage=`url('Pictures/JungleFinder/BetGameComponents/ChestGameGhost.png')`;
+										inside.style.backgroundSize=`5vw 4vw`;
+										inside.style.backgroundPosition=`0vw 0vw`;
+									}
+
+								}	
+
 								}
 
 							}
@@ -4958,8 +5027,24 @@ class Main extends React.Component{
 				}
 				if(gold)
 				{
-					element.style.backgroundSize=`2.9vw 4vw`;
-					element.style.backgroundPosition=`0vw 0vw,1.9vw 0vw,3.8vw 0vw,5.7vw 0vw`;
+					if(($globalScreenWidthMQ>=320) && ($globalScreenWidthMQ<=480))
+					{
+						element.style.backgroundSize=`5.8vw 8vw`;
+						element.style.backgroundPosition=`0vw 0vw,3.8vw 0vw,7.6vw 0vw,11.4vw 0vw`;
+					}
+					else
+					{
+						if(($globalScreenWidthMQ>=481) && ($globalScreenWidthMQ<=767))
+						{
+							element.style.backgroundSize=`5.8vw 8vw`;
+							element.style.backgroundPosition=`0vw 0vw,3.8vw 0vw,7.6vw 0vw,11.4vw 0vw`;
+						}
+						else
+						{
+							element.style.backgroundSize=`2.9vw 4vw`;
+							element.style.backgroundPosition=`0vw 0vw,1.9vw 0vw,3.8vw 0vw,5.7vw 0vw`;
+						}
+					}
 					console.log(e);
 					switch(check)
 					{
@@ -4993,8 +5078,24 @@ class Main extends React.Component{
 				}
 				else
 				{
-					element.style.backgroundSize=`3.7vw 5.3vw`;
-					element.style.backgroundPosition=`0vw 0vw,2.5vw 0vw,5vw 0vw`;
+					if(($globalScreenWidthMQ>=320) && ($globalScreenWidthMQ<=480))
+					{
+						element.style.backgroundSize=`7.4vw 10.6vw`;
+						element.style.backgroundPosition=`0vw 0vw,5vw 0vw,10vw 0vw`;
+					}
+					else
+					{
+						if(($globalScreenWidthMQ>=481) && ($globalScreenWidthMQ<=767))
+						{
+							element.style.backgroundSize=`7.4vw 10.6vw`;
+							element.style.backgroundPosition=`0vw 0vw,5vw 0vw,10vw 0vw`;
+						}
+						else
+						{
+							element.style.backgroundSize=`3.7vw 5.3vw`;
+							element.style.backgroundPosition=`0vw 0vw,2.5vw 0vw,5vw 0vw`;
+						}
+					}
 					console.log(e);
 					switch(check)
 					{
@@ -5078,8 +5179,25 @@ class Main extends React.Component{
 					break;
 				}
 			}
-			element.style.backgroundSize=`2.6vw 3.6vw`;
-			element.style.backgroundPosition=`0vw 0vw,1.7vw 0vw,3.4vw 0vw,5.1vw 0vw`;
+			if(($globalScreenWidthMQ>=320) && ($globalScreenWidthMQ<=480))
+			{
+				element.style.backgroundSize=`5.2vw 7.2vw`;
+				element.style.backgroundPosition=`0vw 0vw,3.4vw 0vw,6.8vw 0vw,10.2vw 0vw`;
+			}
+			else
+			{
+				if(($globalScreenWidthMQ>=481) && ($globalScreenWidthMQ<=767))
+				{
+					element.style.backgroundSize=`5.2vw 7.2vw`;
+					element.style.backgroundPosition=`0vw 0vw,3.4vw 0vw,6.8vw 0vw,10.2vw 0vw`;
+				}
+				else
+				{
+					element.style.backgroundSize=`2.6vw 3.6vw`;
+					element.style.backgroundPosition=`0vw 0vw,1.7vw 0vw,3.4vw 0vw,5.1vw 0vw`;
+				}
+
+			}
 			if(positive)
 			{
 				//Positive values
@@ -5147,7 +5265,7 @@ class Main extends React.Component{
 						else
 						{
 							this.setState({
-								ChestNumbers: Math.floor(Target/2)+1,
+								ChestNumbers: Math.floor(Target/2),
 							})
 							let Chests=document.getElementById('JungleChestOpenGamePlay').getElementsByClassName('Chests');
 							for(let i=0;i<Chests.length;i++)
@@ -5240,7 +5358,7 @@ class Main extends React.Component{
 						Chests[i].getElementsByTagName('div')[0].style.display=`none`;
 						Chests[i].style.cursor=`pointer`;
 						Chests[i].style.color=`black`;
-						if(i<9)
+						if(i<=9)
 						{
 							Chests[i].style.display=`inline-block`;
 						}
@@ -5266,14 +5384,21 @@ class Main extends React.Component{
 			React.createElement('div',{id: `JungleMainDiv`},
 				React.createElement('h1',{id: `JungleTitle`},`Jungle Finder`),
 				//Accessories
-				React.createElement('span',{id: `JungleHPCurrentValue`, style:{visibility: this.state.HPValues}},1000),
-				React.createElement('span',{id: `JungleHPMaxValue`, style:{visibility: this.state.HPValues}},`/1000`),
-				React.createElement('span',{id: `JungleXPCurrentValue`,style:{visibility: this.state.XPValues}},1),
-				React.createElement('span',{id: `JungleXPMaxValue`,style:{visibility: this.state.XPValues}},`/100`),
-				React.createElement('div',{id: `JungleFinderLifeSphere`,onMouseOver:this.mouseOverSpheres, onMouseOut:this.mouseOutSpheres},null),
-				React.createElement('div',{id: `JungleGoldAccessory`},this.state.GoldValue),
-				React.createElement('div',{id: `JungleJewelAccessory`},this.state.JewelValue),
-				React.createElement('div',{id: `JungleFinderXPSphere`,onMouseOver:this.mouseOverSpheres, onMouseOut:this.mouseOutSpheres},null),
+				React.createElement('div',{id: `JungleHPContainer`},
+					React.createElement('span',{id: `JungleHPCurrentValue`, style:{visibility: this.state.HPValues}},1000),
+					React.createElement('span',{id: `JungleHPMaxValue`, style:{visibility: this.state.HPValues}},`/1000Hp`),
+					React.createElement('div',{id: `JungleFinderLifeSphere`,onMouseOver:this.mouseOverSpheres, onMouseOut:this.mouseOutSpheres},null),
+				),
+				React.createElement('div',{id: `JungleAllAccessories`},
+					React.createElement('div',{id: `JungleGoldAccessory`},this.state.GoldValue),
+					React.createElement('div',{id: `JungleJewelAccessory`},this.state.JewelValue)
+				),
+				React.createElement('div',{id:`JugleXPContainer`},
+					React.createElement('span',{id: `JungleXPCurrentValue`,style:{visibility: this.state.XPValues}},1),
+					React.createElement('span',{id: `JungleXPMaxValue`,style:{visibility: this.state.XPValues}},`/100Xp`),
+					React.createElement('div',{id: `JungleFinderXPSphere`,onMouseOver:this.mouseOverSpheres, onMouseOut:this.mouseOutSpheres},null)
+				),
+
 				React.createElement('div',{id: `JungleContainer`},
 					React.createElement('div',{id:`Menu`},
 						React.createElement('div',{id: `JungleMenuCharacter`,onClick:this.JungleMenuChoice},
@@ -5426,26 +5551,30 @@ class Main extends React.Component{
 							cursor:this.state.PathMover.cursor},onClick:this.GameChanger},`PathMover`),
 						React.createElement('div',{id:`JungleChestOpenGame`,style:{backgroundImage: this.state.ChestOpen.Background,visibility:this.state.ChestOpen.visibility,
 							cursor:this.state.ChestOpen.cursor},onClick:this.GameChanger},`ChestOpen`),
+						
 						React.createElement('div',{id:`JungleGoldBet`},
 							React.createElement('input',{id: `GoldBetInput`,placeholder: `GoldValue...`, type: `Number`,onKeyPress:this.ResourcesInputValue,
 								disabled:this.state.GoldInputState.Disabled,style:{opacity: this.state.GoldInputState.Opac}},null),
-							React.createElement('span',{className: `JungleGoldIcon`,style:{fontSize:`3vw`}},`AB`)),
+							React.createElement('span',{id: `GoldBetIconAfterInput`},`AB`)),
+
 						React.createElement('span',{id: `JugleBetActivate`,onClick:this.BetClick,disabled:this.state.BetState.Disabled,style:{opacity:this.state.BetState.Opac,
 							cursor:this.state.BetState.Curs}},`Bet`),
+
 						React.createElement('div',{id:`JungleJewelBet`,},
 							React.createElement('input',{id: `JewelBetInput`,placeholder: `JewelValue...`, type: `Number`,onKeyPress:this.ResourcesInputValue,
 								disabled:this.state.JewelInputState.Disabled,style:{opacity:this.state.JewelInputState.Opac}},null),
-							React.createElement('span',{className: `JungleJewelIcon`,style:{fontSize:`3vw`}},`AB`)),
+							React.createElement('span',{id: `JewelBetIconAfterInput`},`AB`)),
+
 						//BetValues Below
 						React.createElement('div',{id: `JungleBettingValuesContainer`},`BettingTotal:`,
 							React.createElement('span',{id:`JungleTotalGoldBetContainer`,style:{display:this.state.GoldPart}},
 								React.createElement('span',{id: `JungleTotalGoldValue`},this.state.BetGoldValue),
-								React.createElement('span',{className: `JungleGoldIcon`, style:{textShadow:`none`}},`AB`)),
+								React.createElement('span',{id: `JungleGoldIconAtBetting`, style:{textShadow:`none`}},`AB`)),
 
 							React.createElement('span',{id: `JungleTotalJewelBetContainer`,style:{display:this.state.JewelPart}},
 								React.createElement('span',{style:{display:this.state.AndPart}},`&`),
 								React.createElement('span',{id:`JungleTotalJewelValue`},this.state.BetJewelValue),
-								React.createElement('span',{className: `JungleJewelIcon`, style:{textShadow:`none`}},`AB`),),
+								React.createElement('span',{id:`JungleJewelIconAtBetting`, style:{textShadow:`none`}},`AB`),),
 							React.createElement('h1',{id:`JungleSelectedBetGameHeader`},this.state.SelectedBetGameHeader)),
 						//BetGameField Below
 						React.createElement('div',{id:`JungleSelectedGameFieldPathMover`,style:{display:this.state.PathGameActive}},
@@ -5635,16 +5764,14 @@ class Main extends React.Component{
 							React.createElement('div',{id:`InfoForChestGame`,onClick:this.ChestGameInformation},
 									React.createElement('div',{id: `JungleGameChestGamePlatform`,style:{display:this.state.ChestOpenInfo}},
 									React.createElement('h1',{},`ChestOpen`),
-									React.createElement('p',{},`-This game is about opening Chests!Each Chest can contain
-										different things and different multipliers as well, but it can also contain dangers!
-										Minimum number of chests are 10 and the maximum is 30! The game is over, when you open all the chests! 
-										A Chest can contain multipliers like 1.1x 1.5x 5x etc. It can contain things like gold
-										or jewels(rarely). It also can contain negative percentages like -20% -50%(of your bet) etc.
-										Also it can contain a Ghost. When u pick a ghost you lose everything and the game
-										is almost like over!It's a small chance to open a ghost, and it might be that all chests are safe.
-										Everything depends on probability, the more chests are in the game the more risky it becomes!
-										If you pick a ghost, don't worry, you can get golds as well in numbers back!
-										Good Luck!`))
+									React.createElement('p',{},`-This game is about opening Chests! The minimum number of
+									chests are ten and the maximum number can be thirty! With the input below you can set the number
+									of chests you want to have on the wooden platform! When you begin to open the chests, you have to open
+									at least half+1 of the chests in order to collect your reward! The chests can contain gold, jewels, positive multipliers,
+									negative multipliers and a ghost! The amount of gold and jewels you open are added to your assets!
+									The positive multipliers will multiply your current jewel and gold with the opened percentage!
+									The negative multiplier will substract the percentage from your current bet!
+									The ghost is dangerous, because it will set all your bet to zero. In other words it will take away everything from you! Good Luck! `))
 								),
 							React.createElement('input',{id:`ChestNumberInput`,placeholder:`Chests...`,type:`Number`,onKeyPress:this.ChestInput},null),
 							React.createElement('button',{id:`ChestGameAccept`,onClick:this.ChestAccept},`Accept`),
