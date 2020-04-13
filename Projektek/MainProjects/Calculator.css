@@ -102,6 +102,32 @@
          left: 25vw;
          top: 170vw;
      }
+
+     /*Contacts*/
+    #Contacts{
+      width: 100%;
+      height: auto;
+      margin-top: 20vw;
+    }
+
+    #Contacts hr{
+      border-width: 0.375vw;
+    }
+
+    #CopyRight{
+      text-align: center;
+      font-size: 5vw;
+    }
+
+    #Contacts span{
+      font-size: 3.75vw;
+      margin-left: 30vw;
+    }
+
+    #MailHeader{
+      text-align: center;
+      font-size: 5vw;
+    }
 }
 
 
@@ -210,6 +236,32 @@
          left: 65vw;
          top: 45vw;
      }
+
+     /*Contacts*/
+    #Contacts{
+      width: 100%;
+      height: auto;
+      margin-top: 20vw;
+    }
+
+    #Contacts hr{
+      border-width: 0.375vw;
+    }
+
+    #CopyRight{
+      text-align: center;
+      font-size: 5vw;
+    }
+
+    #Contacts span{
+      font-size: 3.75vw;
+      margin-left: 30vw;
+    }
+
+    #MailHeader{
+      text-align: center;
+      font-size: 5vw;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px)
@@ -313,6 +365,31 @@
          top: 24.6vw;
          background-color: transparent;
      }
+
+     /*Contacts*/
+    #Contacts{
+      width: 100%;
+      height: auto;
+    }
+
+    #Contacts hr{
+      border-width: 0.225vw;
+    }
+
+    #CopyRight{
+      text-align: center;
+      font-size: 3vw;
+    }
+
+    #Contacts span{
+      font-size: 2.25vw;
+      margin-left: 35vw;
+    }
+
+    #MailHeader{
+      text-align: center;
+      font-size: 3vw;
+    }
 
 }
 
@@ -418,6 +495,31 @@
          top: 15vw;
          background-color: transparent;
      }
+
+     /*Contacts*/
+    #Contacts{
+      width: 100%;
+      height: auto;
+    }
+
+    #Contacts hr{
+      border-width: 0.15vw;
+    }
+
+    #CopyRight{
+      text-align: center;
+      font-size: 2vw;
+    }
+
+    #Contacts span{
+      font-size: 1.5vw;
+      margin-left: 40vw;
+    }
+
+    #MailHeader{
+      text-align: center;
+      font-size: 2vw;
+    }
 
 }
 
@@ -525,6 +627,31 @@
          top: 14.6vw;
          background-color: transparent;
      }
+     
+     /*Contacts*/
+    #Contacts{
+      width: 100%;
+      height: auto;
+    }
+
+    #Contacts hr{
+      border-width: 0.15vw;
+    }
+
+    #CopyRight{
+      text-align: center;
+      font-size: 2vw;
+    }
+
+    #Contacts span{
+      font-size: 1.5vw;
+      margin-left: 40vw;
+    }
+
+    #MailHeader{
+      text-align: center;
+      font-size: 2vw;
+    }
 
 
 }
