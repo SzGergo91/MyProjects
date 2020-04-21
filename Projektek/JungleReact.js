@@ -1064,7 +1064,7 @@ class Main extends React.Component{
 		this.JungleMenuChoice=this.JungleMenuChoice.bind(this);
 		//V. BetGameMethods
 		//A.PathMover
-		this.ResourcesInputValue=this.ResourcesInputValue.bind(this);
+		this.SetBet=this.SetBet.bind(this);
 		this.InformationToggle=this.InformationToggle.bind(this);
 		this.BetClick=this.BetClick.bind(this);
 		this.StandardClick=this.StandardClick.bind(this);
@@ -2618,8 +2618,8 @@ class Main extends React.Component{
 						document.getElementById('JungleHazardGameDiv').style.display=`inline-block`;
 						document.getElementById('JungleCharacterDiv').style.display=`none`;
 						//Beallitom a JungleMainDiv meretet is mivel a Jatek nagyobb helyet igenyel!
-						document.getElementById('JungleMainDiv').style.minHeight=`145vw`;
-						document.getElementById('JungleMainDiv').style.backgroundSize=`100% 148vw`;
+						document.getElementById('JungleMainDiv').style.minHeight=`150vw`;
+						document.getElementById('JungleMainDiv').style.backgroundSize=`100% 153vw`;
 					}
 				}
 				break;
@@ -2629,76 +2629,122 @@ class Main extends React.Component{
 	}
 	//BETGAME Functions below!
 	//1.Gold and Jewel Event Handler for inputs!
-	ResourcesInputValue(e){
-		let InputId=e.target.id;
-		let value=Math.floor(Number(e.target.value));
+	SetBet(){
 		let GoldValue=this.state.GoldValue;
 		let JewelValue=this.state.JewelValue;
 		let AndGoldCheck=this.state.BetGoldValue;
 		let AndJewelCheck=this.state.BetJewelValue;
-		if(e.key===`Enter`){
-			switch(InputId){
-				case `GoldBetInput`:
-					if(value<=0){
-						window.alert('The Value must be positive and higher then zero!');
-					}
-					else
-					{
-						if(value>GoldValue)
-						{
-							window.alert('The value cannot be higher then your current Gold!(No loans)')
-						}
-						else
-						{
-							if(AndJewelCheck===`Value`)
-							{
-								this.setState({
-									GoldPart:`inline`,
-									BetGoldValue: `${value}`,
-								})
-							}
-							else
-							{
-								this.setState({
-									GoldPart:`inline`,
-									AndPart:`inline`,
-									BetGoldValue: `${value}`,
-								})
-							}
-						}
-					}
-				break;
-				case `JewelBetInput`:
-					if(value<=0){
-						window.alert('The Value must be positive and higher then zero!');
-					}
-					else
-					{
-						if(value>JewelValue)
-						{
-							window.alert('The value cannot be higher then your current Jewels!(No loans)')
-						}
-						else
-						{
-							if(AndGoldCheck===`Value`)
-							{
-								this.setState({
-									JewelPart: `inline`,
-									BetJewelValue: `${value}`,
-								})
-							}
-							else{
-								this.setState({
-									JewelPart: `inline`,
-									AndPart:`inline`,
-									BetJewelValue: `${value}`,
-								})
-							}
-						}
-					}
-				break;
+		let GoldInputValue=Number(document.getElementById('GoldBetInput').value);
+		let JewelInputValue=Number(document.getElementById('JewelBetInput').value);
+		if((GoldInputValue.length!==0) && (GoldInputValue>0))
+		{
+			if(GoldInputValue<=GoldValue)
+			{
+				if(AndJewelCheck!=='Value')
+				{
+					this.setState({
+						GoldPart:`inline`,
+						AndPart:`inline`,
+						BetGoldValue: `${GoldInputValue}`,
+					})
+				}
+				else
+				{
+					this.setState({
+					GoldPart:`inline`,
+					BetGoldValue: `${GoldInputValue}`,
+					})
+				}
+
+			}
+			else
+			{
+				window.alert('The input goldvalue cannot exceed your current gold!');
 			}
 		}
+		else
+		{
+			if((JewelInputValue.length!==0) && (JewelInputValue>0))
+			{
+				if(JewelInputValue<=JewelValue)
+				{
+					if(AndGoldCheck!==`Value`)
+					{
+						this.setState({
+							JewelPart: `inline`,
+							AndPart:`inline`,
+							BetJewelValue: `${JewelInputValue}`,
+						})
+					}
+					else
+					{
+						this.setState({
+							JewelPart: `inline`,
+							BetJewelValue: `${JewelInputValue}`,
+						})
+					}
+				}
+				else
+				{
+					window.alert('the input jewelvalue cannot exceed your current jewels!');
+				}
+
+			}
+			else
+			{
+				window.alert('Type in something in order to set your bet!');
+			}
+		}
+
+		if((JewelInputValue.length!==0) && (JewelInputValue>0))
+		{
+				if(JewelInputValue<=JewelValue)
+				{
+					if(AndGoldCheck!==`Value`)
+					{
+						this.setState({
+							JewelPart: `inline`,
+							AndPart:`inline`,
+							BetJewelValue: `${JewelInputValue}`,
+						})
+					}
+					else
+					{
+						this.setState({
+							JewelPart: `inline`,
+							BetJewelValue: `${JewelInputValue}`,
+						})
+					}
+				}
+				else
+				{
+					window.alert('the input jewelvalue cannot exceed your current jewels!');
+				}
+		}
+
+		if(((GoldInputValue.length!==0) && (GoldInputValue>0)) && ((JewelInputValue.length!==0) && (JewelInputValue>0)))
+		{
+				if((GoldInputValue<=GoldValue) && (JewelInputValue<=JewelValue))
+				{
+
+						this.setState({
+							GoldPart: `inline`,
+							JewelPart: `inline`,
+							AndPart:`inline`,
+							BetGoldValue: `${GoldInputValue}`,
+							BetJewelValue: `${JewelInputValue}`,
+						})
+					
+
+				}
+				else
+				{
+					window.alert('the input consumable cannot exceed your current consumables!');
+				}
+		}
+
+		
+
 	}
 
 	//2.Information toggle function
@@ -2791,6 +2837,10 @@ class Main extends React.Component{
 			}
 		}
 		}
+			//Clear input fields
+		document.getElementById('GoldBetInput').value=``;
+		document.getElementById('JewelBetInput').value=``;
+
 
 
 	}
@@ -5553,17 +5603,21 @@ class Main extends React.Component{
 							cursor:this.state.ChestOpen.cursor},onClick:this.GameChanger},`ChestOpen`),
 						
 						React.createElement('div',{id:`JungleGoldBet`},
-							React.createElement('input',{id: `GoldBetInput`,placeholder: `GoldValue...`, type: `Number`,onKeyPress:this.ResourcesInputValue,
+							React.createElement('input',{id: `GoldBetInput`,placeholder: `GoldValue...`, type: `Number`,
 								disabled:this.state.GoldInputState.Disabled,style:{opacity: this.state.GoldInputState.Opac}},null),
 							React.createElement('span',{id: `GoldBetIconAfterInput`},`AB`)),
 
-						React.createElement('span',{id: `JugleBetActivate`,onClick:this.BetClick,disabled:this.state.BetState.Disabled,style:{opacity:this.state.BetState.Opac,
-							cursor:this.state.BetState.Curs}},`Bet`),
+						React.createElement('span',{id: `JugleSetActivate`,onClick:this.SetBet,disabled:this.state.BetState.Disabled,style:{opacity:this.state.BetState.Opac,
+							cursor:this.state.BetState.Curs}},`Set`),
 
 						React.createElement('div',{id:`JungleJewelBet`,},
-							React.createElement('input',{id: `JewelBetInput`,placeholder: `JewelValue...`, type: `Number`,onKeyPress:this.ResourcesInputValue,
+							React.createElement('input',{id: `JewelBetInput`,placeholder: `JewelValue...`, type: `Number`,
 								disabled:this.state.JewelInputState.Disabled,style:{opacity:this.state.JewelInputState.Opac}},null),
 							React.createElement('span',{id: `JewelBetIconAfterInput`},`AB`)),
+
+
+						React.createElement('span',{id: `JugleBetActivate`,onClick:this.BetClick,disabled:this.state.BetState.Disabled,style:{opacity:this.state.BetState.Opac,
+							cursor:this.state.BetState.Curs}},`Bet`),
 
 						//BetValues Below
 						React.createElement('div',{id: `JungleBettingValuesContainer`},`BettingTotal:`,

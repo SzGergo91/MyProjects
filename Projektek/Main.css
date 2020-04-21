@@ -1938,7 +1938,8 @@
 			background-color: transparent;
 		}
 
-		#JugleBetActivate{
+		#JugleSetActivate
+		{
 			display: inline-block;
 			position: relative;
 			font-size: 13.5vw;
@@ -1950,11 +1951,12 @@
 			background-color: saddlebrown;
 			box-shadow: 0vw 0.6vw 0.9vw black, 0.6vw 0vw 0.9vw black, -0.6vw 0vw 0.9vw black, 0vw -0.6vw 0.9vw black;
 			text-shadow: 0.3vw 0vw 0.6vw white, 0vw 0.3vw 0.6vw white, -0.3vw 0vw 0.6vw white, 0vw -0.3vw 0.6vw white;
-			background-image: url('Pictures/JungleFinder/BetGameComponents/WannaBet.png');
+			background-image: url('Pictures/JungleFinder/BetGameComponents/BetSetIcon.png');
 			background-repeat: no-repeat;
 			background-size: 18vw 12vw;
 			background-position: center;
 		}
+
 		/*Jungle Jewels*/
 		#JungleJewelBet{
 			width: 90vw;
@@ -1992,6 +1994,26 @@
 		{
 			background-color: transparent;
 		}
+
+		#JugleBetActivate{
+			display: inline-block;
+			position: relative;
+			font-size: 13.5vw;
+			margin-left: 45vw;
+			margin-top: 3vw;
+			margin-bottom: 3vw;
+			border-radius: 0.25vw;
+			cursor: pointer;
+			background-color: saddlebrown;
+			box-shadow: 0vw 0.6vw 0.9vw black, 0.6vw 0vw 0.9vw black, -0.6vw 0vw 0.9vw black, 0vw -0.6vw 0.9vw black;
+			text-shadow: 0.3vw 0vw 0.6vw white, 0vw 0.3vw 0.6vw white, -0.3vw 0vw 0.6vw white, 0vw -0.3vw 0.6vw white;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/WannaBet.png');
+			background-repeat: no-repeat;
+			background-size: 18vw 12vw;
+			background-position: center;
+		}
+
+
 		/*Jungle Betting Values*/
 		/*I.Gold*/
 
@@ -2032,6 +2054,7 @@
 		{
 			background-color: transparent;
 		}
+
 
 		/*II.Jewels*/
 		#JungleTotalJewelBetContainer{
@@ -2382,7 +2405,7 @@
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
 			display: inline-block;
-			margin-left: 1.9vw;
+			margin-left: 1.7vw;
 			cursor: pointer;
 		}
 
@@ -4373,7 +4396,8 @@
 			background-color: transparent;
 		}
 
-		#JugleBetActivate{
+		#JugleSetActivate
+		{
 			display: inline-block;
 			position: relative;
 			font-size: 13.5vw;
@@ -4385,7 +4409,7 @@
 			background-color: saddlebrown;
 			box-shadow: 0vw 0.6vw 0.9vw black, 0.6vw 0vw 0.9vw black, -0.6vw 0vw 0.9vw black, 0vw -0.6vw 0.9vw black;
 			text-shadow: 0.3vw 0vw 0.6vw white, 0vw 0.3vw 0.6vw white, -0.3vw 0vw 0.6vw white, 0vw -0.3vw 0.6vw white;
-			background-image: url('Pictures/JungleFinder/BetGameComponents/WannaBet.png');
+			background-image: url('Pictures/JungleFinder/BetGameComponents/BetSetIcon.png');
 			background-repeat: no-repeat;
 			background-size: 18vw 12vw;
 			background-position: center;
@@ -4426,6 +4450,23 @@
 		#JewelBetIconAfterInput::selection
 		{
 			background-color: transparent;
+		}
+		#JugleBetActivate{
+			display: inline-block;
+			position: relative;
+			font-size: 13.5vw;
+			margin-left: 45vw;
+			margin-top: 3vw;
+			margin-bottom: 3vw;
+			border-radius: 0.25vw;
+			cursor: pointer;
+			background-color: saddlebrown;
+			box-shadow: 0vw 0.6vw 0.9vw black, 0.6vw 0vw 0.9vw black, -0.6vw 0vw 0.9vw black, 0vw -0.6vw 0.9vw black;
+			text-shadow: 0.3vw 0vw 0.6vw white, 0vw 0.3vw 0.6vw white, -0.3vw 0vw 0.6vw white, 0vw -0.3vw 0.6vw white;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/WannaBet.png');
+			background-repeat: no-repeat;
+			background-size: 18vw 12vw;
+			background-position: center;
 		}
 		/*Jungle Betting Values*/
 		/*I.Gold*/
@@ -6766,7 +6807,8 @@
 			background-color: transparent;
 		}
 
-		#JugleBetActivate{
+		#JugleSetActivate
+		{
 			display: inline-block;
 			font-size: 4.5vw;
 			margin-left: 2.5vw;
@@ -6776,7 +6818,7 @@
 			background-color: saddlebrown;
 			box-shadow: 0vw 0.2vw 0.3vw black, 0.2vw 0vw 0.3vw black, -0.2vw 0vw 0.3vw black, 0vw -0.2vw 0.3vw black;
 			text-shadow: 0.1vw 0vw 0.2vw white, 0vw 0.1vw 0.2vw white, -0.1vw 0vw 0.2vw white, 0vw -0.1vw 0.2vw white;
-			background-image: url('Pictures/JungleFinder/BetGameComponents/WannaBet.png');
+			background-image: url('Pictures/JungleFinder/BetGameComponents/BetSetIcon.png');
 			background-repeat: no-repeat;
 			background-size: 6vw 4vw;
 			background-position: center;
@@ -6817,6 +6859,21 @@
 		#JewelBetIconAfterInput::selection
 		{
 			background-color: transparent;
+		}
+		#JugleBetActivate{
+			display: inline-block;
+			font-size: 4.5vw;
+			margin-left: 32.25vw;
+			margin-top: 1vw;
+			border-radius: 0.25vw;
+			cursor: pointer;
+			background-color: saddlebrown;
+			box-shadow: 0vw 0.2vw 0.3vw black, 0.2vw 0vw 0.3vw black, -0.2vw 0vw 0.3vw black, 0vw -0.2vw 0.3vw black;
+			text-shadow: 0.1vw 0vw 0.2vw white, 0vw 0.1vw 0.2vw white, -0.1vw 0vw 0.2vw white, 0vw -0.1vw 0.2vw white;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/WannaBet.png');
+			background-repeat: no-repeat;
+			background-size: 6vw 4vw;
+			background-position: center;
 		}
 
 		/*Jungle Betting Values*/
@@ -9142,7 +9199,8 @@
 			background-color: transparent;
 		}
 
-		#JugleBetActivate{
+		#JugleSetActivate
+		{
 			display: inline-block;
 			font-size: 4.5vw;
 			margin-left: 2.5vw;
@@ -9152,11 +9210,12 @@
 			background-color: saddlebrown;
 			box-shadow: 0vw 0.2vw 0.3vw black, 0.2vw 0vw 0.3vw black, -0.2vw 0vw 0.3vw black, 0vw -0.2vw 0.3vw black;
 			text-shadow: 0.1vw 0vw 0.2vw white, 0vw 0.1vw 0.2vw white, -0.1vw 0vw 0.2vw white, 0vw -0.1vw 0.2vw white;
-			background-image: url('Pictures/JungleFinder/BetGameComponents/WannaBet.png');
+			background-image: url('Pictures/JungleFinder/BetGameComponents/BetSetIcon.png');
 			background-repeat: no-repeat;
 			background-size: 6vw 4vw;
 			background-position: center;
 		}
+
 		/*Jungle Jewels*/
 		#JungleJewelBet{
 			width: 30vw;
@@ -9193,6 +9252,22 @@
 		#JewelBetIconAfterInput::selection
 		{
 			background-color: transparent;
+		}
+
+		#JugleBetActivate{
+			display: inline-block;
+			font-size: 4.5vw;
+			margin-left: 32.25vw;
+			margin-top: 1vw;
+			border-radius: 0.25vw;
+			cursor: pointer;
+			background-color: saddlebrown;
+			box-shadow: 0vw 0.2vw 0.3vw black, 0.2vw 0vw 0.3vw black, -0.2vw 0vw 0.3vw black, 0vw -0.2vw 0.3vw black;
+			text-shadow: 0.1vw 0vw 0.2vw white, 0vw 0.1vw 0.2vw white, -0.1vw 0vw 0.2vw white, 0vw -0.1vw 0.2vw white;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/WannaBet.png');
+			background-repeat: no-repeat;
+			background-size: 6vw 4vw;
+			background-position: center;
 		}
 
 		/*Jungle Betting Values*/
@@ -11533,7 +11608,8 @@
 			background-color: transparent;
 		}
 
-		#JugleBetActivate{
+		#JugleSetActivate
+		{
 			display: inline-block;
 			font-size: 4.5vw;
 			margin-left: 2.5vw;
@@ -11543,7 +11619,7 @@
 			background-color: saddlebrown;
 			box-shadow: 0vw 0.2vw 0.3vw black, 0.2vw 0vw 0.3vw black, -0.2vw 0vw 0.3vw black, 0vw -0.2vw 0.3vw black;
 			text-shadow: 0.1vw 0vw 0.2vw white, 0vw 0.1vw 0.2vw white, -0.1vw 0vw 0.2vw white, 0vw -0.1vw 0.2vw white;
-			background-image: url('Pictures/JungleFinder/BetGameComponents/WannaBet.png');
+			background-image: url('Pictures/JungleFinder/BetGameComponents/BetSetIcon.png');
 			background-repeat: no-repeat;
 			background-size: 6vw 4vw;
 			background-position: center;
@@ -11584,6 +11660,22 @@
 		#JewelBetIconAfterInput::selection
 		{
 			background-color: transparent;
+		}
+
+		#JugleBetActivate{
+			display: inline-block;
+			font-size: 4.5vw;
+			margin-left: 32.25vw;
+			margin-top: 1vw;
+			border-radius: 0.25vw;
+			cursor: pointer;
+			background-color: saddlebrown;
+			box-shadow: 0vw 0.2vw 0.3vw black, 0.2vw 0vw 0.3vw black, -0.2vw 0vw 0.3vw black, 0vw -0.2vw 0.3vw black;
+			text-shadow: 0.1vw 0vw 0.2vw white, 0vw 0.1vw 0.2vw white, -0.1vw 0vw 0.2vw white, 0vw -0.1vw 0.2vw white;
+			background-image: url('Pictures/JungleFinder/BetGameComponents/WannaBet.png');
+			background-repeat: no-repeat;
+			background-size: 6vw 4vw;
+			background-position: center;
 		}
 
 		/*Jungle Betting Values*/
