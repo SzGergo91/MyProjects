@@ -676,6 +676,7 @@ $(document).ready(()=>{
 
 
 
+
 		//3. Universe 
 			//A) Setting the sizes!
 			if(($globalwidth>=481) && ($globalwidth<=767)){
